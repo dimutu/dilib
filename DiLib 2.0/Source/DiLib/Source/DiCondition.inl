@@ -36,9 +36,9 @@ DiCondition<T>::~DiCondition()
 ********************************************************************************************************************************************
 */
 template <class T>
-void DiCondition<T>::SetRunTask(DiTask<T>* a_pkRunTask) 
+void DiCondition<T>::SetTrueTask(DiTask<T>* a_pkRunTask) 
 {
-	m_pkRunTask = a_pkRunTask;
+	m_pkTrueTask = a_pkRunTask;
 }
 //***************************************************************************************************************************************************//
 
@@ -50,8 +50,8 @@ void DiCondition<T>::SetRunTask(DiTask<T>* a_pkRunTask)
 ********************************************************************************************************************************************
 */
 template <class T>
-void DiCondition<T>::SetFalseRunTask(DiTask<T>* a_pkRunTask)
+void DiCondition<T>::SetFalseTask(DiTask<T>* a_pkRunTask)
 {
-	m_pkRunTaskFalse = a_pkRunTask;
+	m_pkFalseTask = a_pkRunTask;
 }
 //***************************************************************************************************************************************************//
