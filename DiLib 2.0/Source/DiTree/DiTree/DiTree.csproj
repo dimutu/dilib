@@ -54,11 +54,16 @@
       <DependentUpon>DiTree.cs</DependentUpon>
     </Compile>
     <Compile Include="Custom Control\DiListViewItem.cs" />
+    <Compile Include="Custom Control\DiTreeMethods.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Control\DiTreeNode.cs" />
     <Compile Include="DiApplication.cs" />
     <Compile Include="DiDataHanlder.cs" />
     <Compile Include="DiLib\DiDataTypes.cs" />
     <Compile Include="DiLib\DiCondition.cs" />
     <Compile Include="DiLib\DiFilter.cs" />
+    <Compile Include="DiLib\DiSequence.cs" />
     <Compile Include="DiLib\DiTask.cs" />
     <Compile Include="Forms\frmDiFile.cs">
       <SubType>Form</SubType>
@@ -95,6 +100,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\DiClipboard.cs" />
     <Compile Include="Source\DiDebugData.cs" />
     <Compile Include="Source\DiGlobals.cs" />
     <Compile Include="Source\DiMethods.cs" />

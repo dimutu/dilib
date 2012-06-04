@@ -35,11 +35,10 @@
             this.txtTemplateClass = new System.Windows.Forms.TextBox();
             this.lblTemplateClass = new System.Windows.Forms.Label();
             this.treeBT = new System.Windows.Forms.TreeView();
+            this.imageListTasks = new System.Windows.Forms.ImageList(this.components);
             this.splitProperties = new System.Windows.Forms.SplitContainer();
             this.listTaskTypes = new System.Windows.Forms.ListView();
-            this.imageListTasks = new System.Windows.Forms.ImageList(this.components);
             this.propertyNode = new System.Windows.Forms.PropertyGrid();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitTreeProperties)).BeginInit();
             this.splitTreeProperties.Panel1.SuspendLayout();
             this.splitTreeProperties.Panel2.SuspendLayout();
@@ -80,7 +79,6 @@
             // 
             // splitTree.Panel1
             // 
-            this.splitTree.Panel1.Controls.Add(this.button1);
             this.splitTree.Panel1.Controls.Add(this.txtTemplateClass);
             this.splitTree.Panel1.Controls.Add(this.lblTemplateClass);
             // 
@@ -111,10 +109,28 @@
             // 
             this.treeBT.AllowDrop = true;
             this.treeBT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeBT.ImageIndex = 0;
+            this.treeBT.ImageList = this.imageListTasks;
             this.treeBT.Location = new System.Drawing.Point(0, 0);
             this.treeBT.Name = "treeBT";
+            this.treeBT.SelectedImageIndex = 0;
             this.treeBT.Size = new System.Drawing.Size(502, 436);
             this.treeBT.TabIndex = 0;
+            this.treeBT.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeBT_AfterSelect);
+            this.treeBT.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeBT_DragDrop);
+            this.treeBT.DragEnter += new System.Windows.Forms.DragEventHandler(this.treeBT_DragEnter);
+            this.treeBT.DragOver += new System.Windows.Forms.DragEventHandler(this.treeBT_DragOver);
+            // 
+            // imageListTasks
+            // 
+            this.imageListTasks.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListTasks.ImageStream")));
+            this.imageListTasks.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListTasks.Images.SetKeyName(0, "task");
+            this.imageListTasks.Images.SetKeyName(1, "condition");
+            this.imageListTasks.Images.SetKeyName(2, "filter");
+            this.imageListTasks.Images.SetKeyName(3, "selection");
+            this.imageListTasks.Images.SetKeyName(4, "sequence");
+            this.imageListTasks.Images.SetKeyName(5, "root");
             // 
             // splitProperties
             // 
@@ -138,6 +154,8 @@
             // 
             this.listTaskTypes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listTaskTypes.GridLines = true;
+            this.listTaskTypes.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.listTaskTypes.HoverSelection = true;
             this.listTaskTypes.LargeImageList = this.imageListTasks;
             this.listTaskTypes.Location = new System.Drawing.Point(0, 0);
             this.listTaskTypes.MinimumSize = new System.Drawing.Size(200, 180);
@@ -150,16 +168,8 @@
             this.listTaskTypes.TabIndex = 0;
             this.listTaskTypes.UseCompatibleStateImageBehavior = false;
             this.listTaskTypes.View = System.Windows.Forms.View.List;
-            // 
-            // imageListTasks
-            // 
-            this.imageListTasks.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListTasks.ImageStream")));
-            this.imageListTasks.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListTasks.Images.SetKeyName(0, "task");
-            this.imageListTasks.Images.SetKeyName(1, "condition");
-            this.imageListTasks.Images.SetKeyName(2, "filter");
-            this.imageListTasks.Images.SetKeyName(3, "selection");
-            this.imageListTasks.Images.SetKeyName(4, "sequence");
+            this.listTaskTypes.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listTaskTypes_MouseDoubleClick);
+            this.listTaskTypes.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listTaskTypes_MouseDown);
             // 
             // propertyNode
             // 
@@ -168,16 +178,6 @@
             this.propertyNode.Name = "propertyNode";
             this.propertyNode.Size = new System.Drawing.Size(221, 294);
             this.propertyNode.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(323, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 18);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DiTree
             // 
@@ -214,7 +214,6 @@
         private System.Windows.Forms.SplitContainer splitProperties;
         private System.Windows.Forms.ListView listTaskTypes;
         private System.Windows.Forms.ImageList imageListTasks;
-        private System.Windows.Forms.Button button1;
 
     }
 }

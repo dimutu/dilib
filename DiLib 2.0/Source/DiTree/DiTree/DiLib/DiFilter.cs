@@ -5,22 +5,35 @@ using System.Text;
 
 namespace DiTree
 {
+    /// <summary>
+    /// filter task
+    /// </summary>
     class DiFilter : DiTask
     {
-        protected DiTask m_kTask; //task to run on filter 
+        protected DiTask m_pkTask; //task to run on filter 
         protected bool m_bLoopOn; //loop the task
         protected uint m_uiMaxRunCycles; //if not loop, number of times to run
-        protected double iTimeInterval = 0; //time interval for the filter task
+        protected double m_dTimeInterval = 0; //time interval for the filter task (in milliseconds)
+
+        public DiFilter()
+            : base()
+        {
+            m_eClassType = DICLASSTYPES.DICLASSTYPE_FILTER;
+            m_bLoopOn = false;
+            m_pkTask = null;
+            m_uiMaxRunCycles = 1;
+            m_dTimeInterval = 0;
+        }
 
         public DiTask Task
         {
             get
             {
-                return m_kTask;
+                return m_pkTask;
             }
             set
             {
-                m_kTask = value;
+                m_pkTask = value;
             }
         }
 
@@ -53,11 +66,11 @@ namespace DiTree
         {
             get
             {
-                return iTimeInterval;
+                return m_dTimeInterval;
             }
             set
             {
-                iTimeInterval = value;
+                m_dTimeInterval = value;
             }
         }
     }

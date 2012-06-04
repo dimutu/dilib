@@ -5,9 +5,12 @@ using System.Text;
 
 namespace DiTree
 {
+    /// <summary>
+    /// global data
+    /// </summary>
     public static class DiGlobals
     {
-        public const int DEBUG_PORT = 34542;
+        public const int DEBUG_PORT = 34542; //debug port to connect
         public const int _DIDEBUGSTRUCTSIZE = 524;
         public const int _DIDEBUGCONTROLSIZE = 516;
         private static bool m_bIsConnected = false;

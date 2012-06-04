@@ -6,12 +6,19 @@ using System.ComponentModel;
 
 namespace DiTree
 {
+    /// <summary>
+    /// condition class
+    /// </summary>
     class DiCondition : DiTask
     {
-        /*setting reference to task is easy, so dont have to manage change of class ids, only when the whole class is deleted*/
-
         protected DiTask m_kTrueTask; //when condition is true
         protected DiTask m_kFalseTask; //when condition is false
+
+        public DiCondition()
+            : base()
+        {
+            m_eClassType = DICLASSTYPES.DICLASSTYPE_FILTER;
+        }
 
         public DiTask TrueTask
         {

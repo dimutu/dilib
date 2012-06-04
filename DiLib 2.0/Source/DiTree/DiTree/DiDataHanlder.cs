@@ -58,7 +58,7 @@ namespace DiTree
             kIDCol.ReadOnly = true;
 
             DataColumn kEnumNameCol = m_dtData.Columns.Add(DATAFIELD_ENUMNAME, typeof(string)); //enum name
-            kEnumNameCol.Unique = true;
+            //kEnumNameCol.Unique = true; //had to remove as the user update this after adding a new node
 
             m_dtData.Columns.Add(DATAFIELD_ISTEMPATE, typeof(bool)); //the class is template class or deriving
             m_dtData.Columns.Add(DATAFIELD_CLASSTYPE, typeof(DICLASSTYPES)); //class type
@@ -102,9 +102,49 @@ namespace DiTree
             }
         }
 
+        /// <summary>
+        /// Adds new row when adding a node, so most of the info isnt available at that point
+        /// </summary>
+        /// <param name="a_eClassType"></param>
+        /// <param name="a_zTempleteClassName"></param>
+        /// <returns></returns>
+        public int AddNew(DICLASSTYPES a_eClassType, string a_zTempleteClassName)
+        {
+            try
+            {
+                int id = 0;
+
+                DataRow dr = m_dtData.NewRow();
+                int.TryParse(dr[DATAFIELD_ID].ToString(), out id);
+
+                dr[DATAFIELD_ENUMNAME] = DiMethods.GenerateRandomString();
+                dr[DATAFIELD_ISTEMPATE] = false;
+                dr[DATAFIELD_CLASSTYPE] = a_eClassType;
+                dr[DATAFIELD_CLASSNAME] = "";
+                dr[DATAFIELD_TEMPLATECLASS] = a_zTempleteClassName;
+
+                m_dtData.Rows.Add(dr);
+
+                return id;
+
+            }
+            catch (Exception e)
+            {
+                return -1;
+            }
+        }
+
+        /// <summary>
+        /// Get the row from the task id
+        /// </summary>
+        /// <param name="a_iTaskID"></param>
+        /// <returns></returns>
         public DataRow[] GetRow(int a_iTaskID)
         {
             return m_dtData.Select(DATAFIELD_ID + "=" + a_iTaskID);
         }
+
+
+
     }
 }

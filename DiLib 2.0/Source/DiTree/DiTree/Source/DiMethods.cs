@@ -7,11 +7,17 @@ using System.IO;
 
 namespace DiTree
 {
+    /// <summary>
+    /// static methods to use on program
+    /// </summary>
     static class DiMethods
     {
+        //keep reference to MDI status
         private static ToolStripStatusLabel m_pkStatusMsgLable;
 
-
+        /// <summary>
+        /// set status message on the MDI form
+        /// </summary>
         public static ToolStripStatusLabel StatusMessageLable
         {
             set
@@ -20,11 +26,24 @@ namespace DiTree
             }
         }
 
+        /// <summary>
+        /// Custom dialog to display messages
+        /// </summary>
+        /// <param name="sMessage"></param>
+        /// <param name="eButtons"></param>
+        /// <returns></returns>
         static public DialogResult MyDialogShow(string sMessage, MessageBoxButtons eButtons)
         {
-            return MessageBox.Show(sMessage, "Di Trees", eButtons, MessageBoxIcon.Information);
+            return MessageBox.Show(sMessage, "DiTree", eButtons, MessageBoxIcon.Information);
         }
 
+        /// <summary>
+        /// Custom input dialog box to enter text in the program
+        /// </summary>
+        /// <param name="sTitle"></param>
+        /// <param name="sOutValue"></param>
+        /// <param name="iValueMaxLength"></param>
+        /// <returns></returns>
         static public DialogResult MyInputDialogShow(string sTitle, ref string sOutValue, int iValueMaxLength = 10)
         {
             frmInputBox f = new frmInputBox();
@@ -41,7 +60,11 @@ namespace DiTree
             return d;
         }
 
-        static public void SetStatusMessage(string a_zMessage)
+        /// <summary>
+        /// Set the MDI status message on if its already set
+        /// </summary>
+        /// <param name="a_zMessage"></param>
+        public static void SetStatusMessage(string a_zMessage)
         {
             if (m_pkStatusMsgLable != null)
             {
@@ -49,6 +72,9 @@ namespace DiTree
             }
         }
 
+        /// <summary>
+        /// Remove the status message
+        /// </summary>
         public static void ResetStatusMessage()
         {
             if (m_pkStatusMsgLable != null)
@@ -57,6 +83,10 @@ namespace DiTree
             }
         }
 
+        /// <summary>
+        /// Creates error log 
+        /// </summary>
+        /// <param name="error"></param>
         public static void SetErrorLog(Exception error)
         {
             try
@@ -72,6 +102,17 @@ namespace DiTree
 #endif
                 SetStatusMessage("Unable to write to error log.");
             }
+        }
+
+        /// <summary>
+        /// Generates a random string to set unique identifications for debug id
+        /// </summary>
+        /// <returns></returns>
+        public static string GenerateRandomString()
+        {
+            string str = Path.GetRandomFileName();
+            str = str.Replace(".", "");
+            return str;
         }
 
     }

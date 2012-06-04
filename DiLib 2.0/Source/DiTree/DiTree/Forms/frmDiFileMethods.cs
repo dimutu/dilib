@@ -18,21 +18,12 @@ namespace DiTree
         /// </summary>
         private void InitializeGeneral()
         {
-            txtDebugID.Text = GenerateRandomString();
+            txtDebugID.Text = DiMethods.GenerateRandomString();
             txtIncludeFile.Text = "";
             listInclues.Items.Clear();
         }
 
-        /// <summary>
-        /// Generates a random string to set unique identifications for debug id
-        /// </summary>
-        /// <returns></returns>
-        private string GenerateRandomString()
-        {
-            string str = Path.GetRandomFileName();
-            str = str.Replace(".", "");
-            return str;
-        }
+        
 
         /// <summary>
         /// Adds text in the include to the list
