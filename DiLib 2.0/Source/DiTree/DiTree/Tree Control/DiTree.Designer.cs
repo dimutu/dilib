@@ -193,6 +193,7 @@
             this.propertyGridTask.Name = "propertyGridTask";
             this.propertyGridTask.Size = new System.Drawing.Size(221, 294);
             this.propertyGridTask.TabIndex = 0;
+            this.propertyGridTask.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.propertyGridTask_PropertyValueChanged);
             // 
             // DiTree
             // 

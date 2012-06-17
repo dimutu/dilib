@@ -21,6 +21,13 @@ namespace DiTree
         public const string DATAFIELD_CLASSNAME = "ClassName";
         public const string DATAFIELD_TEMPLATECLASS = "TemplateClass";
 
+        //default initialize data enum ids
+        protected int m_iDefaultTaskID;
+        protected int m_iDefaultConditionID;
+        protected int m_iDefaultFilterID;
+        protected int m_iDefaultSequenceID;
+        protected int m_iDefaultSelectionID;
+
         public DiDataHanlder()
         {
             InitializeDataTable();
@@ -49,9 +56,11 @@ namespace DiTree
         /// <param name="a_zTemplateClass"></param>
         public void InitializeTemplateData(string a_zTemplateClass)
         {
-            AddNew(true, DICLASSTYPES.DICLASSTYPE_SELECTION, "DiSelection", a_zTemplateClass);
-            AddNew(true, DICLASSTYPES.DICLASSTYPE_SEQUENCE, "DiSequece", a_zTemplateClass);
-            AddNew(true, DICLASSTYPES.DICLASSTYPE_FILTER, "DiFilter", a_zTemplateClass);
+            m_iDefaultConditionID = AddNew(DICLASSTYPES.DICLASSTYPE_CONDITION, a_zTemplateClass);
+            m_iDefaultFilterID =  AddNew(DICLASSTYPES.DICLASSTYPE_FILTER, a_zTemplateClass);
+            m_iDefaultSelectionID = AddNew(DICLASSTYPES.DICLASSTYPE_SELECTION, a_zTemplateClass);
+            m_iDefaultSequenceID = AddNew(DICLASSTYPES.DICLASSTYPE_SEQUENCE, a_zTemplateClass);
+            m_iDefaultTaskID = AddNew(DICLASSTYPES.DICLASSTYPE_TASK, a_zTemplateClass);
         }
 
         /// <summary>
@@ -99,7 +108,7 @@ namespace DiTree
         /// <param name="a_zTempleteClassName"></param>
         /// <param name="a_bIsTemplate"></param>
         /// <returns></returns>
-        public DataRow AddNew(DICLASSTYPES a_eClassType, string a_zTempleteClassName)
+        public int AddNew(DICLASSTYPES a_eClassType, string a_zTempleteClassName)
         {
             try
             {
@@ -138,7 +147,7 @@ namespace DiTree
                 DataRow dr = m_dtData.NewRow();
                 int.TryParse(dr[DATAFIELD_ID].ToString(), out id);
 
-                zClassName += id.ToString(); //to make class name unique
+               //zClassName += id.ToString(); //to make class name unique
 
                 dr[DATAFIELD_ISTEMPATE] = true;
                 dr[DATAFIELD_CLASSTYPE] = a_eClassType;
@@ -147,7 +156,7 @@ namespace DiTree
 
                 m_dtData.Rows.Add(dr);
 
-                return dr;
+                return id;
 
             }
             catch (Exception e)
@@ -155,7 +164,7 @@ namespace DiTree
 #if DEBUG
                 Console.WriteLine(e.ToString());
 #endif
-                return null;
+                return -1;
             }
         }
 
@@ -169,5 +178,54 @@ namespace DiTree
             return m_dtData.Select(DATAFIELD_ID + "=" + a_iTaskID);
         }
 
+        /// <summary>
+        /// Gets the default data for given class type
+        /// </summary>
+        /// <param name="a_eClassType"></param>
+        /// <returns></returns>
+        public DataRow GetTemplateDataRow(DICLASSTYPES a_eClassType)
+        {
+            DataRow dr = null;
+            DataRow [] akRows = null;
+            int id = -1;
+
+            switch (a_eClassType)
+            {
+                case DICLASSTYPES.DICLASSTYPE_CONDITION:
+                    {
+                        id = m_iDefaultConditionID;
+                        break;
+                    }
+                case DICLASSTYPES.DICLASSTYPE_FILTER:
+                    {
+                        id = m_iDefaultFilterID;
+                        break;
+                    }
+                case DICLASSTYPES.DICLASSTYPE_SELECTION:
+                    {
+                        id = m_iDefaultSelectionID;
+                        break;
+                    }
+                case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
+                    {
+                        id = m_iDefaultSequenceID;
+                        break;
+                    }
+                default:
+                    {
+                        id = m_iDefaultTaskID;
+                        break;
+                    }
+            }
+
+            akRows = m_dtData.Select(DATAFIELD_ID + "=" + id.ToString());
+
+            if (akRows.Length == 1)
+            {
+                dr = akRows[0];
+            }
+
+            return dr;
+        }
     }
 }

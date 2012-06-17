@@ -269,6 +269,11 @@ namespace DiTree
             }
         }
 
+        private void propertyGridTask_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
+        {
+            Console.WriteLine("value changed" + e.ToString());
+        }
+
        
     }
 }

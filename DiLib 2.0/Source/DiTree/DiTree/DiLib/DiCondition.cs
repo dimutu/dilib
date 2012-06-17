@@ -74,6 +74,7 @@ namespace DiTree
             }
             set
             {
+                //set task from the unique class name got from the property grid
                 for (int ii = 0; ii < (int)CONDITION.CONDITION_COUNT; ++ii)
                 {
                     DiTask pkTask = m_apkTasks[ii];

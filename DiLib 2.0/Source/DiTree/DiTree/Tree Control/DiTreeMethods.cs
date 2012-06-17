@@ -212,7 +212,7 @@ namespace DiTree
                 DiCondition kCondition = (DiCondition)a_pkParent.Task;
 
                 //check either of two tasks remaining to be added
-                if (kCondition.TrueTask != null && kCondition.FalseTask != null) //this is the first task adding,
+                if (kCondition.TaskTrue != null && kCondition.TaskFalse != null) //this is the first task adding,
                 {
                     DiMethods.MyDialogShow("Condition has maximum child tasks.", MessageBoxButtons.OK);
                     bIsValid = false;
@@ -269,8 +269,10 @@ namespace DiTree
                     }
             }
 
+            //get the default template data record for the new node and wait until the
+            // changes in the property grid
             //set new data record
-            DataRow dr = m_pkDataHandler.AddNew(a_eType, txtTemplateClass.Text);
+            DataRow dr = m_pkDataHandler.GetTemplateDataRow(a_eType);
             if (dr != null)
             {
                 pkTask.EnumID = (int)dr[DiDataHanlder.DATAFIELD_ID];
