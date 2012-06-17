@@ -41,6 +41,15 @@ namespace DiTree
             m_bIsCut = a_bCut;
         }
 
+        /// <summary>
+        /// Clear the clipboard
+        /// </summary>
+        public void Clear()
+        {
+            m_pkNode = null;
+            m_bIsCut = false;
+        }
+
         public DiTreeNode Node
         {
             get

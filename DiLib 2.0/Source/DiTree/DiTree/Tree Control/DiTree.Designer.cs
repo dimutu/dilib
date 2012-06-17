@@ -32,13 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DiTree));
             this.splitTreeProperties = new System.Windows.Forms.SplitContainer();
             this.splitTree = new System.Windows.Forms.SplitContainer();
+            this.btnSetTemplate = new System.Windows.Forms.Button();
             this.txtTemplateClass = new System.Windows.Forms.TextBox();
             this.lblTemplateClass = new System.Windows.Forms.Label();
             this.treeBT = new System.Windows.Forms.TreeView();
             this.imageListTasks = new System.Windows.Forms.ImageList(this.components);
             this.splitProperties = new System.Windows.Forms.SplitContainer();
             this.listTaskTypes = new System.Windows.Forms.ListView();
-            this.propertyNode = new System.Windows.Forms.PropertyGrid();
+            this.propertyGridTask = new System.Windows.Forms.PropertyGrid();
             ((System.ComponentModel.ISupportInitialize)(this.splitTreeProperties)).BeginInit();
             this.splitTreeProperties.Panel1.SuspendLayout();
             this.splitTreeProperties.Panel2.SuspendLayout();
@@ -79,6 +80,7 @@
             // 
             // splitTree.Panel1
             // 
+            this.splitTree.Panel1.Controls.Add(this.btnSetTemplate);
             this.splitTree.Panel1.Controls.Add(this.txtTemplateClass);
             this.splitTree.Panel1.Controls.Add(this.lblTemplateClass);
             // 
@@ -89,12 +91,24 @@
             this.splitTree.SplitterDistance = 45;
             this.splitTree.TabIndex = 0;
             // 
+            // btnSetTemplate
+            // 
+            this.btnSetTemplate.Location = new System.Drawing.Point(294, 9);
+            this.btnSetTemplate.Name = "btnSetTemplate";
+            this.btnSetTemplate.Size = new System.Drawing.Size(85, 26);
+            this.btnSetTemplate.TabIndex = 1;
+            this.btnSetTemplate.Text = "Set Template";
+            this.btnSetTemplate.UseVisualStyleBackColor = true;
+            this.btnSetTemplate.Click += new System.EventHandler(this.btnSetTemplate_Click);
+            // 
             // txtTemplateClass
             // 
+            this.txtTemplateClass.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtTemplateClass.Location = new System.Drawing.Point(101, 13);
             this.txtTemplateClass.Name = "txtTemplateClass";
             this.txtTemplateClass.Size = new System.Drawing.Size(177, 20);
-            this.txtTemplateClass.TabIndex = 1;
+            this.txtTemplateClass.TabIndex = 0;
+            this.txtTemplateClass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTemplateClass_KeyDown);
             // 
             // lblTemplateClass
             // 
@@ -116,6 +130,7 @@
             this.treeBT.SelectedImageIndex = 0;
             this.treeBT.Size = new System.Drawing.Size(502, 436);
             this.treeBT.TabIndex = 0;
+            this.treeBT.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.treeBT_ItemDrag);
             this.treeBT.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeBT_AfterSelect);
             this.treeBT.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeBT_DragDrop);
             this.treeBT.DragEnter += new System.Windows.Forms.DragEventHandler(this.treeBT_DragEnter);
@@ -145,7 +160,7 @@
             // 
             // splitProperties.Panel2
             // 
-            this.splitProperties.Panel2.Controls.Add(this.propertyNode);
+            this.splitProperties.Panel2.Controls.Add(this.propertyGridTask);
             this.splitProperties.Size = new System.Drawing.Size(221, 485);
             this.splitProperties.SplitterDistance = 187;
             this.splitProperties.TabIndex = 0;
@@ -171,13 +186,13 @@
             this.listTaskTypes.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listTaskTypes_MouseDoubleClick);
             this.listTaskTypes.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listTaskTypes_MouseDown);
             // 
-            // propertyNode
+            // propertyGridTask
             // 
-            this.propertyNode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyNode.Location = new System.Drawing.Point(0, 0);
-            this.propertyNode.Name = "propertyNode";
-            this.propertyNode.Size = new System.Drawing.Size(221, 294);
-            this.propertyNode.TabIndex = 0;
+            this.propertyGridTask.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propertyGridTask.Location = new System.Drawing.Point(0, 0);
+            this.propertyGridTask.Name = "propertyGridTask";
+            this.propertyGridTask.Size = new System.Drawing.Size(221, 294);
+            this.propertyGridTask.TabIndex = 0;
             // 
             // DiTree
             // 
@@ -210,10 +225,11 @@
         private System.Windows.Forms.TextBox txtTemplateClass;
         private System.Windows.Forms.Label lblTemplateClass;
         private System.Windows.Forms.TreeView treeBT;
-        private System.Windows.Forms.PropertyGrid propertyNode;
         private System.Windows.Forms.SplitContainer splitProperties;
         private System.Windows.Forms.ListView listTaskTypes;
         private System.Windows.Forms.ImageList imageListTasks;
+        private System.Windows.Forms.Button btnSetTemplate;
+        private System.Windows.Forms.PropertyGrid propertyGridTask;
 
     }
 }

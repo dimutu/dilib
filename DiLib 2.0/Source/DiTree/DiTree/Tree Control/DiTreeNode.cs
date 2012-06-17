@@ -47,14 +47,6 @@ namespace DiTree
             }
         }
 
-        public string EnumName
-        {
-            get
-            {
-                return m_kTaskNode.EnumName;
-            }
-        }
-
         public int EnumID
         {
             get

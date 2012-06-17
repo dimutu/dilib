@@ -24,5 +24,32 @@ namespace DiTree
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void openDiFile()
+        {
+            
+        }
+
+        private bool saveDiFile(bool a_bSaveAs)
+        {
+
+            //show the dialog if not already saved or save as selected
+            if (saveFile.FileName == "" || a_bSaveAs)
+            {
+                if (saveFile.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+                {
+                    return false;
+                }
+            }
+
+            if (saveFile.FileName != "")
+            {
+                
+
+            }//end if file not blank
+            return false;
+
+        }
+
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel;
-using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using System.Data;
+using System.Drawing;
 
 namespace DiTree
 {
@@ -15,7 +15,7 @@ namespace DiTree
     ///  setting reference to task is easy, so dont have to manage change of class ids,
     ///  only when the whole class is deleted
     /// </summary>
-    class DiTask 
+    public class DiTask 
     {
         protected DICLASSTYPES m_eClassType; //template class type id, is it task, sequence, condition, etc....
 
@@ -27,19 +27,17 @@ namespace DiTree
 
         protected long m_lDebuggerID; //to identify each task seperately in the tree, duplicated will have different number 
 
-        protected string m_zEnumName; //enumeration name, to display in tool tip
-
         public DiTask()
         {
             m_eClassType = DICLASSTYPES.DICLASSTYPE_TASK;
             m_iEnumID = -1;
             m_lDebuggerID = 0;
             m_zClassName = "";
-            m_zEnumName = "";
             m_zLuaScript = "";
         }
 
-        //[ReadOnly(true)]
+        [Category("Task"), 
+        Description("Name of the inherited class name you created from the base class.")]
         public string ClassName
         {
             get
@@ -52,6 +50,8 @@ namespace DiTree
             }
         }
 
+        [Category("Task"), ReadOnly(true), 
+        Description("Unique identifier for each tree node to use in debugging.")] 
         public long DebuggerID
         {
             get
@@ -64,6 +64,7 @@ namespace DiTree
             }
         }
 
+        [Browsable(false)] //no need to show or change the data table running number for the enumeration
         public int EnumID
         {
             get
@@ -76,9 +77,10 @@ namespace DiTree
             }
         }
 
-       //[Category("File")]
-        //[EditorAttribute(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
-        public string LuaScriptFile
+        [Category("Task"),
+        Editor(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor)),
+        Description("Script file which uses to run the commands inside this class")]
+        public string ScriptFile
         {
             get
             {
@@ -90,7 +92,7 @@ namespace DiTree
             }
         }
 
-        //[ReadOnly(true)]
+        [Browsable(false)] //no need to show the class type and allow to change it
         public DICLASSTYPES ClassType
         {
             get
@@ -100,18 +102,6 @@ namespace DiTree
             set
             {
                 m_eClassType = value;
-            }
-        }
-
-        public string EnumName
-        {
-            get
-            {
-                return m_zEnumName;
-            }
-            set
-            {
-                m_zEnumName = value;
             }
         }
 

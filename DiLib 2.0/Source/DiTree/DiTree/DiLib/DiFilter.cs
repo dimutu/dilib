@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing.Design;
 
 namespace DiTree
 {
     /// <summary>
     /// filter task
     /// </summary>
-    class DiFilter : DiTask
+    public class DiFilter : DiTask
     {
         protected DiTask m_pkTask; //task to run on filter 
         protected bool m_bLoopOn; //loop the task
@@ -25,6 +28,8 @@ namespace DiTree
             m_dTimeInterval = 0;
         }
 
+        [Category("Filter"),
+        Description("Task to run when the filter conditions are met")]
         public DiTask Task
         {
             get
@@ -37,6 +42,8 @@ namespace DiTree
             }
         }
 
+        [Category("Filter"),
+        Description("The task needs to run in a continuous loop.")]
         public bool LoopOn
         {
             get
@@ -49,7 +56,8 @@ namespace DiTree
             }
         }
 
-
+        [Category("Filter"),
+        Description("If not in a loop, maximum times the task should get executed.")]
         public uint MaxRunCycles
         {
             get
@@ -62,6 +70,8 @@ namespace DiTree
             }
         }
 
+        [Category("Filter"),
+        Description("Time interval between each execution in milliseconds")]
         public double TimerInterval
         {
             get

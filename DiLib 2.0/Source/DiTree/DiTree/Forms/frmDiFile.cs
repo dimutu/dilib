@@ -11,17 +11,16 @@ namespace DiTree
 {
     public partial class frmDiFile : Form
     {
+        //data handler for the file
+        private DiDataHanlder m_pkDataHandler;
+
         private const int TABSTART_INDEX = 2; //two tabs will be there always (heders, add new*)
+        private string m_zFilePath;
 
         public frmDiFile()
         {
             InitializeComponent();
             InitializeGeneral();
-
-            //test
-            TabPage t = tabDiFile.TabPages[2];
-            DiTree tr = new DiTree();
-            tr.Parent = t;
         }
 
         private void btnAddInclude_Click(object sender, EventArgs e)
@@ -36,5 +35,27 @@ namespace DiTree
                 listInclues.Items.RemoveAt(listInclues.SelectedIndex);
             }
         }
+
+        private void tabDiFile_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //check add new tab selected
+            if (tabDiFile.SelectedIndex == 0) //first tab, add new clicked, create new tab and focus
+            {
+                AddNewTreeTab();
+            }
+        }
+
+        public string FilePath
+        {
+            get
+            {
+                return m_zFilePath;
+            }
+            set
+            {
+                m_zFilePath = value;
+            }
+        }
+
     }
 }

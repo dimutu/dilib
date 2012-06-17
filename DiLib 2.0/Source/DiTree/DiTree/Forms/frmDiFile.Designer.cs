@@ -41,7 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPageNew = new System.Windows.Forms.TabPage();
             this.tabDiFile = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPageGeneral.SuspendLayout();
             this.tabDiFile.SuspendLayout();
             this.SuspendLayout();
@@ -176,7 +175,6 @@
             // 
             this.tabDiFile.Controls.Add(this.tabPageNew);
             this.tabDiFile.Controls.Add(this.tabPageGeneral);
-            this.tabDiFile.Controls.Add(this.tabPage1);
             this.tabDiFile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabDiFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabDiFile.ItemSize = new System.Drawing.Size(80, 50);
@@ -187,15 +185,7 @@
             this.tabDiFile.SelectedIndex = 0;
             this.tabDiFile.Size = new System.Drawing.Size(740, 490);
             this.tabDiFile.TabIndex = 2;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 54);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(732, 432);
-            this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabDiFile.SelectedIndexChanged += new System.EventHandler(this.tabDiFile_SelectedIndexChanged);
             // 
             // frmDiFile
             // 
@@ -227,6 +217,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPageNew;
         private System.Windows.Forms.TabControl tabDiFile;
-        private System.Windows.Forms.TabPage tabPage1;
     }
 }

@@ -9,8 +9,6 @@ using System.Windows.Forms;
 /*
  * main file 
  * 
- *
- * 
  */
 
 namespace DiTree
@@ -33,6 +31,16 @@ namespace DiTree
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showNewDiFile();
+        }
+
+        private void toolStripMainNew_Click(object sender, EventArgs e)
+        {
+            showNewDiFile();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openDiFile();
         }
 
 
