@@ -271,6 +271,41 @@ namespace DiTree
 
         private void propertyGridTask_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
+            DiTask pkTask = (DiTask)propertyGridTask.SelectedObject;
+            if (pkTask == null)
+            {
+                return;
+            }
+
+
+            //class name changed, check already exists or add new
+            if (e.ChangedItem.Label == "ClassName")
+            {
+                string newVal = e.ChangedItem.Value.ToString();
+
+                if (newVal.Length > 0)
+                {
+                    //check already exists
+                    DiDataRow dr = m_pkDataHandler.GetRow(newVal, txtTemplateClass.Text);
+                    if (dr != null)
+                    {
+                        //do some validations
+                        if (pkTask.ClassType != dr.ClassType)
+                        {
+                            DiMethods.MyDialogShow("Cannot change the task type.", MessageBoxButtons.OK);
+                            return;
+                        }
+                        pkTask.EnumID = dr.EnumID;
+                        pkTask.IsTemplate = dr.IsTemplate;
+                    }
+                    else
+                    {
+                        //class not exists, add new row
+                        pkTask.EnumID = m_pkDataHandler.AddNew(false, pkTask.ClassType, newVal, txtTemplateClass.Text);
+                    }
+                }
+            }
+            
             Console.WriteLine("value changed" + e.ToString());
         }
 

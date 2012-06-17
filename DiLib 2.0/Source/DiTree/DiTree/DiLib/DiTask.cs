@@ -27,6 +27,8 @@ namespace DiTree
 
         protected long m_lDebuggerID; //to identify each task seperately in the tree, duplicated will have different number 
 
+        protected bool m_bIsTemplate; //use of template class or extended, this is not to show but keep referencec to tasks that arent set the properties yet
+
         public DiTask()
         {
             m_eClassType = DICLASSTYPES.DICLASSTYPE_TASK;
@@ -34,6 +36,7 @@ namespace DiTree
             m_lDebuggerID = 0;
             m_zClassName = "";
             m_zLuaScript = "";
+            m_bIsTemplate = true;
         }
 
         [Category("Task"), 
@@ -89,6 +92,19 @@ namespace DiTree
             set
             {
                 m_zLuaScript = value;
+            }
+        }
+
+        [Browsable(false)]
+        public bool IsTemplate
+        {
+            get
+            {
+                return m_bIsTemplate;
+            }
+            set
+            {
+                m_bIsTemplate = value;
             }
         }
 

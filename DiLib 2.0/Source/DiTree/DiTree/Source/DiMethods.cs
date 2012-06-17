@@ -115,5 +115,19 @@ namespace DiTree
             return str;
         }
 
+        /// <summary>
+        /// Set the given string value to check nothing on it to break a SQL query
+        /// </summary>
+        /// <param name="a_zValue"></param>
+        /// <returns></returns>
+        public static string SetQueryString(string a_zValue)
+        {
+            string zVal = a_zValue;
+            zVal = zVal.Replace("\"", "");
+            zVal = zVal.Replace("'", "");
+
+            return zVal;
+        }
+
     }
 }

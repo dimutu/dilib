@@ -272,11 +272,11 @@ namespace DiTree
             //get the default template data record for the new node and wait until the
             // changes in the property grid
             //set new data record
-            DataRow dr = m_pkDataHandler.GetTemplateDataRow(a_eType);
+            DiDataRow dr = m_pkDataHandler.GetTemplateDataRow(a_eType, txtTemplateClass.Text);
             if (dr != null)
             {
-                pkTask.EnumID = (int)dr[DiDataHanlder.DATAFIELD_ID];
-                pkTask.ClassName = (string)dr[DiDataHanlder.DATAFIELD_CLASSNAME];
+                pkTask.EnumID = dr.EnumID;
+                pkTask.ClassName = dr.ClassName;
 
                 pkTask.ClassType = a_eType;
                 pkTreeNode.Task = pkTask;//set the task for the tree node

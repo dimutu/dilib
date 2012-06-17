@@ -173,9 +173,37 @@ namespace DiTree
         /// </summary>
         /// <param name="a_iTaskID"></param>
         /// <returns></returns>
-        public DataRow[] GetRow(int a_iTaskID)
+        public DataRow GetRow(int a_iTaskID)
         {
-            return m_dtData.Select(DATAFIELD_ID + "=" + a_iTaskID);
+            DataRow dr = null;
+            DataRow [] akRows =  m_dtData.Select(DATAFIELD_ID + "=" + a_iTaskID);
+
+            if (akRows.Length == 1)
+            {
+                dr = akRows[0];
+            }
+
+            return dr;
+        }
+
+        /// <summary>
+        /// Get row by class name and template class
+        /// </summary>
+        /// <param name="a_zClassName"></param>
+        /// <returns></returns>
+        public DiDataRow GetRow(string a_zClassName, string a_zTemplateClass)
+        {
+            DiDataRow dr = null;
+            string zQuery = DATAFIELD_CLASSNAME + "='" + DiMethods.SetQueryString(a_zClassName) + "'" +
+                " and " + DATAFIELD_TEMPLATECLASS + "='" + DiMethods.SetQueryString(a_zTemplateClass) + "'";
+            DataRow[] akRows = m_dtData.Select(zQuery);
+
+            if (akRows.Length == 1)
+            {
+                dr.Data = akRows[0];
+            }
+
+            return dr;
         }
 
         /// <summary>
@@ -183,12 +211,12 @@ namespace DiTree
         /// </summary>
         /// <param name="a_eClassType"></param>
         /// <returns></returns>
-        public DataRow GetTemplateDataRow(DICLASSTYPES a_eClassType)
+        public DiDataRow GetTemplateDataRow(DICLASSTYPES a_eClassType, string a_zTemplateClass)
         {
-            DataRow dr = null;
+            DiDataRow dr = null;
             DataRow [] akRows = null;
             int id = -1;
-
+            string zQuery = "";
             switch (a_eClassType)
             {
                 case DICLASSTYPES.DICLASSTYPE_CONDITION:
@@ -218,11 +246,14 @@ namespace DiTree
                     }
             }
 
-            akRows = m_dtData.Select(DATAFIELD_ID + "=" + id.ToString());
+            zQuery = DATAFIELD_ID + "=" + id.ToString() +
+                " and " + DATAFIELD_TEMPLATECLASS + "='" + DiMethods.SetQueryString(a_zTemplateClass) + "'";
+            akRows = m_dtData.Select(zQuery);
 
             if (akRows.Length == 1)
             {
-                dr = akRows[0];
+                dr = new DiDataRow();
+                dr.Data = akRows[0];
             }
 
             return dr;
