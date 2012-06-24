@@ -29,6 +29,8 @@ namespace DiTree
 
         protected bool m_bIsTemplate; //use of template class or extended, this is not to show but keep referencec to tasks that arent set the properties yet
 
+        protected DiDataHanlder m_pkDataHandler; //reference to data handler for auto complete text for class names
+
         public DiTask()
         {
             m_eClassType = DICLASSTYPES.DICLASSTYPE_TASK;
@@ -39,7 +41,7 @@ namespace DiTree
             m_bIsTemplate = true;
         }
 
-        [Category("Task"), 
+        [Category("Task"), TypeConverter( typeof(DiStringAutoComplete)),
         Description("Name of the inherited class name you created from the base class.")]
         public string ClassName
         {
@@ -118,6 +120,23 @@ namespace DiTree
             set
             {
                 m_eClassType = value;
+            }
+        }
+
+        /// <summary>
+        /// reference to data handler
+        /// this uses to create class name list for auto complete on property grid
+        /// </summary>
+        [Browsable(false)]
+        public DiDataHanlder DataHandler
+        {
+            get
+            {
+                return m_pkDataHandler;
+            }
+            set
+            {
+                m_pkDataHandler = value;
             }
         }
 

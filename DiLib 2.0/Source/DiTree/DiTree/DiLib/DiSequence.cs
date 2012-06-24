@@ -21,8 +21,7 @@ namespace DiTree
             m_akTaskList = new List<DiTask>();
         }
 
-        [Category("Task List"), Browsable(false),
-        Description("Task list to execute.")]
+        [Browsable(false)]
         public List<DiTask> TaskList
         {
             get
@@ -31,5 +30,13 @@ namespace DiTree
             }
         }
 
+        /// <summary>
+        /// Remove given task from the task list
+        /// </summary>
+        /// <param name="a_pkTask"></param>
+        public void RemoveTask(DiTask a_pkTask)
+        {
+            m_akTaskList.Remove(a_pkTask);
+        }
     }
 }

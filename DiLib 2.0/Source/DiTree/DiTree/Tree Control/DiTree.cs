@@ -18,7 +18,7 @@ namespace DiTree
 
         protected string m_zTreeName;
 
-        //protected DiPropertyControl m_pkPropertyGrid;
+        protected DiPropertyControl m_pkPropertyGrid;
 
         protected DiDataHanlder m_pkDataHandler;
         //protected DiTreeNode m_pkSelectedNode; //currently selected node in the tree without using the default property
@@ -179,6 +179,39 @@ namespace DiTree
                         break;
                 }
 
+                //set source tasks parent
+                DiTreeNode pkSelectNodeParent = (DiTreeNode)SelectedNode.Parent;
+                if (pkSelectNodeParent != null)
+                {
+                    switch (pkSelectNodeParent.Task.ClassType)
+                    {
+                        case DICLASSTYPES.DICLASSTYPE_CONDITION:
+                            {
+                                DiCondition pkCondition = (DiCondition)pkSelectNodeParent.Task;
+                                pkCondition.RemoveTask(SelectedNode.Task);
+                                break;
+                            }
+
+                        case DICLASSTYPES.DICLASSTYPE_FILTER:
+                            {
+                                DiFilter pkFilter = (DiFilter)pkSelectNodeParent.Task;
+                                pkFilter.Task = null;
+                                break;
+                            }
+
+                        case DICLASSTYPES.DICLASSTYPE_SELECTION:
+                        case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
+                            {
+                                DiSequence pkSeq = (DiSequence)pkSelectNodeParent.Task;
+                                pkSeq.RemoveTask(SelectedNode.Task);
+                                break;
+                            }
+
+                        default:
+                            break;
+                    }
+                }
+
                 DestinationNode.Nodes.Add(kNewNode);
                 DestinationNode.Expand();
                 //Remove Original Node
@@ -297,6 +330,8 @@ namespace DiTree
                         }
                         pkTask.EnumID = dr.EnumID;
                         pkTask.IsTemplate = dr.IsTemplate;
+
+                        dr = null;
                     }
                     else
                     {
@@ -308,7 +343,6 @@ namespace DiTree
             
             Console.WriteLine("value changed" + e.ToString());
         }
-
        
     }
 }

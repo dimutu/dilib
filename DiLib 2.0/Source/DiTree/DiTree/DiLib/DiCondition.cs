@@ -149,5 +149,30 @@ namespace DiTree
             }
         }
 
+        /// <summary>
+        /// Remove task from condition children
+        /// </summary>
+        /// <param name="?"></param>
+        public void RemoveTask(DiTask a_pkTask)
+        {
+            if (m_pkFalseTask == a_pkTask)
+            {
+                m_pkFalseTask = null;
+            }
+            else if (m_pkTrueTask == a_pkTask)
+            {
+                m_pkTrueTask = null;
+            }
+
+            for (int ii = 0; ii < (int)CONDITION.CONDITION_COUNT; ++ii)
+            {
+                if (m_apkTasks[ii] == a_pkTask)
+                {
+                    m_apkTasks[ii] = null;
+                    break;
+                }
+            }
+        }
+
     }
 }

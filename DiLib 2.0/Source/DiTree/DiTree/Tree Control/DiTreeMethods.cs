@@ -269,6 +269,8 @@ namespace DiTree
                     }
             }
 
+            pkTask.DataHandler = m_pkDataHandler;
+
             //get the default template data record for the new node and wait until the
             // changes in the property grid
             //set new data record
@@ -277,8 +279,9 @@ namespace DiTree
             {
                 pkTask.EnumID = dr.EnumID;
                 pkTask.ClassName = dr.ClassName;
-
                 pkTask.ClassType = a_eType;
+                pkTask.DebuggerID = ++m_lDebugIDCounter;
+
                 pkTreeNode.Task = pkTask;//set the task for the tree node
                 pkTreeNode.ImageKey = GetTaskImageKey(a_eType);
                 pkTreeNode.SelectedImageKey = pkTreeNode.ImageKey;
@@ -323,6 +326,7 @@ namespace DiTree
                 a_pkParent.Nodes.Add(pkTreeNode);
                 a_pkParent.Expand(); //expand the parent if not
 
+                dr = null;
             }//end checking null data row
             
         }

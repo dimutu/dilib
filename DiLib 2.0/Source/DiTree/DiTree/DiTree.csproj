@@ -49,10 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Property Control\DiPropertyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Property Control\DiPropertyControl.Designer.cs">
+      <DependentUpon>DiPropertyControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\DiDataRow.cs" />
     <Compile Include="Tab Control\DiTabPage.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Tree Control\DiStringAutoComplete.cs" />
     <Compile Include="Tree Control\DiTaskTypeConverter.cs" />
     <Compile Include="Tree Control\DiTree.cs">
       <SubType>UserControl</SubType>
@@ -117,6 +124,9 @@
     <Compile Include="frmMDIThreading.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="Property Control\DiPropertyControl.resx">
+      <DependentUpon>DiPropertyControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tree Control\DiTree.resx">
       <DependentUpon>DiTree.cs</DependentUpon>
     </EmbeddedResource>

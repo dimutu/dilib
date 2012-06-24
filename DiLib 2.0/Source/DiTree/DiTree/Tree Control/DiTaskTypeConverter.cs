@@ -9,16 +9,18 @@ namespace DiTree
 {
     internal class DiTaskTypeConverter : TypeConverter
     {
+
         public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
         {
-            return true; // display drop
+            //true shows the drop down icon
+            return true;
         }
 
         public override bool GetStandardValuesExclusive(ITypeDescriptorContext context)
         {
             return true; // drop-down vs combo
         }
-
+      
         public override StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
         {
             List<string> kList = new List<string>();

@@ -200,6 +200,7 @@ namespace DiTree
 
             if (akRows.Length == 1)
             {
+                dr = new DiDataRow();
                 dr.Data = akRows[0];
             }
 
@@ -255,6 +256,21 @@ namespace DiTree
                 dr = new DiDataRow();
                 dr.Data = akRows[0];
             }
+
+            return dr;
+        }
+
+        /// <summary>
+        /// Retruns data rows matching the class type
+        /// </summary>
+        /// <param name="a_eType"></param>
+        /// <returns></returns>
+        public DataRow[] GetRows(DICLASSTYPES a_eType)
+        {
+            DataRow[] dr = null;
+            string typeString = ((int)a_eType).ToString();
+            dr = m_dtData.Select(DATAFIELD_CLASSTYPE + "=" + typeString);
+
 
             return dr;
         }
