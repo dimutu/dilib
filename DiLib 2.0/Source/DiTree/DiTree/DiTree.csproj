@@ -56,6 +56,7 @@
       <DependentUpon>DiPropertyControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\DiDataRow.cs" />
+    <Compile Include="Source\DiXMLElements.cs" />
     <Compile Include="Tab Control\DiTabPage.cs">
       <SubType>Component</SubType>
     </Compile>

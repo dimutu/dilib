@@ -539,6 +539,7 @@
             this.toolStripMainSave.Name = "toolStripMainSave";
             this.toolStripMainSave.Size = new System.Drawing.Size(23, 22);
             this.toolStripMainSave.Text = "Save";
+            this.toolStripMainSave.Click += new System.EventHandler(this.toolStripMainSave_Click);
             // 
             // toolStripMainExportConfig
             // 

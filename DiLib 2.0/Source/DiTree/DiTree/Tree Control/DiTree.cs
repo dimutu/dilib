@@ -23,6 +23,26 @@ namespace DiTree
         protected DiDataHanlder m_pkDataHandler;
         //protected DiTreeNode m_pkSelectedNode; //currently selected node in the tree without using the default property
 
+        /// <summary>
+        /// Tree XML element names
+        /// </summary>
+        protected const string XMLELEMENT_ROOT = "RootNode";
+        protected const string XMLELEMENT_TEMPLATECLASS = "TemplateClassName";
+        protected const string XMLELEMENT_ROOTDEBUGID = "RootDebugID";
+        protected const string XMLELEMENT_NODE = "Node";
+        protected const string XMLELEMENT_ENUMID = "EnumID";
+        protected const string XMLELEMENT_TYPE = "TypeID";
+        protected const string XMLELEMENT_CLASSNAME = "ClassName";
+        protected const string XMLELEMENT_SCRIPT_FILE = "LuaScript";
+        protected const string XMLELEMENT_FILTERTASK = "Task";
+        protected const string XMLELEMENT_TIMER_INTERVAL = "TimerInterval";
+        protected const string XMLELEMENT_CHILDCOUNT = "ChildCount";
+        protected const string XMLELEMENT_TASKDEBUGID = "TaskDebugID";
+        protected const string XMLELEMENT_REPEAT = "Repeat";
+        protected const string XMLELEMENT_MAXREPEATS = "MaxRunCycle";
+        protected const string XMLELEMENT_TASKTRUE = "TaskTrue";
+        protected const string XMLELEMENT_TASKFALSE = "TaskFalse";
+
         public DiTree()
         {
             InitializeComponent();

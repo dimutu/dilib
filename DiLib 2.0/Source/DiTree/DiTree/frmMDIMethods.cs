@@ -32,6 +32,15 @@ namespace DiTree
 
         private bool saveDiFile(bool a_bSaveAs)
         {
+            if (this.ActiveMdiChild == null)
+            {
+                return false;
+            }
+            if ((this.ActiveMdiChild is frmDiFile) == false)
+            {
+                return false;
+            }
+            frmDiFile frm = (frmDiFile)this.ActiveMdiChild;
 
             //show the dialog if not already saved or save as selected
             if (saveFile.FileName == "" || a_bSaveAs)
@@ -44,8 +53,8 @@ namespace DiTree
 
             if (saveFile.FileName != "")
             {
-                
 
+                frm.SaveFile(saveFile.FileName);                
             }//end if file not blank
             return false;
 

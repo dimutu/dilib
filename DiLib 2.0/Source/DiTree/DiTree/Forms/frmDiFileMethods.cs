@@ -174,7 +174,8 @@ namespace DiTree
         {
             try
             {
-                /*
+                m_zFilePath = a_zFilePath;
+               
                 XmlWriter writer;
                 XmlWriterSettings settings = new XmlWriterSettings();
                 settings.Indent = true;
@@ -185,72 +186,48 @@ namespace DiTree
                 using (writer = XmlWriter.Create(zTempFile, settings))
                 {
                     writer.WriteStartDocument();
-                    writer.WriteStartElement("TreeRoot");
+                    writer.WriteStartElement(DiXMLElements.XMLELEMENT_TREEROOT);
 
                     //start di config data
-                    writer.WriteStartElement("DiConfig");
+                    writer.WriteStartElement(DiXMLElements.XMLELEMENT_CONFIG);
 
                     //write debug identifier
-                    writer.WriteElementString("DebugID", txtDebugID.Text);
+                    writer.WriteElementString(DiXMLElements.XMLELEMENT_DEBUGID, txtDebugID.Text);
 
                     //header files
-                    writer.WriteStartElement("HeaderFiles");
-                    writer.WriteAttributeString("Count", listInclues.Items.Count.ToString());
+                    writer.WriteStartElement(DiXMLElements.XMLELEMENT_HEADERFILELIST);
+                    writer.WriteAttributeString(DiXMLElements.XMLELEMENT_HEADERFIECOUNT, listInclues.Items.Count.ToString());
 
                     //add header files
                     for (int ii = 0; ii < listInclues.Items.Count; ++ii)
                     {
-                        writer.WriteStartElement("File");
-                        writer.WriteAttributeString("Name", listInclues.Items[ii].ToString());
+                        writer.WriteStartElement(DiXMLElements.XMLELEMENT_HEADERFILE);
+                        writer.WriteAttributeString(DiXMLElements.XMLELEMENT_HEADERFILENAME, listInclues.Items[ii].ToString());
                         writer.WriteEndElement();
                     }
 
                     writer.WriteEndElement(); //header files
 
                     //add enums
-                    writer.WriteStartElement("Enums");
-                    writer.WriteAttributeString("Count", m_kDataTable.Rows.Count.ToString());
-                    for (int iRow = 0; iRow < m_kDataTable.Rows.Count; iRow++)
-                    {
-                        DataRow dr = m_kDataTable.Rows[iRow];
-                        writer.WriteStartElement("Enum");
-                        writer.WriteAttributeString("ID", dr["#"].ToString());
-                        writer.WriteAttributeString("EnumName", dr["Enum Name"].ToString());
+                    m_pkDataHandler.WriteXMLData(ref writer);
 
-                        if (dr["Is Template"].ToString().ToLower() == "true")
-                        {
-                            writer.WriteAttributeString("IsTemplate", "True");
-                        }
-                        else
-                        {
-                            writer.WriteAttributeString("IsTemplate", "False");
-                        }
-                        int iID = (int)dr["Class Type"];
-                        writer.WriteAttributeString("ClassTypeID", iID.ToString());
-                        writer.WriteAttributeString("ClassName", dr["Class Name"].ToString());
-                        writer.WriteAttributeString("TemplateClassName", dr["Template Class"].ToString());
-
-                        writer.WriteEndElement();
-
-                    }
-                    writer.WriteEndElement(); //end enums
                     writer.WriteEndElement();//end di config
 
                     //export trees
-                    if (tabDiFile.TabCount > m_iStaticTabCount)
+                    if (tabDiFile.TabCount > TABSTART_INDEX)
                     {
-                        int iTreeTabs = tabDiFile.TabCount - m_iStaticTabCount;
-                        writer.WriteStartElement("RootNodes");
+                        int iTreeTabs = tabDiFile.TabCount - TABSTART_INDEX;
+                        writer.WriteStartElement(DiXMLElements.XMLELEMENT_ROOTNODES);
                         writer.WriteAttributeString("Count", iTreeTabs.ToString());
 
-                        for (int ii = m_iStaticTabCount; ii < tabDiFile.TabCount; ++ii)
+                        for (int ii = TABSTART_INDEX; ii < tabDiFile.TabCount; ++ii)
                         {
                             foreach (Control ctrl in tabDiFile.TabPages[ii].Controls)
                             {
-                                if (ctrl.GetType() == typeof(DiTreeTab))
+                                if (ctrl.GetType() == typeof(DiTree))
                                 {
-                                    DiTreeTab pkTab = (DiTreeTab)ctrl;
-                                    pkTab.SaveTree(ref writer);
+                                    DiTree pkTree = (DiTree)ctrl;
+                                    pkTree.SaveTree(ref writer);
                                     break;
                                 }
                             }
@@ -265,7 +242,7 @@ namespace DiTree
 
                 //all done without errors
                 File.Copy(zTempFile, a_zFilePath, true);
-                 * */
+
             }
             catch (Exception ex)
             {

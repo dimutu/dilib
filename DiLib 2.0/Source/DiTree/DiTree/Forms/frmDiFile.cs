@@ -15,7 +15,7 @@ namespace DiTree
         private DiDataHanlder m_pkDataHandler;
 
         private const int TABSTART_INDEX = 2; //two tabs will be there always (heders, add new*)
-        private string m_zFilePath;
+        private string m_zFilePath; //save path
 
         public frmDiFile()
         {

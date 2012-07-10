@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Xml;
 
 namespace DiTree
 {
@@ -273,6 +274,40 @@ namespace DiTree
 
 
             return dr;
+        }
+
+        /// <summary>
+        /// Write the data table to the passing in xml writer
+        /// </summary>
+        /// <param name="writer"></param>
+        public void WriteXMLData(ref XmlWriter writer)
+        {
+            //add enums
+            writer.WriteStartElement(DiXMLElements.XMLELEMENT_ENUMLIST);
+            writer.WriteAttributeString(DiXMLElements.XMLELEMENT_ENUMCOUNT, m_dtData.Rows.Count.ToString());
+            for (int iRow = 0; iRow < m_dtData.Rows.Count; iRow++)
+            {
+                DataRow dr = m_dtData.Rows[iRow];
+                writer.WriteStartElement(DiXMLElements.XMLELEMENT_ENUM);
+                writer.WriteAttributeString(DiXMLElements.XMLELEMENT_ENUMID, dr[DATAFIELD_ID].ToString());
+
+                if (dr[DATAFIELD_ISTEMPATE].ToString().ToLower() == "true")
+                {
+                    writer.WriteAttributeString(DiXMLElements.XMLELEMENT_ISTEMPLATE, "True");
+                }
+                else
+                {
+                    writer.WriteAttributeString(DiXMLElements.XMLELEMENT_ISTEMPLATE, "False");
+                }
+                int iID = (int)dr[DATAFIELD_CLASSTYPE];
+                writer.WriteAttributeString(DiXMLElements.XMLELEMENT_CLASSTYPE, iID.ToString());
+                writer.WriteAttributeString(DiXMLElements.XMLELEMENT_CLASSNAME, dr[DATAFIELD_CLASSNAME].ToString());
+                writer.WriteAttributeString(DiXMLElements.XMLELEMENT_TEMPLATECLASS, dr[DATAFIELD_TEMPLATECLASS].ToString());
+
+                writer.WriteEndElement();
+
+            }
+            writer.WriteEndElement(); //end enums
         }
     }
 }

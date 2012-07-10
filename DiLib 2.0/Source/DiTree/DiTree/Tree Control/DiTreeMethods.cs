@@ -384,15 +384,6 @@ namespace DiTree
         }
 
         /// <summary>
-        /// Save current file
-        /// </summary>
-        /// <param name="a_zFilePath"></param>
-        public void SaveFile(string a_zFilePath)
-        {
-            
-        }
-
-        /// <summary>
         /// sets the template class
         /// </summary>
         private void SetTemplateClass()

@@ -63,5 +63,13 @@ namespace DiTree
             }
         }
 
+        public string ScriptFile
+        {
+            get
+            {
+                return m_kTaskNode.ScriptFile;
+            }
+        }
+
     }
 }
