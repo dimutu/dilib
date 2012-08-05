@@ -469,6 +469,59 @@ namespace DiTree
             return true;
         }
 
+        /// <summary>
+        /// Export tree data of this data file for C++ project
+        /// </summary>
+        /// <param name="a_zFilePath"></param>
+        /// <param name="a_iTabIndex"></param>
+        /// <returns></returns>
+        public bool ExportTree(string a_zFilePath, int a_iTabIndex)
+        {
+            if (tabDiFile.TabPages.Count > TABSTART_INDEX)
+            {
+                //check enum table has valid data before start
+                if (!m_pkDataHandler.IsConfigValid())
+                {
+                    DiMethods.MyDialogShow("Error in config data, please check the error before exporting the tree.", MessageBoxButtons.OK);
+                    return false;
+                }
+
+
+                if (a_iTabIndex == -1)
+                {
+                    DiMethods.MyDialogShow("You haven't select the tree to export.", MessageBoxButtons.OK);
+                    return false;
+                }
+                //focus to the exporting tab
+                tabDiFile.SelectedIndex = a_iTabIndex;
+
+                foreach (Control ctrl in tabDiFile.TabPages[a_iTabIndex].Controls)
+                {
+                    if (ctrl.GetType() == typeof(DiTree))
+                    {
+                        DiTree pkTab = (DiTree)ctrl;
+                        if (!pkTab.ExportTree(a_zFilePath, txtDebugID.Text))
+                        {
+
+                            pkTab.Focus();
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                        //break;
+                    }
+                }
+            }//end if tab count > m_iStaticTabCount
+            else
+            {
+                DiMethods.MyDialogShow("No tree files to export.", MessageBoxButtons.OK);
+                return false;
+            }
+
+            return false;
+        }
        
     }
 }

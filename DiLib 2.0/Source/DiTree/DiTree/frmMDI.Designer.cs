@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMDI));
             this.statusStripMDI = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusMsg = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStripProgress = new System.Windows.Forms.ToolStripProgressBar();
             this.menuMDI = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,9 +101,8 @@
             this.toolStripMoveDown = new System.Windows.Forms.ToolStripButton();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
-            this.toolStripStatusMsg = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusStripProgress = new System.Windows.Forms.ToolStripProgressBar();
             this.saveConfigFile = new System.Windows.Forms.SaveFileDialog();
+            this.saveTreeFile = new System.Windows.Forms.SaveFileDialog();
             this.statusStripMDI.SuspendLayout();
             this.menuMDI.SuspendLayout();
             this.toolStripMain.SuspendLayout();
@@ -117,6 +118,17 @@
             this.statusStripMDI.Name = "statusStripMDI";
             this.statusStripMDI.Size = new System.Drawing.Size(741, 22);
             this.statusStripMDI.TabIndex = 1;
+            // 
+            // toolStripStatusMsg
+            // 
+            this.toolStripStatusMsg.AutoSize = false;
+            this.toolStripStatusMsg.Name = "toolStripStatusMsg";
+            this.toolStripStatusMsg.Size = new System.Drawing.Size(500, 17);
+            // 
+            // statusStripProgress
+            // 
+            this.statusStripProgress.Name = "statusStripProgress";
+            this.statusStripProgress.Size = new System.Drawing.Size(100, 16);
             // 
             // menuMDI
             // 
@@ -562,6 +574,7 @@
             this.toolStripMainExportTree.Name = "toolStripMainExportTree";
             this.toolStripMainExportTree.Size = new System.Drawing.Size(86, 22);
             this.toolStripMainExportTree.Text = "Export Tree";
+            this.toolStripMainExportTree.Click += new System.EventHandler(this.toolStripMainExportTree_Click);
             // 
             // toolStripMainDebugPause
             // 
@@ -644,17 +657,6 @@
             this.toolStripMoveDown.Name = "toolStripMoveDown";
             this.toolStripMoveDown.Size = new System.Drawing.Size(23, 22);
             this.toolStripMoveDown.Text = "Move Down";
-            // 
-            // toolStripStatusMsg
-            // 
-            this.toolStripStatusMsg.AutoSize = false;
-            this.toolStripStatusMsg.Name = "toolStripStatusMsg";
-            this.toolStripStatusMsg.Size = new System.Drawing.Size(500, 17);
-            // 
-            // statusStripProgress
-            // 
-            this.statusStripProgress.Name = "statusStripProgress";
-            this.statusStripProgress.Size = new System.Drawing.Size(100, 16);
             // 
             // frmMDI
             // 
@@ -756,6 +758,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusMsg;
         private System.Windows.Forms.ToolStripProgressBar statusStripProgress;
         private System.Windows.Forms.SaveFileDialog saveConfigFile;
+        private System.Windows.Forms.SaveFileDialog saveTreeFile;
     }
 }
 

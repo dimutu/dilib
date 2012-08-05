@@ -193,14 +193,15 @@ namespace DiTree
         /// </summary>
         /// <param name="a_iTaskID"></param>
         /// <returns></returns>
-        public DataRow GetRow(int a_iTaskID)
+        public DiDataRow GetRow(int a_iTaskID)
         {
-            DataRow dr = null;
+            DiDataRow dr = null;
             DataRow [] akRows =  m_dtData.Select(DATAFIELD_ID + "=" + a_iTaskID);
 
             if (akRows.Length == 1)
             {
-                dr = akRows[0];
+                dr = new DiDataRow();
+                dr.Data = akRows[0];
             }
 
             return dr;
@@ -290,6 +291,23 @@ namespace DiTree
             DataRow[] dr = null;
             string typeString = ((int)a_eType).ToString();
             dr = m_dtData.Select(DATAFIELD_CLASSTYPE + "=" + typeString);
+
+
+            return dr;
+        }
+
+        /// <summary>
+        /// Returns data rows matching class type and template
+        /// </summary>
+        /// <param name="a_eType"></param>
+        /// <param name="a_zTemplateClass"></param>
+        /// <returns></returns>
+        public DataRow[] GetRows(DICLASSTYPES a_eType, string a_zTemplateClass)
+        {
+            DataRow[] dr = null;
+            string typeString = ((int)a_eType).ToString();
+            dr = m_dtData.Select(DATAFIELD_CLASSTYPE + "=" + typeString + 
+                " and " + DATAFIELD_TEMPLATECLASS + "='" + DiMethods.SetQueryString(a_zTemplateClass) + "'");
 
 
             return dr;
@@ -428,7 +446,6 @@ namespace DiTree
         {
             string zLine = "";
             DataRow dr;
-            DataColumn dc;
             for (int iRow = 0; iRow < m_dtData.Rows.Count; iRow++)
             {
                 dr = m_dtData.Rows[iRow];

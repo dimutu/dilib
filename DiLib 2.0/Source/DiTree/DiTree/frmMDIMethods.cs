@@ -120,6 +120,7 @@ namespace DiTree
             //there is active file to export
             if (frmActive.GetType() == typeof(frmDiFile))
             {
+                saveConfigFile.FileName = "";
                 //find a path and file to save
                 if (saveConfigFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -137,5 +138,43 @@ namespace DiTree
             }
         }
 
+        /// <summary>
+        /// Export tree file of active didata form
+        /// </summary>
+        private void ExportTree()
+        {
+            Form frmActive = this.ActiveMdiChild;
+
+            if (frmActive == null)
+            {
+                return;
+            }
+
+            if (frmActive.GetType() == typeof(frmDiFile))
+            {
+                //active window is enum id, save that
+                frmDiFile f = (frmDiFile)frmActive;
+
+                //show the select tree from the active form
+                m_frmSelectTree.TreeForm = f;
+                saveTreeFile.FileName = ""; //reset last file
+                if (m_frmSelectTree.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    //now get the path to save
+                    if (saveTreeFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        if (f.ExportTree(saveTreeFile.FileName, m_frmSelectTree.SelectedIndex))
+                        {
+                            DiMethods.SetStatusMessage("Export completed.");
+                        }
+                        else
+                        {
+                            DiMethods.SetStatusMessage("Export failed.");
+                        }
+                    }
+                }
+                
+            }
+        }
     }
 }

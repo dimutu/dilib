@@ -21,7 +21,7 @@ namespace DiTree
         private void InitializeFileHandler()
         {
             //open file filters
-            openFile.Filter = "Di Tree Data File (*.didata)|*.didata|" +
+            openFile.Filter = "Di Data File (*.didata)|*.didata|" +
                     "Di Tree View Files (*.ditree)|*.ditree|Di Config Files (*.diconfig)|*.diconfig|" +
                     "All Files (*.didata, *.ditree, *.diconfig)|*.didata;*.ditree;*.diconfig";
 
@@ -30,6 +30,9 @@ namespace DiTree
 
             //exporting configuration filter
             saveConfigFile.Filter = "Di Config File (*.diconfig)|*.diconfig";
+
+            //exporting tree
+            saveTreeFile.Filter = "Di Tree File (*.ditree)|*.ditree";
         }
 
         /// <summary>

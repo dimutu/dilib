@@ -15,9 +15,10 @@ namespace DiTree
 {
     public partial class frmMDI : Form
     {
-        
+        private frmSelectExportTree m_frmSelectTree; //select tree fro exporting the tree from currently selected frmDiFile
         public frmMDI()
         {
+            m_frmSelectTree = new frmSelectExportTree();
             DiMethods.StatusMessageLable = toolStripStatusMsg;
         }
 
@@ -56,6 +57,11 @@ namespace DiTree
         private void toolStripMainExportConfig_Click(object sender, EventArgs e)
         {
             ExportConfig();
+        }
+
+        private void toolStripMainExportTree_Click(object sender, EventArgs e)
+        {
+            ExportTree();
         }
 
 

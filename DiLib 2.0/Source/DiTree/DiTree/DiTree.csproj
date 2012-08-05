@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frmSelectExportTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSelectExportTree.designer.cs">
+      <DependentUpon>frmSelectExportTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Property Control\DiPropertyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     <Compile Include="frmMDIThreading.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="Forms\frmSelectExportTree.resx">
+      <DependentUpon>frmSelectExportTree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Property Control\DiPropertyControl.resx">
       <DependentUpon>DiPropertyControl.cs</DependentUpon>
     </EmbeddedResource>

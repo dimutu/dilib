@@ -282,6 +282,7 @@ namespace DiTree
                 pkTask.ClassName = dr.ClassName;
                 pkTask.ClassType = a_eType;
                 pkTask.DebuggerID = ++m_lDebugIDCounter;
+                pkTask.TemplateClass = txtTemplateClass.Text;
 
                 pkTreeNode.Task = pkTask;//set the task for the tree node
                 pkTreeNode.ImageKey = GetTaskImageKey(a_eType);

@@ -34,6 +34,8 @@ namespace DiTree
 
         private TreeNode m_pkParent; //keep reference of parent tree node to update text and tooltip when task properties changed
 
+        private string m_zTemplateClass; //template class name ref as this needs for property grid to filter out data
+
         public DiTask()
         {
             m_eClassType = DICLASSTYPES.DICLASSTYPE_TASK;
@@ -42,6 +44,8 @@ namespace DiTree
             m_zClassName = "";
             m_zLuaScript = "";
             m_bIsTemplate = true;
+            m_pkParent = null;
+            m_zTemplateClass = "";
         }
 
         [Category("Task"), TypeConverter( typeof(DiStringAutoComplete)),
@@ -166,6 +170,23 @@ namespace DiTree
             set
             {
                 m_pkParent = value;
+            }
+        }
+
+        /// <summary>
+        /// Template class this task belongs to
+        /// which uses to filter out list of property grid
+        /// </summary>
+        [Browsable(false)]
+        public string TemplateClass
+        {
+            get
+            {
+                return m_zTemplateClass;
+            }
+            set
+            {
+                m_zTemplateClass = value;
             }
         }
 

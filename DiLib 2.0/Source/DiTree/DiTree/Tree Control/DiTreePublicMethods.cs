@@ -81,6 +81,11 @@ namespace DiTree
 //            }
         }
 
+        /// <summary>
+        /// Calling function from SaveTree to iterate through tree control nodes to save
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="node"></param>
         private void SaveXMLTree(ref XmlWriter writer, ref DiTreeNode node)
         {
             //if the current node is null something wrong, dont go forward
@@ -387,6 +392,8 @@ namespace DiTree
             kTask.ClassType = (DICLASSTYPES)Convert.ToInt32(reader[DiXMLElements.XMLELEMENT_NODETYPE]);
             kTask.EnumID = Convert.ToInt32(reader[DiXMLElements.XMLELEMENT_NODEENUMID]);
             kTask.DebuggerID = -1;
+            kTask.TemplateClass = txtTemplateClass.Text;
+
             long lDebugID = Convert.ToInt64(reader[DiXMLElements.XMLELEMENT_NODEDEBUGID]);
             if (lDebugID > 0)
             {
@@ -409,6 +416,230 @@ namespace DiTree
             return node;
         }
 
+        /// <summary>
+        /// Export tree
+        /// </summary>
+        /// <param name="a_zFilePath"></param>
+        /// <param name="a_zDebugID"></param>
+        /// <returns></returns>
+        public bool ExportTree(string a_zFilePath, string a_zDebugID)
+        {
+            //validate tree before exporting
+            if (!IsTreeValid())
+            {
+                DiMethods.MyDialogShow("Error occured trying to export, check the selected node for any error, and check mismatching config details.", MessageBoxButtons.OK);
+                treeBT.Focus();
+                return false;
+            }
+
+            //evaluate the debug ids incase
+            DiTreeNode pkRoot = (DiTreeNode)treeBT.Nodes[0];
+            Evaluate_DebugIDs(ref pkRoot);
+            //
+
+            try
+            {
+                XmlWriter writer;
+                XmlWriterSettings s = new XmlWriterSettings();
+                s.Indent = true;
+                s.OmitXmlDeclaration = true;
+                using (writer = XmlWriter.Create(a_zFilePath, s))
+                {
+                    writer.WriteStartDocument();
+                    writer.WriteStartElement("TreeRoot");
+
+                    //write using DI file 
+                    writer.WriteStartElement("DI");
+                    writer.WriteAttributeString("Template", txtTemplateClass.Text.Trim());
+                    writer.WriteAttributeString("DebugID", a_zDebugID);
+                    writer.WriteAttributeString("TreeDebugID", m_zTreeName);
+                    writer.WriteEndElement();
+                    //end DI file
+
+                    //write the tree nodes under the root
+                    ExportXMLTree(ref writer, ref pkRoot);
+                    //end writing nodes
+
+                    writer.WriteEndDocument();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                DiMethods.SetErrorLog(ex);
+                DiMethods.SetStatusMessage("Error saving file.");
+                DiMethods.MyDialogShow("Unable to save file.", MessageBoxButtons.OK);
+#if DEBUG
+                Console.WriteLine(ex.Message);
+#endif
+            }
+
+            return true;
+
+        }
+
+        /// <summary>
+        /// Export tree recursive function
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="node"></param>
+        private void ExportXMLTree(ref XmlWriter writer, ref DiTreeNode node)
+        {
+            //if the current node is null something wrong, dont go forward
+            if (node == null)
+            {
+                return;
+            }
+
+            if (node.Text == "Root")
+            {
+                writer.WriteStartElement("RootNode");
+                writer.WriteAttributeString("TemplateClassName", txtTemplateClass.Text.ToString());
+
+                //save tree name
+                writer.WriteAttributeString("RootDebugID", m_zTreeName.ToString());
+            }
+            else
+            {
+                writer.WriteStartElement("Node");
+            }
+
+            writer.WriteAttributeString("EnumID", node.Task.EnumID.ToString());
+            writer.WriteAttributeString("TypeID", Convert.ToString((int)node.ClassType));
+            writer.WriteAttributeString("ClassName", node.ClassName.Trim());
+            writer.WriteAttributeString("LuaScript", node.Task.ScriptFile.ToString().Trim());
+            writer.WriteAttributeString("ChildCount", node.Nodes.Count.ToString());
+            writer.WriteAttributeString("TaskDebugID", node.Task.DebuggerID.ToString());
+
+            //if this is condition, set which task runs when true and false
+            if (node.ClassType == DICLASSTYPES.DICLASSTYPE_CONDITION)
+            {
+                DiCondition kCondition = (DiCondition)node.Task;
+                //check true task is set
+                if (kCondition.TaskTrue != null)
+                {
+                    writer.WriteAttributeString("TaskTrue", kCondition.TaskTrue.EnumID.ToString());
+                }
+                if (kCondition.TaskFalse != null)
+                {
+                    writer.WriteAttributeString("TaskFalse", kCondition.TaskFalse.EnumID.ToString());
+                }
+
+            }
+            else if (node.ClassType == DICLASSTYPES.DICLASSTYPE_FILTER)
+            {
+                DiFilter kFilter = (DiFilter)node.Task;
+                writer.WriteAttributeString("TimerInterval", kFilter.TimerInterval.ToString());
+                writer.WriteAttributeString("Repeat", kFilter.LoopOn.ToString());
+                writer.WriteAttributeString("MaxRunCycle", kFilter.MaxRunCycles.ToString());
+            }
+            //go through childern nodes
+            for (int i = 0; i < node.Nodes.Count; i++)
+            {
+                DiTreeNode kChildNode = (DiTreeNode)node.Nodes[i];
+                ExportXMLTree(ref writer, ref kChildNode); //create new node for each child
+            }
+
+            writer.WriteEndElement(); //end writing the current node
+
+        }
+
+        /// <summary>
+        /// Checks tree is valid to export
+        /// </summary>
+        /// <returns></returns>
+        private bool IsTreeValid()
+        {
+            DiTreeNode kRoot = (DiTreeNode)treeBT.Nodes[0];
+            return IsTreeValid(ref kRoot);
+        }
+
+        /// <summary>
+        /// Tree validation recursive function
+        /// </summary>
+        /// <param name="currentNode"></param>
+        /// <returns></returns>
+        private bool IsTreeValid(ref DiTreeNode currentNode)
+        {
+            //check current node is valid
+            DiTask kCurrentTask = currentNode.Task;
+
+            if (kCurrentTask.EnumID == -1 && kCurrentTask.ClassType != DICLASSTYPES.DICLASSTYPE_ROOT) //enum not set
+            {
+                //set the error node to selected
+                treeBT.SelectedNode = (TreeNode)currentNode;
+                return false;
+            }
+
+            //only validate with enum table for everything but the root
+            if (currentNode.Task.ClassType != DICLASSTYPES.DICLASSTYPE_ROOT)
+            {
+                DiDataRow dr = m_pkDataHandler.GetRow(kCurrentTask.EnumID);
+
+                if (dr == null) //enum id not found
+                {
+                    treeBT.SelectedNode = (TreeNode)currentNode;
+                    return false;
+                }
+
+                //check class types are matching
+                if (dr.ClassType != kCurrentTask.ClassType)
+                {
+                    //the class type has changed in the
+                    treeBT.SelectedNode = (TreeNode)currentNode;
+                    return false;
+                }
+                else if (kCurrentTask.IsTemplate) //check templates not extended
+                {
+                    if (kCurrentTask.ClassType == DICLASSTYPES.DICLASSTYPE_TASK ||
+                        kCurrentTask.ClassType == DICLASSTYPES.DICLASSTYPE_CONDITION)
+                    {
+                        //check is templated and not extended, which is an error and cannot be allowed
+                        treeBT.SelectedNode = (TreeNode)currentNode;
+                        return false;
+                    }
+                }
+
+            }//not root
+
+            bool bResult = true;
+            //current node is good, check its children
+            foreach (TreeNode t in currentNode.Nodes)
+            {
+                DiTreeNode child = (DiTreeNode)t;
+                bResult = IsTreeValid(ref child);
+
+                if (!bResult)
+                    return false;
+
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Evaluate the nodes debug ids and set values if not set
+        /// </summary>
+        /// <param name="node"></param>
+        private void Evaluate_DebugIDs(ref DiTreeNode node)
+        {
+            if (node.Task.ClassType != DICLASSTYPES.DICLASSTYPE_ROOT)
+            {
+                if (node.Task.DebuggerID < 0)
+                {
+                    //id not set
+                    node.Task.DebuggerID = ++m_lDebugIDCounter;
+                }
+            }
+
+            //go through its children for invalid ids
+            foreach (TreeNode tnode in node.Nodes)
+            {
+                DiTreeNode bnode = (DiTreeNode)tnode;
+                Evaluate_DebugIDs(ref bnode);
+            }
+
+        }
     }
 
 

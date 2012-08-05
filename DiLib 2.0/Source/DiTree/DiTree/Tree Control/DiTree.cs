@@ -347,6 +347,7 @@ namespace DiTree
                     {
                         //class not exists, add new row
                         pkTask.EnumID = m_pkDataHandler.AddNew(false, pkTask.ClassType, newVal, txtTemplateClass.Text);
+                        pkTask.IsTemplate = false;
                     }
                 }
             }

@@ -14,7 +14,7 @@ namespace DiTree
         //data handler for the file
         private DiDataHanlder m_pkDataHandler;
 
-        private const int TABSTART_INDEX = 2; //two tabs will be there always (heders, add new*)
+        public const int TABSTART_INDEX = 2; //two tabs will be there always (heders, add new*)
         private string m_zFilePath; //save path
 
         public frmDiFile()
@@ -54,6 +54,17 @@ namespace DiTree
             set
             {
                 m_zFilePath = value;
+            }
+        }
+
+        /// <summary>
+        /// Access the tab control uses for set the exporting tree list
+        /// </summary>
+        public TabControl Tab
+        {
+            get
+            {
+                return tabDiFile;
             }
         }
 
