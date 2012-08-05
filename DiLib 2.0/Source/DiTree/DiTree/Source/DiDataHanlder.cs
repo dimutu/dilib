@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Xml;
+using System.IO;
 
 namespace DiTree
 {
@@ -29,6 +30,9 @@ namespace DiTree
         protected int m_iDefaultSequenceID;
         protected int m_iDefaultSelectionID;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public DiDataHanlder()
         {
             InitializeDataTable();
@@ -389,6 +393,58 @@ namespace DiTree
             }
         }
 
-       
+        /// <summary>
+        /// Checks all the configuration data is valid and filled
+        /// </summary>
+        /// <returns></returns>
+        public bool IsConfigValid()
+        {
+            //check any empty strings are there
+            bool isOK = true;
+            for (int iRow = 0; iRow < m_dtData.Rows.Count; iRow++)
+            {
+                DataRow dr = m_dtData.Rows[iRow];
+                for (int iCol = 0; iCol < m_dtData.Columns.Count; iCol++)
+                {
+                    if (dr[iCol].ToString().Length <= 0)
+                    {
+                        isOK = false;
+                        break;
+                    }
+                }
+
+
+            }
+
+            return isOK;
+        }
+
+        /// <summary>
+        /// Writes configuration data used in C++ import
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <returns></returns>
+        public bool WriteConfigData(ref StreamWriter writer)
+        {
+            string zLine = "";
+            DataRow dr;
+            DataColumn dc;
+            for (int iRow = 0; iRow < m_dtData.Rows.Count; iRow++)
+            {
+                dr = m_dtData.Rows[iRow];
+
+                zLine = dr[DATAFIELD_ID].ToString() + ","; //enum id
+                zLine += dr[DATAFIELD_CLASSNAME].ToString().ToUpper() + ","; //unique identification
+                zLine += dr[DATAFIELD_ISTEMPATE].ToString() + ","; //is template
+                zLine += dr[DATAFIELD_CLASSTYPE].ToString() + ","; //class type
+                zLine += dr[DATAFIELD_CLASSNAME].ToString() + ","; //class name
+                zLine += dr[DATAFIELD_TEMPLATECLASS].ToString(); //template class
+
+                writer.WriteLine(zLine);
+
+            }
+
+            return true;
+        }
     }
 }

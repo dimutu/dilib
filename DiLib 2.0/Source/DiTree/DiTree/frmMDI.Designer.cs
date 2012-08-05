@@ -99,6 +99,10 @@
             this.toolStripMoveDown = new System.Windows.Forms.ToolStripButton();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
+            this.toolStripStatusMsg = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStripProgress = new System.Windows.Forms.ToolStripProgressBar();
+            this.saveConfigFile = new System.Windows.Forms.SaveFileDialog();
+            this.statusStripMDI.SuspendLayout();
             this.menuMDI.SuspendLayout();
             this.toolStripMain.SuspendLayout();
             this.toolStripMove.SuspendLayout();
@@ -106,6 +110,9 @@
             // 
             // statusStripMDI
             // 
+            this.statusStripMDI.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusMsg,
+            this.statusStripProgress});
             this.statusStripMDI.Location = new System.Drawing.Point(0, 445);
             this.statusStripMDI.Name = "statusStripMDI";
             this.statusStripMDI.Size = new System.Drawing.Size(741, 22);
@@ -514,68 +521,62 @@
             // 
             // toolStripMainNew
             // 
-            this.toolStripMainNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripMainNew.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMainNew.Image")));
             this.toolStripMainNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripMainNew.Name = "toolStripMainNew";
-            this.toolStripMainNew.Size = new System.Drawing.Size(23, 22);
+            this.toolStripMainNew.Size = new System.Drawing.Size(51, 22);
             this.toolStripMainNew.Text = "New";
             this.toolStripMainNew.Click += new System.EventHandler(this.toolStripMainNew_Click);
             // 
             // toolStripMainOpen
             // 
-            this.toolStripMainOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripMainOpen.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMainOpen.Image")));
             this.toolStripMainOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripMainOpen.Name = "toolStripMainOpen";
-            this.toolStripMainOpen.Size = new System.Drawing.Size(23, 22);
+            this.toolStripMainOpen.Size = new System.Drawing.Size(56, 22);
             this.toolStripMainOpen.Text = "Open";
             this.toolStripMainOpen.Click += new System.EventHandler(this.toolStripMainOpen_Click);
             // 
             // toolStripMainSave
             // 
-            this.toolStripMainSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripMainSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMainSave.Image")));
             this.toolStripMainSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripMainSave.Name = "toolStripMainSave";
-            this.toolStripMainSave.Size = new System.Drawing.Size(23, 22);
+            this.toolStripMainSave.Size = new System.Drawing.Size(51, 22);
             this.toolStripMainSave.Text = "Save";
             this.toolStripMainSave.Click += new System.EventHandler(this.toolStripMainSave_Click);
             // 
             // toolStripMainExportConfig
             // 
-            this.toolStripMainExportConfig.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripMainExportConfig.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMainExportConfig.Image")));
             this.toolStripMainExportConfig.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripMainExportConfig.Name = "toolStripMainExportConfig";
-            this.toolStripMainExportConfig.Size = new System.Drawing.Size(23, 22);
+            this.toolStripMainExportConfig.Size = new System.Drawing.Size(99, 22);
             this.toolStripMainExportConfig.Text = "Export Config";
+            this.toolStripMainExportConfig.Click += new System.EventHandler(this.toolStripMainExportConfig_Click);
             // 
             // toolStripMainExportTree
             // 
-            this.toolStripMainExportTree.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripMainExportTree.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMainExportTree.Image")));
             this.toolStripMainExportTree.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripMainExportTree.Name = "toolStripMainExportTree";
-            this.toolStripMainExportTree.Size = new System.Drawing.Size(23, 22);
+            this.toolStripMainExportTree.Size = new System.Drawing.Size(86, 22);
             this.toolStripMainExportTree.Text = "Export Tree";
             // 
             // toolStripMainDebugPause
             // 
-            this.toolStripMainDebugPause.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripMainDebugPause.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMainDebugPause.Image")));
             this.toolStripMainDebugPause.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripMainDebugPause.Name = "toolStripMainDebugPause";
-            this.toolStripMainDebugPause.Size = new System.Drawing.Size(23, 22);
+            this.toolStripMainDebugPause.Size = new System.Drawing.Size(105, 22);
             this.toolStripMainDebugPause.Text = "Pause/Resume";
             // 
             // toolStripMainDebugNext
             // 
-            this.toolStripMainDebugNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripMainDebugNext.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMainDebugNext.Image")));
             this.toolStripMainDebugNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripMainDebugNext.Name = "toolStripMainDebugNext";
-            this.toolStripMainDebugNext.Size = new System.Drawing.Size(23, 22);
+            this.toolStripMainDebugNext.Size = new System.Drawing.Size(89, 22);
             this.toolStripMainDebugNext.Text = "Debug Next";
             // 
             // toolStripMain
@@ -602,7 +603,7 @@
             this.toolStripMoveRight,
             this.toolStripMoveUp,
             this.toolStripMoveDown});
-            this.toolStripMove.Location = new System.Drawing.Point(185, 24);
+            this.toolStripMove.Location = new System.Drawing.Point(556, 24);
             this.toolStripMove.Name = "toolStripMove";
             this.toolStripMove.Size = new System.Drawing.Size(104, 25);
             this.toolStripMove.TabIndex = 1;
@@ -644,6 +645,17 @@
             this.toolStripMoveDown.Size = new System.Drawing.Size(23, 22);
             this.toolStripMoveDown.Text = "Move Down";
             // 
+            // toolStripStatusMsg
+            // 
+            this.toolStripStatusMsg.AutoSize = false;
+            this.toolStripStatusMsg.Name = "toolStripStatusMsg";
+            this.toolStripStatusMsg.Size = new System.Drawing.Size(500, 17);
+            // 
+            // statusStripProgress
+            // 
+            this.statusStripProgress.Name = "statusStripProgress";
+            this.statusStripProgress.Size = new System.Drawing.Size(100, 16);
+            // 
             // frmMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -656,6 +668,8 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuMDI;
             this.Name = "frmMDI";
+            this.statusStripMDI.ResumeLayout(false);
+            this.statusStripMDI.PerformLayout();
             this.menuMDI.ResumeLayout(false);
             this.menuMDI.PerformLayout();
             this.toolStripMain.ResumeLayout(false);
@@ -739,6 +753,9 @@
         private System.Windows.Forms.ToolStripButton toolStripMoveDown;
         private System.Windows.Forms.OpenFileDialog openFile;
         private System.Windows.Forms.SaveFileDialog saveFile;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusMsg;
+        private System.Windows.Forms.ToolStripProgressBar statusStripProgress;
+        private System.Windows.Forms.SaveFileDialog saveConfigFile;
     }
 }
 

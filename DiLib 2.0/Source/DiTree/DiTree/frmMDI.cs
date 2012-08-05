@@ -18,7 +18,7 @@ namespace DiTree
         
         public frmMDI()
         {
-            
+            DiMethods.StatusMessageLable = toolStripStatusMsg;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -51,6 +51,11 @@ namespace DiTree
         private void toolStripMainOpen_Click(object sender, EventArgs e)
         {
             openDiFile();
+        }
+
+        private void toolStripMainExportConfig_Click(object sender, EventArgs e)
+        {
+            ExportConfig();
         }
 
 

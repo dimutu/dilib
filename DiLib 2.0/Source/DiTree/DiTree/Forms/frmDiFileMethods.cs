@@ -423,5 +423,52 @@ namespace DiTree
             pkTabPage.Tree.OpenTree(ref reader);
 
         }
+
+        /// <summary>
+        /// Export configuration data of the this data file
+        /// </summary>
+        /// <returns></returns>
+        public bool ExportConfig(string a_zFilePath)
+        {
+            //validate data first
+            if (!m_pkDataHandler.IsConfigValid())
+            {
+                DiMethods.MyDialogShow("Cannot save config file, please check all the data fields are filled and valid.", MessageBoxButtons.OK);
+                return false;
+            }
+
+            //open writer
+            System.IO.StreamWriter kWriter = new System.IO.StreamWriter(a_zFilePath);
+
+            //write some comments not to modify this
+            string sLine = "# do not modify this file, this is a generated file - DiLib 2.0";
+            kWriter.WriteLine(sLine);
+            kWriter.WriteLine();
+
+            //listing all the header files needs to be included
+            sLine = "[Headers]";
+            kWriter.WriteLine(sLine);
+
+            //go through header files list
+            for (int i = 0; i < listInclues.Items.Count; i++)
+            {
+                sLine = listInclues.Items[i].ToString();
+                kWriter.WriteLine(sLine);
+            }
+
+            //write the enum values
+            sLine = "[Enum]";
+            kWriter.WriteLine();
+            kWriter.WriteLine(sLine);
+
+            //export data
+            m_pkDataHandler.WriteConfigData(ref kWriter);
+
+            kWriter.Close(); //close writing
+
+            return true;
+        }
+
+       
     }
 }

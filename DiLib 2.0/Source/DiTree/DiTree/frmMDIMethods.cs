@@ -70,6 +70,11 @@ namespace DiTree
             }
         }
 
+        /// <summary>
+        /// Save currently active data
+        /// </summary>
+        /// <param name="a_bSaveAs"></param>
+        /// <returns></returns>
         private bool saveDiFile(bool a_bSaveAs)
         {
             if (this.ActiveMdiChild == null)
@@ -98,6 +103,38 @@ namespace DiTree
             }//end if file not blank
             return false;
 
+        }
+
+        /// <summary>
+        /// Export configuration file of active didata form
+        /// </summary>
+        private void ExportConfig()
+        {
+            Form frmActive = this.ActiveMdiChild;
+
+            if (frmActive == null)
+            {
+                return;
+            }
+
+            //there is active file to export
+            if (frmActive.GetType() == typeof(frmDiFile))
+            {
+                //find a path and file to save
+                if (saveConfigFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    //active window is enum id, save that
+                    frmDiFile f = (frmDiFile)frmActive;
+                    if (f.ExportConfig(saveConfigFile.FileName))
+                    {
+                        DiMethods.SetStatusMessage("Export completed.");
+                    }
+                    else
+                    {
+                        DiMethods.SetStatusMessage("Export failed.");
+                    }
+                }
+            }
         }
 
     }
