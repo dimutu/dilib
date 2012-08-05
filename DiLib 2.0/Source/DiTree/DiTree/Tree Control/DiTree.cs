@@ -26,7 +26,8 @@ namespace DiTree
         /// <summary>
         /// Tree XML element names
         /// </summary>
-        protected const string XMLELEMENT_ROOT = "RootNode";
+        /// 
+        /*protected const string XMLELEMENT_ROOT = "RootNode";
         protected const string XMLELEMENT_TEMPLATECLASS = "TemplateClassName";
         protected const string XMLELEMENT_ROOTDEBUGID = "RootDebugID";
         protected const string XMLELEMENT_NODE = "Node";
@@ -42,6 +43,7 @@ namespace DiTree
         protected const string XMLELEMENT_MAXREPEATS = "MaxRunCycle";
         protected const string XMLELEMENT_TASKTRUE = "TaskTrue";
         protected const string XMLELEMENT_TASKFALSE = "TaskFalse";
+         * */
 
         public DiTree()
         {
@@ -283,19 +285,7 @@ namespace DiTree
             }
             propertyGridTask.SelectedObject = null;
             DiTreeNode pkNode = (DiTreeNode)treeBT.SelectedNode;
-            if (pkNode.ClassType != DICLASSTYPES.DICLASSTYPE_ROOT)
-            {
-                propertyGridTask.SelectedObject = pkNode.Task;
-            }
-            /*
-            m_pkPropertyGrid.SelectedObject = null;
-
-            DiTreeNode pkNode = (DiTreeNode)treeBT.SelectedNode;
-            if (pkNode.ClassType != DICLASSTYPES.DICLASSTYPE_ROOT)
-            {
-                m_pkPropertyGrid.SelectedObject = pkNode.Task;
-            }
-            */
+            propertyGridTask.SelectedObject = pkNode.Task;
 
         }
 

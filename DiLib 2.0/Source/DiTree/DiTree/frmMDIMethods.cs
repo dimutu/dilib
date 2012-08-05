@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using System.IO;
 
 /*
  * holds the common function use in the form
@@ -25,9 +25,49 @@ namespace DiTree
             frm.Show();
         }
 
+        /// <summary>
+        /// Open file from storage
+        /// </summary>
         private void openDiFile()
         {
-            
+            //open new di file
+            DialogResult dr = openFile.ShowDialog();
+
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                if (openFile.FileName != "")
+                {
+                    string zFileExt = Path.GetExtension(openFile.FileName);
+                    zFileExt = zFileExt.Replace(".", "");
+                    if (zFileExt.CompareTo(DiGlobals.DIEXT_DIDATA) == 0)
+                    {
+                        frmDiFile n = new frmDiFile();
+                        n.MdiParent = this;
+                        n.WindowState = FormWindowState.Maximized;
+                        n.OpenFile(openFile.FileName);
+                        n.Show();
+                        openFile.FileName = "";
+                    }
+                    else if (zFileExt.CompareTo(DiGlobals.DIEXT_DITREE) == 0)
+                    {
+                       /* frmTreeViewer n = new frmTreeViewer();
+                        n.MdiParent = this;
+                        n.WindowState = FormWindowState.Maximized;
+                        n.OpenTree(openFileTreeData.FileName);
+                        n.Show();
+                        openFileTreeData.FileName = "";*/
+                    }
+                    else if (zFileExt.CompareTo(DiGlobals.DIEXT_DICONFIG) == 0)
+                    {
+                        /*frmConfigViewer n = new frmConfigViewer();
+                        n.MdiParent = this;
+                        n.WindowState = FormWindowState.Maximized;
+                        n.OpenConfig(openFileTreeData.FileName);
+                        n.Show();
+                        openFileTreeData.FileName = "";*/
+                    }
+                }
+            }
         }
 
         private bool saveDiFile(bool a_bSaveAs)

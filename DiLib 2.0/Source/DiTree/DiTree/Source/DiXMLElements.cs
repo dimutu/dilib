@@ -7,22 +7,49 @@ namespace DiTree
 {
     public static class DiXMLElements
     {
-        public const string XMLELEMENT_TREEROOT = "TreeRoot";
-        public const string XMLELEMENT_CONFIG = "DiConfig";
-        public const string XMLELEMENT_DEBUGID = "DebugID";
-        public const string XMLELEMENT_HEADERFILELIST = "HeaderFiles";
-        public const string XMLELEMENT_HEADERFIECOUNT = "Count";
-        public const string XMLELEMENT_HEADERFILE = "File";
-        public const string XMLELEMENT_HEADERFILENAME = "Name"; //file name
-        public const string XMLELEMENT_ENUMLIST = "Enums"; //enums parent element
-        public const string XMLELEMENT_ENUMCOUNT = "Count"; //enum count
-        public const string XMLELEMENT_ENUM = "Enum"; //child element
-        public const string XMLELEMENT_ENUMID = "ID"; //enum id
-        public const string XMLELEMENT_ISTEMPLATE = "IsTemplate";
-        public const string XMLELEMENT_CLASSTYPE = "ClassTypeID";
-        public const string XMLELEMENT_CLASSNAME = "ClassName";
-        public const string XMLELEMENT_TEMPLATECLASS = "TemplateClassName";
+        public const string XMLELEMENT_TREEROOT = "TreeRoot"; //main xml header
 
-        public const string XMLELEMENT_ROOTNODES = "RootNodes";
+        //configuration details
+        public const string XMLELEMENT_CONFIG = "DiConfig"; //diconfig xml tag
+        public const string XMLELEMENT_DEBUGID = "DebugID"; //configuration attribute diconfig
+
+        public const string XMLELEMENT_HEADERFILELIST = "HeaderFiles";//all header file parent tag
+        public const string XMLELEMENT_HEADERFIECOUNT = "Count";//header files attribute - count
+        public const string XMLELEMENT_HEADERFILE = "File";//header file tag
+        public const string XMLELEMENT_HEADERFILENAME = "Name"; //header file attribute - name
+
+        //data table
+        public const string XMLELEMENT_ENUMLIST = "Enums"; //enums parent tag
+        public const string XMLELEMENT_ENUMCOUNT = "Count"; //enums attribute count
+
+        public const string XMLELEMENT_ENUM = "Enum"; //child element tag of Enums
+        public const string XMLELEMENT_ENUMID = "ID"; //enum attribute
+        public const string XMLELEMENT_ISTEMPLATE = "IsTemplate";//enum attribute
+        public const string XMLELEMENT_CLASSTYPE = "ClassTypeID"; //enum attribute
+        public const string XMLELEMENT_CLASSNAME = "ClassName"; //enum attribute
+        public const string XMLELEMENT_TEMPLATECLASS = "TemplateClassName"; //enum attribute
+        public const string XMLELEMENT_SCRIPTFILE = "ScriptFile"; //enum attribute
+
+        //xml tags for the tree xml
+        public const string XMLELEMENT_ROOTNODES = "RootNodes"; //all tree roots tag
+        public const string XMLELEMENT_ROOTNODE_COUNT = "ChildCount"; //attribute
+
+        public const string XMLELEMENT_ROOT = "RootNode"; //single tree root tag
+        public const string XMLELEMENT_ROOTTEMPLATECLASS = "TemplateClassName"; //root node attribute
+        public const string XMLELEMENT_ROOTDEBUGID = "RootDebugID"; //root node attribute - debug name or tab name 
+        
+        public const string XMLELEMENT_NODE = "Node"; //individual tree node tag
+        public const string XMLELEMENT_NODEENUMID = "EnumID"; //node attribute - enum id matching to data table
+        public const string XMLELEMENT_NODETYPE = "TypeID"; //node attribute - class type
+        public const string XMLELEMENT_NODECLASSNAME = "ClassName"; //node attribute - class name
+        public const string XMLELEMENT_NODESCRIPT_FILE = "LuaScript"; //node attribute - script file
+        public const string XMLELEMENT_NODEFILTERTASK = "Task"; //filter node attribute - child task enum id
+        public const string XMLELEMENT_NODETIMER_INTERVAL = "TimerInterval"; //filter node attribute - 
+        public const string XMLELEMENT_NODECHILDCOUNT = "ChildCount"; //node attribute - if any children tasks in and will have the same of this
+        public const string XMLELEMENT_NODEDEBUGID = "TaskDebugID"; //node attribute - debug identifier
+        public const string XMLELEMENT_NODEREPEAT = "Repeat"; //filter node attribute
+        public const string XMLELEMENT_NODEMAXREPEATS = "MaxRunCycle"; //filter node attribute
+        public const string XMLELEMENT_NODETASKTRUE = "TaskTrue"; //condition node attribute - enum id of the task
+        public const string XMLELEMENT_NODETASKFALSE = "TaskFalse";//condition node attribute - enum id of the task
     }
 }

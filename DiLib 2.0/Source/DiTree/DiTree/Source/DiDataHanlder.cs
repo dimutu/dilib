@@ -145,17 +145,32 @@ namespace DiTree
                         }
                 }
 
-                DataRow dr = m_dtData.NewRow();
-                int.TryParse(dr[DATAFIELD_ID].ToString(), out id);
+                //check this already exitss before adding
+                string zQuery = "";
 
-               //zClassName += id.ToString(); //to make class name unique
+                zQuery = DATAFIELD_CLASSNAME + "='" + DiMethods.SetQueryString(zClassName) + "'" +
+                    " and " + DATAFIELD_TEMPLATECLASS + "='" + DiMethods.SetQueryString(a_zTempleteClassName) + "'";
+                DataRow[] akRows = m_dtData.Select(zQuery);
+                DataRow dr;
+                if (akRows.Length == 0) //creates new record
+                {
+                    dr = m_dtData.NewRow();
+                    int.TryParse(dr[DATAFIELD_ID].ToString(), out id);
 
-                dr[DATAFIELD_ISTEMPATE] = true;
-                dr[DATAFIELD_CLASSTYPE] = a_eClassType;
-                dr[DATAFIELD_CLASSNAME] = zClassName;
-                dr[DATAFIELD_TEMPLATECLASS] = a_zTempleteClassName;
+                    //zClassName += id.ToString(); //to make class name unique
 
-                m_dtData.Rows.Add(dr);
+                    dr[DATAFIELD_ISTEMPATE] = true;
+                    dr[DATAFIELD_CLASSTYPE] = a_eClassType;
+                    dr[DATAFIELD_CLASSNAME] = zClassName;
+                    dr[DATAFIELD_TEMPLATECLASS] = a_zTempleteClassName;
+
+                    m_dtData.Rows.Add(dr);
+                }
+                else
+                {
+                    dr = akRows[0];
+                    id = (int)dr[DATAFIELD_ID]; //already exists, return the enum id
+                }
 
                 return id;
 
@@ -309,5 +324,71 @@ namespace DiTree
             }
             writer.WriteEndElement(); //end enums
         }
+
+        /// <summary>
+        /// Reads xml enum data and creates the table
+        /// </summary>
+        /// <param name="reader"></param>
+        public void ReadXMLData(ref XmlReader reader)
+        {
+            bool bEnumRead = false;
+            while (reader.Read())
+            {
+                switch (reader.Name)
+                {
+                    case DiXMLElements.XMLELEMENT_ENUMLIST:
+                        {
+                            if (reader.NodeType == XmlNodeType.EndElement)
+                            {
+                                //all enumerations added
+                                bEnumRead = true;
+                            }
+                            break;
+                        }
+
+                    case DiXMLElements.XMLELEMENT_ENUM:
+                        {
+                            DataRow dr = m_dtData.NewRow();
+                            int iVal = -1;
+
+                            dr[DATAFIELD_ID] = Convert.ToInt32(reader[DiXMLElements.XMLELEMENT_ENUMID].ToString().Trim()); //id
+                            dr[DATAFIELD_CLASSNAME] = reader[DiXMLElements.XMLELEMENT_CLASSNAME].ToString().Trim(); //enum name
+                            if (reader[DiXMLElements.XMLELEMENT_ISTEMPLATE].ToString().Trim().ToLower() == "true") //is template
+                            {
+                                dr[DATAFIELD_ISTEMPATE] = true;
+                            }
+                            else
+                            {
+                                dr[DATAFIELD_ISTEMPATE] = false;
+                            }
+
+                            if (int.TryParse(reader[DiXMLElements.XMLELEMENT_CLASSTYPE].ToString().Trim(), out iVal))
+                            {
+                                dr[DATAFIELD_CLASSTYPE] = (DICLASSTYPES)iVal; //class type
+                            }
+                            else
+                            {
+                                dr[DATAFIELD_CLASSTYPE] = 0;
+                            }
+                            dr[DATAFIELD_TEMPLATECLASS] = reader[DiXMLElements.XMLELEMENT_TEMPLATECLASS].ToString().Trim(); //template class name
+                            m_dtData.Rows.Add(dr);
+                            //iECounter++;
+                            break;
+                        }
+                    default:
+                        {
+                            break;
+                        }
+                
+                }//end switch
+
+                if (bEnumRead) //all the enums read and read close element, exit loop and function
+                {
+                    break;
+                }
+            }
+        }
+
+       
     }
 }

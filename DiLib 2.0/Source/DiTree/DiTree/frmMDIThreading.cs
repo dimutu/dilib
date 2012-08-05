@@ -34,6 +34,8 @@ namespace DiTree
                 m_kListenThread.IsBackground = true;
                 m_kListenThread.Name = "Connection Listening Thread";
                 m_kListenThread.Start();
+
+                m_bIsQutting = false;
             }
             catch (Exception ex)
             {

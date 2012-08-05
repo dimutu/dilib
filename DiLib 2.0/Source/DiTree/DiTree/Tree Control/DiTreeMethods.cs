@@ -27,7 +27,7 @@ namespace DiTree
             {
                 DiTreeNode node = new DiTreeNode();
                 DiTask task = new DiTask();
-                task.ClassName = "Root";
+                task.ClassName = DiXMLElements.XMLELEMENT_ROOT;
                 task.ClassType = DICLASSTYPES.DICLASSTYPE_ROOT;
                 task.EnumID = 0;
                 task.DebuggerID = m_lDebugIDCounter;
@@ -35,6 +35,7 @@ namespace DiTree
                 node.Task = task;
                 node.ImageKey = GetTaskImageKey(DICLASSTYPES.DICLASSTYPE_ROOT);
                 node.SelectedImageKey = node.ImageKey;
+                node.Text = DiXMLElements.XMLELEMENT_ROOT;
 
                 treeBT.Nodes.Add(node);
             }
@@ -306,6 +307,16 @@ namespace DiTree
                             else if (temp.TaskElement2 == null)
                             {
                                 temp.TaskElement2 = pkTask;
+                            }
+
+                            //set default true and false tasks
+                            if (temp.TaskTrue == null)
+                            {
+                                temp.TaskTrue = pkTask;
+                            }
+                            else if (temp.TaskFalse == null)
+                            {
+                                temp.TaskFalse = pkTask;
                             }
                             break;
                         }

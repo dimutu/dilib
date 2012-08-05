@@ -13,6 +13,11 @@ namespace DiTree
         public const int DEBUG_PORT = 34542; //debug port to connect
         public const int _DIDEBUGSTRUCTSIZE = 524;
         public const int _DIDEBUGCONTROLSIZE = 516;
+
+        public const string DIEXT_DIDATA = "didata";
+        public const string DIEXT_DICONFIG = "diconfig";
+        public const string DIEXT_DITREE = "ditree";
+
         private static bool m_bIsConnected = false;
         private static bool m_bDebugOn = false; //is c# is debuggin the c++ code(true) or default just showing where the c++ currently executing (false)
         private static bool m_bDebugNextOn = false; //is next button pressed

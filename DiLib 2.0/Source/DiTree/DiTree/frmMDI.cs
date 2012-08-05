@@ -48,6 +48,11 @@ namespace DiTree
             saveDiFile(false);
         }
 
+        private void toolStripMainOpen_Click(object sender, EventArgs e)
+        {
+            openDiFile();
+        }
+
 
     }
 }

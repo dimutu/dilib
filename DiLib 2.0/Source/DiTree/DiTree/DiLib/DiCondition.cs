@@ -16,6 +16,9 @@ namespace DiTree
 
         protected DiTask[] m_apkTasks; //both tasks to show in the property grid
 
+        protected int m_iEnumTrue; //eumeration index of the true task
+        protected int m_iEnumFalse; //enumeration index of false task
+
         public DiCondition()
             : base()
         {
@@ -146,6 +149,38 @@ namespace DiTree
             set
             {
                 m_pkFalseTask = value;
+            }
+        }
+
+        /// <summary>
+        /// Enumeration index of the true task set in this condition
+        /// </summary>
+        [Browsable(false)]
+        public int EnumTrue
+        {
+            get
+            {
+                return m_iEnumTrue;
+            }
+            set
+            {
+                m_iEnumTrue = value;
+            }
+        }
+
+        /// <summary>
+        /// Enumeration index of the false task set in this condition
+        /// </summary>
+        [Browsable(false)]
+        public int EnumFalse
+        {
+            get
+            {
+                return m_iEnumFalse;
+            }
+            set
+            {
+                m_iEnumFalse = value;
             }
         }
 

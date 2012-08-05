@@ -25,6 +25,7 @@ namespace DiTree
             set
             {
                 m_kTaskNode = value;
+                m_kTaskNode.Parent = this; //set the parent as this for the task
             }
         }
 

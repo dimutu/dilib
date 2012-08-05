@@ -17,6 +17,7 @@ namespace DiTree
         protected bool m_bLoopOn; //loop the task
         protected uint m_uiMaxRunCycles; //if not loop, number of times to run
         protected double m_dTimeInterval = 0; //time interval for the filter task (in milliseconds)
+        protected int m_iTaskEnum; //enumeration index of the child task
 
         public DiFilter()
             : base()
@@ -81,6 +82,22 @@ namespace DiTree
             set
             {
                 m_dTimeInterval = value;
+            }
+        }
+
+        /// <summary>
+        /// Enumeration index of the child task
+        /// </summary>
+        [Browsable(false)]
+        public int EnumTask
+        {
+            get
+            {
+                return m_iTaskEnum;
+            }
+            set
+            {
+                m_iTaskEnum = value;
             }
         }
     }

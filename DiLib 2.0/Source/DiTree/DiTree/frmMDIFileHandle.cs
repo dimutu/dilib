@@ -20,6 +20,9 @@ namespace DiTree
             openFile.Filter = "Di Tree Data File (*.didata)|*.didata|" +
                     "Di Tree View Files (*.ditree)|*.ditree|Di Config Files (*.diconfig)|*.diconfig|" +
                     "All Files (*.didata, *.ditree, *.diconfig)|*.didata;*.ditree;*.diconfig";
+
+            saveFile.Filter = "Di Tree Data File (*.didata)|*.didata";
+            //|" + "Di Tree View Files (*.ditree)|*.ditree|Di Config Files (*.diconfig)|*.diconfig";
         }
 
         /// <summary>

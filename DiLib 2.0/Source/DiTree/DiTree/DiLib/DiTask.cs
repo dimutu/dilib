@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel;
+using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using System.Data;
 using System.Drawing;
@@ -31,6 +32,8 @@ namespace DiTree
 
         protected DiDataHanlder m_pkDataHandler; //reference to data handler for auto complete text for class names
 
+        private TreeNode m_pkParent; //keep reference of parent tree node to update text and tooltip when task properties changed
+
         public DiTask()
         {
             m_eClassType = DICLASSTYPES.DICLASSTYPE_TASK;
@@ -52,6 +55,10 @@ namespace DiTree
             set
             {
                 m_zClassName = value;
+                if (m_pkParent != null)
+                {
+                    m_pkParent.Text = m_zClassName;
+                }
             }
         }
 
@@ -93,7 +100,12 @@ namespace DiTree
             }
             set
             {
+                if (value == null)
+                {
+                    value = "";
+                }
                 m_zLuaScript = value;
+                
             }
         }
 
@@ -137,6 +149,23 @@ namespace DiTree
             set
             {
                 m_pkDataHandler = value;
+            }
+        }
+
+        /// <summary>
+        /// Reference to parent tree node keeping this task as properties
+        /// This is to modify the node Text and ToolTip when properties changed through property grid
+        /// </summary>
+        [Browsable(false)]
+        public TreeNode Parent
+        {
+            get
+            {
+                return m_pkParent;
+            }
+            set
+            {
+                m_pkParent = value;
             }
         }
 

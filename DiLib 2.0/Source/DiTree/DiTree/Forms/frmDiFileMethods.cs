@@ -170,9 +170,13 @@ namespace DiTree
             }
         }
 
+        /// <summary>
+        /// Save all the data into the file path
+        /// </summary>
+        /// <param name="a_zFilePath"></param>
         public void SaveFile(string a_zFilePath)
         {
-            try
+            //try
             {
                 m_zFilePath = a_zFilePath;
                
@@ -218,8 +222,8 @@ namespace DiTree
                     {
                         int iTreeTabs = tabDiFile.TabCount - TABSTART_INDEX;
                         writer.WriteStartElement(DiXMLElements.XMLELEMENT_ROOTNODES);
-                        writer.WriteAttributeString("Count", iTreeTabs.ToString());
-
+                        writer.WriteAttributeString(DiXMLElements.XMLELEMENT_ROOTNODE_COUNT, iTreeTabs.ToString());
+                        
                         for (int ii = TABSTART_INDEX; ii < tabDiFile.TabCount; ++ii)
                         {
                             foreach (Control ctrl in tabDiFile.TabPages[ii].Controls)
@@ -227,13 +231,13 @@ namespace DiTree
                                 if (ctrl.GetType() == typeof(DiTree))
                                 {
                                     DiTree pkTree = (DiTree)ctrl;
-                                    pkTree.SaveTree(ref writer);
+                                    pkTree.SaveTree(ref writer); //export individual tree
                                     break;
                                 }
                             }
                         }
 
-                        writer.WriteEndElement(); //end root nodes
+                        writer.WriteEndElement(); //end root nodes all
                     }
 
                     writer.WriteEndElement(); //end tree root
@@ -244,15 +248,180 @@ namespace DiTree
                 File.Copy(zTempFile, a_zFilePath, true);
 
             }
-            catch (Exception ex)
+//            catch (Exception ex)
+//            {
+//                DiMethods.SetErrorLog(ex);
+//                DiMethods.SetStatusMessage("Error saving file.");
+//                DiMethods.MyDialogShow("Unable to save file, make sure the file is not read-only.", MessageBoxButtons.OK);
+//#if DEBUG
+//                Console.WriteLine(ex.Message);
+//#endif
+//            }
+        }
+
+        /// <summary>
+        /// Open the tree data in the file path
+        /// </summary>
+        /// <param name="a_zFilePath"></param>
+        public void OpenFile(string a_zFilePath)
+        {
+            try
             {
-                DiMethods.SetErrorLog(ex);
-                DiMethods.SetStatusMessage("Error saving file.");
-                DiMethods.MyDialogShow("Unable to save file, make sure the file is not read-only.", MessageBoxButtons.OK);
+                XmlReader reader = XmlReader.Create(a_zFilePath);
+
+                while (reader.Read())
+                {
+                    switch (reader.Name)
+                    {
+                        case DiXMLElements.XMLELEMENT_CONFIG:
+                            {
+                                if (reader.NodeType != XmlNodeType.EndElement)
+                                {
+                                    LoadConfiguration(ref reader);
+                                }
+                                break;
+                            }
+
+
+                        case DiXMLElements.XMLELEMENT_ROOT:
+                            {
+                                if (reader.NodeType != XmlNodeType.EndElement)
+                                {
+                                    LoadTree(ref reader);
+                                }
+                                break;
+                            }
+                        default:
+                            break;
+                    }
+                }
+
+                reader.Close();
+                //saveFileExportTree.FileName = filename;
+                //saveFileDiDataTree.FileName = filename;
+                this.Text = System.IO.Path.GetFileName(a_zFilePath);
+            }
+            catch (Exception e)
+            {
+                DiMethods.SetErrorLog(e);
+                DiMethods.SetStatusMessage("Error loading file.");
+                DiMethods.MyDialogShow("Unable to open file. Please check the file you are trying to open is valid.", MessageBoxButtons.OK);
 #if DEBUG
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(e.Message.ToString());
 #endif
             }
+        }
+
+        /// <summary>
+        /// Loads Configuration data from xml reader
+        /// </summary>
+        /// <param name="reader"></param>
+        private void LoadConfiguration(ref XmlReader reader)
+        {
+            try
+            {
+                //check both has red or not
+                bool bHeaderRead = false;
+                bool bEnumRead = false;
+
+                //generate string to initialize, if data file has one, it will replace this :)
+                txtDebugID.Text = DiMethods.GenerateRandomString();
+
+                while (reader.Read())
+                {
+                    switch (reader.Name)
+                    {
+                        case DiXMLElements.XMLELEMENT_DEBUGID:
+                            {
+                                txtDebugID.Text = reader.ReadString();
+                                break;
+                            }
+                        case DiXMLElements.XMLELEMENT_HEADERFILELIST:
+                            {
+                                //set total header files in the list
+                                if (reader.NodeType == XmlNodeType.EndElement)
+                                {
+                                    bHeaderRead = true;
+                                }
+                                else
+                                {
+                                    //check count is not zer0, and if it is set hedaer read to true
+                                    int iHeaderCount = Convert.ToInt32(reader[DiXMLElements.XMLELEMENT_HEADERFIECOUNT].ToString().Trim());
+                                    if (iHeaderCount == 0)
+                                    {
+                                        bHeaderRead = true;
+                                    }
+                                }
+
+                                break;
+                            }
+                        case DiXMLElements.XMLELEMENT_HEADERFILE:
+                            {
+                                listInclues.Items.Add(reader[DiXMLElements.XMLELEMENT_HEADERFILENAME].ToString());
+                                break;
+                            }
+                        case DiXMLElements.XMLELEMENT_ENUMLIST:
+                            {
+                                m_pkDataHandler.ReadXMLData(ref reader);
+                                if (reader.NodeType == XmlNodeType.EndElement)
+                                {
+                                    bEnumRead = true;
+                                    //iEMax = Convert.ToInt32(reader["Count"].ToString());
+                                }
+                                break;
+                            }
+                        
+                        default:
+                            break;
+                    }
+
+                    if (bHeaderRead && bEnumRead)
+                    {
+                        //all the data has been red
+                        return;
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                DiMethods.SetErrorLog(e);
+                DiMethods.SetStatusMessage("Error loading file.");
+                DiMethods.MyDialogShow("Unable to load config file.", MessageBoxButtons.OK);
+                Console.Write(e.Message.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Load the tree data from xml reader
+        /// </summary>
+        /// <param name="reader"></param>
+        private void LoadTree(ref XmlReader reader)
+        {
+            //create new tab
+            DiTabPage pkTabPage = null;
+            int iCount = tabDiFile.TabCount - TABSTART_INDEX;
+            string sTabName = "";
+
+            if (reader[DiXMLElements.XMLELEMENT_ROOTDEBUGID] != null)
+            {
+                sTabName = reader[DiXMLElements.XMLELEMENT_ROOTDEBUGID].ToString();
+            }
+            else
+            {
+                sTabName = "Tree " + iCount.ToString();
+
+            }
+
+            pkTabPage = new DiTabPage(iCount);
+            pkTabPage.Text = sTabName;
+
+            pkTabPage.Tree.DataHandler = m_pkDataHandler;
+
+            tabDiFile.TabPages.Add(pkTabPage);
+            
+            pkTabPage.Tree.OpenTree(ref reader);
+
         }
     }
 }

@@ -530,6 +530,7 @@
             this.toolStripMainOpen.Name = "toolStripMainOpen";
             this.toolStripMainOpen.Size = new System.Drawing.Size(23, 22);
             this.toolStripMainOpen.Text = "Open";
+            this.toolStripMainOpen.Click += new System.EventHandler(this.toolStripMainOpen_Click);
             // 
             // toolStripMainSave
             // 
