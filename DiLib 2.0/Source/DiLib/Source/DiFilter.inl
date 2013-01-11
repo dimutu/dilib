@@ -171,3 +171,8 @@ bool DiFilter<T>::IsLoopOn() const
 }
 //***************************************************************************************************************************************************//
 
+template <class T>
+void DiFilter<T>::SetTask(DiTask* a_pkTask)
+{
+	m_pkTask = a_pkTask;
+}

@@ -446,10 +446,16 @@ namespace DiTree
         {
             string zLine = "";
             DataRow dr;
+            DiDataRow data = new DiDataRow();
             for (int iRow = 0; iRow < m_dtData.Rows.Count; iRow++)
             {
                 dr = m_dtData.Rows[iRow];
+                data.Data = dr;
 
+                if (data.IsTemplate)
+                {
+                    continue;
+                }
                 zLine = dr[DATAFIELD_ID].ToString() + ","; //enum id
                 zLine += dr[DATAFIELD_CLASSNAME].ToString().ToUpper() + ","; //unique identification
                 zLine += dr[DATAFIELD_ISTEMPATE].ToString() + ","; //is template
@@ -458,6 +464,7 @@ namespace DiTree
                 zLine += dr[DATAFIELD_TEMPLATECLASS].ToString(); //template class
 
                 writer.WriteLine(zLine);
+                
 
             }
 

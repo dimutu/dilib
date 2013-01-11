@@ -32,7 +32,7 @@
 * Return: none
 ********************************************************************************************************************************************
 */
-#define DIDEBUGGER_INIT() DiNetwork::Initialize()
+#define DIDEBUGGER_INIT() DiLib::Initialize()
 
 /*
 ********************************************************************************************************************************************
@@ -41,16 +41,16 @@
 * Return: none
 ********************************************************************************************************************************************
 */
-#define DIDEBUGGER_SHUTDOWN() DiNetwork::Shutdown()
+#define DIDEBUGGER_SHUTDOWN() DiLib::Shutdown()
 
 /*
 ********************************************************************************************************************************************
 * Macro: DIDEBUGGER_SEND() - send the data through the connected dubugging service
-* Parameters: a_pkTask - pointer of DiBase
+* Parameters: task - pointer of DiBase
 * Return: none
 ********************************************************************************************************************************************
 */
-#define DIDEBUGGER_SEND(a_pkTask) DiNetwork::Debug(DiLib::DiBase* a_pkTask) 
+#define DIDEBUGGER_SEND(task) DiLib::Debug(task);
 
 #else //not running on debug build
 
@@ -79,7 +79,7 @@
 * Return: none
 ********************************************************************************************************************************************
 */
-#define DIDEBUGGER_SEND(a_pkTask) 
+#define DIDEBUGGER_SEND(task) 
 
 
 #endif //end directive for checking _DEBUG

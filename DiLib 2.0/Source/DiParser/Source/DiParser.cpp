@@ -76,9 +76,9 @@ namespace DiLib
 		bool bHeaders = false;
 		bool bEnums = false;
 
-
 		if (kINIFile.is_open() && kEnumHFile.is_open() ) //open the DI file and enum header to write
 		{
+			std::cout << "Generating " << a_zEnumFile << "... ";
 			char zBuff[200];
 			
 			//write a comment on header
@@ -209,7 +209,16 @@ namespace DiLib
 			kINIFile.close();
 			kEnumHFile.close();
 
+			std::cout << "Completed.\n";
 			return true;
+		}
+		else if (!kINIFile.is_open() )
+		{
+			std::cout << "DiParser Error: Unable to open " << a_zConfigFile << " file. Make sure the file exists and not read-only.";
+		}
+		else if (!kEnumHFile.is_open() )
+		{
+			std::cout << "DiParser Error: Unable to open or create " << a_zEnumFile << " file. Make sure you have relavent permission for file access.";
 		}
 
 		return false;
@@ -240,6 +249,7 @@ namespace DiLib
 
 		if (kDIFile.is_open() && kCppFile.is_open() ) //open the DI file and enum header to write
 		{
+			std::cout << "Generating " << a_zCppFile << "... ";
 			char zBuff[200];
 
 			//inlcude the header just created, so all the inlcudes can go in
@@ -252,9 +262,9 @@ namespace DiLib
 			//make function
 			sWriteLine =	"using namespace DiLib;\nnamespace DiFactory\n \
 \t{\n \
-\t\tDiBaseTask* CreateTask(DI_CLASSTYPEID a_eClassTypeID)\n \
+\t\tDiBase* CreateTask(DI_CLASSTYPEID a_eClassTypeID)\n \
 \t\t{\n \
-\t\t\tDiBaseTask* pkTask = NULL;\n \
+\t\t\tDiBase* pkTask = NULL;\n \
 \t\t\tswitch (a_eClassTypeID)\n \
 \t\t\t{\n";
 			
@@ -336,7 +346,7 @@ namespace DiLib
 						sWriteLine = "\n\t\t\tcase DICLASSTYPE_CUSTOM_" + sName + ":\n\
 \t\t\t\t{\n\
 \t\t\t\t\t" + sClassName + "<" + sTemplate + ">* pkClass = new " + sClassName + "<" + sTemplate + ">();\n \
-\t\t\t\t\tpkTask = (DiBaseTask*)pkClass;\n \
+\t\t\t\t\tpkTask = (DiBase*)pkClass;\n \
 \t\t\t\t}\n\
 \t\t\t\tbreak;\n";
 					}
@@ -345,7 +355,7 @@ namespace DiLib
 						sWriteLine = "\n\t\t\tcase DICLASSTYPE_CUSTOM_" + sName + ":\n\
 \t\t\t\t{\n\
 \t\t\t\t" + sClassName + "* pkClass = new " + sClassName + "();\n \
-\t\t\t\tpkTask = (DiBaseTask*)pkClass;\n \
+\t\t\t\tpkTask = (DiBase*)pkClass;\n \
 \t\t\t\t}\n\
 \t\t\t\tbreak;\n";
 					}
@@ -371,6 +381,18 @@ namespace DiLib
 
 			kDIFile.close();
 			kCppFile.close();
+
+			std::cout << "Completed.\n";
+
+		}
+		else if (kDIFile.is_open())
+		{
+			std::cout << "DiParser Error: Unable to open " << a_zConfigFile << " file. Make sure the file exists and not read-only.";
+
+		}
+		else if (kCppFile.is_open() )
+		{
+			std::cout << "DiParser Error: Unable to open or create " << a_zCppFile << " file. Make sure you have relavent permission for file access.";
 
 		}
 

@@ -394,6 +394,12 @@ namespace DiTree
             kTask.DebuggerID = -1;
             kTask.TemplateClass = txtTemplateClass.Text;
 
+            DiDataRow dr = m_pkDataHandler.GetRow(kTask.EnumID);
+            if (dr != null)
+            {
+                kTask.IsTemplate = dr.IsTemplate;
+            }
+
             long lDebugID = Convert.ToInt64(reader[DiXMLElements.XMLELEMENT_NODEDEBUGID]);
             if (lDebugID > 0)
             {
@@ -411,7 +417,6 @@ namespace DiTree
             node.ImageKey = GetTaskImageKey(eType);
             node.SelectedImageKey = node.ImageKey;
             node.Text = kTask.ClassName;
-
             
             return node;
         }

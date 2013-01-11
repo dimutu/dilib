@@ -5,7 +5,6 @@
 * Function: CreateRoot() - create the header root file using the passing data
 * Parameters:	const char* a_zDiTreeFile - tree file that has all the data to create the tree
 *				DiLib::DiRoot<T>* a_pkRoot - header root file that needs all this data put-in
-*				DiBillboard* a_pkExternalData - external data
 * Return: bool - tree creation success(true) or not(false)
 ********************************************************************************************************************************************
 */
@@ -28,9 +27,6 @@ bool CreateRoot(const char* a_zXMLFile, DiLib::DiRoot<T>* a_pkRoot)
 	//open xml file
 	TiXmlDocument xmlDoc;
 	TiXmlElement* xmlRoot;
-	TiXmlElement* xmlNode;
-
-	//DiSelection<T>* pkRootSelection = new DiSelection<T>();
 
 	if ( !xmlDoc.LoadFile(a_zXMLFile))
 	{
@@ -46,7 +42,7 @@ bool CreateRoot(const char* a_zXMLFile, DiLib::DiRoot<T>* a_pkRoot)
 #endif
 
 
-	xmlRoot = xmlRoot->FirstChildElement("RootNode");
+	xmlRoot = xmlRoot->FirstChildElement("Node");
 
 	//call tree create recursive function
 	CreateTree(xmlRoot, a_pkRoot, a_pkRoot);	
@@ -62,7 +58,6 @@ bool CreateRoot(const char* a_zXMLFile, DiLib::DiRoot<T>* a_pkRoot)
 * Parameters:	TiXmlElement* a_xmlNode - current xml node which has the data for the current task node
 *				DiLib::DiTask<T>* a_pkCurNode - parent node created a step before in the recursive function
 *				DiLib::DiRoot<T>* a_pkRoot - pointer to root node
-*				DiBillboard* a_pkExternalData - external
 * Return: bool - tree creation success(true) or not(false)
 ********************************************************************************************************************************************
 */
@@ -92,7 +87,6 @@ void CreateTree(TiXmlElement* a_xmlNode, DiLib::DiTask<T>* a_pkCurNode, DiLib::D
 
 			//set child data
 			pkChildNode->SetParent(a_pkCurNode); //set parent
-			std::string zTimer = pkXmlChild->Attribute("Timer");
 
 #ifdef _DIDEBUG
 			//set debugging information
@@ -104,8 +98,8 @@ void CreateTree(TiXmlElement* a_xmlNode, DiLib::DiTask<T>* a_pkCurNode, DiLib::D
 			if (pkChildNode->ClassID() == DiLib::DICLASS_FILTER)
 			{
 				DiLib::DiFilter<T>* pkF = (DiLib::DiFilter<T>*)pkChildNode;
-				pkF->SetTimer(atof(pkXmlChild->Attribute("TimerInterval")));
-				zTimer = pkXmlChild->Attribute("Repeat");
+				pkF->SetTimer((unsigned int)atof(pkXmlChild->Attribute("TimerInterval")));
+				std::string zTimer = pkXmlChild->Attribute("Repeat");
 				if (zTimer.compare("True") == 0)
 				{
 					//loop
@@ -146,7 +140,7 @@ void CreateTree(TiXmlElement* a_xmlNode, DiLib::DiTask<T>* a_pkCurNode, DiLib::D
 						iTaskTrue = atoi(a_xmlNode->Attribute("TaskTrue"));
 						if (iTaskTrue == atoi(pkXmlChild->Attribute("EnumID"))	)
 						{
-							pkCod->SetRunTask(pkChildNode);
+							pkCod->SetTrueTask(pkChildNode);
 						}
 					}
 
@@ -156,7 +150,7 @@ void CreateTree(TiXmlElement* a_xmlNode, DiLib::DiTask<T>* a_pkCurNode, DiLib::D
 						iTaskTrue = atoi(a_xmlNode->Attribute("TaskFalse"));
 						if (iTaskTrue == atoi(pkXmlChild->Attribute("EnumID"))	)
 						{
-							pkCod->SetFalseRunTask(pkChildNode);
+							pkCod->SetFalseTask(pkChildNode);
 						}
 					}
 					
@@ -185,7 +179,7 @@ void CreateTree(TiXmlElement* a_xmlNode, DiLib::DiTask<T>* a_pkCurNode, DiLib::D
 			}
 
 			//check child node has any of its own children nodes
-			CreateTree(pkXmlChild, pkChildNode, a_pkRoot, a_pkExternalData);
+			CreateTree(pkXmlChild, pkChildNode, a_pkRoot);
 
 			pkXmlChild = pkXmlChild->NextSiblingElement(); //get the next xml sibling node
 

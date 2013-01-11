@@ -80,7 +80,11 @@ namespace DiTree
             }
         }
 
+#if RELEASE
         [Browsable(false)] //no need to show or change the data table running number for the enumeration
+#elif DEBUG
+        [ReadOnly(true)]
+#endif
         public int EnumID
         {
             get
@@ -113,7 +117,11 @@ namespace DiTree
             }
         }
 
+#if DEBUG
+        [ReadOnly(true)]
+#elif RELEASE
         [Browsable(false)]
+#endif
         public bool IsTemplate
         {
             get

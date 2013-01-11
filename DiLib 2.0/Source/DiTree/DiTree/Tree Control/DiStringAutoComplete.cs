@@ -25,14 +25,16 @@ namespace DiTree
         {
             List<string> kClassList = new List<string>();
             DiTask temp = context.Instance as DiTask;
-            DataRow[] dr = temp.DataHandler.GetRows(temp.ClassType, temp.TemplateClass);
-
-            foreach (DataRow row in dr)
+            if (temp.DataHandler != null)
             {
-                kClassList.Add(row[DiDataHanlder.DATAFIELD_CLASSNAME].ToString());
+                DataRow[] dr = temp.DataHandler.GetRows(temp.ClassType, temp.TemplateClass);
 
+                foreach (DataRow row in dr)
+                {
+                    kClassList.Add(row[DiDataHanlder.DATAFIELD_CLASSNAME].ToString());
+
+                }
             }
-            
 
             return new StandardValuesCollection(kClassList);
         }

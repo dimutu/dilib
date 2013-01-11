@@ -18,7 +18,7 @@
 #define _DIMAXCHARLENGTH 256
 #define _DINETWORKPORT 34542
 
-namespace DiNetwork
+namespace DiLib
 {
 	class DiBase;
 
@@ -44,32 +44,32 @@ namespace DiNetwork
 	#pragma pack()
 
 
-		/*
-		********************************************************************************************************************************************
-		* Function: Initialize() - initialize sockets to prepare debugging data service
-		* Parameters: void
-		* Return: void
-		********************************************************************************************************************************************
-		*/
-		bool Initialize();
+	/*
+	********************************************************************************************************************************************
+	* Function: Initialize() - initialize sockets to prepare debugging data service
+	* Parameters: void
+	* Return: void
+	********************************************************************************************************************************************
+	*/
+	bool Initialize();
 
-		/*
-		********************************************************************************************************************************************
-		* Function: Debug() - do the debug networking here and return the calling function requires to execute or skip
-		* Parameters: void
-		* Return: bool - does the debug requires to move into the function calling and execute its content(true) or return back to parent function(false)
-		********************************************************************************************************************************************
-		*/
-		bool Debug(DiBase* a_pkTask);
+	/*
+	********************************************************************************************************************************************
+	* Function: Debug() - do the debug networking here and return the calling function requires to execute or skip
+	* Parameters: void
+	* Return: bool - does the debug requires to move into the function calling and execute its content(true) or return back to parent function(false)
+	********************************************************************************************************************************************
+	*/
+	bool Debug(DiBase* a_pkTask);
 
-		/*
-		********************************************************************************************************************************************
-		* Function: Terminate() - close all the sockets and data transfer
-		* Parameters: void
-		* Return: void
-		********************************************************************************************************************************************
-		*/
-		void Terminate();
+	/*
+	********************************************************************************************************************************************
+	* Function: Shutdown() - close all the sockets and data transfer
+	* Parameters: void
+	* Return: void
+	********************************************************************************************************************************************
+	*/
+	void Shutdown();
 }
 
 #endif

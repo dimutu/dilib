@@ -19,22 +19,20 @@
 #include "DiSelection.h"
 #include "DiSequence.h"
 
-namespace DiNetwork
+namespace DiLib
 {
-	static SOCKET m_kSendSocket; //socket to send data
-	static sockaddr_in m_kRecevAddr; 
-	static bool m_bIsConnected = false;
-	static std::string m_zDebugID;
-	static std::string m_zDebugTreeID;
-	static int m_iDebugCommand = 0;
+	SOCKET m_kSendSocket; //socket to send data
+	sockaddr_in m_kRecevAddr; 
+	bool m_bIsConnected = false;
+	std::string m_zDebugID;
+	std::string m_zDebugTreeID;
+	int m_iDebugCommand = 0;
 
 	//function declaration
 	bool InitWinSock(); //initialize windows socket for connection
 	void CreateSocket(); //connect to network socket
-	void Terminate(); //close all the sockets and data transfer
 	void Send(DiBase* a_pkTask);  //send data to connected port 
 	void Receive(DiBase* a_pkTask); // receive messages (UI debug commands)
-
 
 	/*
 	********************************************************************************************************************************************
@@ -63,7 +61,11 @@ namespace DiNetwork
 	*/
 	void Shutdown()
 	{
-		Terminate();
+		if (m_bIsConnected)
+		{
+			shutdown(m_kSendSocket, SD_SEND);
+			closesocket(m_kSendSocket);
+		}
 	}
 
 	/*
@@ -241,29 +243,8 @@ namespace DiNetwork
 			}
 			
 		}
-
-
 #endif
-	}
-
-	/*
-	********************************************************************************************************************************************
-	* Function: Terminate() - close all the sockets and data transfer
-	* Parameters: void
-	* Return: void
-	********************************************************************************************************************************************
-	*/
-	void Terminate()
-	{
-		if (m_bIsConnected)
-		{
-			shutdown(m_kSendSocket, SD_SEND);
-			closesocket(m_kSendSocket);
-		}
-	}
-
-
-		
+	}		
 }
 
 
