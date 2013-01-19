@@ -8,7 +8,7 @@
 ********************************************************************************************************************************************
 */
 template <class T>
-DiFilter<T>::DiFilter() : DiCondition() 
+DiFilter<T>::DiFilter() : DiTask() 
 {
 	m_eClassID = DICLASS_FILTER;
 

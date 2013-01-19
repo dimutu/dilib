@@ -135,6 +135,7 @@
             this.treeBT.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeBT_DragDrop);
             this.treeBT.DragEnter += new System.Windows.Forms.DragEventHandler(this.treeBT_DragEnter);
             this.treeBT.DragOver += new System.Windows.Forms.DragEventHandler(this.treeBT_DragOver);
+            this.treeBT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeBT_KeyDown);
             // 
             // imageListTasks
             // 
@@ -146,6 +147,12 @@
             this.imageListTasks.Images.SetKeyName(3, "selection");
             this.imageListTasks.Images.SetKeyName(4, "sequence");
             this.imageListTasks.Images.SetKeyName(5, "root");
+            this.imageListTasks.Images.SetKeyName(6, "filter_run");
+            this.imageListTasks.Images.SetKeyName(7, "condition_run");
+            this.imageListTasks.Images.SetKeyName(8, "root_run");
+            this.imageListTasks.Images.SetKeyName(9, "selection_run");
+            this.imageListTasks.Images.SetKeyName(10, "sequence_run");
+            this.imageListTasks.Images.SetKeyName(11, "task_run");
             // 
             // splitProperties
             // 

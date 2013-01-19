@@ -110,7 +110,7 @@
             this.label1.Size = new System.Drawing.Size(534, 15);
             this.label1.TabIndex = 7;
             this.label1.Text = "This is all the behaviour tree tasks header files, deriving from the template cla" +
-                "sses";
+    "sses";
             // 
             // label3
             // 
@@ -193,6 +193,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 490);
             this.Controls.Add(this.tabDiFile);
+            this.KeyPreview = true;
             this.Name = "frmDiFile";
             this.Text = "frmDiFile";
             this.tabPageGeneral.ResumeLayout(false);

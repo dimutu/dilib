@@ -36,11 +36,15 @@ namespace DiTree
                 m_kListenThread.Start();
 
                 m_bIsQutting = false;
+
+                m_frmConsole.addOutputText("Debugger connection listener started.");
+
             }
             catch (Exception ex)
             {
                 DiMethods.SetErrorLog(ex);
                 DiMethods.MyDialogShow("Unable to open socket\nError: " + ex.Message, MessageBoxButtons.OK);
+                m_frmConsole.addOutputText("Error connecting: " + ex.Message);
             }
         }
 
@@ -57,7 +61,7 @@ namespace DiTree
                 m_kListenThread = null;
             }
 
-
+            m_frmConsole.addOutputText("Debugger Disconnected.");
         }
 
         private void ConnectionAccept()
@@ -78,7 +82,7 @@ namespace DiTree
                         m_kMainThread.Start(m_kClientSocket);
 
                         SetConnectedClientSocketInThread(m_kClientSocket);
-
+                        m_frmConsole.addOutputText("Debugger connection established.");
                     }
 
                 }
@@ -112,6 +116,7 @@ namespace DiTree
                     //only take node data send from C++
                     if (iReceiveDataLength != DiGlobals._DIDEBUGSTRUCTSIZE)
                     {
+                        m_frmConsole.addOutputText("Debugger receieve data incomplete.");
                         break;
                     }
 
@@ -121,6 +126,7 @@ namespace DiTree
 #if DEBUG
                     Console.WriteLine(e.Message.ToString());
 #endif
+                    m_frmConsole.addOutputText("Debugger connection error:" + e.Message);
                     UpdateSocketDisconnect();
                     DiMethods.SetErrorLog(e);
                     break;
@@ -140,7 +146,7 @@ namespace DiTree
                 }
 
                 //do whatever using the data
-                // Console.WriteLine("task : " + kMsgData.m_zDebugID + " : " + kMsgData.m_zDebugTreeID + " : " + kMsgData.m_lDebugTaskID.ToString() + " : " + kMsgData.m_lTime.ToString());
+                 Console.WriteLine("task : " + kMsgData.m_zDebugID + " : " + kMsgData.m_zDebugTreeID + " : " + kMsgData.m_lDebugTaskID.ToString() + " : " + kMsgData.m_lTime.ToString());
             }
         }
 
@@ -187,30 +193,25 @@ namespace DiTree
                     Form frmActive = this.ActiveMdiChild;
                     if (frmActive != null)
                     {
-                        /*
-                        if (frmActive.GetType() == typeof(frmDiTreeData))
+                        
+                        if (frmActive.GetType() == typeof(frmDiFile))
                         {
-                            frmDiTreeData f = (frmDiTreeData)frmActive;
-                            if (f.DebugTreeID == a_kDebugData.m_zDebugID) //check active tree is the one that data is coming for
+                            frmDiFile f = (frmDiFile)frmActive;
+                            if (f.DebugID == a_kDebugData.m_zDebugID) //check active tree is the one that data is coming for
                             {
                                 f.SetTreeDebugData(a_kDebugData.m_zDebugTreeID, a_kDebugData.m_lDebugTaskID);
                             }
 
 
                         }
-                         * */
                     }
 
 
-                    if (DiGlobals.IsConnected)
+                    //place any data coming in to console
+                    if (a_kDebugData != null)
                     {
-                        //show in log
-                        //frmDebugLog.AddToLog(ref a_kDebugData);
-
-                        //set data receving animation
-
+                        m_frmConsole.addOutputText("Debug data:" + a_kDebugData.m_zDebugID + " : " + a_kDebugData.m_zDebugTreeID + " : " + a_kDebugData.m_lDebugTaskID.ToString() + " : " + a_kDebugData.m_lTime.ToString());
                     }
-
 
                 }
                 ));

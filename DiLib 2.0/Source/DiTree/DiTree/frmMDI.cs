@@ -15,11 +15,14 @@ namespace DiTree
 {
     public partial class frmMDI : Form
     {
+        private frmConsole m_frmConsole;
         private frmSelectExportTree m_frmSelectTree; //select tree fro exporting the tree from currently selected frmDiFile
         public frmMDI()
         {
             m_frmSelectTree = new frmSelectExportTree();
             DiMethods.StatusMessageLable = toolStripStatusMsg;
+
+            m_frmConsole = new frmConsole();
         }
 
         protected override void OnLoad(EventArgs e)
@@ -62,6 +65,38 @@ namespace DiTree
         private void toolStripMainExportTree_Click(object sender, EventArgs e)
         {
             ExportTree();
+        }
+
+        private void connectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DiGlobals.IsConnected = true;
+            DebugConnect();
+        }
+
+        private void closeAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm != null)
+                {
+                    frm.Dispose();
+                }
+            }
+        }
+
+        private void closeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form frmActive = this.ActiveMdiChild;
+
+            if (frmActive != null)
+            {
+                frmActive.Dispose();
+            }
+        }
+
+        private void consoleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            m_frmConsole.Show();
         }
 
 

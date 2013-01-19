@@ -71,6 +71,14 @@ namespace DiLib
 		*/
 		bool GenerateClassGenCpp(const char* a_zConfigFile, const char* a_zCppFile);
 
+		/*
+		********************************************************************************************************************************************
+		* Function: GenerateTemplateClasses() - generate switch statement for DiFactory includes the default template classes generation
+		* Return: std::string - string values of the switch statement
+		********************************************************************************************************************************************
+
+		*/
+		std::string GenerateTemplateClasses();
 	private:
 		//generating file names
 		std::string m_zEnumFileName;

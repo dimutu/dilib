@@ -49,6 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frmConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConsole.Designer.cs">
+      <DependentUpon>frmConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDiFileThreading.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmSelectExportTree.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +140,12 @@
     <Compile Include="frmMDIThreading.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Tree Control\DiTreeThreading.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <EmbeddedResource Include="Forms\frmConsole.resx">
+      <DependentUpon>frmConsole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSelectExportTree.resx">
       <DependentUpon>frmSelectExportTree.cs</DependentUpon>
     </EmbeddedResource>

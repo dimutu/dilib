@@ -452,15 +452,42 @@ namespace DiTree
                 dr = m_dtData.Rows[iRow];
                 data.Data = dr;
 
-                if (data.IsTemplate)
+                if (data.IsTemplate && data.ClassType == DICLASSTYPES.DICLASSTYPE_TASK)
+                {
+                   continue;
+                }
+                else if (data.IsTemplate && data.ClassType == DICLASSTYPES.DICLASSTYPE_CONDITION)
                 {
                     continue;
                 }
+
                 zLine = dr[DATAFIELD_ID].ToString() + ","; //enum id
                 zLine += dr[DATAFIELD_CLASSNAME].ToString().ToUpper() + ","; //unique identification
                 zLine += dr[DATAFIELD_ISTEMPATE].ToString() + ","; //is template
                 zLine += dr[DATAFIELD_CLASSTYPE].ToString() + ","; //class type
-                zLine += dr[DATAFIELD_CLASSNAME].ToString() + ","; //class name
+
+                if (data.IsTemplate)
+                {
+                    //use template names
+                    switch (data.ClassType)
+                    {
+                        case DICLASSTYPES.DICLASSTYPE_FILTER:
+                            zLine += "DiFilter,"; //class name
+                            break;
+                        case DICLASSTYPES.DICLASSTYPE_SELECTION:
+                            zLine += "DiSelection,"; //class name
+                            break;
+                        case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
+                            zLine += "DiSequence,"; //class name
+                            break;
+                        default:
+                            continue;
+                    };
+                }
+                else
+                {
+                    zLine += dr[DATAFIELD_CLASSNAME].ToString() + ","; //class name
+                }
                 zLine += dr[DATAFIELD_TEMPLATECLASS].ToString(); //template class
 
                 writer.WriteLine(zLine);

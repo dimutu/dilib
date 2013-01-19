@@ -68,5 +68,12 @@ namespace DiTree
             }
         }
 
+        public string DebugID
+        {
+            get
+            {
+                return txtDebugID.Text;
+            }
+        }
     }
 }

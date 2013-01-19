@@ -32,7 +32,14 @@ namespace DiTree
         [FieldOffset(520)]
         public long m_lDebugTaskID;
 
+        // These change the calling code's correctness
+        public static bool operator ==(DiDebugData f1, DiDebugData f2) { return false; }
+        public static bool operator !=(DiDebugData f1, DiDebugData f2) { return false; }
 
+        // These aren't relevant, but the compiler will issue an
+        // unrelated warning if they're missing
+        public override bool Equals(object x) { return false; }
+        public override int GetHashCode() { return 0; }
     };
 
     [StructLayout(LayoutKind.Explicit, Size = DiGlobals._DIDEBUGCONTROLSIZE)]

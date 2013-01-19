@@ -354,6 +354,24 @@ namespace DiTree
             
             Console.WriteLine("value changed" + e.ToString());
         }
-       
+
+        private void treeBT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (treeBT.SelectedNode == null)
+            {
+                return;
+            }
+
+            DiTreeNode node = (DiTreeNode)treeBT.SelectedNode;
+
+            if (node.ClassType != DICLASSTYPES.DICLASSTYPE_ROOT && e.KeyCode == Keys.Delete)
+            {
+                if (node.Nodes.Count > 0)
+                {
+                    DiMethods.MyDialogShow("This will delete all the child nodes, wish to continue?", MessageBoxButtons.YesNoCancel);
+                }
+            }
+        }
+
     }
 }
