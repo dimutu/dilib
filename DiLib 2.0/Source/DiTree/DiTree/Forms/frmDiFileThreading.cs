@@ -8,6 +8,19 @@ namespace DiTree
 {
     public partial class frmDiFile : Form
     {
+        public string GetTabTreeName()
+        {
+            if (tabDiFile.SelectedIndex >= TABSTART_INDEX)
+            {
+                if (tabDiFile.SelectedTab != null)
+                {
+                    DiTabPage kTab = (DiTabPage)tabDiFile.SelectedTab;
+                    return kTab.Tree.TreeName;
+                }
+            }
+            return "";
+        }
+
         public void SetTreeDebugData(string a_zDebugTreeID, long a_lDebugTaskID)
         {
             //dont want to see changing icons when behaviour tree executes

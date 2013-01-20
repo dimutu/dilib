@@ -99,6 +99,16 @@ namespace DiTree
             m_frmConsole.Show();
         }
 
+        private void toolStripMainDebugPause_Click(object sender, EventArgs e)
+        {
+            DebugPlayPause();
+        }
+
+        private void toolStripMainDebugNext_Click(object sender, EventArgs e)
+        {
+            DebugPlayForward();
+        }
+
 
     }
 }

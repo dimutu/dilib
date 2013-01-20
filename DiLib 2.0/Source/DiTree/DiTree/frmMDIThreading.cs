@@ -20,6 +20,8 @@ namespace DiTree
 
         private bool m_bIsQutting;
 
+        private frmDiFile m_frmDebugControlForm;
+
         private void DebugConnect()
         {
             try
@@ -201,8 +203,6 @@ namespace DiTree
                             {
                                 f.SetTreeDebugData(a_kDebugData.m_zDebugTreeID, a_kDebugData.m_lDebugTaskID);
                             }
-
-
                         }
                     }
 
@@ -216,6 +216,144 @@ namespace DiTree
                 }
                 ));
             }
+        }
+
+        /// <summary>
+        /// Debug play and pause currently connected tree
+        /// </summary>
+        private void DebugPlayPause()
+        {
+            if (!DiGlobals.IsDebugging) //currently not debugging
+            {
+                //check any data file has loaded
+                if (this.ActiveMdiChild == null)
+                {
+                    DiMethods.SetStatusMessage("No data file open for debugging.");
+                    return;
+                }
+                else
+                {
+                    if (this.ActiveMdiChild.GetType() != typeof(frmDiFile))
+                    {
+                        DiMethods.SetStatusMessage("No data file open for debugging.");
+                        return;
+                    }
+                    else
+                    {
+                        //set the debugging form
+                        m_frmDebugControlForm = (frmDiFile)this.ActiveMdiChild;
+                        //check active tab is a tree
+                        if (m_frmDebugControlForm.GetTabTreeName() == "")
+                        {
+                            m_frmDebugControlForm = null;
+                            DiMethods.MyDialogShow("No tree selected to debug, select a tree tab that you requier to debug.", MessageBoxButtons.OK);
+                            return;
+                        }
+
+                    }
+                }
+            }
+
+            if (!DiGlobals.IsConnected)
+            {
+                DialogResult dr = DiMethods.MyDialogShow("You are not connected to debug service.\nDo you wish to connect?", MessageBoxButtons.YesNoCancel);
+                if (dr == System.Windows.Forms.DialogResult.Yes)
+                {
+                    DiGlobals.IsConnected = true;
+                    //ShowDebugConnectMenu();
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            DiGlobals.IsDebugging = !DiGlobals.IsDebugging;
+
+            if (DiGlobals.IsDebugging)
+            {
+                //debgging started
+                //toolStripDebugPause.Image = Properties.Resources.control_play;
+                DiGlobals.IsDebugNextOn = true;
+                //toolStripDebugPause.ToolTipText = "Stop Debugging";
+                SendDebugCommands(DIDEBUGCONTROLS.DIDEBUGCONTROL_STARTDEBUG);
+
+                //on debug through UI must have the viewable on
+                if (!DiGlobals.IsDebugViewable)
+                {
+                    DiGlobals.IsDebugViewable = true;
+                    //SetDebugViewable();
+                }
+
+            }
+            else
+            {
+                //debugging stoped
+               // toolStripDebugPause.Image = Properties.Resources.control_pause;
+               // toolStripDebugPause.ToolTipText = "Start Debugging";
+                SendDebugCommands(DIDEBUGCONTROLS.DIDEBUGCONTROL_RESUME);
+            }
+        }
+
+        private void DebugPlayForward()
+        {
+            if (!DiGlobals.IsConnected)
+            {
+                return;
+            }
+
+            if (DiGlobals.IsDebugging)
+            {
+                SendDebugCommands(DIDEBUGCONTROLS.DIDEBUGCONTROL_NEXTTASK);
+                DiGlobals.IsDebugNextOn = true; //flag so the tree can see that next update to set tree
+            }
+        }
+        /// <summary>
+        /// Send debugging commands back to C++
+        /// </summary>
+        /// <param name="eControl"></param>
+        private void SendDebugCommands(DIDEBUGCONTROLS eControl)
+        {
+            if (m_kClientSocket != null)
+            {
+                if (m_kClientSocket.Connected)
+                {
+                    if (eControl != DIDEBUGCONTROLS.DIDEBUGCONTROL_NONE)
+                    {
+                        DiDebugControl kDebugControl = new DiDebugControl();
+                        kDebugControl.m_eCommand = eControl;
+                        if (m_frmDebugControlForm != null)
+                        {
+                            kDebugControl.m_zDebugID = m_frmDebugControlForm.DebugID;
+                            kDebugControl.m_zDebugTreeID = m_frmDebugControlForm.GetTabTreeName();
+
+
+                            switch (eControl)
+                            {
+                                case DIDEBUGCONTROLS.DIDEBUGCONTROL_RESUME:
+                                    {
+                                        m_frmDebugControlForm = null;
+                                        break;
+                                    }
+                                default:
+                                    break;
+                            }
+
+                            byte[] barr = new byte[DiGlobals._DIDEBUGCONTROLSIZE];
+                            IntPtr ptr = Marshal.AllocHGlobal(DiGlobals._DIDEBUGCONTROLSIZE);
+
+                            Marshal.StructureToPtr(kDebugControl, ptr, true);
+                            Marshal.Copy(ptr, barr, 0, DiGlobals._DIDEBUGCONTROLSIZE);
+                            Marshal.FreeHGlobal(ptr);
+
+                            m_kClientSocket.Send(barr, DiGlobals._DIDEBUGCONTROLSIZE, SocketFlags.None);
+                        }
+
+                    }
+                }
+            }
+
+
         }
     }
 }
