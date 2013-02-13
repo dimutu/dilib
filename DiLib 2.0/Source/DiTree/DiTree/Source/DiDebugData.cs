@@ -14,7 +14,11 @@ namespace DiTree
         DIDEBUGCONTROL_NONE, //for threading so it can set once the current control is sent to c++
         DIDEBUGCONTROL_STARTDEBUG, //pressed pause, so start debuging in C++
         DIDEBUGCONTROL_NEXTTASK, //move to next task in C++
-        DIDEBUGCONTROL_RESUME //stop debugging and business as usual
+        DIDEBUGCONTROL_RESUME, //stop debugging and business as usual,
+        DIDEBUGCONTROL_BREAKPOINT_ADD, //added new breakpoint
+        DIDEBUGCONTROL_BREAKPOINT_REMOVE, //removed breakpoint
+        DIDEBUGCONTROL_BREAKPOINT_REMOVE_ALL, //remove all breakpoints
+        DIDEBUGCONTROL_BREAKPOINT_EXECUTE //currently executing a breakpoint (RETURN DATA)
     };
 
     [StructLayout(LayoutKind.Explicit, Size = DiGlobals._DIDEBUGSTRUCTSIZE)]
@@ -31,6 +35,9 @@ namespace DiTree
 
         [FieldOffset(520)]
         public long m_lDebugTaskID;
+
+         [FieldOffset(524)]
+        public DIDEBUGCONTROLS m_eCommand;
 
         // These change the calling code's correctness
         public static bool operator ==(DiDebugData f1, DiDebugData f2) { return false; }
@@ -53,5 +60,8 @@ namespace DiTree
 
         [FieldOffset(512)]
         public DIDEBUGCONTROLS m_eCommand;
+
+        [FieldOffset(516)]
+        public long m_lDebugTaskID;
     };
 }

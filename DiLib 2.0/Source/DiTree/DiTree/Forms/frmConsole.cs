@@ -17,9 +17,16 @@ namespace DiTree
             txtConsole.Text = "";
         }
 
-        public void addOutputText(string str)
+        public void addOutputText(string str, bool isDebug = false)
         {
-            txtConsole.Text += str + "\r\n";
+            if (isDebug && DiGlobals.LogDebugInfo)
+            {
+                txtConsole.Text += str + "\r\n";
+            }
+            else if (!isDebug)
+            {
+                txtConsole.Text += str + "\r\n";
+            }
         }
 
         private void copyConsoleToolStripMenuItem_Click(object sender, EventArgs e)

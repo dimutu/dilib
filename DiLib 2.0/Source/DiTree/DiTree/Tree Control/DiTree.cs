@@ -320,7 +320,6 @@ namespace DiTree
                 return;
             }
 
-
             //class name changed, check already exists or add new
             if (e.ChangedItem.Label == "ClassName")
             {
@@ -370,6 +369,59 @@ namespace DiTree
                 {
                     DiMethods.MyDialogShow("This will delete all the child nodes, wish to continue?", MessageBoxButtons.YesNoCancel);
                 }
+            }
+        }
+
+        private void moveUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MoveNode(TREENODEMOVEMENT.TREENODEMOVE_UP);
+        }
+
+        private void moveDownToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MoveNode(TREENODEMOVEMENT.TREENODEMOVE_DOWN);
+        }
+
+        private void moveLeftToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MoveNode(TREENODEMOVEMENT.TREENODEMOVE_LEFT);
+        }
+
+        private void moveRightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MoveNode(TREENODEMOVEMENT.TREENODEMOVE_RIGHT);
+        }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //DiClipboard.Instance.Copy(
+        }
+
+        private void treeBT_MouseMove(object sender, MouseEventArgs e)
+        {
+            // Get the node at the current mouse pointer location.
+            DiTreeNode theNode = (DiTreeNode)treeBT.GetNodeAt(e.X, e.Y);
+
+            // Set a ToolTip only if the mouse pointer is actually paused on a node.
+            if ((theNode != null))
+            {
+                // Verify that the tag property is not "null".
+                if (theNode.Tag != null)
+                {
+                    // Change the ToolTip only if the pointer moved to a new node.
+                    if (theNode.Tag.ToString() != toolTipTreeNode.GetToolTip(treeBT))
+                    {
+                        toolTipTreeNode.SetToolTip(treeBT, theNode.ToolTip);
+                    }
+                }
+                else
+                {
+                    toolTipTreeNode.SetToolTip(treeBT, "");
+                }
+            }
+            else     // Pointer is not over a node so clear the ToolTip.
+            {
+                toolTipTreeNode.SetToolTip(treeBT, "");
             }
         }
 

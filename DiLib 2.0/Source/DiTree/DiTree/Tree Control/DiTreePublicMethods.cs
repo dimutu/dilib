@@ -20,6 +20,33 @@ namespace DiTree
         /// <param name="a_eDirection"></param>
         public void MoveNode(TREENODEMOVEMENT a_eDirection)
         {
+            DiTreeNode node = (DiTreeNode)treeBT.SelectedNode;
+            if (node != null)
+            {
+                switch (a_eDirection)
+                {
+                    case TREENODEMOVEMENT.TREENODEMOVE_UP:
+                    {
+                        MoveNodeUp(node);
+                        break;
+                    }
+                    case TREENODEMOVEMENT.TREENODEMOVE_DOWN:
+                    {
+                        MoveNodeDown(node);
+                        break;
+                    }
+                    case TREENODEMOVEMENT.TREENODEMOVE_LEFT:
+                    {
+                        break;
+                    }
+                    case TREENODEMOVEMENT.TREENODEMOVE_RIGHT:
+                    {
+                        break;
+                    }
+                    default:
+                        break;
+                };
+            }
         }
 
         /// <summary>
@@ -27,6 +54,11 @@ namespace DiTree
         /// </summary>
         public void CopyNode()
         {
+            DiTreeNode node = (DiTreeNode)treeBT.SelectedNode;
+            if (node != null)
+            {
+                DiClipboard.Copy(node);
+            }
         }
 
         /// <summary>
@@ -34,6 +66,11 @@ namespace DiTree
         /// </summary>
         public void CutNode()
         {
+            DiTreeNode node = (DiTreeNode)treeBT.SelectedNode;
+            if (node != null)
+            {
+                DiClipboard.Copy(node, true);
+            }
         }
 
         /// <summary>
@@ -41,6 +78,10 @@ namespace DiTree
         /// </summary>
         public void PasteNode()
         {
+            if (DiClipboard.Node != null)
+            {
+
+            }
         }
 
         /// <summary>
@@ -417,7 +458,6 @@ namespace DiTree
             node.ImageKey = GetTaskImageKey(eType);
             node.SelectedImageKey = node.ImageKey;
             node.Text = kTask.ClassName;
-            
             return node;
         }
 

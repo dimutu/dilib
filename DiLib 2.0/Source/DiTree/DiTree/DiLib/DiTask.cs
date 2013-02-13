@@ -36,6 +36,8 @@ namespace DiTree
 
         private string m_zTemplateClass; //template class name ref as this needs for property grid to filter out data
 
+        private bool m_bBreakpoint;// this node is has a breakpoint or not
+
         public DiTask()
         {
             m_eClassType = DICLASSTYPES.DICLASSTYPE_TASK;
@@ -195,6 +197,22 @@ namespace DiTree
             set
             {
                 m_zTemplateClass = value;
+            }
+        }
+
+        /// <summary>
+        /// this task has a breakpoint
+        /// </summary>
+        [Browsable(false)]
+        public bool Breakpoint
+        {
+            get
+            {
+                return m_bBreakpoint;
+            }
+            set
+            {
+                m_bBreakpoint = value;
             }
         }
 

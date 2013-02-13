@@ -9,7 +9,7 @@ namespace DiTree
     /// <summary>
     /// extended tree node to have behaviour tree properties in the tree view
     /// </summary>
-    class DiTreeNode : TreeNode
+    public class DiTreeNode : TreeNode
     {
         private DiTask m_kTaskNode; //task represent by the tree node in the tree view
 
@@ -72,5 +72,19 @@ namespace DiTree
             }
         }
 
+        public string ToolTip
+        {
+            get
+            {
+                return string.Format("Enum: {0}\nClass Name:{1}\nType: {2}\nScript :{3}\nDebug ID: {4}",
+                  m_kTaskNode.EnumID.ToString(), m_kTaskNode.ClassName, m_kTaskNode.ClassType.ToString(),
+                  m_kTaskNode.ScriptFile, m_kTaskNode.DebuggerID.ToString()); ;
+            }
+        }
+
+        public void ToggleBreakpoint()
+        {
+            m_kTaskNode.Breakpoint = !m_kTaskNode.Breakpoint;
+        }
     }
 }

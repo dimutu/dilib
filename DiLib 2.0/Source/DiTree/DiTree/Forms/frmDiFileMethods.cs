@@ -55,6 +55,15 @@ namespace DiTree
         /// <param name="a_eDirection"></param>
         public void MoveNode(TREENODEMOVEMENT a_eDirection)
         {
+            if (tabDiFile.SelectedIndex < TABSTART_INDEX)
+            {
+                return;
+            }
+            DiTabPage pkTabPage = (DiTabPage)tabDiFile.SelectedTab;
+            if (pkTabPage != null)
+            {
+                pkTabPage.Tree.MoveNode(a_eDirection);
+            }
         }
 
         /// <summary>
@@ -62,6 +71,15 @@ namespace DiTree
         /// </summary>
         public void CopyNode()
         {
+            if (tabDiFile.SelectedIndex < TABSTART_INDEX)
+            {
+                return;
+            }
+            DiTabPage pkTabPage = (DiTabPage)tabDiFile.SelectedTab;
+            if (pkTabPage != null)
+            {
+                pkTabPage.Tree.CopyNode();
+            }
         }
 
         /// <summary>
@@ -69,6 +87,15 @@ namespace DiTree
         /// </summary>
         public void CutNode()
         {
+            if (tabDiFile.SelectedIndex < TABSTART_INDEX)
+            {
+                return;
+            }
+            DiTabPage pkTabPage = (DiTabPage)tabDiFile.SelectedTab;
+            if (pkTabPage != null)
+            {
+                pkTabPage.Tree.CutNode();
+            }
         }
 
         /// <summary>
@@ -76,6 +103,15 @@ namespace DiTree
         /// </summary>
         public void PasteNode()
         {
+            if (tabDiFile.SelectedIndex < TABSTART_INDEX)
+            {
+                return;
+            }
+            DiTabPage pkTabPage = (DiTabPage)tabDiFile.SelectedTab;
+            if (pkTabPage != null)
+            {
+                pkTabPage.Tree.PasteNode();
+            }
         }
 
         /// <summary>
@@ -83,7 +119,15 @@ namespace DiTree
         /// </summary>
         public void RemoveNode()
         {
-
+            if (tabDiFile.SelectedIndex < TABSTART_INDEX)
+            {
+                return;
+            }
+            DiTabPage pkTabPage = (DiTabPage)tabDiFile.SelectedTab;
+            if (pkTabPage != null)
+            {
+                pkTabPage.Tree.RemoveNode();
+            }
         }
 
         /// <summary>

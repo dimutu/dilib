@@ -88,6 +88,9 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Tree Control\DiTreeNode.cs" />
+    <Compile Include="Tree Control\DiTreeNodeMovement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Tree Control\DiTreePublicMethods.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -11,8 +11,8 @@ namespace DiTree
     public static class DiGlobals
     {
         public const int DEBUG_PORT = 34542; //debug port to connect
-        public const int _DIDEBUGSTRUCTSIZE = 524;
-        public const int _DIDEBUGCONTROLSIZE = 516;
+        public const int _DIDEBUGSTRUCTSIZE = 528;
+        public const int _DIDEBUGCONTROLSIZE = 520;
 
         public const string DIEXT_DIDATA = "didata";
         public const string DIEXT_DICONFIG = "diconfig";
@@ -22,6 +22,8 @@ namespace DiTree
         private static bool m_bDebugOn = false; //is c# is debuggin the c++ code(true) or default just showing where the c++ currently executing (false)
         private static bool m_bDebugNextOn = false; //is next button pressed
         private static bool m_bDebugView = false; //ability to see where the current nodes are executing
+        private static bool m_bIsListening = false;
+        private static bool m_bLogDebugInfo = false;
 
         public static bool IsConnected
         {
@@ -68,6 +70,33 @@ namespace DiTree
             set
             {
                 m_bDebugView = value;
+            }
+        }
+
+        public static bool IsListening
+        {
+            get
+            {
+                return m_bIsListening;
+            }
+            set
+            {
+                m_bIsListening = value;
+            }
+        }
+
+        /// <summary>
+        /// Log debugging data into console
+        /// </summary>
+        public static bool LogDebugInfo
+        {
+            get
+            {
+                return m_bLogDebugInfo;
+            }
+            set
+            {
+                m_bLogDebugInfo = value;
             }
         }
     }

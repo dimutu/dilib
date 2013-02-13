@@ -21,28 +21,10 @@
 namespace DiLib
 {
 	class DiBase;
-
-	//data from the enumrations in the behaviour tree
-	#pragma pack(4)
-	struct DiDebugData
-	{
-		char m_zDebugId[_DIMAXCHARLENGTH];
-		char m_zDebugTreeID[_DIMAXCHARLENGTH];
-		double m_lTime; //time since the program started
-		long m_lDebugTaskID;
-	};
-	#pragma pack()
-
-	//data from UI to control the behaviour tree
-	#pragma pack(4)
-	struct DiDebugControl
-	{
-		char m_zDebugId[_DIMAXCHARLENGTH];
-		char m_zDebugTreeID[_DIMAXCHARLENGTH];
-		int m_iCommand;
-	};
-	#pragma pack()
-
+	struct DiDebugData;
+	struct DiDebugControl;
+	struct DiDebugBreakpoint;
+	
 
 	/*
 	********************************************************************************************************************************************

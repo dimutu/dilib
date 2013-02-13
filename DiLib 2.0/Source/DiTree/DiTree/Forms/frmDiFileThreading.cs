@@ -59,5 +59,25 @@ namespace DiTree
             }
 
         }
+
+        public DiTreeNode ToggleBreakpoint()
+        {
+            if (tabDiFile.SelectedIndex >= TABSTART_INDEX)
+            {
+                if (tabDiFile.SelectedTab.GetType() == typeof(DiTabPage))
+                {
+                    DiTabPage tabActive = (DiTabPage)tabDiFile.SelectedTab;
+                    if (tabActive != null)
+                    {
+                        return tabActive.Tree.ToggleBreakpoint();
+                    }
+                }
+            }
+            return null;
+        }
+
+        public void RemoveAllBreakpoints()
+        {
+        }
     }
 }

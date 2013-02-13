@@ -111,5 +111,20 @@ namespace DiTree
 
             return zKey;
         }
+
+        /// <summary>
+        /// Gets currently selected node in the tree
+        /// </summary>
+        /// <returns></returns>
+        public DiTreeNode ToggleBreakpoint()
+        {
+            DiTreeNode node = (DiTreeNode)treeBT.SelectedNode;
+            if (node != null)
+            {
+                node.ToggleBreakpoint();
+                //TODO: update node image
+            }
+            return node;
+        }
     }
 }
