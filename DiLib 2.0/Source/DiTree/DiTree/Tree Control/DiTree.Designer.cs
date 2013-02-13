@@ -290,12 +290,24 @@
             this.imageListTasks.Images.SetKeyName(3, "selection");
             this.imageListTasks.Images.SetKeyName(4, "sequence");
             this.imageListTasks.Images.SetKeyName(5, "root");
-            this.imageListTasks.Images.SetKeyName(6, "filter_run");
+            this.imageListTasks.Images.SetKeyName(6, "task_run");
             this.imageListTasks.Images.SetKeyName(7, "condition_run");
-            this.imageListTasks.Images.SetKeyName(8, "root_run");
+            this.imageListTasks.Images.SetKeyName(8, "filter_run");
             this.imageListTasks.Images.SetKeyName(9, "selection_run");
             this.imageListTasks.Images.SetKeyName(10, "sequence_run");
-            this.imageListTasks.Images.SetKeyName(11, "task_run");
+            this.imageListTasks.Images.SetKeyName(11, "root_run");
+            this.imageListTasks.Images.SetKeyName(12, "task_bp");
+            this.imageListTasks.Images.SetKeyName(13, "condition_bp");
+            this.imageListTasks.Images.SetKeyName(14, "filter_bp");
+            this.imageListTasks.Images.SetKeyName(15, "selection_bp");
+            this.imageListTasks.Images.SetKeyName(16, "sequence_bp");
+            this.imageListTasks.Images.SetKeyName(17, "root_bp");
+            this.imageListTasks.Images.SetKeyName(18, "task_bp_run");
+            this.imageListTasks.Images.SetKeyName(19, "condition_bp_run");
+            this.imageListTasks.Images.SetKeyName(20, "filter_bp_run");
+            this.imageListTasks.Images.SetKeyName(21, "selection_bp_run");
+            this.imageListTasks.Images.SetKeyName(22, "sequence_bp_run");
+            this.imageListTasks.Images.SetKeyName(23, "root_bp_run");
             // 
             // splitProperties
             // 

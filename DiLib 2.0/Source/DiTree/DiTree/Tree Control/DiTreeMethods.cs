@@ -418,6 +418,70 @@ namespace DiTree
             }
         }
 
-       
+        public string GetTaskBreakImageKey(DICLASSTYPES a_eType)
+        {
+            string zKey = "";
+            switch (a_eType)
+            {
+                case DICLASSTYPES.DICLASSTYPE_CONDITION:
+                    zKey = "condition_bp";
+                    break;
+
+                case DICLASSTYPES.DICLASSTYPE_FILTER:
+                    zKey = "filter_bp";
+                    break;
+
+                case DICLASSTYPES.DICLASSTYPE_ROOT:
+                    zKey = "root_bp";
+                    break;
+
+                case DICLASSTYPES.DICLASSTYPE_SELECTION:
+                    zKey = "selection_bp";
+                    break;
+
+                case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
+                    zKey = "sequence_bp";
+                    break;
+
+                default:
+                    zKey = "task_bp";
+                    break;
+            }
+
+            return zKey;
+        }
+
+        public string GetTaskBreakRunImageKey(DICLASSTYPES a_eType)
+        {
+            string zKey = "";
+            switch (a_eType)
+            {
+                case DICLASSTYPES.DICLASSTYPE_CONDITION:
+                    zKey = "condition_bp_run";
+                    break;
+
+                case DICLASSTYPES.DICLASSTYPE_FILTER:
+                    zKey = "filter_bp_run";
+                    break;
+
+                case DICLASSTYPES.DICLASSTYPE_ROOT:
+                    zKey = "root_bp_run";
+                    break;
+
+                case DICLASSTYPES.DICLASSTYPE_SELECTION:
+                    zKey = "selection_bp_run";
+                    break;
+
+                case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
+                    zKey = "sequence_bp_run";
+                    break;
+
+                default:
+                    zKey = "task_bp_run";
+                    break;
+            }
+
+            return zKey;
+        }
     }
 }

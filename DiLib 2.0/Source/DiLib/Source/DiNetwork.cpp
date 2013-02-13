@@ -323,6 +323,9 @@ namespace DiLib
 #endif
 	}
 
+	/**
+	* Check the currently executing node is in the breakpoint list
+	*/
 	void CheckBreakpoint(DiBase* a_pkTask)
 	{
 #ifdef _DIDEBUG

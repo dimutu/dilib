@@ -69,7 +69,16 @@ namespace DiTree
 
         private void connectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DebugConnect();
+            if (!DiGlobals.IsConnected)
+            {
+                //connect
+                DebugConnect();
+            }
+            else if (DiGlobals.IsDebugging)
+            {
+                //continue
+                DebugPlayPause();
+            }
             DebugMenuDisplay();
         }
 

@@ -25,7 +25,14 @@ namespace DiTree
             if (m_pkCurrentRunNode != null)
             {
                 //change the old running image to normal
-                m_pkCurrentRunNode.ImageKey = GetTaskImageKey(m_pkCurrentRunNode.ClassType);
+                if (m_pkCurrentRunNode.Task.Breakpoint)
+                {
+                    m_pkCurrentRunNode.ImageKey = GetTaskBreakImageKey(m_pkCurrentRunNode.ClassType);
+                }
+                else
+                {
+                    m_pkCurrentRunNode.ImageKey = GetTaskImageKey(m_pkCurrentRunNode.ClassType);
+                }
                 m_pkCurrentRunNode.SelectedImageKey = m_pkCurrentRunNode.ImageKey;
             }
 
@@ -35,7 +42,16 @@ namespace DiTree
             if (pkDebugTreeNode != null)
             {
                 m_lCurrentDebugID = a_lDebugTaskID;
-                pkDebugTreeNode.ImageKey = GetImageKeyRun(pkDebugTreeNode.ClassType);
+                
+                if (pkDebugTreeNode.Task.Breakpoint)
+                {
+                    pkDebugTreeNode.ImageKey = GetTaskBreakRunImageKey(pkDebugTreeNode.ClassType);
+                }
+                else
+                {
+                    pkDebugTreeNode.ImageKey = GetImageKeyRun(pkDebugTreeNode.ClassType);
+                }
+
                 pkDebugTreeNode.SelectedImageKey = pkDebugTreeNode.ImageKey;
                 m_pkCurrentRunNode = pkDebugTreeNode;
             }
@@ -123,6 +139,15 @@ namespace DiTree
             {
                 node.ToggleBreakpoint();
                 //TODO: update node image
+                if (node.Task.Breakpoint)
+                {
+                    node.ImageKey = GetTaskBreakImageKey(node.ClassType);
+                }
+                else
+                {
+                    node.ImageKey = GetTaskImageKey(node.ClassType);
+                }
+                node.SelectedImageKey = node.ImageKey;
             }
             return node;
         }
