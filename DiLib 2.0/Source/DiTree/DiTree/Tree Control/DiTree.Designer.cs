@@ -102,12 +102,14 @@
             this.splitTree.Panel1.Controls.Add(this.btnSetTemplate);
             this.splitTree.Panel1.Controls.Add(this.txtTemplateClass);
             this.splitTree.Panel1.Controls.Add(this.lblTemplateClass);
+            this.splitTree.Panel1MinSize = 40;
             // 
             // splitTree.Panel2
             // 
             this.splitTree.Panel2.Controls.Add(this.treeBT);
+            this.splitTree.Panel2MinSize = 400;
             this.splitTree.Size = new System.Drawing.Size(502, 485);
-            this.splitTree.SplitterDistance = 45;
+            this.splitTree.SplitterDistance = 40;
             this.splitTree.TabIndex = 0;
             // 
             // btnSetTemplate
@@ -148,7 +150,7 @@
             this.treeBT.Location = new System.Drawing.Point(0, 0);
             this.treeBT.Name = "treeBT";
             this.treeBT.SelectedImageIndex = 0;
-            this.treeBT.Size = new System.Drawing.Size(502, 436);
+            this.treeBT.Size = new System.Drawing.Size(502, 441);
             this.treeBT.TabIndex = 0;
             this.toolTipTreeNode.SetToolTip(this.treeBT, "dgdfg");
             this.treeBT.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.treeBT_ItemDrag);

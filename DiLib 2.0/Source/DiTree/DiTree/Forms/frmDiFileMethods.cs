@@ -566,6 +566,18 @@ namespace DiTree
 
             return false;
         }
+
+        public void AddTreeNode(DICLASSTYPES a_eType)
+        {
+            if (tabDiFile.SelectedIndex >= TABSTART_INDEX)
+            {
+                if (tabDiFile.SelectedTab != null)
+                {
+                    DiTabPage kTab = (DiTabPage)tabDiFile.SelectedTab;
+                    kTab.Tree.AddNewTreeNode(a_eType);
+                }
+            }
+        }
        
     }
 }

@@ -112,5 +112,26 @@ namespace DiTree
             return node;
         }
 
+        public void RemoveAllBreakpoints()
+        {
+            DiTreeNode node = (DiTreeNode)treeBT.Nodes[0];
+            RemoveAllBreakpoints(ref node);
+        }
+
+        private void RemoveAllBreakpoints(ref DiTreeNode node)
+        {
+            DiTreeNode childnode;
+            if (node.Task.Breakpoint)
+            {
+                node.Task.Breakpoint = false;
+                node.ImageKey = DiUtility.GetTaskImageKey(node.ClassType);
+                node.SelectedImageKey = node.ImageKey;
+            }
+            for (int i = node.Nodes.Count - 1; i >= 0; --i)
+            {
+                childnode = (DiTreeNode)node.Nodes[i];
+                RemoveAllBreakpoints(ref childnode);
+            }
+        }
     }
 }

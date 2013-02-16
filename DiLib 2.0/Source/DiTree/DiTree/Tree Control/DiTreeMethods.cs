@@ -396,6 +396,20 @@ namespace DiTree
             }
         }
 
-        
+        public void AddNewTreeNode(DICLASSTYPES a_eType)
+        {
+            DiTreeNode node = (DiTreeNode)treeBT.SelectedNode;
+            if (node != null)
+            {
+                if (IsAddValidate(node))
+                {
+                    AddNewTreeNode(node, a_eType);
+                }
+                else
+                {
+                    DiMethods.MyDialogShow("Cannot add a new node. Invalid parent node or already has maximum child nodes.", MessageBoxButtons.OK);
+                }
+            }
+        }
     }
 }

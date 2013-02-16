@@ -340,5 +340,110 @@ namespace DiTree
             Application.Exit();
         }
 
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAbout frm = new frmAbout();
+            frm.ShowDialog();
+        }
+
+        private void taskToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
+            if (frmActive != null)
+            {
+                InsertTreeNode(DICLASSTYPES.DICLASSTYPE_TASK, frmActive);
+            }
+        }
+
+        private void conditionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
+            if (frmActive != null)
+            {
+                InsertTreeNode(DICLASSTYPES.DICLASSTYPE_CONDITION, frmActive);
+            }
+        }
+
+        private void filterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
+            if (frmActive != null)
+            {
+                InsertTreeNode(DICLASSTYPES.DICLASSTYPE_FILTER, frmActive);
+            }
+        }
+
+        private void sequenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
+            if (frmActive != null)
+            {
+                InsertTreeNode(DICLASSTYPES.DICLASSTYPE_SEQUENCE, frmActive);
+            }
+        }
+
+        private void selectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
+            if (frmActive != null)
+            {
+                InsertTreeNode(DICLASSTYPES.DICLASSTYPE_SELECTION, frmActive);
+            }
+        }
+
+        private void insertTaskToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
+            if (frmActive != null)
+            {
+                InsertTreeNode(DICLASSTYPES.DICLASSTYPE_TASK, frmActive);
+            }
+        }
+
+        private void insertConditionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
+            if (frmActive != null)
+            {
+                InsertTreeNode(DICLASSTYPES.DICLASSTYPE_CONDITION, frmActive);
+            }
+        }
+
+        private void insertSequenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
+            if (frmActive != null)
+            {
+                InsertTreeNode(DICLASSTYPES.DICLASSTYPE_SEQUENCE, frmActive);
+            }
+        }
+
+        private void insertSelectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
+            if (frmActive != null)
+            {
+                InsertTreeNode(DICLASSTYPES.DICLASSTYPE_SELECTION, frmActive);
+            }
+        }
+
+        private void insertFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
+            if (frmActive != null)
+            {
+                InsertTreeNode(DICLASSTYPES.DICLASSTYPE_FILTER, frmActive);
+            }
+        }
+
+        private void insertTreeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
+            if (frmActive != null)
+            {
+                frmActive.AddNewTreeTab(true);
+            }
+        }
+
     }
 }

@@ -83,6 +83,17 @@ namespace DiTree
 
         public void RemoveAllBreakpoints()
         {
+            if (tabDiFile.SelectedIndex >= TABSTART_INDEX)
+            {
+                if (tabDiFile.SelectedTab.GetType() == typeof(DiTabPage))
+                {
+                    DiTabPage tabActive = (DiTabPage)tabDiFile.SelectedTab;
+                    if (tabActive != null)
+                    {
+                        tabActive.Tree.RemoveAllBreakpoints();
+                    }
+                }
+            }
         }
 
     }

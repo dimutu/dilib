@@ -176,5 +176,10 @@ namespace DiTree
                 
             }
         }
+
+        public void InsertTreeNode(DICLASSTYPES a_eType, frmDiFile a_frmDiFile)
+        {
+            a_frmDiFile.AddTreeNode(a_eType);
+        }
     }
 }
