@@ -162,9 +162,11 @@ namespace DiTree
             if (DiGlobals.IsListening)
             {
                 DebugStopListenning();
+                DiGlobals.IsListening = false;
             }
             else if (DiGlobals.IsConnected)
             {
+                m_bIsQutting = true;
                 DebugDisconnect();
             }
             DebugMenuDisplay();
@@ -280,6 +282,12 @@ namespace DiTree
             {
                 m_frmDebugControlForm = frmActive;
             }
+        }
+
+        private void frmMDI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_bIsQutting = true;
+            DebugDisconnect();
         }
 
         

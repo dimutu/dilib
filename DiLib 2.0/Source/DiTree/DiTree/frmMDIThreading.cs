@@ -77,34 +77,42 @@ namespace DiTree
 
         private void DebugDisconnect()
         {
-            if (m_kClientSocket != null)
-            {
-                m_kClientSocket.Shutdown(SocketShutdown.Both);
-                m_kClientSocket.Disconnect(false);
-                m_kClientSocket.Dispose();
-                m_kClientSocket = null;
-            }
-
-            if (m_kMainSocket != null)
-            {
-                
-                m_kMainSocket.Shutdown(SocketShutdown.Both);
-                m_kMainSocket.Disconnect(false);
-                m_kMainSocket.Dispose();
-                m_kMainSocket = null;
-            }
-
             if (m_kMainThread != null)
             {
                 m_kMainThread.Abort();
                 m_kMainThread = null;
             }
+
             if (m_kListenThread != null)
             {
                 m_kListenThread.Abort();
                 m_kListenThread = null;
             }
 
+            if (m_kClientSocket != null)
+            {
+                m_kClientSocket.Shutdown(SocketShutdown.Both);
+                if (m_kClientSocket.Connected)
+                {
+                    m_kClientSocket.Disconnect(false);
+                }
+                m_kClientSocket.Dispose();
+                m_kClientSocket = null;
+            }
+
+            if (m_kMainSocket != null)
+            {
+                //m_kMainSocket.Shutdown(SocketShutdown.Both);
+                //if (m_kMainSocket.Connected)
+                //{
+                //    m_kMainSocket.Disconnect(false);
+                //}
+                m_kMainSocket.Dispose();
+                m_kMainSocket = null;
+            }
+
+            DiGlobals.IsConnected = false;
+            DiGlobals.IsDebugging = false;
             m_frmConsole.addOutputText("Debugger Disconnected.");
         }
 
