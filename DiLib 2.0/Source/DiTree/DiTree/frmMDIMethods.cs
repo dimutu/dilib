@@ -50,21 +50,21 @@ namespace DiTree
                     }
                     else if (zFileExt.CompareTo(DiGlobals.DIEXT_DITREE) == 0)
                     {
-                       /* frmTreeViewer n = new frmTreeViewer();
+                        frmDiTreeView n = new frmDiTreeView();
                         n.MdiParent = this;
                         n.WindowState = FormWindowState.Maximized;
-                        n.OpenTree(openFileTreeData.FileName);
+                        n.OpenTree(openFile.FileName);
                         n.Show();
-                        openFileTreeData.FileName = "";*/
+                        openFile.FileName = "";
                     }
                     else if (zFileExt.CompareTo(DiGlobals.DIEXT_DICONFIG) == 0)
                     {
-                        /*frmConfigViewer n = new frmConfigViewer();
+                        frmDiConfigFile n = new frmDiConfigFile();
                         n.MdiParent = this;
                         n.WindowState = FormWindowState.Maximized;
-                        n.OpenConfig(openFileTreeData.FileName);
+                        n.OpenFile(openFile.FileName);
                         n.Show();
-                        openFileTreeData.FileName = "";*/
+                        openFile.FileName = "";
                     }
                 }
             }

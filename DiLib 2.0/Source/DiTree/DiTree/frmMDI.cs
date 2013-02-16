@@ -208,55 +208,6 @@ namespace DiTree
             }
         }
 
-        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
-            if (frmActive != null)
-            {
-                frmActive.CopyNode();
-            }
-        }
-
-        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
-            if (frmActive != null)
-            {
-                frmActive.CutNode();
-            }
-        }
-
-        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
-            if (frmActive != null)
-            {
-                frmActive.PasteNode();
-            }
-        }
-
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
-            if (frmActive != null)
-            {
-                frmActive.RemoveNode();
-            }
-        }
-
-        private void logToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DiGlobals.LogDebugInfo = !DiGlobals.LogDebugInfo;
-            if (DiGlobals.LogDebugInfo)
-            {
-                logToolStripMenuItem.CheckState = CheckState.Checked;
-            }
-            else
-            {
-                logToolStripMenuItem.CheckState = CheckState.Unchecked;
-            }
-        }
-
         private void toggleBreakpointToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
@@ -290,6 +241,104 @@ namespace DiTree
             DebugDisconnect();
         }
 
-        
+        private void frmMDI_DragEnter(object sender, DragEventArgs e)
+        {
+            FileDragEnter(sender, e);
+        }
+
+        private void frmMDI_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            //open each file
+            foreach (string file in files)
+            {
+                OpenFile(file);
+            }
+        }
+
+        private void logToConsoleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DiGlobals.LogDebugInfo = !DiGlobals.LogDebugInfo;
+           logToConsoleToolStripMenuItem.Checked = DiGlobals.LogDebugInfo;
+        }
+
+        private void renameTreeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
+            if (frmActive != null)
+            {
+                frmActive.RenameTreeTab();
+            }
+        }
+
+        private void deleteTreeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
+            if (frmActive != null)
+            {
+                frmActive.RemoveTreeTab();
+            }
+        }
+
+        private void deleteNodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
+            if (frmActive != null)
+            {
+                frmActive.RemoveNode();
+            }
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmActive = this.ActiveMdiChild;
+            if (frmActive != null)
+            {
+                if (frmActive is frmDiFile)
+                {
+                    frmDiFile fdi = (frmDiFile)frmActive;
+                    fdi.Print(false);
+                }
+                else if (frmActive is frmDiTreeView)
+                {
+                    frmDiTreeView ftree = (frmDiTreeView)frmActive;
+                    ftree.Print(false);
+                }
+            }
+        }
+
+        private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmActive = this.ActiveMdiChild;
+            if (frmActive != null)
+            {
+                if (frmActive is frmDiFile)
+                {
+                    frmDiFile fdi = (frmDiFile)frmActive;
+                    fdi.Print(true);
+                }
+                else if (frmActive is frmDiTreeView)
+                {
+                    frmDiTreeView ftree = (frmDiTreeView)frmActive;
+                    ftree.Print(true);
+                }
+            }
+        }
+
+        private void treeInsertToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
+            if (frmActive != null)
+            {
+                frmActive.AddNewTreeTab(true);
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }

@@ -405,23 +405,14 @@ namespace DiTree
             // Set a ToolTip only if the mouse pointer is actually paused on a node.
             if ((theNode != null))
             {
-                // Verify that the tag property is not "null".
-                if (theNode.Tag != null)
+                if (theNode.ToolTip != toolTipTreeNode.GetToolTip(treeBT))
                 {
-                    // Change the ToolTip only if the pointer moved to a new node.
-                    if (theNode.Tag.ToString() != toolTipTreeNode.GetToolTip(treeBT))
-                    {
-                        toolTipTreeNode.SetToolTip(treeBT, theNode.ToolTip);
-                    }
-                }
-                else
-                {
-                    toolTipTreeNode.SetToolTip(treeBT, "");
+                    toolTipTreeNode.SetToolTip(this.treeBT, theNode.ToolTip);
                 }
             }
             else     // Pointer is not over a node so clear the ToolTip.
             {
-                toolTipTreeNode.SetToolTip(treeBT, "");
+                toolTipTreeNode.SetToolTip(this.treeBT, "");
             }
         }
 

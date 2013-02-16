@@ -17,7 +17,7 @@ namespace DiTree
         public DiTabPage(int a_iIndex)
             : base()
         {
-            this.Text = "Tree " + a_iIndex.ToString();
+            this.Text = "DiTree" + a_iIndex.ToString();
             m_pkTreeControl = new DiTree();
             m_pkTreeControl.Parent = this;
             m_pkTreeControl.Dock = DockStyle.Fill;

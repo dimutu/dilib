@@ -22,11 +22,11 @@ namespace DiTree
                 //change the old running image to normal
                 if (m_pkCurrentRunNode.Task.Breakpoint)
                 {
-                    m_pkCurrentRunNode.ImageKey = GetTaskBreakImageKey(m_pkCurrentRunNode.ClassType);
+                    m_pkCurrentRunNode.ImageKey = DiUtility.GetTaskBreakImageKey(m_pkCurrentRunNode.ClassType);
                 }
                 else
                 {
-                    m_pkCurrentRunNode.ImageKey = GetTaskImageKey(m_pkCurrentRunNode.ClassType);
+                    m_pkCurrentRunNode.ImageKey = DiUtility.GetTaskImageKey(m_pkCurrentRunNode.ClassType);
                 }
                 m_pkCurrentRunNode.SelectedImageKey = m_pkCurrentRunNode.ImageKey;
             }
@@ -40,11 +40,11 @@ namespace DiTree
                 
                 if (pkDebugTreeNode.Task.Breakpoint)
                 {
-                    pkDebugTreeNode.ImageKey = GetTaskBreakRunImageKey(pkDebugTreeNode.ClassType);
+                    pkDebugTreeNode.ImageKey = DiUtility.GetTaskBreakRunImageKey(pkDebugTreeNode.ClassType);
                 }
                 else
                 {
-                    pkDebugTreeNode.ImageKey = GetImageKeyRun(pkDebugTreeNode.ClassType);
+                    pkDebugTreeNode.ImageKey = DiUtility.GetImageKeyRun(pkDebugTreeNode.ClassType);
                 }
 
                 pkDebugTreeNode.SelectedImageKey = pkDebugTreeNode.ImageKey;
@@ -87,43 +87,7 @@ namespace DiTree
             return pkReturnNode;
         }
 
-        /// <summary>
-        /// Gets run task image for currently debugging
-        /// </summary>
-        /// <param name="a_eClassType"></param>
-        /// <returns></returns>
-        private string GetImageKeyRun(DICLASSTYPES a_eClassType)
-        {
-            string zKey = "";
-            switch (a_eClassType)
-            {
-                case DICLASSTYPES.DICLASSTYPE_CONDITION:
-                    zKey = "condition_run";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_FILTER:
-                    zKey = "filter_run";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_ROOT:
-                    zKey = "root_run";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_SELECTION:
-                    zKey = "selection_run";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
-                    zKey = "sequence_run";
-                    break;
-
-                default:
-                    zKey = "task_run";
-                    break;
-            }
-
-            return zKey;
-        }
+       
 
         /// <summary>
         /// Gets currently selected node in the tree
@@ -137,11 +101,11 @@ namespace DiTree
                 node.ToggleBreakpoint();
                 if (node.Task.Breakpoint)
                 {
-                    node.ImageKey = GetTaskBreakImageKey(node.ClassType);
+                    node.ImageKey = DiUtility.GetTaskBreakImageKey(node.ClassType);
                 }
                 else
                 {
-                    node.ImageKey = GetTaskImageKey(node.ClassType);
+                    node.ImageKey = DiUtility.GetTaskImageKey(node.ClassType);
                 }
                 node.SelectedImageKey = node.ImageKey;
             }

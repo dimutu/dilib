@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Data;
+using Pitman.Printing;
 
 namespace DiTree
 {
@@ -34,7 +35,7 @@ namespace DiTree
                 task.DebuggerID = m_lDebugIDCounter;
 
                 node.Task = task;
-                node.ImageKey = GetTaskImageKey(DICLASSTYPES.DICLASSTYPE_ROOT);
+                node.ImageKey = DiUtility.GetTaskImageKey(DICLASSTYPES.DICLASSTYPE_ROOT);
                 node.SelectedImageKey = node.ImageKey;
                 node.Text = DiXMLElements.XMLELEMENT_ROOT;
 
@@ -69,50 +70,14 @@ namespace DiTree
         private void AddTaskItem(DICLASSTYPES a_eType)
         {
             DiListViewItem item = new DiListViewItem();
-            string zKey = GetTaskImageKey(a_eType);
+            string zKey = DiUtility.GetTaskImageKey(a_eType);
             item.TaskType = a_eType;
             item.ImageKey = zKey;
             item.Text = zKey[0].ToString().ToUpper() + zKey.Substring(1);
             listTaskTypes.Items.Add(item);
         }
 
-        /// <summary>
-        /// Get image list image key from the class type
-        /// </summary>
-        /// <param name="a_eType"></param>
-        /// <returns></returns>
-        public string GetTaskImageKey(DICLASSTYPES a_eType)
-        {
-            string zKey = "";
-            switch (a_eType)
-            {
-                case DICLASSTYPES.DICLASSTYPE_CONDITION:
-                    zKey = "condition";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_FILTER:
-                    zKey = "filter";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_ROOT:
-                    zKey = "root";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_SELECTION:
-                    zKey = "selection";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
-                    zKey = "sequence";
-                    break;
-
-                default:
-                    zKey = "task";
-                    break;
-            }
-
-            return zKey;
-        }
+       
 
         /// <summary>
         /// Check the this node is valid to add a new node under it
@@ -286,7 +251,7 @@ namespace DiTree
                 pkTask.TemplateClass = txtTemplateClass.Text;
 
                 pkTreeNode.Task = pkTask;//set the task for the tree node
-                pkTreeNode.ImageKey = GetTaskImageKey(a_eType);
+                pkTreeNode.ImageKey = DiUtility.GetTaskImageKey(a_eType);
                 pkTreeNode.SelectedImageKey = pkTreeNode.ImageKey;
 
                 //set parent task node 
@@ -418,70 +383,19 @@ namespace DiTree
             }
         }
 
-        public string GetTaskBreakImageKey(DICLASSTYPES a_eType)
+        public void Print(bool a_bIsPreview)
         {
-            string zKey = "";
-            switch (a_eType)
+            PrintHelper print = new PrintHelper();
+            if (a_bIsPreview)
             {
-                case DICLASSTYPES.DICLASSTYPE_CONDITION:
-                    zKey = "condition_bp";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_FILTER:
-                    zKey = "filter_bp";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_ROOT:
-                    zKey = "root_bp";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_SELECTION:
-                    zKey = "selection_bp";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
-                    zKey = "sequence_bp";
-                    break;
-
-                default:
-                    zKey = "task_bp";
-                    break;
+                print.PrintPreviewTree(treeBT, m_zTreeName);
             }
-
-            return zKey;
+            else
+            {
+                print.PrintTree(treeBT, m_zTreeName);
+            }
         }
 
-        public string GetTaskBreakRunImageKey(DICLASSTYPES a_eType)
-        {
-            string zKey = "";
-            switch (a_eType)
-            {
-                case DICLASSTYPES.DICLASSTYPE_CONDITION:
-                    zKey = "condition_bp_run";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_FILTER:
-                    zKey = "filter_bp_run";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_ROOT:
-                    zKey = "root_bp_run";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_SELECTION:
-                    zKey = "selection_bp_run";
-                    break;
-
-                case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
-                    zKey = "sequence_bp_run";
-                    break;
-
-                default:
-                    zKey = "task_bp_run";
-                    break;
-            }
-
-            return zKey;
-        }
+        
     }
 }

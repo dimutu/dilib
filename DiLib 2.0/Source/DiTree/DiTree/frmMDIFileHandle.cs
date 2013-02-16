@@ -65,38 +65,59 @@ namespace DiTree
             string zFileExt = Path.GetExtension(a_zFileName);
             if (zFileExt.CompareTo(".didata") == 0)
             {
-                /*
-                frmDiTreeData n = new frmDiTreeData();
+                frmDiFile n = new frmDiFile();
                 n.MdiParent = this;
                 n.WindowState = FormWindowState.Maximized;
-                n.OpenTree(a_zFileName);
+                n.OpenFile(a_zFileName);
                 n.Show();
-                openFileTreeData.FileName = "";
-                 * */
             }
             else if (zFileExt.CompareTo(".ditree") == 0)
             {
-                /*
-                frmTreeViewer n = new frmTreeViewer();
+                frmDiTreeView n = new frmDiTreeView();
                 n.MdiParent = this;
                 n.WindowState = FormWindowState.Maximized;
                 n.OpenTree(a_zFileName);
                 n.Show();
-                openFileTreeData.FileName = "";
-                 */
             }
             else if (zFileExt.CompareTo(".diconfig") == 0)
             {
-                /*
-                frmConfigViewer n = new frmConfigViewer();
+                frmDiConfigFile n = new frmDiConfigFile();
                 n.MdiParent = this;
                 n.WindowState = FormWindowState.Maximized;
-                n.OpenConfig(a_zFileName);
+                n.OpenFile(a_zFileName);
                 n.Show();
-                openFileTreeData.FileName = "";
-                 */
             }
 
+        }
+
+        private void FileDragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                //check file extention
+                string[] fileExt = (string[])e.Data.GetData(DataFormats.FileDrop);
+                bool bFilesGood = true;
+
+                foreach (string file in fileExt)
+                {
+                    if (Path.GetExtension(file).CompareTo(".didata") != 0
+                                && Path.GetExtension(file).CompareTo(".ditree") != 0
+                                && Path.GetExtension(file).CompareTo(".diconfig") != 0)
+                    {
+                        bFilesGood = false;
+                        break;
+                    }
+                }
+
+                if (bFilesGood)
+                {
+                    e.Effect = DragDropEffects.All;
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+            }
         }
     }
 }

@@ -23,7 +23,7 @@ namespace DiTree
         private static bool m_bDebugNextOn = false; //is next button pressed
         private static bool m_bDebugView = false; //ability to see where the current nodes are executing
         private static bool m_bIsListening = false;
-        private static bool m_bLogDebugInfo = false;
+        private static bool m_bLogDebugInfo = true;
 
         private static bool m_bIsBreak = false; //flag break is selected from menu, then use that as a breakpoint on whatever current location is
         private static bool m_bIsResume = false; //flag menu action of continue selected

@@ -76,5 +76,17 @@ namespace DiTree
                 return txtDebugID.Text;
             }
         }
+
+        public void Print(bool a_bIsPreview)
+        {
+            if (tabDiFile.SelectedIndex >= TABSTART_INDEX)
+            {
+                if (tabDiFile.SelectedTab != null)
+                {
+                    DiTabPage pkTabPage = (DiTabPage)tabDiFile.SelectedTab;
+                    pkTabPage.Tree.Print(a_bIsPreview);
+                }
+            }
+        }
     }
 }

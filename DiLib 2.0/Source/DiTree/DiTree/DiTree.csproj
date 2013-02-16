@@ -49,14 +49,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extern\PrintHelper.cs" />
     <Compile Include="Forms\frmConsole.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmConsole.Designer.cs">
       <DependentUpon>frmConsole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmDiConfigFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDiConfigFile.Designer.cs">
+      <DependentUpon>frmDiConfigFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmDiFileThreading.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDiTreeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDiTreeView.Designer.cs">
+      <DependentUpon>frmDiTreeView.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmSelectExportTree.cs">
       <SubType>Form</SubType>
@@ -71,6 +84,7 @@
       <DependentUpon>DiPropertyControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\DiDataRow.cs" />
+    <Compile Include="Source\DiUtility.cs" />
     <Compile Include="Source\DiXMLElements.cs" />
     <Compile Include="Tab Control\DiTabPage.cs">
       <SubType>Component</SubType>
@@ -148,6 +162,12 @@
     </Compile>
     <EmbeddedResource Include="Forms\frmConsole.resx">
       <DependentUpon>frmConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDiConfigFile.resx">
+      <DependentUpon>frmDiConfigFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDiTreeView.resx">
+      <DependentUpon>frmDiTreeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSelectExportTree.resx">
       <DependentUpon>frmSelectExportTree.cs</DependentUpon>

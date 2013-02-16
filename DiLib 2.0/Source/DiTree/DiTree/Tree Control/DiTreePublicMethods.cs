@@ -251,7 +251,7 @@ namespace DiTree
                 DiTreeNode kTreeRoot = (DiTreeNode)treeBT.Nodes[0];
                 DiTask kTask = new DiTask();
 
-                kTreeRoot.ImageKey = GetTaskImageKey(DICLASSTYPES.DICLASSTYPE_ROOT);
+                kTreeRoot.ImageKey = DiUtility.GetTaskImageKey(DICLASSTYPES.DICLASSTYPE_ROOT);
                 kTask.ClassType = (DICLASSTYPES)Convert.ToInt32(reader[DiXMLElements.XMLELEMENT_NODETYPE]);
                 kTask.EnumID = Convert.ToInt32(reader[DiXMLElements.XMLELEMENT_NODEENUMID]);
                 kTask.ScriptFile = reader[DiXMLElements.XMLELEMENT_SCRIPTFILE];
@@ -455,7 +455,7 @@ namespace DiTree
             kTask.ScriptFile = reader[DiXMLElements.XMLELEMENT_NODESCRIPT_FILE];
             node.Task = kTask;
 
-            node.ImageKey = GetTaskImageKey(eType);
+            node.ImageKey = DiUtility.GetTaskImageKey(eType);
             node.SelectedImageKey = node.ImageKey;
             node.Text = kTask.ClassName;
             return node;

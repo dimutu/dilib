@@ -133,7 +133,7 @@ namespace DiTree
         /// <summary>
         /// Adds new tab page to control
         /// </summary>
-        public void AddNewTreeTab()
+        public void AddNewTreeTab(bool a_bRename = false)
         {
             int iIndex = tabDiFile.TabCount - TABSTART_INDEX;
             DiTabPage pkTabPage = new DiTabPage(iIndex);
@@ -142,7 +142,6 @@ namespace DiTree
             tabDiFile.TabPages.Add(pkTabPage);
             tabDiFile.SelectedIndex = tabDiFile.TabCount - 1;
             pkTabPage.Tree.DataHandler = m_pkDataHandler;
-            
         }
 
         /// <summary>
@@ -311,6 +310,7 @@ namespace DiTree
         {
             try
             {
+                Text = Path.GetFileName(a_zFilePath);
                 XmlReader reader = XmlReader.Create(a_zFilePath);
 
                 while (reader.Read())
