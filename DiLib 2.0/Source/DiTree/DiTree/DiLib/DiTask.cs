@@ -48,6 +48,7 @@ namespace DiTree
             m_bIsTemplate = true;
             m_pkParent = null;
             m_zTemplateClass = "";
+            m_bBreakpoint = false;
         }
 
         [Category("Task"), TypeConverter( typeof(DiStringAutoComplete)),

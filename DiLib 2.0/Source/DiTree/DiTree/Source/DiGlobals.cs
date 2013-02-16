@@ -25,6 +25,9 @@ namespace DiTree
         private static bool m_bIsListening = false;
         private static bool m_bLogDebugInfo = false;
 
+        private static bool m_bIsBreak = false; //flag break is selected from menu, then use that as a breakpoint on whatever current location is
+        private static bool m_bIsResume = false; //flag menu action of continue selected
+
         public static bool IsConnected
         {
             get
@@ -97,6 +100,36 @@ namespace DiTree
             set
             {
                 m_bLogDebugInfo = value;
+            }
+        }
+
+        /// <summary>
+        /// Break menu selected
+        /// </summary>
+        public static bool IsBreak
+        {
+            get
+            {
+                return m_bIsBreak;
+            }
+            set
+            {
+                m_bIsBreak = value;
+            }
+        }
+
+        /// <summary>
+        /// Continue menu selected
+        /// </summary>
+        public static bool IsResume
+        {
+            get
+            {
+                return m_bIsResume;
+            }
+            set
+            {
+                m_bIsResume = value;
             }
         }
     }

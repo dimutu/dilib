@@ -260,12 +260,7 @@ namespace DiTree
             frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
             if (frmActive != null)
             {
-                DiTreeNode node = frmActive.ToggleBreakpoint();
-                if (node != null)
-                {
-                    m_frmDebugControlForm = frmActive;
-                    DebugToggleBreakpoint(node.Task);
-                }
+                frmActive.ToggleBreakpoint();
             }
         }
 
@@ -275,6 +270,15 @@ namespace DiTree
             if (frmActive != null)
             {
                 frmActive.RemoveAllBreakpoints();
+            }
+        }
+
+        private void frmMDI_MdiChildActivate(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
+            if (frmActive != null)
+            {
+                m_frmDebugControlForm = frmActive;
             }
         }
 

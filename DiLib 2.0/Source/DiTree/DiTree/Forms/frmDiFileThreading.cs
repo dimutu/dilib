@@ -21,7 +21,7 @@ namespace DiTree
             return "";
         }
 
-        public void SetTreeDebugData(string a_zDebugTreeID, long a_lDebugTaskID)
+        public DiTreeNode SetTreeDebugData(string a_zDebugTreeID, long a_lDebugTaskID)
         {
             //dont want to see changing icons when behaviour tree executes
             /*if (!DiGlobals.IsDebugViewable)
@@ -41,7 +41,7 @@ namespace DiTree
                         if (tabActive.Tree != null)
                         {
                             DiTree pkTree = tabActive.Tree;
-                            pkTree.SetDebugger(a_lDebugTaskID);
+                            DiTreeNode node  = pkTree.SetDebugger(a_lDebugTaskID);
                             //if (!DiGlobals.IsDebugging)
                             //{
                             //    pkTree.SetDebugger(a_lDebugTaskID);
@@ -51,12 +51,17 @@ namespace DiTree
                             //    pkTree.SetDebugger(a_lDebugTaskID);
                             //    DiGlobals.IsDebugNextOn = false; //reset flag after updating tree current pos
                             //}
+
+                            //send node is updated back to C++
+                            return node;
                         }
                     }
                 }
 
 
             }
+
+            return null;
 
         }
 
@@ -79,5 +84,6 @@ namespace DiTree
         public void RemoveAllBreakpoints()
         {
         }
+
     }
 }

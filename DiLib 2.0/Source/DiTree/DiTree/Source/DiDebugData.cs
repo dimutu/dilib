@@ -15,10 +15,7 @@ namespace DiTree
         DIDEBUGCONTROL_STARTDEBUG, //pressed pause, so start debuging in C++
         DIDEBUGCONTROL_NEXTTASK, //move to next task in C++
         DIDEBUGCONTROL_RESUME, //stop debugging and business as usual,
-        DIDEBUGCONTROL_BREAKPOINT_ADD, //added new breakpoint
-        DIDEBUGCONTROL_BREAKPOINT_REMOVE, //removed breakpoint
-        DIDEBUGCONTROL_BREAKPOINT_REMOVE_ALL, //remove all breakpoints
-        DIDEBUGCONTROL_BREAKPOINT_EXECUTE //currently executing a breakpoint (RETURN DATA)
+        DIDEBUGCONTROL_BREAKPOINT //current node is in C# has breakpoint, sending back value to C++
     };
 
     [StructLayout(LayoutKind.Explicit, Size = DiGlobals._DIDEBUGSTRUCTSIZE)]
@@ -64,4 +61,5 @@ namespace DiTree
         [FieldOffset(516)]
         public long m_lDebugTaskID;
     };
+
 }

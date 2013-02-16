@@ -77,10 +77,19 @@ namespace DiTree
 
         private void DebugDisconnect()
         {
+            if (m_kClientSocket != null)
+            {
+                m_kClientSocket.Shutdown(SocketShutdown.Both);
+                m_kClientSocket.Disconnect(false);
+                m_kClientSocket.Dispose();
+                m_kClientSocket = null;
+            }
+
             if (m_kMainSocket != null)
             {
-                m_kMainSocket.Disconnect(false);
+                
                 m_kMainSocket.Shutdown(SocketShutdown.Both);
+                m_kMainSocket.Disconnect(false);
                 m_kMainSocket.Dispose();
                 m_kMainSocket = null;
             }
@@ -240,30 +249,26 @@ namespace DiTree
             {
                 this.Invoke(new MethodInvoker(delegate
                 {
-                    if (a_kDebugData.m_eCommand == DIDEBUGCONTROLS.DIDEBUGCONTROL_BREAKPOINT_EXECUTE)
+                    //returning current executing node data
+                    Form frmActive = this.ActiveMdiChild;
+                    if (frmActive != null)
                     {
-                        //sending current node triggered a breakpoint
-                        DiGlobals.IsDebugging = true;
-                        DebugMenuDisplay();
-                    }
-                    else
-                    {
-                        //returning current executing node data
-                        Form frmActive = this.ActiveMdiChild;
-                        if (frmActive != null)
-                        {
 
-                            if (frmActive.GetType() == typeof(frmDiFile))
+                        if (frmActive.GetType() == typeof(frmDiFile))
+                        {
+                            frmDiFile f = (frmDiFile)frmActive;
+                            if (f.DebugID == a_kDebugData.m_zDebugID) //check active tree is the one that data is coming for
                             {
-                                frmDiFile f = (frmDiFile)frmActive;
-                                if (f.DebugID == a_kDebugData.m_zDebugID) //check active tree is the one that data is coming for
+                                DiTreeNode node = f.SetTreeDebugData(a_kDebugData.m_zDebugTreeID, a_kDebugData.m_lDebugTaskID);
+                                //send back the node is updated
+                                if (node != null)
                                 {
-                                    f.SetTreeDebugData(a_kDebugData.m_zDebugTreeID, a_kDebugData.m_lDebugTaskID);
+                                    SendDebugTask(node.Task);
                                 }
                             }
                         }
-
                     }
+
 
                     //place any data coming in to console
                     if (a_kDebugData != null)
@@ -334,7 +339,8 @@ namespace DiTree
                 //toolStripDebugPause.Image = Properties.Resources.control_play;
                 DiGlobals.IsDebugNextOn = true;
                 //toolStripDebugPause.ToolTipText = "Stop Debugging";
-                SendDebugCommands(DIDEBUGCONTROLS.DIDEBUGCONTROL_STARTDEBUG);
+                //SendDebugCommands(DIDEBUGCONTROLS.DIDEBUGCONTROL_STARTDEBUG);
+                DiGlobals.IsBreak = true;
 
                 //on debug through UI must have the viewable on
                 if (!DiGlobals.IsDebugViewable)
@@ -350,6 +356,7 @@ namespace DiTree
                // toolStripDebugPause.Image = Properties.Resources.control_pause;
                // toolStripDebugPause.ToolTipText = "Start Debugging";
                 SendDebugCommands(DIDEBUGCONTROLS.DIDEBUGCONTROL_RESUME);
+               // DiGlobals.IsResume = true;
             }
         }
 
@@ -385,18 +392,6 @@ namespace DiTree
                             kDebugControl.m_zDebugID = m_frmDebugControlForm.DebugID;
                             kDebugControl.m_zDebugTreeID = m_frmDebugControlForm.GetTabTreeName();
 
-
-                            switch (eControl)
-                            {
-                                case DIDEBUGCONTROLS.DIDEBUGCONTROL_RESUME:
-                                    {
-                                        m_frmDebugControlForm = null;
-                                        break;
-                                    }
-                                default:
-                                    break;
-                            }
-
                             byte[] barr = new byte[DiGlobals._DIDEBUGCONTROLSIZE];
                             IntPtr ptr = Marshal.AllocHGlobal(DiGlobals._DIDEBUGCONTROLSIZE);
 
@@ -414,45 +409,62 @@ namespace DiTree
 
         }
 
-        private void SendDebugCommands(DIDEBUGCONTROLS eControl, DiTask a_pkTask)
+        /// <summary>
+        /// Send the task back to C++
+        /// </summary>
+        /// <param name="a_pkTask"></param>
+        private void SendDebugTask(DiTask a_pkTask)
         {
-            if (m_kClientSocket != null)
+            if (m_kClientSocket != null && a_pkTask != null)
             {
                 if (m_kClientSocket.Connected)
                 {
-                    if (eControl != DIDEBUGCONTROLS.DIDEBUGCONTROL_NONE)
+                    DiDebugControl kDebugControl = new DiDebugControl();
+                    bool debug = DiGlobals.IsDebugging;
+                    if (a_pkTask.Breakpoint)
                     {
-                        DiDebugControl kDebugControl = new DiDebugControl();
-                        kDebugControl.m_eCommand = eControl;
-                        if (m_frmDebugControlForm != null)
-                        {
-                            kDebugControl.m_zDebugID = m_frmDebugControlForm.DebugID;
-                            kDebugControl.m_zDebugTreeID = m_frmDebugControlForm.GetTabTreeName();
-                            kDebugControl.m_lDebugTaskID = a_pkTask.DebuggerID;
-
-                            byte[] barr = new byte[DiGlobals._DIDEBUGCONTROLSIZE];
-                            IntPtr ptr = Marshal.AllocHGlobal(DiGlobals._DIDEBUGCONTROLSIZE);
-
-                            Marshal.StructureToPtr(kDebugControl, ptr, true);
-                            Marshal.Copy(ptr, barr, 0, DiGlobals._DIDEBUGCONTROLSIZE);
-                            Marshal.FreeHGlobal(ptr);
-
-                            m_kClientSocket.Send(barr, DiGlobals._DIDEBUGCONTROLSIZE, SocketFlags.None);
-                        }
-
+                        kDebugControl.m_eCommand = DIDEBUGCONTROLS.DIDEBUGCONTROL_BREAKPOINT;
+                        DiGlobals.IsDebugging = true;
                     }
+                    else if (DiGlobals.IsBreak)
+                    {
+                        kDebugControl.m_eCommand = DIDEBUGCONTROLS.DIDEBUGCONTROL_STARTDEBUG;
+                        DiGlobals.IsBreak = false;
+                    }
+                    else if (DiGlobals.IsResume)
+                    {
+                        kDebugControl.m_eCommand = DIDEBUGCONTROLS.DIDEBUGCONTROL_RESUME;
+                        DiGlobals.IsResume = false;
+                    }
+                    else
+                    {
+                        kDebugControl.m_eCommand = DIDEBUGCONTROLS.DIDEBUGCONTROL_NONE;
+                    }
+                    if (debug != DiGlobals.IsDebugging)
+                    {
+                        DebugMenuDisplay();
+                    }
+                    if (m_frmDebugControlForm != null)
+                    {
+                        kDebugControl.m_zDebugID = m_frmDebugControlForm.DebugID;
+                        kDebugControl.m_zDebugTreeID = m_frmDebugControlForm.GetTabTreeName();
+                        kDebugControl.m_lDebugTaskID = a_pkTask.DebuggerID;
+
+                        byte[] barr = new byte[DiGlobals._DIDEBUGCONTROLSIZE];
+                        IntPtr ptr = Marshal.AllocHGlobal(DiGlobals._DIDEBUGCONTROLSIZE);
+
+                        Marshal.StructureToPtr(kDebugControl, ptr, true);
+                        Marshal.Copy(ptr, barr, 0, DiGlobals._DIDEBUGCONTROLSIZE);
+                        Marshal.FreeHGlobal(ptr);
+
+                        m_kClientSocket.Send(barr, DiGlobals._DIDEBUGCONTROLSIZE, SocketFlags.None);
+                    }
+
+                    
                 }
             }
 
 
-        }
-
-        private void DebugToggleBreakpoint(DiTask a_pkTask)
-        {
-            if (DiGlobals.IsConnected)
-            {
-                SendDebugCommands(DIDEBUGCONTROLS.DIDEBUGCONTROL_BREAKPOINT_ADD, a_pkTask);
-            }
         }
     }
 }

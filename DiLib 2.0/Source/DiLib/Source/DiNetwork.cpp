@@ -51,15 +51,14 @@ namespace DiLib
 	std::string m_zDebugID;
 	std::string m_zDebugTreeID;
 	int m_iDebugCommand = 0;
-	std::vector<long> m_alBreakpoints; //all the breakpoints stored here
+	bool m_bWaitAtNextNode = false;
 
 	//function declaration
 	bool InitWinSock(); //initialize windows socket for connection
 	void CreateSocket(); //connect to network socket
 	void Send(DiBase* a_pkTask);  //send data to connected port 
-	void Receive(DiBase* a_pkTask); // receive messages (UI debug commands)
-	void SetBreakpoint(long a_lDebugTaskID, bool a_bRemove = false); //set breakpoints list
-	void CheckBreakpoint(DiBase* a_pkTask);
+	bool Receive(DiBase* a_pkTask); // receive messages (UI debug commands)
+	void Wait(DiBase* a_pkTask);
 
 	/*
 	********************************************************************************************************************************************
@@ -162,10 +161,17 @@ namespace DiLib
 	{
 #ifdef _DIDEBUG
 
-		Receive(a_pkTask); //check for incoming data
-		CheckBreakpoint(a_pkTask); //check current node is set for breakpoint
 		Send(a_pkTask);
 
+		//set to wait on receive for response from the UI that is being updated
+		u_long iMode = 0;
+		ioctlsocket(m_kSendSocket, FIONBIO, &iMode);
+
+		if (Receive(a_pkTask) || m_bWaitAtNextNode) //check for incoming data
+		{
+			m_bWaitAtNextNode = false;
+			Wait(a_pkTask);
+		}
 		return true;
 
 #else
@@ -183,8 +189,8 @@ namespace DiLib
 	void Send(DiLib::DiBase* a_pkTask) //send data to connected clients
 	{
 #ifdef _DIDEBUG
+
 		DiDebugData kData;
-		//strcpy_s(kData.m_zEnumName, a_pkTask->GetDebugIdentifier());
 		strcpy_s(kData.m_zDebugId, a_pkTask->GetDebugId());
 		strcpy_s(kData.m_zDebugTreeID, a_pkTask->GetDebugTreeId());
 		kData.m_lDebugTaskID = a_pkTask->GetDebugTaskId();
@@ -196,10 +202,93 @@ namespace DiLib
 		
 	}
 
-	void Receive(DiLib::DiBase* a_pkTask)
+	bool Receive(DiLib::DiBase* a_pkTask)
 	{
 #ifdef _DIDEBUG
 
+		DiDebugControl kControl;
+		char zBuff[ sizeof(DiDebugControl) ];
+		int iByteRecv = 0;
+		long lTaskID = 0;
+		bool bWait = false;
+
+		if (m_zDebugID.size() > 0) //debug control set
+		{
+			//only call receive only if this is the task thats paused from UI
+			if (m_zDebugID.compare(a_pkTask->GetDebugId()) != 0)
+			{
+				//this is not the command intended tree, ignore
+				return false;
+			}
+			else if (m_zDebugTreeID.compare( a_pkTask->GetDebugTreeId() ) != 0)
+			{
+				return false;
+			}
+		}
+
+		iByteRecv = recv(m_kSendSocket, zBuff, sizeof(DiDebugControl), 0);
+
+		if (iByteRecv > 0)
+		{
+			//get the command sent from the c# UI
+			/*
+			0. DIDEBUGCONTROL_NONE, //for threading so it can set once the current control is sent to c++
+			1. DIDEBUGCONTROL_STARTDEBUG, //pressed pause, so start debuging in C++
+			2. DIDEBUGCONTROL_NEXTTASK, //move to next task in C++
+			3. DIDEBUGCONTROL_RESUME, //stop debugging and business as usual,
+			4. DIDEBUGCONTROL_BREAKPOINT //reached breakpoint
+			*/
+			memcpy((char*)&kControl, zBuff, sizeof(DiDebugControl));
+
+			//set debug properties
+			m_zDebugID = kControl.m_zDebugId;
+			m_zDebugTreeID = kControl.m_zDebugTreeID;
+			m_iDebugCommand = kControl.m_iCommand;
+			lTaskID = kControl.m_lDebugTaskID;
+
+			switch (m_iDebugCommand)
+			{
+			case 1: case 4:
+				{
+					//pausing, set to hold for UI commands
+					u_long iMode = 0;
+					ioctlsocket(m_kSendSocket, FIONBIO, &iMode);
+					bWait = true;
+					break;
+				}
+				
+			case 2:
+				{
+					break;
+				}
+
+			case 3:
+				{
+					//set back not blocking
+					u_long iMode = 1;
+					ioctlsocket(m_kSendSocket, FIONBIO, &iMode);
+
+					m_zDebugID.clear();
+					m_zDebugTreeID.clear();
+					m_iDebugCommand = 0;
+					m_bWaitAtNextNode = false;
+					break;
+				}
+
+			default:
+				break;
+			}
+			
+		}
+		return bWait;
+#else
+		return false;
+#endif
+	}
+
+	void Wait(DiLib::DiBase* a_pkTask)
+	{
+#ifdef _DIDEBUG
 		DiDebugControl kControl;
 		char zBuff[ sizeof(DiDebugControl) ];
 		int iByteRecv = 0;
@@ -229,10 +318,7 @@ namespace DiLib
 			1. DIDEBUGCONTROL_STARTDEBUG, //pressed pause, so start debuging in C++
 			2. DIDEBUGCONTROL_NEXTTASK, //move to next task in C++
 			3. DIDEBUGCONTROL_RESUME, //stop debugging and business as usual,
-			4. DIDEBUGCONTROL_BREAKPOINT_ADD, //added new breakpoint
-			5. DIDEBUGCONTROL_BREAKPOINT_REMOVE, //removed breakpoint
-			6. DIDEBUGCONTROL_BREAKPOINT_REMOVE_ALL //remove all breakpoints
-			7. DIDEBUGCONTROL_BREAKPOINT_EXECUTE //currently executing at the break point
+			4. DIDEBUGCONTROL_BREAKPOINT //reached breakpoint
 			*/
 			memcpy((char*)&kControl, zBuff, sizeof(DiDebugControl));
 
@@ -244,19 +330,11 @@ namespace DiLib
 
 			switch (m_iDebugCommand)
 			{
-			case 1:
-				{
-					//pausing, set to hold for UI commands
-					u_long iMode = 0;
-					ioctlsocket(m_kSendSocket, FIONBIO, &iMode);
-					break;
-				}
-				
 			case 2:
 				{
+					m_bWaitAtNextNode = true;
 					break;
 				}
-
 			case 3:
 				{
 					//set back not blocking
@@ -266,23 +344,7 @@ namespace DiLib
 					m_zDebugID.clear();
 					m_zDebugTreeID.clear();
 					m_iDebugCommand = 0;
-					break;
-				}
-			case 4: //add new breakpoint
-				{
-					SetBreakpoint(lTaskID);
-					break;
-				}
-				
-			case 5: //remove breakpoint
-				{
-					SetBreakpoint(lTaskID, true);
-					break;
-				}
-
-			case 6: //remove all breakpoints
-				{
-					m_alBreakpoints.erase(m_alBreakpoints.begin(), m_alBreakpoints.end());
+					m_bWaitAtNextNode = false;
 					break;
 				}
 
@@ -290,63 +352,6 @@ namespace DiLib
 				break;
 			}
 			
-		}
-#endif
-	}
-
-	/**
-	* Set breakpoints list
-	*/
-	void SetBreakpoint(long a_lDebugTaskID, bool a_bRemove)
-	{
-#ifdef _DIDEBUG
-		std::vector<long>::iterator itr = m_alBreakpoints.begin();
-		bool bExists = false;
-
-		for (; itr != m_alBreakpoints.end(); ++itr)
-		{
-			if (*itr == a_lDebugTaskID)
-			{
-				bExists = true;
-				if (a_bRemove)
-				{
-					m_alBreakpoints.erase(itr);
-				}
-				break;
-			}
-		}
-
-		if (!bExists && !a_bRemove)
-		{
-			m_alBreakpoints.push_back(a_lDebugTaskID);
-		}
-#endif
-	}
-
-	/**
-	* Check the currently executing node is in the breakpoint list
-	*/
-	void CheckBreakpoint(DiBase* a_pkTask)
-	{
-#ifdef _DIDEBUG
-		std::vector<long>::iterator itr = m_alBreakpoints.begin();
-		u_long iMode = 0;
-		for (; itr != m_alBreakpoints.end(); ++itr)
-		{
-			if (*itr == a_pkTask->GetDebugTaskId())
-			{
-				//send message to say at the breakpoint
-				DiDebugData kData;
-				strcpy_s(kData.m_zDebugId, a_pkTask->GetDebugId());
-				strcpy_s(kData.m_zDebugTreeID, a_pkTask->GetDebugTreeId());
-				kData.m_lDebugTaskID = a_pkTask->GetDebugTaskId();
-				kData.m_lTime = clock();
-				kData.m_iCommand = 7; //DIDEBUGCONTROL_BREAKPOINT_EXECUTE
-				sendto(m_kSendSocket, (char*)&kData, sizeof(kData), 0, (SOCKADDR*)&m_kRecevAddr, sizeof(m_kRecevAddr) );
-
-				ioctlsocket(m_kSendSocket, FIONBIO, &iMode);
-				break;
-			}
 		}
 #endif
 	}

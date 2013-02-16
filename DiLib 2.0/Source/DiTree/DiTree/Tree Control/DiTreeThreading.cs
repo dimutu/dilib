@@ -15,13 +15,8 @@ namespace DiTree
         /// Set debugging node to display
         /// </summary>
         /// <param name="a_lDebugTaskID"></param>
-        public void SetDebugger(long a_lDebugTaskID)
+        public DiTreeNode SetDebugger(long a_lDebugTaskID)
         {
-            if (m_lCurrentDebugID == a_lDebugTaskID)
-            {
-                return;
-            }
-
             if (m_pkCurrentRunNode != null)
             {
                 //change the old running image to normal
@@ -55,6 +50,8 @@ namespace DiTree
                 pkDebugTreeNode.SelectedImageKey = pkDebugTreeNode.ImageKey;
                 m_pkCurrentRunNode = pkDebugTreeNode;
             }
+
+            return m_pkCurrentRunNode;
         }
 
         /// <summary>
@@ -138,7 +135,6 @@ namespace DiTree
             if (node != null)
             {
                 node.ToggleBreakpoint();
-                //TODO: update node image
                 if (node.Task.Breakpoint)
                 {
                     node.ImageKey = GetTaskBreakImageKey(node.ClassType);
@@ -151,5 +147,6 @@ namespace DiTree
             }
             return node;
         }
+
     }
 }

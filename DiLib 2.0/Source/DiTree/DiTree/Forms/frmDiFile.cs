@@ -17,6 +17,7 @@ namespace DiTree
         public const int TABSTART_INDEX = 2; //two tabs will be there always (heders, add new*)
         private string m_zFilePath; //save path
 
+
         public frmDiFile()
         {
             InitializeComponent();

@@ -728,6 +728,7 @@
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuMDI;
             this.Name = "frmMDI";
+            this.MdiChildActivate += new System.EventHandler(this.frmMDI_MdiChildActivate);
             this.statusStripMDI.ResumeLayout(false);
             this.statusStripMDI.PerformLayout();
             this.menuMDI.ResumeLayout(false);
