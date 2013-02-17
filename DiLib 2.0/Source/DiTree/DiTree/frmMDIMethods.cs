@@ -128,11 +128,11 @@ namespace DiTree
                     frmDiFile f = (frmDiFile)frmActive;
                     if (f.ExportConfig(saveConfigFile.FileName))
                     {
-                        DiMethods.SetStatusMessage("Export completed.");
+                        DiMethods.SetStatusMessage(DiLangID.ID_EXPORT_COMPLETE);
                     }
                     else
                     {
-                        DiMethods.SetStatusMessage("Export failed.");
+                        DiMethods.SetStatusMessage(DiLangID.ID_ERROR_EXPORT_FILE);
                     }
                 }
             }
@@ -165,11 +165,11 @@ namespace DiTree
                     {
                         if (f.ExportTree(saveTreeFile.FileName, m_frmSelectTree.SelectedIndex))
                         {
-                            DiMethods.SetStatusMessage("Export completed.");
+                            DiMethods.SetStatusMessage(DiLangID.ID_EXPORT_COMPLETE);
                         }
                         else
                         {
-                            DiMethods.SetStatusMessage("Export failed.");
+                            DiMethods.SetStatusMessage(DiLangID.ID_ERROR_EXPORT_FILE);
                         }
                     }
                 }

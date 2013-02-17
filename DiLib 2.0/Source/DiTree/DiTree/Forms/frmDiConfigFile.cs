@@ -43,7 +43,7 @@ namespace DiTree
             catch (Exception e)
             {
                 DiMethods.SetErrorLog(e);
-                DiMethods.SetStatusMessage("Error loading file.");
+                DiMethods.SetStatusMessage(DiLangID.ID_ERROR_LOAD_FILE);
                 DiMethods.MyDialogShow("Unable to load config file.", MessageBoxButtons.OK);
                 Console.Write(e.Message.ToString());
             }

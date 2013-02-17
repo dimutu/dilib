@@ -290,7 +290,7 @@ namespace DiTree
             catch (Exception ex)
             {
                 DiMethods.SetErrorLog(ex);
-                DiMethods.SetStatusMessage("Error loading file.");
+                DiMethods.SetStatusMessage(DiLangID.ID_ERROR_LOAD_FILE);
                 DiMethods.MyDialogShow("Unable to load tree, please check the data file is valid.", MessageBoxButtons.OK);
 
 #if DEBUG
@@ -512,7 +512,7 @@ namespace DiTree
             catch (Exception ex)
             {
                 DiMethods.SetErrorLog(ex);
-                DiMethods.SetStatusMessage("Error saving file.");
+                DiMethods.SetStatusMessage(DiLangID.ID_ERROR_SAVE_FILE);
                 DiMethods.MyDialogShow("Unable to save file.", MessageBoxButtons.OK);
 #if DEBUG
                 Console.WriteLine(ex.Message);

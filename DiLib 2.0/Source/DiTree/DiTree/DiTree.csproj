@@ -111,6 +111,7 @@
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Source\DiDataRow.cs" />
+    <Compile Include="Source\DiLangID.cs" />
     <Compile Include="Source\DiUtility.cs" />
     <Compile Include="Source\DiXMLElements.cs" />
     <Compile Include="Tab Control\DiTabPage.cs">

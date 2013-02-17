@@ -299,14 +299,14 @@ namespace DiTree
                 //check any data file has loaded
                 if (this.ActiveMdiChild == null)
                 {
-                    DiMethods.SetStatusMessage("No data file open for debugging.");
+                    DiMethods.SetStatusMessage(DiLangID.ID_ERROR_NO_DEBUG_FILE);
                     return;
                 }
                 else
                 {
                     if (this.ActiveMdiChild.GetType() != typeof(frmDiFile))
                     {
-                        DiMethods.SetStatusMessage("No data file open for debugging.");
+                        DiMethods.SetStatusMessage(DiLangID.ID_ERROR_NO_DEBUG_FILE);
                         return;
                     }
                     else

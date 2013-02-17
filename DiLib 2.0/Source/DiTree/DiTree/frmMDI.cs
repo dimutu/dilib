@@ -17,11 +17,12 @@ namespace DiTree
     {
         private frmConsole m_frmConsole;
         private frmSelectExportTree m_frmSelectTree; //select tree fro exporting the tree from currently selected frmDiFile
+        
         public frmMDI()
         {
             m_frmSelectTree = new frmSelectExportTree();
-            DiMethods.StatusMessageLable = toolStripStatusMsg;
             m_frmConsole = new frmConsole();
+            DiMethods.StatusMessageLable = toolStripStatusMessage;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -30,6 +31,28 @@ namespace DiTree
             string[] args = Environment.GetCommandLineArgs();
             LoadFiles(args); 
             DebugMenuDisplay();
+        }
+
+        private void showHelptoolStrip(object sender, EventArgs e)
+        {
+            if (sender is ToolStripMenuItem)
+            {
+                ToolStripMenuItem menu = (ToolStripMenuItem)sender;
+                DiMethods.StatusMessageLable = toolStripStatusMessage;
+                DiMethods.SetStatusMessage(menu.Tag.ToString());
+            }
+            else if (sender is ToolStripButton)
+            {
+                ToolStripButton btn = (ToolStripButton)sender;
+                DiMethods.StatusMessageLable = toolStripStatusMessage;
+                DiMethods.SetStatusMessage(btn.Tag.ToString());
+            }
+        }
+
+        private void hideHelptoolStrip(object sender, EventArgs e)
+        {
+            DiMethods.StatusMessageLable = toolStripStatusMessage;
+            DiMethods.SetStatusMessage(DiLangID.ID_EMPTY);
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -443,6 +466,11 @@ namespace DiTree
             {
                 frmActive.AddNewTreeTab(true);
             }
+        }
+
+        private void allToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

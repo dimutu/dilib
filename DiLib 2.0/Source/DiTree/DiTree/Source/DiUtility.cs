@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
+using System.Resources;
 
 namespace DiTree
 {
     public static class DiUtility
     {
+        private static ResourceManager m_kResourceManager = Properties.Resources.ResourceManager;
         /// <summary>
         /// Gets run task image for currently debugging
         /// </summary>
@@ -147,6 +150,11 @@ namespace DiTree
             }
 
             return zKey;
+        }
+
+        public static string GetString(string a_zID)
+        {
+            return m_kResourceManager.GetString(a_zID);
         }
     }
 }

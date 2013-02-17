@@ -64,11 +64,11 @@ namespace DiTree
         /// Set the MDI status message on if its already set
         /// </summary>
         /// <param name="a_zMessage"></param>
-        public static void SetStatusMessage(string a_zMessage)
+        public static void SetStatusMessage(string a_zID)
         {
             if (m_pkStatusMsgLable != null)
             {
-                m_pkStatusMsgLable.Text = a_zMessage;
+                m_pkStatusMsgLable.Text = DiUtility.GetString(a_zID);
             }
         }
 
@@ -100,7 +100,7 @@ namespace DiTree
 #if DEBUG
                 Console.WriteLine(e.ToString());
 #endif
-                SetStatusMessage("Unable to write to error log.");
+                SetStatusMessage(DiLangID.ID_ERROR_WRITING_LOG);
             }
         }
 
