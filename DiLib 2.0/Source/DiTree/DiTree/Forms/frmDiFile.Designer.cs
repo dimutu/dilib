@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDiFile));
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDebugID = new System.Windows.Forms.TextBox();
@@ -41,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPageNew = new System.Windows.Forms.TabPage();
             this.tabDiFile = new System.Windows.Forms.TabControl();
+            this.btnCloseTab = new System.Windows.Forms.Button();
             this.tabPageGeneral.SuspendLayout();
             this.tabDiFile.SuspendLayout();
             this.SuspendLayout();
@@ -187,11 +189,23 @@
             this.tabDiFile.TabIndex = 2;
             this.tabDiFile.SelectedIndexChanged += new System.EventHandler(this.tabDiFile_SelectedIndexChanged);
             // 
+            // btnCloseTab
+            // 
+            this.btnCloseTab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCloseTab.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseTab.Image")));
+            this.btnCloseTab.Location = new System.Drawing.Point(711, 4);
+            this.btnCloseTab.Name = "btnCloseTab";
+            this.btnCloseTab.Size = new System.Drawing.Size(20, 20);
+            this.btnCloseTab.TabIndex = 3;
+            this.btnCloseTab.UseVisualStyleBackColor = true;
+            this.btnCloseTab.Click += new System.EventHandler(this.btnCloseTab_Click);
+            // 
             // frmDiFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 490);
+            this.Controls.Add(this.btnCloseTab);
             this.Controls.Add(this.tabDiFile);
             this.KeyPreview = true;
             this.Name = "frmDiFile";
@@ -218,5 +232,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPageNew;
         private System.Windows.Forms.TabControl tabDiFile;
+        private System.Windows.Forms.Button btnCloseTab;
     }
 }

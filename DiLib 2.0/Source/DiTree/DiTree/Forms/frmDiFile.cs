@@ -88,5 +88,17 @@ namespace DiTree
                 }
             }
         }
+
+        private void btnCloseTab_Click(object sender, EventArgs e)
+        {
+            if (tabDiFile.SelectedIndex >= TABSTART_INDEX)
+            {
+                if (tabDiFile.SelectedTab != null)
+                {
+                    DiTabPage pkTabPage = (DiTabPage)tabDiFile.SelectedTab;
+                    RemoveTreeTab();
+                }
+            }
+        }
     }
 }

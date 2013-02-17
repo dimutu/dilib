@@ -43,7 +43,7 @@ namespace DiTree
         {
             string zFile = "";
             int iCounter = 0;
-            InitializeComponent();
+            
             InitializeFileHandler();
 
             if (a_azFiles != null)

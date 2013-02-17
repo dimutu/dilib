@@ -20,6 +20,7 @@ namespace DiTree
         
         public frmMDI()
         {
+            InitializeComponent();
             m_frmSelectTree = new frmSelectExportTree();
             m_frmConsole = new frmConsole();
             DiMethods.StatusMessageLable = toolStripStatusMessage;
@@ -38,13 +39,11 @@ namespace DiTree
             if (sender is ToolStripMenuItem)
             {
                 ToolStripMenuItem menu = (ToolStripMenuItem)sender;
-                DiMethods.StatusMessageLable = toolStripStatusMessage;
                 DiMethods.SetStatusMessage(menu.Tag.ToString());
             }
             else if (sender is ToolStripButton)
             {
                 ToolStripButton btn = (ToolStripButton)sender;
-                DiMethods.StatusMessageLable = toolStripStatusMessage;
                 DiMethods.SetStatusMessage(btn.Tag.ToString());
             }
         }
@@ -115,6 +114,11 @@ namespace DiTree
                 breakToolStripMenuItem.Enabled = false;
                 debugStepToolStripMenuItem.Enabled = false;
                 disconnectToolStripMenuItem.Enabled = true;
+
+                toolStripBtnDebugStart.Enabled = false;
+                toolStripBtnDebugBreak.Enabled = false;
+                toolStripBtnDebugStep.Enabled = false;
+                toolStripBtnDebugStop.Enabled = true;
             }
             else if (DiGlobals.IsConnected && !DiGlobals.IsDebugging)
             {
@@ -124,6 +128,11 @@ namespace DiTree
                 breakToolStripMenuItem.Enabled = true;
                 debugStepToolStripMenuItem.Enabled = false;
                 disconnectToolStripMenuItem.Enabled = true;
+
+                toolStripBtnDebugStart.Enabled = false;
+                toolStripBtnDebugBreak.Enabled = true;
+                toolStripBtnDebugStep.Enabled = false;
+                toolStripBtnDebugStop.Enabled = true;
             }
             else if (DiGlobals.IsConnected && DiGlobals.IsDebugging)
             {
@@ -132,6 +141,11 @@ namespace DiTree
                 breakToolStripMenuItem.Enabled = false;
                 debugStepToolStripMenuItem.Enabled = true;
                 disconnectToolStripMenuItem.Enabled = true;
+
+                toolStripBtnDebugStart.Enabled = true;
+                toolStripBtnDebugBreak.Enabled = false;
+                toolStripBtnDebugStep.Enabled = true;
+                toolStripBtnDebugStop.Enabled = true;
             }
             else
             {
@@ -140,6 +154,11 @@ namespace DiTree
                 breakToolStripMenuItem.Enabled = false;
                 debugStepToolStripMenuItem.Enabled = false;
                 disconnectToolStripMenuItem.Enabled = false;
+
+                toolStripBtnDebugStart.Enabled = true;
+                toolStripBtnDebugBreak.Enabled = false;
+                toolStripBtnDebugStep.Enabled = false;
+                toolStripBtnDebugStop.Enabled = false;
             }
         }
 
@@ -471,6 +490,47 @@ namespace DiTree
         private void allToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripBtnDebugStart_Click(object sender, EventArgs e)
+        {
+            if (!DiGlobals.IsConnected)
+            {
+                //connect
+                DebugConnect();
+            }
+            else if (DiGlobals.IsDebugging)
+            {
+                //continue
+                DebugPlayPause();
+            }
+            DebugMenuDisplay();
+        }
+
+        private void toolStripBtnDebugStop_Click(object sender, EventArgs e)
+        {
+            if (DiGlobals.IsListening)
+            {
+                DebugStopListenning();
+                DiGlobals.IsListening = false;
+            }
+            else if (DiGlobals.IsConnected)
+            {
+                m_bIsQutting = true;
+                DebugDisconnect();
+            }
+            DebugMenuDisplay();
+        }
+
+        private void toolStripBtnDebugBreak_Click(object sender, EventArgs e)
+        {
+            DebugPlayPause();
+            DebugMenuDisplay();
+        }
+
+        private void toolStripBtnDebugStep_Click(object sender, EventArgs e)
+        {
+            DebugPlayForward();
         }
 
     }
