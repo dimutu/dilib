@@ -62,7 +62,7 @@
             this.tabPageGeneral.Location = new System.Drawing.Point(4, 54);
             this.tabPageGeneral.Name = "tabPageGeneral";
             this.tabPageGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGeneral.Size = new System.Drawing.Size(732, 432);
+            this.tabPageGeneral.Size = new System.Drawing.Size(772, 432);
             this.tabPageGeneral.TabIndex = 0;
             this.tabPageGeneral.Text = "General";
             this.tabPageGeneral.ToolTipText = "Lists Including Header Files";
@@ -185,7 +185,7 @@
             this.tabDiFile.Name = "tabDiFile";
             this.tabDiFile.Padding = new System.Drawing.Point(20, 5);
             this.tabDiFile.SelectedIndex = 0;
-            this.tabDiFile.Size = new System.Drawing.Size(740, 490);
+            this.tabDiFile.Size = new System.Drawing.Size(780, 490);
             this.tabDiFile.TabIndex = 2;
             this.tabDiFile.SelectedIndexChanged += new System.EventHandler(this.tabDiFile_SelectedIndexChanged);
             // 
@@ -193,7 +193,7 @@
             // 
             this.btnCloseTab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCloseTab.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseTab.Image")));
-            this.btnCloseTab.Location = new System.Drawing.Point(711, 4);
+            this.btnCloseTab.Location = new System.Drawing.Point(751, 4);
             this.btnCloseTab.Name = "btnCloseTab";
             this.btnCloseTab.Size = new System.Drawing.Size(20, 20);
             this.btnCloseTab.TabIndex = 3;
@@ -204,7 +204,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 490);
+            this.ClientSize = new System.Drawing.Size(780, 490);
             this.Controls.Add(this.btnCloseTab);
             this.Controls.Add(this.tabDiFile);
             this.KeyPreview = true;

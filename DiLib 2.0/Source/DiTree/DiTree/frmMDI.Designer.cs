@@ -45,6 +45,7 @@
             this.recentFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emptyRecentFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearRecentFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.separateRecentToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -120,7 +121,6 @@
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.saveConfigFile = new System.Windows.Forms.SaveFileDialog();
             this.saveTreeFile = new System.Windows.Forms.SaveFileDialog();
-            this.separateRecentToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.statusStripMDI.SuspendLayout();
             this.menuMDI.SuspendLayout();
             this.toolStripMain.SuspendLayout();
@@ -207,6 +207,7 @@
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.saveToolStripMenuItem.Tag = "ID_SAVE_DIDATA";
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             this.saveToolStripMenuItem.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
             this.saveToolStripMenuItem.MouseLeave += new System.EventHandler(this.hideHelptoolStrip);
             // 
@@ -218,6 +219,7 @@
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.saveAsToolStripMenuItem.Tag = "ID_SAVEAS_DIDATA";
             this.saveAsToolStripMenuItem.Text = "Save As";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             this.saveAsToolStripMenuItem.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
             this.saveAsToolStripMenuItem.MouseLeave += new System.EventHandler(this.hideHelptoolStrip);
             // 
@@ -275,15 +277,20 @@
             // 
             this.emptyRecentFilesToolStripMenuItem.Enabled = false;
             this.emptyRecentFilesToolStripMenuItem.Name = "emptyRecentFilesToolStripMenuItem";
-            this.emptyRecentFilesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.emptyRecentFilesToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.emptyRecentFilesToolStripMenuItem.Text = "(Empty)";
             // 
             // clearRecentFilesToolStripMenuItem
             // 
             this.clearRecentFilesToolStripMenuItem.Name = "clearRecentFilesToolStripMenuItem";
-            this.clearRecentFilesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clearRecentFilesToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.clearRecentFilesToolStripMenuItem.Text = "Clear";
             this.clearRecentFilesToolStripMenuItem.Click += new System.EventHandler(this.clearRecentFilesToolStripMenuItem_Click);
+            // 
+            // separateRecentToolStripMenuItem
+            // 
+            this.separateRecentToolStripMenuItem.Name = "separateRecentToolStripMenuItem";
+            this.separateRecentToolStripMenuItem.Size = new System.Drawing.Size(113, 6);
             // 
             // toolStripMenuItem11
             // 
@@ -962,11 +969,6 @@
             this.toolStripBtnDebugStop.Text = "toolStripButton1";
             this.toolStripBtnDebugStop.Click += new System.EventHandler(this.toolStripBtnDebugStop_Click);
             // 
-            // separateRecentToolStripMenuItem
-            // 
-            this.separateRecentToolStripMenuItem.Name = "separateRecentToolStripMenuItem";
-            this.separateRecentToolStripMenuItem.Size = new System.Drawing.Size(149, 6);
-            // 
             // frmMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -979,6 +981,7 @@
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuMDI;
             this.Name = "frmMDI";
+            this.Text = "DiLib";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMDI_FormClosing);
             this.MdiChildActivate += new System.EventHandler(this.frmMDI_MdiChildActivate);
             this.statusStripMDI.ResumeLayout(false);

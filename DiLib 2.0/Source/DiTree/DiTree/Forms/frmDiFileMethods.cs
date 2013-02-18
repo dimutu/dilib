@@ -289,6 +289,7 @@ namespace DiTree
 
                 //all done without errors
                 File.Copy(zTempFile, a_zFilePath, true);
+                Text = Path.GetFileName(a_zFilePath);
 
             }
 //            catch (Exception ex)
@@ -341,8 +342,7 @@ namespace DiTree
                 }
 
                 reader.Close();
-                //saveFileExportTree.FileName = filename;
-                //saveFileDiDataTree.FileName = filename;
+                m_zFilePath = a_zFilePath;
                 this.Text = System.IO.Path.GetFileName(a_zFilePath);
 
                 return true;

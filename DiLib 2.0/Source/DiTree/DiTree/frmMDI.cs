@@ -75,10 +75,6 @@ namespace DiTree
             openDiFile();
         }
 
-        private void toolStripMainSave_Click(object sender, EventArgs e)
-        {
-            saveDiFile(false);
-        }
 
         private void toolStripMainOpen_Click(object sender, EventArgs e)
         {
@@ -542,6 +538,21 @@ namespace DiTree
         private void clearRecentFilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             m_recentFileManager.ClearAll();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveDiFile(false);
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveDiFile(true);
+        }
+
+        private void toolStripMainSave_Click(object sender, EventArgs e)
+        {
+            saveDiFile(false);
         }
 
     }

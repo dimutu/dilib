@@ -44,9 +44,15 @@ namespace DiTree
                         frmDiFile n = new frmDiFile();
                         n.MdiParent = this;
                         n.WindowState = FormWindowState.Maximized;
-                        n.OpenFile(openFile.FileName);
-                        n.Show();
-                        m_recentFileManager.AddRecentFile(openFile.FileName);
+                        if (n.OpenFile(openFile.FileName))
+                        {
+                            n.Show();
+                            m_recentFileManager.AddRecentFile(openFile.FileName);
+                        }
+                        else
+                        {
+                            n = null;
+                        }
                         openFile.FileName = "";
                     }
                     else if (zFileExt.CompareTo(DiGlobals.DIEXT_DITREE) == 0)
@@ -54,9 +60,15 @@ namespace DiTree
                         frmDiTreeView n = new frmDiTreeView();
                         n.MdiParent = this;
                         n.WindowState = FormWindowState.Maximized;
-                        n.OpenTree(openFile.FileName);
-                        n.Show();
-                        m_recentFileManager.AddRecentFile(openFile.FileName);
+                        if (n.OpenTree(openFile.FileName))
+                        {
+                            n.Show();
+                            m_recentFileManager.AddRecentFile(openFile.FileName);
+                        }
+                        else
+                        {
+                            n = null;
+                        }
                         openFile.FileName = "";
                     }
                     else if (zFileExt.CompareTo(DiGlobals.DIEXT_DICONFIG) == 0)
@@ -64,9 +76,15 @@ namespace DiTree
                         frmDiConfigFile n = new frmDiConfigFile();
                         n.MdiParent = this;
                         n.WindowState = FormWindowState.Maximized;
-                        n.OpenFile(openFile.FileName);
-                        n.Show();
-                        m_recentFileManager.AddRecentFile(openFile.FileName);
+                        if (n.OpenFile(openFile.FileName))
+                        {
+                            n.Show();
+                            m_recentFileManager.AddRecentFile(openFile.FileName);
+                        }
+                        else
+                        {
+                            n = null;
+                        }
                         openFile.FileName = "";
                     }
                 }
@@ -91,19 +109,25 @@ namespace DiTree
             frmDiFile frm = (frmDiFile)this.ActiveMdiChild;
 
             //show the dialog if not already saved or save as selected
-            if (saveFile.FileName == "" || a_bSaveAs)
+            if (a_bSaveAs || frm.FilePath == "")
             {
-                if (saveFile.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+                if (saveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    frm.FilePath = saveFile.FileName;
+                    saveFile.FileName = "";
+                }
+                else
                 {
                     return false;
                 }
             }
 
-            if (saveFile.FileName != "")
+            if (frm.FilePath != "")
             {
-
-                frm.SaveFile(saveFile.FileName);                
-            }//end if file not blank
+                frm.SaveFile(frm.FilePath);
+                m_recentFileManager.AddRecentFile(frm.FilePath);
+            }
+            //end if file not blank
             return false;
 
         }

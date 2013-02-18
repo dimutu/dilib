@@ -162,6 +162,7 @@ namespace DiTree
 
             writer.WriteAttributeString(DiXMLElements.XMLELEMENT_NODECHILDCOUNT, node.Nodes.Count.ToString());
             writer.WriteAttributeString(DiXMLElements.XMLELEMENT_NODEDEBUGID, kNodeTask.DebuggerID.ToString());
+            writer.WriteAttributeString(DiXMLElements.XMLELEMENT_NODEBREAKPOINT, kNodeTask.Breakpoint.ToString());
 
             //if this is condition, set which task runs when true and false
             switch (node.ClassType)
@@ -434,6 +435,7 @@ namespace DiTree
             kTask.EnumID = Convert.ToInt32(reader[DiXMLElements.XMLELEMENT_NODEENUMID]);
             kTask.DebuggerID = -1;
             kTask.TemplateClass = txtTemplateClass.Text;
+            kTask.Breakpoint = Convert.ToBoolean(reader[DiXMLElements.XMLELEMENT_NODEBREAKPOINT]);
 
             DiDataRow dr = m_pkDataHandler.GetRow(kTask.EnumID);
             if (dr != null)
@@ -455,7 +457,14 @@ namespace DiTree
             kTask.ScriptFile = reader[DiXMLElements.XMLELEMENT_NODESCRIPT_FILE];
             node.Task = kTask;
 
-            node.ImageKey = DiUtility.GetTaskImageKey(eType);
+            if (kTask.Breakpoint)
+            {
+                node.ImageKey = DiUtility.GetTaskBreakImageKey(eType);
+            }
+            else
+            {
+                node.ImageKey = DiUtility.GetTaskImageKey(eType);
+            }
             node.SelectedImageKey = node.ImageKey;
             node.Text = kTask.ClassName;
             return node;
