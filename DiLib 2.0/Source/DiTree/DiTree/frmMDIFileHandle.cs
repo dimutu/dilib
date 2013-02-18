@@ -59,7 +59,7 @@ namespace DiTree
         /// Open given file name with path according to its file extension
         /// </summary>
         /// <param name="a_zFileName">File to open</param>
-        private void OpenFile(string a_zFileName)
+        public void OpenFile(string a_zFileName)
         {
 
             string zFileExt = Path.GetExtension(a_zFileName);
@@ -68,24 +68,42 @@ namespace DiTree
                 frmDiFile n = new frmDiFile();
                 n.MdiParent = this;
                 n.WindowState = FormWindowState.Maximized;
-                n.OpenFile(a_zFileName);
-                n.Show();
+                if (n.OpenFile(a_zFileName))
+                {
+                    n.Show();
+                }
+                else
+                {
+                    n = null;
+                }
             }
             else if (zFileExt.CompareTo(".ditree") == 0)
             {
                 frmDiTreeView n = new frmDiTreeView();
                 n.MdiParent = this;
                 n.WindowState = FormWindowState.Maximized;
-                n.OpenTree(a_zFileName);
-                n.Show();
+                if (n.OpenTree(a_zFileName))
+                {
+                    n.Show();
+                }
+                else
+                {
+                    n = null;
+                }
             }
             else if (zFileExt.CompareTo(".diconfig") == 0)
             {
                 frmDiConfigFile n = new frmDiConfigFile();
                 n.MdiParent = this;
                 n.WindowState = FormWindowState.Maximized;
-                n.OpenFile(a_zFileName);
-                n.Show();
+                if (n.OpenFile(a_zFileName))
+                {
+                    n.Show();
+                }
+                else
+                {
+                    n = null;
+                }
             }
 
         }

@@ -306,7 +306,7 @@ namespace DiTree
         /// Open the tree data in the file path
         /// </summary>
         /// <param name="a_zFilePath"></param>
-        public void OpenFile(string a_zFilePath)
+        public bool OpenFile(string a_zFilePath)
         {
             try
             {
@@ -344,6 +344,8 @@ namespace DiTree
                 //saveFileExportTree.FileName = filename;
                 //saveFileDiDataTree.FileName = filename;
                 this.Text = System.IO.Path.GetFileName(a_zFilePath);
+
+                return true;
             }
             catch (Exception e)
             {
@@ -353,6 +355,7 @@ namespace DiTree
 #if DEBUG
                 Console.WriteLine(e.Message.ToString());
 #endif
+                return false;
             }
         }
 

@@ -21,7 +21,7 @@ namespace DiTree
             InitializeComponent();
         }
 
-        public void OpenTree(string filename)
+        public bool OpenTree(string filename)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace DiTree
 
                 reader.Close();
                 this.Text = System.IO.Path.GetFileName(filename);
-
+                return true;
             }
             catch (Exception e)
             {
@@ -57,6 +57,7 @@ namespace DiTree
 #if DEBUG
                 Console.WriteLine(e.Message.ToString());
 #endif
+                return false;
             }
 
         }

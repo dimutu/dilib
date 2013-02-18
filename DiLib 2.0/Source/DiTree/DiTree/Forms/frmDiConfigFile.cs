@@ -17,7 +17,7 @@ namespace DiTree
             InitializeComponent();
         }
 
-        public void OpenFile(string filename)
+        public bool OpenFile(string filename)
         {
             try
             {
@@ -38,7 +38,7 @@ namespace DiTree
                     }
                 }
 
-
+                return true;
             }
             catch (Exception e)
             {
@@ -46,6 +46,7 @@ namespace DiTree
                 DiMethods.SetStatusMessage(DiLangID.ID_ERROR_LOAD_FILE);
                 DiMethods.MyDialogShow("Unable to load config file.", MessageBoxButtons.OK);
                 Console.Write(e.Message.ToString());
+                return false;
             }
         }
     }

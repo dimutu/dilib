@@ -42,6 +42,10 @@
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.recentFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.emptyRecentFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearRecentFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -109,13 +113,14 @@
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
             this.insertTreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripBtnDebugStart = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBtnDebugStep = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBtnDebugBreak = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBtnDebugStop = new System.Windows.Forms.ToolStripButton();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.saveConfigFile = new System.Windows.Forms.SaveFileDialog();
             this.saveTreeFile = new System.Windows.Forms.SaveFileDialog();
-            this.toolStripBtnDebugStep = new System.Windows.Forms.ToolStripButton();
-            this.toolStripBtnDebugBreak = new System.Windows.Forms.ToolStripButton();
-            this.toolStripBtnDebugStop = new System.Windows.Forms.ToolStripButton();
+            this.separateRecentToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.statusStripMDI.SuspendLayout();
             this.menuMDI.SuspendLayout();
             this.toolStripMain.SuspendLayout();
@@ -164,6 +169,8 @@
             this.printToolStripMenuItem,
             this.printPreviewToolStripMenuItem,
             this.toolStripMenuItem3,
+            this.recentFilesToolStripMenuItem,
+            this.toolStripMenuItem11,
             this.importToolStripMenuItem,
             this.exportToolStripMenuItem,
             this.exitToolStripMenuItem});
@@ -253,6 +260,35 @@
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(174, 6);
+            // 
+            // recentFilesToolStripMenuItem
+            // 
+            this.recentFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.emptyRecentFilesToolStripMenuItem,
+            this.clearRecentFilesToolStripMenuItem,
+            this.separateRecentToolStripMenuItem});
+            this.recentFilesToolStripMenuItem.Name = "recentFilesToolStripMenuItem";
+            this.recentFilesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.recentFilesToolStripMenuItem.Text = "Recent Files";
+            // 
+            // emptyRecentFilesToolStripMenuItem
+            // 
+            this.emptyRecentFilesToolStripMenuItem.Enabled = false;
+            this.emptyRecentFilesToolStripMenuItem.Name = "emptyRecentFilesToolStripMenuItem";
+            this.emptyRecentFilesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.emptyRecentFilesToolStripMenuItem.Text = "(Empty)";
+            // 
+            // clearRecentFilesToolStripMenuItem
+            // 
+            this.clearRecentFilesToolStripMenuItem.Name = "clearRecentFilesToolStripMenuItem";
+            this.clearRecentFilesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clearRecentFilesToolStripMenuItem.Text = "Clear";
+            this.clearRecentFilesToolStripMenuItem.Click += new System.EventHandler(this.clearRecentFilesToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem11
+            // 
+            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(174, 6);
             // 
             // importToolStripMenuItem
             // 
@@ -721,7 +757,7 @@
             this.toolStripMainNew.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMainNew.Image")));
             this.toolStripMainNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripMainNew.Name = "toolStripMainNew";
-            this.toolStripMainNew.Size = new System.Drawing.Size(67, 36);
+            this.toolStripMainNew.Size = new System.Drawing.Size(59, 28);
             this.toolStripMainNew.Tag = "ID_NEW_DIDATA";
             this.toolStripMainNew.Text = "New";
             this.toolStripMainNew.Click += new System.EventHandler(this.toolStripMainNew_Click);
@@ -733,7 +769,7 @@
             this.toolStripMainOpen.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMainOpen.Image")));
             this.toolStripMainOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripMainOpen.Name = "toolStripMainOpen";
-            this.toolStripMainOpen.Size = new System.Drawing.Size(72, 36);
+            this.toolStripMainOpen.Size = new System.Drawing.Size(64, 28);
             this.toolStripMainOpen.Tag = "ID_OPEN_DIDATA";
             this.toolStripMainOpen.Text = "Open";
             this.toolStripMainOpen.Click += new System.EventHandler(this.toolStripMainOpen_Click);
@@ -745,7 +781,7 @@
             this.toolStripMainSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMainSave.Image")));
             this.toolStripMainSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripMainSave.Name = "toolStripMainSave";
-            this.toolStripMainSave.Size = new System.Drawing.Size(67, 36);
+            this.toolStripMainSave.Size = new System.Drawing.Size(59, 28);
             this.toolStripMainSave.Tag = "ID_SAVE_DIDATA";
             this.toolStripMainSave.Text = "Save";
             this.toolStripMainSave.Click += new System.EventHandler(this.toolStripMainSave_Click);
@@ -757,7 +793,7 @@
             this.toolStripMainExportConfig.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMainExportConfig.Image")));
             this.toolStripMainExportConfig.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripMainExportConfig.Name = "toolStripMainExportConfig";
-            this.toolStripMainExportConfig.Size = new System.Drawing.Size(115, 36);
+            this.toolStripMainExportConfig.Size = new System.Drawing.Size(107, 28);
             this.toolStripMainExportConfig.Tag = "ID_EXPORT_CONFIG";
             this.toolStripMainExportConfig.Text = "Export Config";
             this.toolStripMainExportConfig.Click += new System.EventHandler(this.toolStripMainExportConfig_Click);
@@ -769,7 +805,7 @@
             this.toolStripMainExportTree.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMainExportTree.Image")));
             this.toolStripMainExportTree.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripMainExportTree.Name = "toolStripMainExportTree";
-            this.toolStripMainExportTree.Size = new System.Drawing.Size(102, 36);
+            this.toolStripMainExportTree.Size = new System.Drawing.Size(94, 28);
             this.toolStripMainExportTree.Tag = "ID_EXPORT_TREE";
             this.toolStripMainExportTree.Text = "Export Tree";
             this.toolStripMainExportTree.Click += new System.EventHandler(this.toolStripMainExportTree_Click);
@@ -793,14 +829,14 @@
             this.toolStripBtnDebugStop});
             this.toolStripMain.Location = new System.Drawing.Point(0, 24);
             this.toolStripMain.Name = "toolStripMain";
-            this.toolStripMain.Size = new System.Drawing.Size(850, 39);
+            this.toolStripMain.Size = new System.Drawing.Size(850, 31);
             this.toolStripMain.TabIndex = 4;
             this.toolStripMain.Text = "Standard";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripSplitButton1
             // 
@@ -816,7 +852,7 @@
             this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
             this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
-            this.toolStripSplitButton1.Size = new System.Drawing.Size(40, 36);
+            this.toolStripSplitButton1.Size = new System.Drawing.Size(40, 28);
             this.toolStripSplitButton1.Text = "Insert";
             // 
             // insertTaskToolStripMenuItem
@@ -889,7 +925,7 @@
             this.toolStripBtnDebugStart.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBtnDebugStart.Image")));
             this.toolStripBtnDebugStart.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripBtnDebugStart.Name = "toolStripBtnDebugStart";
-            this.toolStripBtnDebugStart.Size = new System.Drawing.Size(70, 36);
+            this.toolStripBtnDebugStart.Size = new System.Drawing.Size(70, 28);
             this.toolStripBtnDebugStart.Tag = "ID_DEBUG_START";
             this.toolStripBtnDebugStart.Text = "Debug";
             this.toolStripBtnDebugStart.Click += new System.EventHandler(this.toolStripBtnDebugStart_Click);
@@ -902,7 +938,7 @@
             this.toolStripBtnDebugStep.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBtnDebugStep.Image")));
             this.toolStripBtnDebugStep.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripBtnDebugStep.Name = "toolStripBtnDebugStep";
-            this.toolStripBtnDebugStep.Size = new System.Drawing.Size(28, 36);
+            this.toolStripBtnDebugStep.Size = new System.Drawing.Size(28, 28);
             this.toolStripBtnDebugStep.Text = "Debug Step";
             this.toolStripBtnDebugStep.Click += new System.EventHandler(this.toolStripBtnDebugStep_Click);
             // 
@@ -912,7 +948,7 @@
             this.toolStripBtnDebugBreak.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBtnDebugBreak.Image")));
             this.toolStripBtnDebugBreak.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripBtnDebugBreak.Name = "toolStripBtnDebugBreak";
-            this.toolStripBtnDebugBreak.Size = new System.Drawing.Size(28, 36);
+            this.toolStripBtnDebugBreak.Size = new System.Drawing.Size(28, 28);
             this.toolStripBtnDebugBreak.Text = "Break";
             this.toolStripBtnDebugBreak.Click += new System.EventHandler(this.toolStripBtnDebugBreak_Click);
             // 
@@ -922,9 +958,14 @@
             this.toolStripBtnDebugStop.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBtnDebugStop.Image")));
             this.toolStripBtnDebugStop.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripBtnDebugStop.Name = "toolStripBtnDebugStop";
-            this.toolStripBtnDebugStop.Size = new System.Drawing.Size(28, 36);
+            this.toolStripBtnDebugStop.Size = new System.Drawing.Size(28, 28);
             this.toolStripBtnDebugStop.Text = "toolStripButton1";
             this.toolStripBtnDebugStop.Click += new System.EventHandler(this.toolStripBtnDebugStop_Click);
+            // 
+            // separateRecentToolStripMenuItem
+            // 
+            this.separateRecentToolStripMenuItem.Name = "separateRecentToolStripMenuItem";
+            this.separateRecentToolStripMenuItem.Size = new System.Drawing.Size(149, 6);
             // 
             // frmMDI
             // 
@@ -1040,6 +1081,11 @@
         private System.Windows.Forms.ToolStripButton toolStripBtnDebugStep;
         private System.Windows.Forms.ToolStripButton toolStripBtnDebugBreak;
         private System.Windows.Forms.ToolStripButton toolStripBtnDebugStop;
+        private System.Windows.Forms.ToolStripMenuItem recentFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem emptyRecentFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearRecentFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem11;
+        private System.Windows.Forms.ToolStripSeparator separateRecentToolStripMenuItem;
     }
 }
 

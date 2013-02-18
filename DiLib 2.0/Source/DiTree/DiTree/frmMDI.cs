@@ -17,13 +17,19 @@ namespace DiTree
     {
         private frmConsole m_frmConsole;
         private frmSelectExportTree m_frmSelectTree; //select tree fro exporting the tree from currently selected frmDiFile
-        
+        private DiRecentFileManager m_recentFileManager;
+
         public frmMDI()
         {
             InitializeComponent();
             m_frmSelectTree = new frmSelectExportTree();
             m_frmConsole = new frmConsole();
             DiMethods.StatusMessageLable = toolStripStatusMessage;
+
+            m_recentFileManager = new DiRecentFileManager(this, ref recentFilesToolStripMenuItem, 
+                                        ref clearRecentFilesToolStripMenuItem, 
+                                        ref emptyRecentFilesToolStripMenuItem,
+                                        ref separateRecentToolStripMenuItem);
         }
 
         protected override void OnLoad(EventArgs e)
@@ -531,6 +537,11 @@ namespace DiTree
         private void toolStripBtnDebugStep_Click(object sender, EventArgs e)
         {
             DebugPlayForward();
+        }
+
+        private void clearRecentFilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            m_recentFileManager.ClearAll();
         }
 
     }

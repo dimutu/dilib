@@ -46,6 +46,7 @@ namespace DiTree
                         n.WindowState = FormWindowState.Maximized;
                         n.OpenFile(openFile.FileName);
                         n.Show();
+                        m_recentFileManager.AddRecentFile(openFile.FileName);
                         openFile.FileName = "";
                     }
                     else if (zFileExt.CompareTo(DiGlobals.DIEXT_DITREE) == 0)
@@ -55,6 +56,7 @@ namespace DiTree
                         n.WindowState = FormWindowState.Maximized;
                         n.OpenTree(openFile.FileName);
                         n.Show();
+                        m_recentFileManager.AddRecentFile(openFile.FileName);
                         openFile.FileName = "";
                     }
                     else if (zFileExt.CompareTo(DiGlobals.DIEXT_DICONFIG) == 0)
@@ -64,6 +66,7 @@ namespace DiTree
                         n.WindowState = FormWindowState.Maximized;
                         n.OpenFile(openFile.FileName);
                         n.Show();
+                        m_recentFileManager.AddRecentFile(openFile.FileName);
                         openFile.FileName = "";
                     }
                 }
