@@ -162,15 +162,7 @@ void CreateTree(TiXmlElement* a_xmlNode, DiLib::DiTask<T>* a_pkCurNode, DiLib::D
 			case DiLib::DICLASS_FILTER: //parent a filter
 				{
 					DiLib::DiFilter<T>* pkFil = (DiLib::DiFilter<T>*)a_pkCurNode;
-
-					//check which tasks are set
-					if (a_xmlNode->Attribute("Task") != NULL)
-					{
-						if (atoi(a_xmlNode->Attribute("Task")) == atoi(pkXmlChild->Attribute("EnumID"))	)
-						{
-							pkFil->SetTask(pkChildNode);
-						}
-					}
+					pkFil->SetTask(pkChildNode);
 
 					break;
 				}

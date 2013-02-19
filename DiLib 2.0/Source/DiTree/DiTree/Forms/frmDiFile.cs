@@ -122,12 +122,15 @@ namespace DiTree
 
         private void frmDiFile_KeyDown(object sender, KeyEventArgs e)
         {
-            if (tabDiFile.SelectedIndex >= TABSTART_INDEX)
+            if (e.KeyCode == Keys.Delete)
             {
-                if (tabDiFile.SelectedTab != null)
+                if (tabDiFile.SelectedIndex >= TABSTART_INDEX)
                 {
-                    DiTabPage pkTabPage = (DiTabPage)tabDiFile.SelectedTab;
-                    pkTabPage.Tree.RemoveNode();
+                    if (tabDiFile.SelectedTab != null)
+                    {
+                        DiTabPage pkTabPage = (DiTabPage)tabDiFile.SelectedTab;
+                        pkTabPage.Tree.RemoveNode();
+                    }
                 }
             }
         }

@@ -424,7 +424,7 @@ namespace DiTree
                                     }
                                 case DICLASSTYPES.DICLASSTYPE_FILTER:
                                     {
-                                       
+                                        //DiFilter kFil = (DiFilter)kTaskParent;
                                         
                                         break;
                                     }
@@ -486,7 +486,7 @@ namespace DiTree
                     kFilter.EnumTask = Convert.ToInt32(reader[DiXMLElements.XMLELEMENT_NODETASKTRUE]);
                     kFilter.LoopOn = Convert.ToBoolean(reader[DiXMLElements.XMLELEMENT_NODEREPEAT]);
                     kFilter.MaxRunCycles = Convert.ToUInt16(reader[DiXMLElements.XMLELEMENT_NODEMAXREPEATS]);
-
+                    kFilter.TimerInterval = Convert.ToUInt32(reader[DiXMLElements.XMLELEMENT_NODETIMER_INTERVAL]);
                     break;
 
                 case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
