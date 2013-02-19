@@ -9,6 +9,7 @@ namespace DiTree
 {
     public class DiRecentFileManager
     {
+        private const int MAXCHARLENGTH = 50;
         private const int MAXCOUNT = 10;
         private string m_zSubKeyName = "DiLib";
         private frmMDI m_kMDI;
@@ -131,7 +132,16 @@ namespace DiTree
 
         private void AddMenuItem(string a_zFileName)
         {
-            ToolStripItem menu = m_kParentMenuItem.DropDownItems.Add(a_zFileName);
+            //show only 50 chars on the menu
+            string filename = a_zFileName;
+            if (filename.Length > MAXCHARLENGTH)
+            {
+                //and not show any parts of path, but first \ on the path at the end strings
+                string fileend = filename.Substring(filename.Length - MAXCHARLENGTH + 3);
+                fileend = fileend.Substring(fileend.IndexOf("\\"));
+                filename = filename.Substring(0, 3) + "..." + fileend; //create string
+            }
+            ToolStripItem menu = m_kParentMenuItem.DropDownItems.Add(filename);
             menu.Tag = a_zFileName;
             menu.Click += toolStripRecentFile_Click;
         }
