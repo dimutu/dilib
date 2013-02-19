@@ -22,6 +22,7 @@ namespace DiTree
         {
             InitializeComponent();
             InitializeGeneral();
+            EnableTabCloseButton();
         }
 
         private void btnAddInclude_Click(object sender, EventArgs e)
@@ -44,6 +45,7 @@ namespace DiTree
             {
                 AddNewTreeTab();
             }
+            EnableTabCloseButton();
         }
 
         public string FilePath
@@ -97,6 +99,35 @@ namespace DiTree
                 {
                     DiTabPage pkTabPage = (DiTabPage)tabDiFile.SelectedTab;
                     RemoveTreeTab();
+                }
+            }
+        }
+
+        private void btnCloseTab_MouseHover(object sender, EventArgs e)
+        {
+            toolTipHelp.SetToolTip(btnCloseTab, Properties.Resources.ID_DELETE_TREE);
+        }
+
+        private void EnableTabCloseButton()
+        {
+            if (tabDiFile.SelectedIndex >= TABSTART_INDEX)
+            {
+                btnCloseTab.Enabled = true;
+            }
+            else
+            {
+                btnCloseTab.Enabled = false;
+            }
+        }
+
+        private void frmDiFile_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (tabDiFile.SelectedIndex >= TABSTART_INDEX)
+            {
+                if (tabDiFile.SelectedTab != null)
+                {
+                    DiTabPage pkTabPage = (DiTabPage)tabDiFile.SelectedTab;
+                    pkTabPage.Tree.RemoveNode();
                 }
             }
         }

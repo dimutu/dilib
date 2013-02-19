@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDiFile));
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@
             this.tabPageNew = new System.Windows.Forms.TabPage();
             this.tabDiFile = new System.Windows.Forms.TabControl();
             this.btnCloseTab = new System.Windows.Forms.Button();
+            this.toolTipHelp = new System.Windows.Forms.ToolTip(this.components);
             this.tabPageGeneral.SuspendLayout();
             this.tabDiFile.SuspendLayout();
             this.SuspendLayout();
@@ -168,7 +170,7 @@
             this.tabPageNew.ImageKey = "bullet_star.png";
             this.tabPageNew.Location = new System.Drawing.Point(4, 54);
             this.tabPageNew.Name = "tabPageNew";
-            this.tabPageNew.Size = new System.Drawing.Size(732, 432);
+            this.tabPageNew.Size = new System.Drawing.Size(772, 432);
             this.tabPageNew.TabIndex = 2;
             this.tabPageNew.Tag = "Add";
             this.tabPageNew.ToolTipText = "Add New Tree";
@@ -199,6 +201,7 @@
             this.btnCloseTab.TabIndex = 3;
             this.btnCloseTab.UseVisualStyleBackColor = true;
             this.btnCloseTab.Click += new System.EventHandler(this.btnCloseTab_Click);
+            this.btnCloseTab.MouseHover += new System.EventHandler(this.btnCloseTab_MouseHover);
             // 
             // frmDiFile
             // 
@@ -210,6 +213,7 @@
             this.KeyPreview = true;
             this.Name = "frmDiFile";
             this.Text = "frmDiFile";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDiFile_KeyDown);
             this.tabPageGeneral.ResumeLayout(false);
             this.tabPageGeneral.PerformLayout();
             this.tabDiFile.ResumeLayout(false);
@@ -233,5 +237,6 @@
         private System.Windows.Forms.TabPage tabPageNew;
         private System.Windows.Forms.TabControl tabDiFile;
         private System.Windows.Forms.Button btnCloseTab;
+        private System.Windows.Forms.ToolTip toolTipHelp;
     }
 }

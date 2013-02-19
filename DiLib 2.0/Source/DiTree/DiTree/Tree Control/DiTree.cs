@@ -416,5 +416,35 @@ namespace DiTree
             }
         }
 
+        private void taskToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNewTreeNode(DICLASSTYPES.DICLASSTYPE_TASK);
+        }
+
+        private void conditionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNewTreeNode(DICLASSTYPES.DICLASSTYPE_CONDITION);
+        }
+
+        private void filterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNewTreeNode(DICLASSTYPES.DICLASSTYPE_FILTER);
+        }
+
+        private void sequenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNewTreeNode(DICLASSTYPES.DICLASSTYPE_SEQUENCE);
+        }
+
+        private void selectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddNewTreeNode(DICLASSTYPES.DICLASSTYPE_SELECTION);
+        }
+
+        private void removeTaskToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoveNode();
+        }
+
     }
 }

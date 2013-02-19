@@ -89,7 +89,80 @@ namespace DiTree
         /// </summary>
         public void RemoveNode()
         {
+            DiTreeNode node = (DiTreeNode)treeBT.SelectedNode;
+            if (node == null)
+            {
+                return;
+            }
+            //remove
+            if (node.ClassType == DICLASSTYPES.DICLASSTYPE_ROOT)
+            {
+                //cannot delete root node
+                DiMethods.MyDialogShow("Cannot delete the root node.", MessageBoxButtons.OK);
+                return;
 
+            }
+
+            //delete the selected node
+            DialogResult dr = DiMethods.MyDialogShow("Are you sure to delete this node?", MessageBoxButtons.YesNoCancel);
+            if (dr == DialogResult.Yes)
+            {
+                //setup parent node to lose this child node if its has children
+                DiTreeNode kParent = (DiTreeNode)node.Parent;
+                if (kParent != null)
+                {
+                    switch (kParent.Task.ClassType)
+                    {
+                        case DICLASSTYPES.DICLASSTYPE_SELECTION:
+                        case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
+                            {
+                                //remove this task from the list
+                                DiSequence kSeqTask = (DiSequence)kParent.Task;
+
+                                foreach (DiTask kTask in kSeqTask.TaskList)
+                                {
+                                    if (kTask.DebuggerID == node.DebuggerID)
+                                    {
+                                        kSeqTask.TaskList.Remove(kTask);
+                                        break;
+                                    }
+                                }
+
+                            }
+                            break;
+
+                        case DICLASSTYPES.DICLASSTYPE_FILTER:
+                            {
+                                DiFilter kFilter = (DiFilter)kParent.Task;
+                                if (kFilter.Task == node.Task)
+                                {
+                                    kFilter.Task = null;
+                                }
+                                break;
+                            }
+                        case DICLASSTYPES.DICLASSTYPE_CONDITION:
+                            {
+                                DiCondition kCondTask = (DiCondition)kParent.Task;
+                                if (kCondTask.TaskElement1 == node.Task)
+                                {
+                                    kCondTask.TaskElement1 = null;
+                                    kCondTask.TrueTask = "";
+                                }
+                                else if (kCondTask.TaskElement2 == node.Task)
+                                {
+                                    kCondTask.TaskElement2 = null;
+                                    kCondTask.FalseTask = "";
+                                }
+                            }
+                            break;
+
+                        default:
+                            break;
+                    };
+                }
+                treeBT.Nodes.Remove(node);
+
+            }
         }
 
         /// <summary>

@@ -195,30 +195,35 @@
             this.taskToolStripMenuItem.Name = "taskToolStripMenuItem";
             this.taskToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.taskToolStripMenuItem.Text = "Task";
+            this.taskToolStripMenuItem.Click += new System.EventHandler(this.taskToolStripMenuItem_Click);
             // 
             // conditionToolStripMenuItem
             // 
             this.conditionToolStripMenuItem.Name = "conditionToolStripMenuItem";
             this.conditionToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.conditionToolStripMenuItem.Text = "Condition";
+            this.conditionToolStripMenuItem.Click += new System.EventHandler(this.conditionToolStripMenuItem_Click);
             // 
             // filterToolStripMenuItem
             // 
             this.filterToolStripMenuItem.Name = "filterToolStripMenuItem";
             this.filterToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.filterToolStripMenuItem.Text = "Filter";
+            this.filterToolStripMenuItem.Click += new System.EventHandler(this.filterToolStripMenuItem_Click);
             // 
             // sequenceToolStripMenuItem
             // 
             this.sequenceToolStripMenuItem.Name = "sequenceToolStripMenuItem";
             this.sequenceToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.sequenceToolStripMenuItem.Text = "Sequence";
+            this.sequenceToolStripMenuItem.Click += new System.EventHandler(this.sequenceToolStripMenuItem_Click);
             // 
             // selectionToolStripMenuItem
             // 
             this.selectionToolStripMenuItem.Name = "selectionToolStripMenuItem";
             this.selectionToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.selectionToolStripMenuItem.Text = "Selection";
+            this.selectionToolStripMenuItem.Click += new System.EventHandler(this.selectionToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -227,6 +232,7 @@
             // 
             // cutToolStripMenuItem
             // 
+            this.cutToolStripMenuItem.Enabled = false;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.cutToolStripMenuItem.Text = "Cut";
@@ -234,12 +240,14 @@
             // 
             // copyToolStripMenuItem
             // 
+            this.copyToolStripMenuItem.Enabled = false;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             // 
             // pasteToolStripMenuItem
             // 
+            this.pasteToolStripMenuItem.Enabled = false;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
@@ -249,6 +257,7 @@
             this.removeTaskToolStripMenuItem.Name = "removeTaskToolStripMenuItem";
             this.removeTaskToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.removeTaskToolStripMenuItem.Text = "Delete";
+            this.removeTaskToolStripMenuItem.Click += new System.EventHandler(this.removeTaskToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -271,6 +280,7 @@
             // 
             // moveLeftToolStripMenuItem
             // 
+            this.moveLeftToolStripMenuItem.Enabled = false;
             this.moveLeftToolStripMenuItem.Name = "moveLeftToolStripMenuItem";
             this.moveLeftToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.moveLeftToolStripMenuItem.Text = "Move Left";
@@ -278,6 +288,7 @@
             // 
             // moveRightToolStripMenuItem
             // 
+            this.moveRightToolStripMenuItem.Enabled = false;
             this.moveRightToolStripMenuItem.Name = "moveRightToolStripMenuItem";
             this.moveRightToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.moveRightToolStripMenuItem.Text = "Move Right";

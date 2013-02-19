@@ -165,7 +165,7 @@
         XTesb3QPLh88M+QwdP6m681Lt7xuXbu94vbgcOjwnZHokdE77DtTd1PuvriXeW/h/sYH6AdFD6UeVjxS
         fNTws+7PbaOWo6fHXMf6Hwc/vj/OGn/2S8Yv7ycKnpCfVEyqTDZPmU2dmnafvvF05dOJZ+nPFmYKf5X+
         tfa5zvMffnP8rX82YnbiBf/Fp99LXsq/PPRq2aueuYC5R69TXy/MF72Rf3P4LeNt37vwd5MLWe+x7ys/
-        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALEAAACxABrSO9dQAAAnZJREFUOE91k+1PUmEY
+        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALDgAACw4BQL7hQQAAAnZJREFUOE91k+1PUmEY
         xh80t0JAJBVoZiXaKykg9qaOYabYNDUQAhKYlvFqpqG90CLXWh9arf+gD60/oH+lD31o2mYvs61ZogFm
         cvXcB1iicbZ759p1/e77PM9zzmG+g2pmLGNMU11lnX/xaKm9Vm1lRS7KdjCm8jL2zHhiYOFeEJlpB1bn
         JmE4UNe3fQZ5lOUZ/f7aLOM9Uu/ByxjSg3p81EqRcZ5D8kkUhjzAGdLkUUbMxmUD8DSKC431LtamORRK
@@ -179,4 +179,7 @@
         lox5r+xuMUZXLNji67cyfwFCRXm0UmqXjQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="toolTipHelp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
