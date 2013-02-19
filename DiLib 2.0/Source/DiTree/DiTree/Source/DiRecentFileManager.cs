@@ -56,25 +56,42 @@ namespace DiTree
             string[] list = m_kRecentSub.GetValueNames();
             string value;
             bool bNew = true;
+            int i = 0;
 
-            if (list.Length < MAXCOUNT)
+            foreach (string str in list)
             {
-                foreach (string str in list)
+                value = (string)m_kRecentSub.GetValue(str);
+                if (value == a_zFileName)
                 {
-                    value = (string)m_kRecentSub.GetValue(str);
-                    if (value == a_zFileName)
+                    bNew = false;
+                    break;
+                }
+            }
+
+            if (bNew)
+            {
+                if (list.Length >= MAXCOUNT) //maximum reached, remove first
+                {
+                    list = m_kRecentSub.GetValueNames();
+                    foreach (string str in list)
                     {
-                        bNew = false;
-                        break;
+                        m_kRecentSub.DeleteValue(str);
+                    }
+                    i = 0; 
+                    foreach (string str in list)
+                    {
+                        if (i == 0)
+                        {
+                            i++;
+                            continue;
+                        }
+                        m_kRecentSub.SetValue(m_kRecentSub.ValueCount.ToString(), str);
                     }
                 }
 
-                if (bNew)
-                {
-                    m_kRecentSub.SetValue(m_kRecentSub.ValueCount.ToString(), a_zFileName);
-                    AddMenuItem(a_zFileName);
-                    ShowDefault();
-                }
+                m_kRecentSub.SetValue(m_kRecentSub.ValueCount.ToString(), a_zFileName);
+                AddMenuItem(a_zFileName);
+                ShowDefault();
             }
         }
 

@@ -282,7 +282,16 @@ namespace DiTree
         private void frmMDI_FormClosing(object sender, FormClosingEventArgs e)
         {
             m_bIsQutting = true;
-            DebugDisconnect();
+            if (DiGlobals.IsListening)
+            {
+                DebugStopListenning();
+                DiGlobals.IsListening = false;
+            }
+            else if (DiGlobals.IsConnected)
+            {
+                m_bIsQutting = true;
+                DebugDisconnect();
+            }
         }
 
         private void frmMDI_DragEnter(object sender, DragEventArgs e)

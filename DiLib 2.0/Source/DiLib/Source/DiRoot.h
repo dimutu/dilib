@@ -85,7 +85,18 @@ namespace DiLib
 		*/
 		virtual void ReloadScripts();
 
+		/*
+		********************************************************************************************************************************************
+		* Function: SetLastTask() - for extending purpose, keep track of last task if need to avoid executing whole tree
+		* Parameters: void
+		* Return: none
+		********************************************************************************************************************************************
+		*/
+		virtual void SetLastTask(const DiTask* a_pkTask);
+
 	protected:
+		const DiTask<T>* m_pkLastTask; //for extending purpose, keep track of last task if need to avoid executing whole tree
+
 		std::vector< DiTask<T>* > m_akTreeNodesList; //all the nodes belongs to this tree root
 
 		std::vector< DiTask<T>* > m_akScriptNodeList; //the nodes that have scripts, so running through this node list can reload its scripts

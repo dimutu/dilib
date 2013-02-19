@@ -102,11 +102,11 @@ namespace DiTree
 
             if (m_kMainSocket != null)
             {
-                //m_kMainSocket.Shutdown(SocketShutdown.Both);
-                //if (m_kMainSocket.Connected)
-                //{
-                //    m_kMainSocket.Disconnect(false);
-                //}
+                m_kMainSocket.Shutdown(SocketShutdown.Both);
+                if (m_kMainSocket.Connected)
+                {
+                    m_kMainSocket.Disconnect(false);
+                }
                 m_kMainSocket.Dispose();
                 m_kMainSocket = null;
             }

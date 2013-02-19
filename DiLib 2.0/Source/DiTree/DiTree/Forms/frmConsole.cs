@@ -19,6 +19,7 @@ namespace DiTree
 
         public void addOutputText(string str, bool isDebug = false)
         {
+            str = "[" + DateTime.Now.ToString() + "] " + str;
             if (isDebug && DiGlobals.LogDebugInfo)
             {
                 txtConsole.Text += str + "\r\n";

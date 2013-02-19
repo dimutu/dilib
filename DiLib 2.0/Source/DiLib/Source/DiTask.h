@@ -22,6 +22,9 @@
 namespace DiLib
 {
 	template <class T>
+	class DiRoot;
+
+	template <class T>
 	class DiTask : public DiBase
 	{
 	public:
@@ -89,7 +92,18 @@ namespace DiLib
 		*/
 		void SetParent(const DiTask<T>* a_pkParentTask);
 
+		/*
+		********************************************************************************************************************************************
+		* Function: SetRoot() - set the root node
+		* Parameters: const DiTask<T>* a_pkRoot - pointer to root
+		* Return: void
+		********************************************************************************************************************************************
+		*/
+		void SetRoot(const DiRoot<T>* a_pkRoot);
+
 	protected:
+		const DiRoot<T>* m_pkRoot;
+
 		const DiTask* m_pkParentTask; //parent node
 
 		std::string m_zScriptFile; //location of the lua script 

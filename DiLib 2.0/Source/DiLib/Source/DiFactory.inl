@@ -87,6 +87,7 @@ void CreateTree(TiXmlElement* a_xmlNode, DiLib::DiTask<T>* a_pkCurNode, DiLib::D
 
 			//set child data
 			pkChildNode->SetParent(a_pkCurNode); //set parent
+			pkChildNode->SetRoot(a_pkRoot);
 
 #ifdef _DIDEBUG
 			//set debugging information
