@@ -232,7 +232,8 @@ namespace DiTree
             DataRow [] akRows = null;
             string zQuery = "";
             zQuery = DATAFIELD_CLASSTYPE + "=" + ((int)a_eClassType).ToString() +
-                " and " + DATAFIELD_TEMPLATECLASS + "='" + DiMethods.SetQueryString(a_zTemplateClass) + "'";
+                " and " + DATAFIELD_TEMPLATECLASS + "='" + DiMethods.SetQueryString(a_zTemplateClass) + "'" +
+                " and " + DATAFIELD_ISTEMPATE + "='true'";
             akRows = m_dtData.Select(zQuery);
 
             if (akRows.Length == 1)

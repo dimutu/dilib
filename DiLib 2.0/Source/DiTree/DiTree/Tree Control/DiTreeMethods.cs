@@ -301,6 +301,7 @@ namespace DiTree
                         }
                 }
 
+                pkTreeNode.Text = pkTask.ClassName;
                 a_pkParent.Nodes.Add(pkTreeNode);
                 a_pkParent.Expand(); //expand the parent if not
 
