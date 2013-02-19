@@ -23,13 +23,6 @@ namespace DiTree
         public const string DATAFIELD_CLASSNAME = "ClassName";
         public const string DATAFIELD_TEMPLATECLASS = "TemplateClass";
 
-        //default initialize data enum ids
-        protected int m_iDefaultTaskID;
-        protected int m_iDefaultConditionID;
-        protected int m_iDefaultFilterID;
-        protected int m_iDefaultSequenceID;
-        protected int m_iDefaultSelectionID;
-
         /// <summary>
         /// Constructor
         /// </summary>
@@ -61,11 +54,11 @@ namespace DiTree
         /// <param name="a_zTemplateClass"></param>
         public void InitializeTemplateData(string a_zTemplateClass)
         {
-            m_iDefaultConditionID = AddNew(DICLASSTYPES.DICLASSTYPE_CONDITION, a_zTemplateClass);
-            m_iDefaultFilterID =  AddNew(DICLASSTYPES.DICLASSTYPE_FILTER, a_zTemplateClass);
-            m_iDefaultSelectionID = AddNew(DICLASSTYPES.DICLASSTYPE_SELECTION, a_zTemplateClass);
-            m_iDefaultSequenceID = AddNew(DICLASSTYPES.DICLASSTYPE_SEQUENCE, a_zTemplateClass);
-            m_iDefaultTaskID = AddNew(DICLASSTYPES.DICLASSTYPE_TASK, a_zTemplateClass);
+            AddNew(DICLASSTYPES.DICLASSTYPE_CONDITION, a_zTemplateClass);
+            AddNew(DICLASSTYPES.DICLASSTYPE_FILTER, a_zTemplateClass);
+            AddNew(DICLASSTYPES.DICLASSTYPE_SELECTION, a_zTemplateClass);
+            AddNew(DICLASSTYPES.DICLASSTYPE_SEQUENCE, a_zTemplateClass);
+            AddNew(DICLASSTYPES.DICLASSTYPE_TASK, a_zTemplateClass);
         }
 
         /// <summary>
@@ -237,38 +230,8 @@ namespace DiTree
         {
             DiDataRow dr = null;
             DataRow [] akRows = null;
-            int id = -1;
             string zQuery = "";
-            switch (a_eClassType)
-            {
-                case DICLASSTYPES.DICLASSTYPE_CONDITION:
-                    {
-                        id = m_iDefaultConditionID;
-                        break;
-                    }
-                case DICLASSTYPES.DICLASSTYPE_FILTER:
-                    {
-                        id = m_iDefaultFilterID;
-                        break;
-                    }
-                case DICLASSTYPES.DICLASSTYPE_SELECTION:
-                    {
-                        id = m_iDefaultSelectionID;
-                        break;
-                    }
-                case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
-                    {
-                        id = m_iDefaultSequenceID;
-                        break;
-                    }
-                default:
-                    {
-                        id = m_iDefaultTaskID;
-                        break;
-                    }
-            }
-
-            zQuery = DATAFIELD_ID + "=" + id.ToString() +
+            zQuery = DATAFIELD_CLASSTYPE + "=" + ((int)a_eClassType).ToString() +
                 " and " + DATAFIELD_TEMPLATECLASS + "='" + DiMethods.SetQueryString(a_zTemplateClass) + "'";
             akRows = m_dtData.Select(zQuery);
 

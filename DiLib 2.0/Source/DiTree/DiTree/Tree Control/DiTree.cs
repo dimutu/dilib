@@ -115,6 +115,10 @@ namespace DiTree
                         DICLASSTYPES eType = (DICLASSTYPES)e.Data.GetData(typeof(DICLASSTYPES));
                         AddNewTreeNode(pkParentNode, eType);
                     }
+                    else
+                    {
+                        DiMethods.MyDialogShow("Cannot add a new node. Invalid parent node or already has maximum child nodes.", MessageBoxButtons.OK);
+                    }
                 }
             }
             else if (e.Data.GetDataPresent("DiTree.DiTreeNode"))

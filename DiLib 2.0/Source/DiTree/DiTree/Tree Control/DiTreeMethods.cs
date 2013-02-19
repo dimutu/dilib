@@ -22,7 +22,7 @@ namespace DiTree
             AddTaskItem(DICLASSTYPES.DICLASSTYPE_FILTER);
             AddTaskItem(DICLASSTYPES.DICLASSTYPE_SEQUENCE);
             AddTaskItem(DICLASSTYPES.DICLASSTYPE_SELECTION);
-            AddTaskItem(DICLASSTYPES.DICLASSTYPE_ROOT);
+           // AddTaskItem(DICLASSTYPES.DICLASSTYPE_ROOT);
 
             //creates the root node on the tree view
             if (treeBT.Nodes.Count == 0)
