@@ -124,12 +124,12 @@ bool DiSequence<T>::RemoveAllTasks()
 ********************************************************************************************************************************************
 */
 template <class T>
-DI_TASK_RETURNS DiSequence<T>::Execute(T* a_pkOwner)
+int DiSequence<T>::Execute(T* a_pkOwner)
 {
 	DIDEBUGGER_SEND(this);
 
 	//run all the taskst in the sequence
-	DI_TASK_RETURNS eReturn = DITASK_COMPLETE;
+	int eReturn = 0; //DiLib::DI_TASK_RETURNS::DITASK_COMPLETE
 
 	m_itrCurrentTask = m_akTaskSequence.begin();
 
@@ -140,14 +140,14 @@ DI_TASK_RETURNS DiSequence<T>::Execute(T* a_pkOwner)
 		if (pkTask != NULL)
 		{
 			eReturn = pkTask->Execute(a_pkOwner); //run the task
-			if (eReturn == DITASK_FAILED)
+			if (eReturn == 1) //DiLib::DI_TASK_RETURNS::DITASK_FAILED
 			{
-				return DITASK_FAILED; //something wrong running this task, exit sequence and back to parent
+				return 1; //something wrong running this task, exit sequence and back to parent
 			}
 		}
 	}
 
-	return DITASK_COMPLETE;//all run well 
+	return 0;//all run well (DiLib::DI_TASK_RETURNS::DITASK_COMPLETE)
 }
 //***************************************************************************************************************************************************//
 

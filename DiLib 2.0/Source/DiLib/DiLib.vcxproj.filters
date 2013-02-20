@@ -50,9 +50,6 @@
     <ClInclude Include="Source\DiTask.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\DiDataTypes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Source\DiTimer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -84,6 +81,9 @@
       <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="Source\DiBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DiDataTypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

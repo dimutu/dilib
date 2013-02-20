@@ -23,7 +23,9 @@ namespace DiTree
             txtIncludeFile.Text = "";
             listInclues.Items.Clear();
             //set default tab
-            tabDiFile.SelectedIndex = TABSTART_INDEX - 1;
+            tabDiFile.SelectedIndex = 1;
+
+            m_zFilePath = "";
 
             //initialize data handler
             m_pkDataHandler = new DiDataHanlder();
@@ -182,7 +184,6 @@ namespace DiTree
                     //check name already exists
                     for (int ii = TABSTART_INDEX; ii < tabDiFile.TabCount; ++ii)
                     {
-
                         string zValue = tabDiFile.TabPages[ii].Text;
                         if (sTabName.CompareTo(zValue) == 0)
                         {
@@ -254,6 +255,20 @@ namespace DiTree
                     }
 
                     writer.WriteEndElement(); //header files
+
+                    //add custom enums
+                    writer.WriteStartElement(DiXMLElements.XMLELEMENT_CUSTOMRETURNENUMS);
+                    writer.WriteAttributeString(DiXMLElements.XMLELEMENT_CUSTOMRETURNENUM_COUNT, listReturnEnums.Items.Count.ToString());
+
+                    for (int ii = 0; ii < listReturnEnums.Items.Count; ++ii)
+                    {
+                        writer.WriteStartElement(DiXMLElements.XMLELEMENT_CUSTOMENUM);
+                        writer.WriteAttributeString(DiXMLElements.XMLELEMENT_CUSTOMENUM_NAME, listReturnEnums.Items[ii].ToString());
+                        writer.WriteEndElement();
+                    }
+
+                    writer.WriteEndElement(); //custom enums
+
 
                     //add enums
                     m_pkDataHandler.WriteXMLData(ref writer);
@@ -370,6 +385,7 @@ namespace DiTree
                 //check both has red or not
                 bool bHeaderRead = false;
                 bool bEnumRead = false;
+                bool bCustomReturnsRead = false;
 
                 //generate string to initialize, if data file has one, it will replace this :)
                 txtDebugID.Text = DiMethods.GenerateRandomString();
@@ -418,11 +434,36 @@ namespace DiTree
                                 break;
                             }
                         
+                            //custom return enumeration list
+                        case DiXMLElements.XMLELEMENT_CUSTOMRETURNENUMS:
+                            {
+                                //set total header files in the list
+                                if (reader.NodeType == XmlNodeType.EndElement)
+                                {
+                                    bCustomReturnsRead = true;
+                                }
+                                else
+                                {
+                                    //check count is not zer0, and if it is set hedaer read to true
+                                    int iHeaderCount = Convert.ToInt32(reader[DiXMLElements.XMLELEMENT_CUSTOMRETURNENUM_COUNT].ToString().Trim());
+                                    if (iHeaderCount == 0)
+                                    {
+                                        bCustomReturnsRead = true;
+                                    }
+                                }
+
+                                break;
+                            }
+                        case DiXMLElements.XMLELEMENT_CUSTOMENUM:
+                            {
+                                listReturnEnums.Items.Add(reader[DiXMLElements.XMLELEMENT_CUSTOMENUM_NAME].ToString());
+                                break;
+                            }
                         default:
                             break;
                     }
 
-                    if (bHeaderRead && bEnumRead)
+                    if (bHeaderRead && bEnumRead && bCustomReturnsRead)
                     {
                         //all the data has been red
                         return;
@@ -500,6 +541,18 @@ namespace DiTree
             for (int i = 0; i < listInclues.Items.Count; i++)
             {
                 sLine = listInclues.Items[i].ToString();
+                kWriter.WriteLine(sLine);
+            }
+
+            //listing all custom return types
+            sLine = "[ReturnTypes]";
+            kWriter.WriteLine();
+            kWriter.WriteLine(sLine);
+
+            //go through header files list
+            for (int i = 0; i < listReturnEnums.Items.Count; i++)
+            {
+                sLine = listReturnEnums.Items[i].ToString();
                 kWriter.WriteLine(sLine);
             }
 
@@ -581,6 +634,28 @@ namespace DiTree
                 }
             }
         }
-       
+
+        /// <summary>
+        /// Adds text in the include to the list
+        /// </summary>
+        private void AddEnumToList()
+        {
+            if (txtReturnEnum.Text.Length > 0)
+            {
+                string str = txtReturnEnum.Text.ToUpper();
+                //check has DITASK_ infront, if not put it
+                if (!str.StartsWith("DITASK_"))
+                {
+                    str = "DITASK_" + str;
+                }
+
+                if (!listReturnEnums.Items.Contains(str))
+                {
+                    listReturnEnums.Items.Add(str);
+                }
+                txtReturnEnum.Text = "";
+                txtReturnEnum.Focus();
+            }
+        }
     }
 }

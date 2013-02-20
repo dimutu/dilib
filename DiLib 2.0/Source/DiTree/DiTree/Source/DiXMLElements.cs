@@ -18,6 +18,12 @@ namespace DiTree
         public const string XMLELEMENT_HEADERFILE = "File";//header file tag
         public const string XMLELEMENT_HEADERFILENAME = "Name"; //header file attribute - name
 
+        //custom enumerations for return types
+        public const string XMLELEMENT_CUSTOMRETURNENUMS = "CustomReturn";//all return type enum parent tag
+        public const string XMLELEMENT_CUSTOMRETURNENUM_COUNT = "Count";//enum type attribute - count
+        public const string XMLELEMENT_CUSTOMENUM = "ReturnType";//return enum tag
+        public const string XMLELEMENT_CUSTOMENUM_NAME = "Enum"; //return enum attribute - name
+
         //data table
         public const string XMLELEMENT_ENUMLIST = "Enums"; //enums parent tag
         public const string XMLELEMENT_ENUMCOUNT = "Count"; //enums attribute count

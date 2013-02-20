@@ -43,7 +43,7 @@ DiFilter<T>::~DiFilter()
 ********************************************************************************************************************************************
 */
 template <class T>
-DI_TASK_RETURNS DiFilter<T>::Execute(T* a_pkOwner)
+int DiFilter<T>::Execute(T* a_pkOwner)
 {
 	DIDEBUGGER_SEND(this);
 
@@ -51,7 +51,7 @@ DI_TASK_RETURNS DiFilter<T>::Execute(T* a_pkOwner)
 	if ( !m_pkTimer->IsRunTime() )
 	{
 		//time not ready, come back later to execute
-		return DITASK_CALLBACK;
+		return 2; //DiLib::DI_TASK_RETURNS::DITASK_CALLBACK
 	}
 
 	//check loop conditions before executing
@@ -67,7 +67,7 @@ DI_TASK_RETURNS DiFilter<T>::Execute(T* a_pkOwner)
 
 	}
 
-	return DITASK_COMPLETE;
+	return 0; //DiLib::DI_TASK_RETURNS::DITASK_COMPLETE
 
 }
 //***************************************************************************************************************************************************//

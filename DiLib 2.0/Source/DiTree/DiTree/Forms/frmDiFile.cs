@@ -14,7 +14,7 @@ namespace DiTree
         //data handler for the file
         private DiDataHanlder m_pkDataHandler;
 
-        public const int TABSTART_INDEX = 2; //two tabs will be there always (heders, add new*)
+        public const int TABSTART_INDEX = 3; //two tabs will be there always (heders, add new*)
         private string m_zFilePath; //save path
 
 
@@ -131,6 +131,61 @@ namespace DiTree
                         DiTabPage pkTabPage = (DiTabPage)tabDiFile.SelectedTab;
                         pkTabPage.Tree.RemoveNode();
                     }
+                }
+            }
+        }
+
+        private void btnAddEnum_Click(object sender, EventArgs e)
+        {
+            AddEnumToList();
+        }
+
+        private void btnRemoveEnum_Click(object sender, EventArgs e)
+        {
+            if (listReturnEnums.SelectedIndex >= 0)
+            {
+                listReturnEnums.Items.RemoveAt(listReturnEnums.SelectedIndex);
+            }
+        }
+
+        private void txtIncludeFile_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AddTextToList();
+            }
+        }
+
+        private void txtReturnEnum_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AddEnumToList();
+            }
+        }
+
+        private void listReturnEnums_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                if (listReturnEnums.SelectedIndex >= 0)
+                {
+                    int index = listReturnEnums.SelectedIndex;
+                    listReturnEnums.Items.RemoveAt(listReturnEnums.SelectedIndex);
+                    listReturnEnums.SelectedIndex = --index;
+                }
+            }
+        }
+
+        private void listInclues_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                if (listInclues.SelectedIndex >= 0)
+                {
+                    int index = listInclues.SelectedIndex;
+                    listInclues.Items.RemoveAt(listReturnEnums.SelectedIndex);
+                    listInclues.SelectedIndex = --index;
                 }
             }
         }

@@ -36,7 +36,7 @@ DiSelection<T>::~DiSelection()
 ********************************************************************************************************************************************
 */
 template <class T>
-DI_TASK_RETURNS DiSelection<T>::Execute(T* a_pkOwner)
+int DiSelection<T>::Execute(T* a_pkOwner)
 {
 	DIDEBUGGER_SEND(this);
 
@@ -44,19 +44,22 @@ DI_TASK_RETURNS DiSelection<T>::Execute(T* a_pkOwner)
 	DiTask<T>* pkTask = *m_itrCurrentTask;
 	if (pkTask != NULL) //check current task is valie
 	{
-		DI_TASK_RETURNS eReturn;
+		int eReturn;
 		eReturn = pkTask->Execute(a_pkOwner);
 
 		switch (eReturn)
 		{
-		case DITASK_NEXTTASK: //check needs to get next task
-		case DITASK_COMPLETE://current task ran successfully (currently works like a sequence)
+		case 3: //check needs to get next task (DiLib::DI_TASK_RETURNS::DITASK_NEXTTASK)
+		case 0://current task ran successfully (currently works like a sequence) (DiLib::DI_TASK_RETURNS::DITASK_COMPLETE)
 			++m_itrCurrentTask; //move to next task
 			break;
 
-		case DITASK_FAILED:
+		case 1: //DiLib::DI_TASK_RETURNS::DITASK_FAILED
 			//current task failed, all selection is failed and return back to parent
-			return DITASK_FAILED;
+			return 1;
+			break;
+
+		default:
 			break;
 		}
 			
@@ -71,12 +74,12 @@ DI_TASK_RETURNS DiSelection<T>::Execute(T* a_pkOwner)
 
 	if (m_itrCurrentTask == m_akTaskSequence.end()) //check all the task are ran through
 	{
-		return DITASK_COMPLETE; //all the task has ran through, go back to parent with all complete message
+		return 0; //all the task has ran through, go back to parent with all complete message(DiLib::DI_TASK_RETURNS::DITASK_COMPLETE)
 	}
 	else
 	{
 		//more task has to run
-		return DITASK_CALLBACK;
+		return 2; //(DiLib::DI_TASK_RETURNS::DITASK_CALLBACK)
 	}
 
 }

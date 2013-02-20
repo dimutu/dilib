@@ -14,6 +14,7 @@ namespace DiLib
 	{
 		m_zEnumFileName = "DiClassTypeIDs.h";
 		m_zClassFileName = "DiClassGenerator.cpp";
+		m_zReturnTypesFileName = "DiReturnEnums.h";
 	}
 	/******************************************************************************************************************************************/
 
@@ -46,9 +47,14 @@ namespace DiLib
 		std::string zCppFile = a_zDestinationPath;
 		zCppFile += "/" + m_zClassFileName;
 
+		std::string zReturnHFileName = a_zDestinationPath;
+		zReturnHFileName += "/" + m_zReturnTypesFileName;
+
 		GenerateEnumHeader(a_zConfigFile, zEnumHFileName.c_str());
 
 		GenerateClassGenCpp(a_zConfigFile, zCppFile.c_str());
+
+		GenerateReturnTypeEnumHeader(a_zConfigFile, zReturnHFileName.c_str());
 
 		return false;
 	}
@@ -400,8 +406,103 @@ namespace DiLib
 	}
 	/******************************************************************************************************************************************/
 
-	std::string DiParser::GenerateTemplateClasses()
+	bool DiParser::GenerateReturnTypeEnumHeader(const char* a_zConfigFile, const char* a_zEnumFile)
 	{
-		return "";
+		std::fstream kConfigFile;
+		std::fstream kEnumHFile;
+
+		kConfigFile.open(a_zConfigFile, std::ios_base::in );
+		kEnumHFile.open(a_zEnumFile, std::ios_base::out | std::ios_base::trunc);
+
+		std::string sLine;
+		std::string sWriteLine;
+		char zBuff[200];
+		bool bStartRead = false;
+		bool bHasCustomEnums = false; //flag additional enumerations added (this helps to close the last default enum or contact to fit with custom
+
+		if (kConfigFile.is_open() && kEnumHFile.is_open() ) //open the DI file and enum header to write
+		{
+			std::cout << "Generating " << a_zEnumFile << "... ";
+
+			//write a comment on header
+			sWriteLine = "\n/*this file generates at runtime to identify each inherited or templated class by a enum id for easy identification*/\n\n";
+			kEnumHFile.write(sWriteLine.c_str(), sWriteLine.size());
+
+			//write #defines for header
+			sWriteLine = "\n#ifndef _DI_TASK_RETURN_TYPE_IDS_H_\n#define _DI_TASK_RETURN_TYPE_IDS_H_\n\n";
+			kEnumHFile.write(sWriteLine.c_str(), sWriteLine.size());
+
+			sWriteLine = "namespace DiLib\n\
+{\n\
+\tenum DI_TASK_RETURNS\n\
+\t{\n\
+\t\tDITASK_COMPLETE = 0, //task successfully done and now can exit the task\n\
+\t\tDITASK_FAILED = 1, //task failed, return back to parent class\n\
+\t\tDITASK_CALLBACK = 2, //task completed, or waiting... dont return to parent, need to comeback to execute the same task (i.e. filter or selection)\n\
+\t\tDITASK_NEXTTASK = 3";
+			kEnumHFile.write(sWriteLine.c_str(), sWriteLine.size());
+
+			while (!kConfigFile.eof())
+			{
+				kConfigFile.getline(zBuff, 200);
+				sLine = zBuff;
+
+				if (sLine == "[ReturnTypes]")
+				{
+					bStartRead = true;
+					continue;
+				}
+
+				if (bStartRead && sLine.size() <= 1)
+				{
+					bStartRead = false;
+					break;
+				}
+
+				if (zBuff[0] == '#')
+				{
+					continue;
+				}
+
+				if (bStartRead)
+				{
+					if (!bHasCustomEnums) //additional enums here, place comma to add new ones
+					{
+						sWriteLine = ", //move to next task\n";
+						kEnumHFile.write(sWriteLine.c_str(), sWriteLine.size());
+						bHasCustomEnums = true;
+					}
+					sWriteLine = "\t\t" + sLine + ",\n";
+					kEnumHFile.write(sWriteLine.c_str(), sWriteLine.size());
+				}
+			}
+
+			if (!bHasCustomEnums)
+			{
+				sWriteLine = " //move to next task\n";
+				kEnumHFile.write(sWriteLine.c_str(), sWriteLine.size());
+			}
+
+			sWriteLine = "\t};\n}\n"; //close enum and namespace
+			kEnumHFile.write(sWriteLine.c_str(), sWriteLine.size());
+
+			//end define
+			sWriteLine = "\n#endif\n";
+			kEnumHFile.write(sWriteLine.c_str(), sWriteLine.size());
+
+			std::cout << "Completed.\n";
+			return true;
+		}
+		else if (!kConfigFile.is_open() )
+		{
+			std::cout << "DiParser Error: Unable to open " << a_zConfigFile << " file. Make sure the file exists and not read-only.";
+		}
+		else if (!kEnumHFile.is_open() )
+		{
+			std::cout << "DiParser Error: Unable to open or create " << a_zEnumFile << " file. Make sure you have relavent permission for file access.";
+		}
+
+		return false;
 	}
+
 } //end namespace

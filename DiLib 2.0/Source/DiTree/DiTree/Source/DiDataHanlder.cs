@@ -111,7 +111,7 @@ namespace DiTree
             try
             {
                 int id = 0;
-                string zClassName = "Di" + a_zTempleteClassName; //genereate class name
+                string zClassName = "Di"; //genereate class name
 
                 switch (a_eClassType)
                 {
@@ -122,16 +122,19 @@ namespace DiTree
                         }
                     case DICLASSTYPES.DICLASSTYPE_FILTER:
                         {
+                            zClassName += a_zTempleteClassName;
                             zClassName += "Filter";
                             break;
                         }
                     case DICLASSTYPES.DICLASSTYPE_SELECTION:
                         {
+                            zClassName += a_zTempleteClassName;
                             zClassName += "Selection";
                             break;
                         }
                     case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
                         {
+                            zClassName += a_zTempleteClassName;
                             zClassName += "Sequence";
                             break;
                         }

@@ -43,10 +43,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPageNew = new System.Windows.Forms.TabPage();
             this.tabDiFile = new System.Windows.Forms.TabControl();
+            this.tabPageReturns = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtReturnEnum = new System.Windows.Forms.TextBox();
+            this.btnRemoveEnum = new System.Windows.Forms.Button();
+            this.btnAddEnum = new System.Windows.Forms.Button();
+            this.listReturnEnums = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnCloseTab = new System.Windows.Forms.Button();
             this.toolTipHelp = new System.Windows.Forms.ToolTip(this.components);
             this.tabPageGeneral.SuspendLayout();
             this.tabDiFile.SuspendLayout();
+            this.tabPageReturns.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPageGeneral
@@ -90,11 +98,13 @@
             // 
             // txtIncludeFile
             // 
-            this.txtIncludeFile.AcceptsReturn = true;
+            this.txtIncludeFile.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtIncludeFile.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
             this.txtIncludeFile.Location = new System.Drawing.Point(215, 107);
             this.txtIncludeFile.Name = "txtIncludeFile";
             this.txtIncludeFile.Size = new System.Drawing.Size(268, 21);
             this.txtIncludeFile.TabIndex = 2;
+            this.txtIncludeFile.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIncludeFile_KeyDown);
             // 
             // lblDebugName
             // 
@@ -153,6 +163,7 @@
             this.listInclues.Name = "listInclues";
             this.listInclues.Size = new System.Drawing.Size(268, 229);
             this.listInclues.TabIndex = 4;
+            this.listInclues.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listInclues_KeyDown);
             // 
             // label2
             // 
@@ -179,6 +190,7 @@
             // 
             this.tabDiFile.Controls.Add(this.tabPageNew);
             this.tabDiFile.Controls.Add(this.tabPageGeneral);
+            this.tabDiFile.Controls.Add(this.tabPageReturns);
             this.tabDiFile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabDiFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabDiFile.ItemSize = new System.Drawing.Size(80, 50);
@@ -190,6 +202,82 @@
             this.tabDiFile.Size = new System.Drawing.Size(780, 490);
             this.tabDiFile.TabIndex = 2;
             this.tabDiFile.SelectedIndexChanged += new System.EventHandler(this.tabDiFile_SelectedIndexChanged);
+            // 
+            // tabPageReturns
+            // 
+            this.tabPageReturns.Controls.Add(this.textBox1);
+            this.tabPageReturns.Controls.Add(this.txtReturnEnum);
+            this.tabPageReturns.Controls.Add(this.btnRemoveEnum);
+            this.tabPageReturns.Controls.Add(this.btnAddEnum);
+            this.tabPageReturns.Controls.Add(this.listReturnEnums);
+            this.tabPageReturns.Controls.Add(this.label6);
+            this.tabPageReturns.Location = new System.Drawing.Point(4, 54);
+            this.tabPageReturns.Name = "tabPageReturns";
+            this.tabPageReturns.Size = new System.Drawing.Size(772, 432);
+            this.tabPageReturns.TabIndex = 3;
+            this.tabPageReturns.Text = "Return Types";
+            this.tabPageReturns.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(563, 56);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(181, 240);
+            this.textBox1.TabIndex = 14;
+            this.textBox1.Text = resources.GetString("textBox1.Text");
+            // 
+            // txtReturnEnum
+            // 
+            this.txtReturnEnum.AcceptsReturn = true;
+            this.txtReturnEnum.Location = new System.Drawing.Point(208, 64);
+            this.txtReturnEnum.Name = "txtReturnEnum";
+            this.txtReturnEnum.Size = new System.Drawing.Size(268, 21);
+            this.txtReturnEnum.TabIndex = 8;
+            this.txtReturnEnum.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReturnEnum_KeyDown);
+            // 
+            // btnRemoveEnum
+            // 
+            this.btnRemoveEnum.ImageKey = "delete.png";
+            this.btnRemoveEnum.Location = new System.Drawing.Point(493, 147);
+            this.btnRemoveEnum.Name = "btnRemoveEnum";
+            this.btnRemoveEnum.Size = new System.Drawing.Size(53, 37);
+            this.btnRemoveEnum.TabIndex = 12;
+            this.btnRemoveEnum.UseVisualStyleBackColor = true;
+            this.btnRemoveEnum.Click += new System.EventHandler(this.btnRemoveEnum_Click);
+            // 
+            // btnAddEnum
+            // 
+            this.btnAddEnum.ImageKey = "add.png";
+            this.btnAddEnum.Location = new System.Drawing.Point(493, 56);
+            this.btnAddEnum.Name = "btnAddEnum";
+            this.btnAddEnum.Size = new System.Drawing.Size(53, 37);
+            this.btnAddEnum.TabIndex = 10;
+            this.btnAddEnum.UseVisualStyleBackColor = true;
+            this.btnAddEnum.Click += new System.EventHandler(this.btnAddEnum_Click);
+            // 
+            // listReturnEnums
+            // 
+            this.listReturnEnums.FormattingEnabled = true;
+            this.listReturnEnums.ItemHeight = 15;
+            this.listReturnEnums.Location = new System.Drawing.Point(208, 147);
+            this.listReturnEnums.Name = "listReturnEnums";
+            this.listReturnEnums.Size = new System.Drawing.Size(268, 229);
+            this.listReturnEnums.TabIndex = 11;
+            this.listReturnEnums.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listReturnEnums_KeyDown);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(34, 67);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(136, 15);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Additional Return Types";
             // 
             // btnCloseTab
             // 
@@ -217,6 +305,8 @@
             this.tabPageGeneral.ResumeLayout(false);
             this.tabPageGeneral.PerformLayout();
             this.tabDiFile.ResumeLayout(false);
+            this.tabPageReturns.ResumeLayout(false);
+            this.tabPageReturns.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -238,5 +328,12 @@
         private System.Windows.Forms.TabControl tabDiFile;
         private System.Windows.Forms.Button btnCloseTab;
         private System.Windows.Forms.ToolTip toolTipHelp;
+        private System.Windows.Forms.TabPage tabPageReturns;
+        private System.Windows.Forms.TextBox txtReturnEnum;
+        private System.Windows.Forms.Button btnRemoveEnum;
+        private System.Windows.Forms.Button btnAddEnum;
+        private System.Windows.Forms.ListBox listReturnEnums;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -17,7 +17,6 @@
 
 #include <string>
 #include "DiBase.h"
-#include "DiDataTypes.h"
 
 namespace DiLib
 {
@@ -72,7 +71,7 @@ namespace DiLib
 		* Return: DI_TASK_RETURNS
 		********************************************************************************************************************************************
 		*/
-		virtual DI_TASK_RETURNS Execute(T* a_pkOwner) = 0;
+		virtual int Execute(T* a_pkOwner) = 0;
 
 		/*
 		********************************************************************************************************************************************

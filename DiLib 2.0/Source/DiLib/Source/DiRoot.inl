@@ -37,7 +37,7 @@ DiRoot<T>::~DiRoot()
 ********************************************************************************************************************************************
 */
 template <class T>
-DI_TASK_RETURNS DiRoot<T>::Execute(T* a_pkOwner)
+int DiRoot<T>::Execute(T* a_pkOwner)
 {
 	DIDEBUGGER_SEND(this);
 
@@ -51,11 +51,11 @@ DI_TASK_RETURNS DiRoot<T>::Execute(T* a_pkOwner)
 	DiTask<T>* pkTask = *m_itrCurrentTask;
 	if (pkTask != NULL) //check current task is valie
 	{
-		DI_TASK_RETURNS eReturn;
+		int eReturn;
 		eReturn = pkTask->Execute(a_pkOwner);
 
 		//move to next if its not callback (its complete or failed)
-		if (eReturn != DITASK_CALLBACK)
+		if (eReturn != 2) //DiLib::DI_TASK_RETURNS::DITASK_CALLBACK
 		{
 			++m_itrCurrentTask; //move to next task
 		}			
@@ -68,7 +68,7 @@ DI_TASK_RETURNS DiRoot<T>::Execute(T* a_pkOwner)
 	}//end if curretn task null
 
 	//root always gets callback
-	return DITASK_CALLBACK;
+	return 2; //DiLib::DI_TASK_RETURNS::DITASK_CALLBACK
 
 }
 //***************************************************************************************************************************************************//
