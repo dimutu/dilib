@@ -215,7 +215,7 @@
             this.tabPageReturns.Name = "tabPageReturns";
             this.tabPageReturns.Size = new System.Drawing.Size(772, 432);
             this.tabPageReturns.TabIndex = 3;
-            this.tabPageReturns.Text = "Return Types";
+            this.tabPageReturns.Text = "Enumerations";
             this.tabPageReturns.UseVisualStyleBackColor = true;
             // 
             // textBox1

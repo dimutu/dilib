@@ -649,7 +649,12 @@ namespace DiTree
                     str = "DITASK_" + str;
                 }
 
-                if (!listReturnEnums.Items.Contains(str))
+                //check its not default 
+                if (str == "DITASK_COMPLETE" || str == "DITASK_FAILED" || str == "DITASK_CALLBACK" || str == "DITASK_NEXTTASK")
+                {
+                    DiMethods.MyDialogShow("No need to add default enumerations, will be added when parsing config file.", MessageBoxButtons.OK);
+                }
+                else if (!listReturnEnums.Items.Contains(str))
                 {
                     listReturnEnums.Items.Add(str);
                 }

@@ -343,7 +343,6 @@ namespace DiTree
                         }
                         pkTask.EnumID = dr.EnumID;
                         pkTask.IsTemplate = dr.IsTemplate;
-
                         dr = null;
                     }
                     else

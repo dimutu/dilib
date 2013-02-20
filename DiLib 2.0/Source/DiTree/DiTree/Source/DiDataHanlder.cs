@@ -22,6 +22,7 @@ namespace DiTree
         public const string DATAFIELD_CLASSTYPE = "ClassType";
         public const string DATAFIELD_CLASSNAME = "ClassName";
         public const string DATAFIELD_TEMPLATECLASS = "TemplateClass";
+        public const string DATAFIELD_USECOUNT = "UseCount";
 
         /// <summary>
         /// Constructor
@@ -46,6 +47,7 @@ namespace DiTree
             m_dtData.Columns.Add(DATAFIELD_CLASSTYPE, typeof(DICLASSTYPES)); //class type
             m_dtData.Columns.Add(DATAFIELD_CLASSNAME, typeof(string)); //class name this can be template class or derived
             m_dtData.Columns.Add(DATAFIELD_TEMPLATECLASS, typeof(string)); //is it Player, Enemy type class
+            m_dtData.Columns.Add(DATAFIELD_USECOUNT, typeof(int)); //total times this class is used in the tree
         }
 
         /// <summary>
@@ -83,6 +85,7 @@ namespace DiTree
                 dr[DATAFIELD_CLASSTYPE] = a_eClassType;
                 dr[DATAFIELD_CLASSNAME] = a_zClassName;
                 dr[DATAFIELD_TEMPLATECLASS] = a_zTempleteClassName;
+                dr[DATAFIELD_USECOUNT] = 1;
 
                 m_dtData.Rows.Add(dr);
 
@@ -163,6 +166,7 @@ namespace DiTree
                     dr[DATAFIELD_CLASSTYPE] = a_eClassType;
                     dr[DATAFIELD_CLASSNAME] = zClassName;
                     dr[DATAFIELD_TEMPLATECLASS] = a_zTempleteClassName;
+                    dr[DATAFIELD_USECOUNT] = 1;
 
                     m_dtData.Rows.Add(dr);
                 }
@@ -463,6 +467,23 @@ namespace DiTree
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Update use count of the class as increased use or not in use anymore
+        /// </summary>
+        /// <param name="a_zClassName"></param>
+        /// <param name="a_Increase"></param>
+        public void UpdateUseCount(string a_zClassName, bool a_Increase)
+        {
+            DataRow[] adr = null;
+            DataRow dr = null;
+            adr = m_dtData.Select(DATAFIELD_CLASSNAME + "='" + a_zClassName + "'");
+            if (adr.Length == 1)
+            {
+                dr = adr[0];
+                dr[DATAFIELD_USECOUNT] = (int)dr[DATAFIELD_USECOUNT] + (a_Increase ? 1 : -1);
+            }
         }
     }
 }

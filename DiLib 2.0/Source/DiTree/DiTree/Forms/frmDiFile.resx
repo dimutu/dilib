@@ -121,10 +121,10 @@
     <value>Addition to default return task types, you can place custom return types you wish to handle inside the behaviour tree. 
 
 Default values:
-DITASK_COMPLETE
-DITASK_FAILED
-DITASK_CALLBACK
-DITASK_NEXTTASK
+DITASK_COMPLETE = 0
+DITASK_FAILED = 1
+DITASK_CALLBACK = 2
+DITASK_NEXTTASK = 3
 
 **Prefix (DITASK) will be added automatically.</value>
   </data>
