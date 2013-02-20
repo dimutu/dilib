@@ -662,5 +662,25 @@ namespace DiTree
                 txtReturnEnum.Focus();
             }
         }
+
+        /// <summary>
+        /// Iterate through all the trees and set each task use count for frmTaskView
+        /// </summary>
+        public void ProcessData()
+        {
+            if (tabDiFile.TabCount > TABSTART_INDEX)
+            {
+                m_pkDataHandler.ResetUseCount();
+                for (int i = TABSTART_INDEX; i < tabDiFile.TabCount; ++i)
+                {
+                    DiTabPage tab = (DiTabPage)tabDiFile.TabPages[i];
+                    if (tab != null)
+                    {
+                        tab.Tree.ProcessTreeData();
+
+                    }
+                }
+            }
+        }
     }
 }

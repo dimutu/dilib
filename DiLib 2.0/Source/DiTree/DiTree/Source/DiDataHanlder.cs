@@ -33,6 +33,17 @@ namespace DiTree
         }
 
         /// <summary>
+        /// Get current data
+        /// </summary>
+        public DataTable Data
+        {
+            get
+            {
+                return m_dtData;
+            }
+        }
+
+        /// <summary>
         /// creates the data table
         /// </summary>
         private void InitializeDataTable()
@@ -483,6 +494,14 @@ namespace DiTree
             {
                 dr = adr[0];
                 dr[DATAFIELD_USECOUNT] = (int)dr[DATAFIELD_USECOUNT] + (a_Increase ? 1 : -1);
+            }
+        }
+
+        public void ResetUseCount()
+        {
+            foreach (DataRow dr in m_dtData.Rows)
+            {
+                dr[DATAFIELD_USECOUNT] = 0;
             }
         }
     }

@@ -412,5 +412,26 @@ namespace DiTree
                 }
             }
         }
+
+        public void ProcessTreeData()
+        {
+            DiTreeNode root = (DiTreeNode)treeBT.Nodes[0];
+            ProcessTreeData(root); 
+        }
+
+        private void ProcessTreeData(DiTreeNode a_pkNode)
+        {
+            if (a_pkNode == null)
+            {
+                return;
+            }
+            DiTreeNode node;
+            m_pkDataHandler.UpdateUseCount(a_pkNode.ClassName, true);
+            for (int i = a_pkNode.Nodes.Count - 1; i >= 0; --i)
+            {
+                node = (DiTreeNode)a_pkNode.Nodes[i];
+                ProcessTreeData(node);
+            }
+        }
     }
 }

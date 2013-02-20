@@ -18,12 +18,14 @@ namespace DiTree
         private frmConsole m_frmConsole;
         private frmSelectExportTree m_frmSelectTree; //select tree fro exporting the tree from currently selected frmDiFile
         private DiRecentFileManager m_recentFileManager;
+        private frmTaskView m_frmTaskView;
 
         public frmMDI()
         {
             InitializeComponent();
             m_frmSelectTree = new frmSelectExportTree();
             m_frmConsole = new frmConsole();
+            m_frmTaskView = new frmTaskView();
             DiMethods.StatusMessageLable = toolStripStatusMessage;
 
             m_recentFileManager = new DiRecentFileManager(this, ref recentFilesToolStripMenuItem, 
@@ -562,6 +564,26 @@ namespace DiTree
         private void toolStripMainSave_Click(object sender, EventArgs e)
         {
             saveDiFile(false);
+        }
+
+        private void outputWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            m_frmConsole.Show();
+        }
+
+        private void tasksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
+            if (frmActive != null)
+            {
+                frmActive.ProcessData();
+                m_frmTaskView.SetData(frmActive.DataHandler);
+                m_frmTaskView.ShowDialog();
+            }
+            else
+            {
+                DiMethods.MyDialogShow("Need to open a didata file to view the tasks list.", MessageBoxButtons.OK);
+            }
         }
 
     }

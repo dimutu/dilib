@@ -25,6 +25,17 @@ namespace DiTree
             EnableTabCloseButton();
         }
 
+        /// <summary>
+        /// Data Handler
+        /// </summary>
+        public DiDataHanlder DataHandler
+        {
+            get
+            {
+                return m_pkDataHandler;
+            }
+        }
+
         private void btnAddInclude_Click(object sender, EventArgs e)
         {
             AddTextToList();
