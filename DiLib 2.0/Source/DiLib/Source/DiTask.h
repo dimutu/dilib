@@ -1,12 +1,24 @@
 
 /*
 *********************************************************************************************************************************************
+* DiLib v2.0
 *
 * Author: Dimutu Kulawardana
 * Date: 28-05-2011
-* Description: template class gets to implement a single task that executed by a player,		
-*		** NOTE THAT THIS IS JUST A TEMPLATE THAT HAS TO IMPLEMENT TO EACH TASK SO THE FUNCTION BODIES HERE ARE ONLY TO EXPLAIN HOW THE FUNCTION
-*			WORKS!!!**
+* Description: decription Template class gets to implement a single task that executed in the tree,
+*				 this act as the leaf node of the tree and base class for all other tasks.
+*				 THIS CLASS MUST BE IMPLEMENTED IN THE GAME CODE IN-ORDER TO USE IT.
+*
+* Modified: 05-10-2012
+* Description: removed DiTimer implementation in task and moved only into DiFilter
+*
+* Modified: 19-02-2013
+* Description: added pointer to tree root, so the task can set itself as last state,
+*				to avoid full tree iteration on each execution cycle and root can point and execute this task
+*				ROOT FUNCTIONALITY IS TO IMPLEMENTED BY THE PROGRAMMERS
+*
+* Modified: 20-02-2013
+* Description: removed Execute function returning enum and changed to int, to able to have many types of return values
 *
 *********************************************************************************************************************************************
 */

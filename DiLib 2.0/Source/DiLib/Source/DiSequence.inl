@@ -120,7 +120,7 @@ bool DiSequence<T>::RemoveAllTasks()
 ********************************************************************************************************************************************
 * Function: Execute() - run all the child tasks sequenctially
 * Parameters: T* a_pkOwner - ai player that is executing through the function
-* Return: DI_TASK_RETURNS
+* Return: int
 ********************************************************************************************************************************************
 */
 template <class T>

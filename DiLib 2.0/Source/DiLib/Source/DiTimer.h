@@ -98,8 +98,6 @@ namespace DiLib
 		clock_t m_lLastRunTime; //time at last execution
 
 		clock_t m_lNextRunTime; //next execution time
-
-
 	};
 
 }

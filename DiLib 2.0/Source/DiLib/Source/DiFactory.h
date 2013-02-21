@@ -1,6 +1,7 @@
 
 /*
 *********************************************************************************************************************************************
+* DiLib v2.0
 *
 * Author: Dimutu Kulawardana
 * Date: 06-06-2011
@@ -8,19 +9,15 @@
 *				map key is to identify each task so if same number pass in, create new number of the new instance 
 *				but copy all of the values from that identifier to new instance
 *
+* Modified: 10-12-2012
+* Description: updated loading structure with modified DiTask, DiFilter structures
+*
+* Modified: 20-02-2013
+* Description: set root reference pointer when setting up each task
+*
 *********************************************************************************************************************************************
 */
 
-/*
-*********************************************************************************************************************************************
-*
-* Author: Dimutu Kulawardana
-* Date: 06-06-2011
-* Description: factory class that create each task node, and create the tree using tree file created using,
-*				DiTreeCreator application
-*
-*********************************************************************************************************************************************
-*/
 
 #ifndef _DI_TASK_FACTORY_H_
 #define _DI_TASK_FACTORY_H_
@@ -32,9 +29,7 @@
 
 #include "DiBase.h"
 #include "DiRoot.h"
-#include "DiClassTypeIDs.h"
 #include "DiTask.h"
-#include "DiClassTypeIDs.h"
 #include "DiCondition.h"
 #include "DiFilter.h"
 #include "DiSelection.h"
@@ -58,11 +53,11 @@ namespace DiFactory
 	* THIS FUNCTION CONTENT IS GENERATED AT RUNTIME BY COMPILING THE DICONFIG FILE
 	* Function: CreateTask() - create a task node using the given type in enum value, this enum is runtime generated using
 	*							DiParser
-	* Parameters: DI_CLASSTYPEID a_eClassTypeID - class type that needs new instance of
+	* Parameters: int a_eClassTypeID - class type that needs new instance of
 	* Return: DiLib::DiBase* - new class instance of given type
 	********************************************************************************************************************************************
 	*/
-	DiLib::DiBase* CreateTask(DI_CLASSTYPEID a_eClassTypeID);
+	DiLib::DiBase* CreateTask(int a_eClassTypeID);
 
 	/*
 	********************************************************************************************************************************************

@@ -1,10 +1,14 @@
 
 /*
 *********************************************************************************************************************************************
+* DiLib v2.0
 *
 * Author: Dimutu Kulawardana
 * Date: 04-06-2011
 * Description: check a condition and if child task exists try to run the task or return back to parent
+*
+* Modified: 20-02-2013
+* Description: removed Execute function returning enum and changed to int, to able to have many types of return values
 *
 *********************************************************************************************************************************************
 */

@@ -32,7 +32,7 @@ DiSelection<T>::~DiSelection()
 ********************************************************************************************************************************************
 * Function: Execute() - run current task until its completed and move on to next and loop until one fails
 * Parameters: T* a_pkOwner - ai player that is executing through the function
-* Return: DI_TASK_RETURNS
+* Return: int
 ********************************************************************************************************************************************
 */
 template <class T>

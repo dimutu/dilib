@@ -1,10 +1,19 @@
 
 /*
 *********************************************************************************************************************************************
+* DiLib v2.0
 *
 * Author: Dimutu Kulawardana
 * Date: 06-06-2011
 * Description: the behaviour tree root node, this will keep track of all the task nodes in the tree, handles the memory and reloading scripts
+*
+* Modified: 19-02-2013
+* Description: added pointer to tree root, so the task can set itself as last state,
+*				to avoid full tree iteration on each execution cycle and root can point and execute this task
+*				ROOT FUNCTIONALITY IS TO IMPLEMENTED BY THE PROGRAMMERS
+*
+* Modified: 20-02-2013
+* Description: removed Execute function returning enum and changed to int, to able to have many types of return values
 *
 *********************************************************************************************************************************************
 */

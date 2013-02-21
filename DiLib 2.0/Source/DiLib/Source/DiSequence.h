@@ -2,10 +2,14 @@
 
 /*
 *********************************************************************************************************************************************
+* DiLib v2.0
 *
 * Author: Dimutu Kulawardana
 * Date: 28-05-2011
 * Description: inherits from DiCondition and do the task on given time intervel and it can be a continuos loop, eg: run animation, play sound
+*
+* Modified: 20-02-2013
+* Description: removed Execute function returning enum and changed to int, to able to have many types of return values
 *
 *********************************************************************************************************************************************
 */

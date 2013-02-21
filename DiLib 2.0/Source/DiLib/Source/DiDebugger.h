@@ -1,11 +1,18 @@
 
 /*
 *********************************************************************************************************************************************
+* DiLib v2.0
 *
 * Author: Dimutu Kulawardana
 * Date: 12-11-2011
 * Description: debugger macros to use in behaviour tree task, which is under _DEBUG directive so only effect while debugging and not in
 *					final output
+*
+* Modified: 20-06-2012
+* Description: added _DIDEBUG preprocessor to setup debug mode only on WIN platform
+*
+* Modified: 11-01-2013
+* Description: change namespace and renamed Terminate function to Shutdown
 *
 *********************************************************************************************************************************************
 */

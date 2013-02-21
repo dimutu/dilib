@@ -1,14 +1,15 @@
 
 /*
 *********************************************************************************************************************************************
+* DiLib v2.0
 *
 * Author: Dimutu Kulawardana
 * Date: 06-06-2011
-* Description: base class deriving to template classes, so this can use as base pointer to point to
-*					what ever the template class implements into and dont have to use void* pointers
+* Description: Base class deriving to template classes, so this can use as base pointer to point to
+*				what ever the template class implements into and dont have to use void* pointers
 *
 * Modified: 11-11-2011
-* Description: added debugging service data
+* Description: Added debugging service data
 *********************************************************************************************************************************************
 */
 

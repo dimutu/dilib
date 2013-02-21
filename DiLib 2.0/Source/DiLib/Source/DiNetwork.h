@@ -1,10 +1,17 @@
 
 /*
 *********************************************************************************************************************************************
+* DiLib v2.0
 *
 * Author: Dimutu Kulawardana
 * Date: 11-11-2011
 * Description: network class to manage data sending to client UI for debugging servince, run as a singleton
+*
+* Modified: 11-01-2013
+* Description: change namespace and renamed Terminate function to Shutdown
+*
+* Modified: 13-02-2013
+* Description: re-write data transferring method to facilitate UI breakpoints
 *
 *********************************************************************************************************************************************
 */

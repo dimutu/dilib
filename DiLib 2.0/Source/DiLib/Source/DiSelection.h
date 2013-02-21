@@ -1,11 +1,15 @@
 
 /*
 *********************************************************************************************************************************************
+* DiLib v2.0
 *
 * Author: Dimutu Kulawardana
 * Date: 06-06-2011
 * Description: inherits from DiSequence to do one task in the list until its completed and move on to next after until all the task has been
 *				ran through or return to parent if any task has failed to execute
+*
+* Modified: 20-02-2013
+* Description: removed Execute function returning enum and changed to int, to able to have many types of return values
 *
 *********************************************************************************************************************************************
 */

@@ -1,10 +1,20 @@
 
 /*
 *********************************************************************************************************************************************
+* DiLib v2.0
 *
 * Author: Dimutu Kulawardana
 * Date: 04-06-2011
 * Description: inherits from DiCondition and do the task on given time intervel and it can be a continues loop, eg: run animation, play sound
+*
+* Modified: 14-10-2012
+* Description: changed inheritance to DiTask and only has single task execution on timer
+*
+* Modified: 28-11-2012
+* Description: fixed issue with loading tree not setting up timer properties
+*
+* Modified: 20-02-2013
+* Description: removed Execute function returning enum and changed to int, to able to have many types of return values
 *
 *********************************************************************************************************************************************
 */
