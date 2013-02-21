@@ -31,7 +31,7 @@ namespace DiLib
 	public:
 		/*
 		********************************************************************************************************************************************
-		* Function: DiSelection() - constructor
+		* Function: DiRoot() - constructor
 		* Parameters: none
 		* Return: none
 		********************************************************************************************************************************************
@@ -40,7 +40,7 @@ namespace DiLib
 
 		/*
 		********************************************************************************************************************************************
-		* Function: ~DiSelection() - destructor, remove the root and its child nodes
+		* Function: ~DiRoot() - destructor, remove the root and its child nodes
 		* Parameters: none
 		* Return: none
 		********************************************************************************************************************************************
@@ -51,7 +51,7 @@ namespace DiLib
 		********************************************************************************************************************************************
 		* Function: Execute() - run current task until its completed and move on to next and loop until one fails
 		* Parameters: T* a_pkOwner - ai player that is executing through the function
-		* Return: DI_TASK_RETURNS
+		* Return: int
 		********************************************************************************************************************************************
 		*/
 		virtual int Execute(T* a_pkOwner);

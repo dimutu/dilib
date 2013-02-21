@@ -6,7 +6,7 @@
 *
 * Author: Dimutu Kulawardana
 * Date: 28-05-2011
-* Description: inherits from DiCondition and do the task on given time intervel and it can be a continuos loop, eg: run animation, play sound
+* Description: Execute the tasks in the list in sequential order
 *
 * Modified: 20-02-2013
 * Description: removed Execute function returning enum and changed to int, to able to have many types of return values
@@ -85,7 +85,7 @@ namespace DiLib
 		********************************************************************************************************************************************
 		* Function: Execute() - run all the child tasks sequenctially
 		* Parameters: T* a_pkOwner - ai player that is executing through the function
-		* Return: DI_TASK_RETURNS
+		* Return: int
 		********************************************************************************************************************************************
 		*/
 		virtual int Execute(T* a_pkOwner);

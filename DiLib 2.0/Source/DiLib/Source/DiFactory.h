@@ -9,6 +9,9 @@
 *				map key is to identify each task so if same number pass in, create new number of the new instance 
 *				but copy all of the values from that identifier to new instance
 *
+* Modified: 05-08-2012
+* Description: removed DiBillboard
+*
 * Modified: 10-12-2012
 * Description: updated loading structure with modified DiTask, DiFilter structures
 *
@@ -82,7 +85,6 @@ namespace DiFactory
 	* Parameters:	TiXmlElement* a_xmlNode - current xml node which has the data for the current task node
 	*				DiLib::DiTask<T>* a_pkCurNode - parent node created a step before in the recursive function
 	*				DiLib::DiRoot<T>* a_pkRoot - pointer to root node
-	*				DiBillboard* a_pkExternalData - external
 	* Return: bool - tree creation success(true) or not(false)
 	********************************************************************************************************************************************
 	*/

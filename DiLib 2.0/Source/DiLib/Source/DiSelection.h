@@ -5,8 +5,7 @@
 *
 * Author: Dimutu Kulawardana
 * Date: 06-06-2011
-* Description: inherits from DiSequence to do one task in the list until its completed and move on to next after until all the task has been
-*				ran through or return to parent if any task has failed to execute
+* Description: execute tasks in selected order
 *
 * Modified: 20-02-2013
 * Description: removed Execute function returning enum and changed to int, to able to have many types of return values
@@ -48,14 +47,14 @@ namespace DiLib
 		********************************************************************************************************************************************
 		* Function: Execute() - run current task until its completed and move on to next and loop until one fails
 		* Parameters: T* a_pkOwner - ai player that is executing through the function
-		* Return: DI_TASK_RETURNS
+		* Return: int
 		********************************************************************************************************************************************
 		*/
 		virtual int Execute(T* a_pkOwner);
 
 		/*
 		********************************************************************************************************************************************
-		* Function: SetBegin() - set the current task back to begining
+		* Function: SetExecuteBegin() - set the current task back to begining
 		* Parameters: void
 		* Return: void
 		********************************************************************************************************************************************
@@ -64,7 +63,7 @@ namespace DiLib
 
 		/*
 		********************************************************************************************************************************************
-		* Function: SetEnd() - set the current task to end so it will exit back to parent
+		* Function: SetExecuteEnd() - set the current task to end so it will exit back to parent
 		* Parameters: void
 		* Return: void
 		********************************************************************************************************************************************

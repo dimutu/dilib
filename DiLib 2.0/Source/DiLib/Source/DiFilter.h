@@ -52,10 +52,9 @@ namespace DiLib
 
 		/*
 		********************************************************************************************************************************************
-		* Function: Execute() - do the ai stuff to this playr, either using lua script is set or the code set in the function
-								virtual function that has to implement for do ai stuff
+		* Function: Execute() - execute child task if the filtering time has met and reset timer for next execution if loop or iteration count set
 		* Parameters: T* a_pkOwner - ai player that is executing through the function
-		* Return: DI_TASK_RETURNS
+		* Return: int
 		********************************************************************************************************************************************
 		*/
 		virtual int Execute(T* a_pkOwner);
