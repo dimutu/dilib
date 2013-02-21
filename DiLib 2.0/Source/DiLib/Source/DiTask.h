@@ -59,16 +59,20 @@ namespace DiLib
 
 		/*
 		********************************************************************************************************************************************
-		* Function: LoadScript() - load the lua script using the given file
-		* Parameters: const char* a_zScriptFile - lua script file that nees to be loading
-		* Return: bool - loading script successful (true) or not (false)
+		* Function: LoadScript() - Load an external script using the given file, this gets parameter value set from the UI 
+		*							during the loading process of the tree and sets m_zScriptFile.
+		*							Function must be overriden in-order to set the rest of the process of opening and executing the selected scrip file 
+		*
+		* Parameters: const char* a_zScriptFile Script file path set's through the tree creation interface
+		* Return: bool - For extending purposes to evaluate loading success or failure.
 		********************************************************************************************************************************************
 		*/
 		virtual bool LoadScript(const char* a_zScriptFile);
 
 		/*
 		********************************************************************************************************************************************
-		* Function: ReloadScript() - reload the current script to update script modification
+		* Function: ReloadScript() - Reload the current script to update script modification.
+		*								Function must be overriden in-order to use the features.
 		* Parameters: void
 		* Return: void
 		********************************************************************************************************************************************
@@ -113,11 +117,11 @@ namespace DiLib
 		void SetRoot(const DiRoot<T>* a_pkRoot);
 
 	protected:
-		const DiRoot<T>* m_pkRoot;
+		const DiRoot<T>* m_pkRoot; //root node
 
 		const DiTask* m_pkParentTask; //parent node
 
-		std::string m_zScriptFile; //location of the lua script 
+		std::string m_zScriptFile; //location of the external script file
 
 	};
 	//***************************************************************************************************************************************************//

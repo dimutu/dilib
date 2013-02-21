@@ -2,14 +2,14 @@
 
 /*
 ********************************************************************************************************************************************
-* Function: CreateRoot() - create the header root file using the passing data
+* Function: CreateTree() - create the header root file using the passing data
 * Parameters:	const char* a_zDiTreeFile - tree file that has all the data to create the tree
 *				DiLib::DiRoot<T>* a_pkRoot - header root file that needs all this data put-in
 * Return: bool - tree creation success(true) or not(false)
 ********************************************************************************************************************************************
 */
 template <class T>
-bool CreateRoot(const char* a_zXMLFile, DiLib::DiRoot<T>* a_pkRoot)
+bool CreateTree(const char* a_zXMLFile, DiLib::DiRoot<T>* a_pkRoot)
 {
 	//cannot return a tree if root is not passed in 
 	if (a_pkRoot == NULL)
@@ -45,7 +45,7 @@ bool CreateRoot(const char* a_zXMLFile, DiLib::DiRoot<T>* a_pkRoot)
 	xmlRoot = xmlRoot->FirstChildElement("Node");
 
 	//call tree create recursive function
-	CreateTree(xmlRoot, a_pkRoot, a_pkRoot);	
+	GenerateTree(xmlRoot, a_pkRoot, a_pkRoot);	
 
 	return true;
 }
@@ -54,7 +54,7 @@ bool CreateRoot(const char* a_zXMLFile, DiLib::DiRoot<T>* a_pkRoot)
 
 /*
 ********************************************************************************************************************************************
-* Function: CreateTree() - recursive function creating the tree using xml data in the tree file
+* Function: GenerateTree() - recursive function creating the tree using xml data in the tree file
 * Parameters:	TiXmlElement* a_xmlNode - current xml node which has the data for the current task node
 *				DiLib::DiTask<T>* a_pkCurNode - parent node created a step before in the recursive function
 *				DiLib::DiRoot<T>* a_pkRoot - pointer to root node
@@ -62,7 +62,7 @@ bool CreateRoot(const char* a_zXMLFile, DiLib::DiRoot<T>* a_pkRoot)
 ********************************************************************************************************************************************
 */
 template <class T>
-void CreateTree(TiXmlElement* a_xmlNode, DiLib::DiTask<T>* a_pkCurNode, DiLib::DiRoot<T>* a_pkRoot)
+void GenerateTree(TiXmlElement* a_xmlNode, DiLib::DiTask<T>* a_pkCurNode, DiLib::DiRoot<T>* a_pkRoot)
 {
 	if (a_xmlNode == NULL) //if current xml is empty, reach to a leaf node
 	{
@@ -82,7 +82,7 @@ void CreateTree(TiXmlElement* a_xmlNode, DiLib::DiTask<T>* a_pkCurNode, DiLib::D
 		for (int ii = 0; ii < iChildCount; ++ii)
 		{
 			//get a new instance of the node
-			DiLib::DiTask<T>* pkChildNode = (DiLib::DiTask<T>*)CreateTask( (DI_CLASSTYPEID)atoi(pkXmlChild->Attribute("EnumID")));
+			DiLib::DiTask<T>* pkChildNode = (DiLib::DiTask<T>*)CreateTask( (int)atoi(pkXmlChild->Attribute("EnumID")));
 			a_pkRoot->AddTaskNode(pkChildNode); //add to root task list array(helps when clearing memory)
 
 			//set child data
@@ -172,7 +172,7 @@ void CreateTree(TiXmlElement* a_xmlNode, DiLib::DiTask<T>* a_pkCurNode, DiLib::D
 			}
 
 			//check child node has any of its own children nodes
-			CreateTree(pkXmlChild, pkChildNode, a_pkRoot);
+			GenerateTree(pkXmlChild, pkChildNode, a_pkRoot);
 
 			pkXmlChild = pkXmlChild->NextSiblingElement(); //get the next xml sibling node
 

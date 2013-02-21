@@ -15,6 +15,9 @@
 * Modified: 20-02-2013
 * Description: set root reference pointer when setting up each task
 *
+* ModifiedL 21-02-2013
+* Description: renamed CreateRoot to CreateTree, and CreateTree to GenerateTree for misreading function naming
+*
 *********************************************************************************************************************************************
 */
 
@@ -61,7 +64,8 @@ namespace DiFactory
 
 	/*
 	********************************************************************************************************************************************
-	* Function: CreateRoot() - create the header root file using the passing data
+	* INTERNAL USE ONLY
+	* Function: CreateTree() - create the header root file using the passing data
 	* Parameters:	const char* a_zDiTreeFile - tree file that has all the data to create the tree
 	*				DiLib::DiRoot<T>* a_pkRoot - header root file that needs all this data put-in
 	*				DiBillboard* a_pkExternalData - external data
@@ -69,11 +73,12 @@ namespace DiFactory
 	********************************************************************************************************************************************
 	*/
 	template <class T>
-	bool CreateRoot(const char* a_zDiTreeFile, DiLib::DiRoot<T>* a_pkRoot);
+	bool CreateTree(const char* a_zDiTreeFile, DiLib::DiRoot<T>* a_pkRoot);
 
 	/*
 	********************************************************************************************************************************************
-	* Function: CreateTree() - recursive function creating the tree using xml data in the tree file
+	* INTERNAL USE ONLY
+	* Function: GenerateTree() - recursive function creating the tree using xml data in the tree file
 	* Parameters:	TiXmlElement* a_xmlNode - current xml node which has the data for the current task node
 	*				DiLib::DiTask<T>* a_pkCurNode - parent node created a step before in the recursive function
 	*				DiLib::DiRoot<T>* a_pkRoot - pointer to root node
@@ -82,7 +87,7 @@ namespace DiFactory
 	********************************************************************************************************************************************
 	*/
 	template <class T>
-	void CreateTree(TiXmlElement* a_xmlNode, DiLib::DiTask<T>* a_pkCurNode, DiLib::DiRoot<T>* a_pkRoot);
+	void GenerateTree(TiXmlElement* a_xmlNode, DiLib::DiTask<T>* a_pkCurNode, DiLib::DiRoot<T>* a_pkRoot);
 
 	
 	#include "DiFactory.inl"

@@ -268,7 +268,7 @@ namespace DiLib
 			//make function
 			sWriteLine =	"using namespace DiLib;\nnamespace DiFactory\n \
 \t{\n \
-\t\tDiBase* CreateTask(DI_CLASSTYPEID a_eClassTypeID)\n \
+\t\tDiBase* CreateTask(int a_eClassTypeID)\n \
 \t\t{\n \
 \t\t\tDiBase* pkTask = NULL;\n \
 \t\t\tswitch (a_eClassTypeID)\n \
