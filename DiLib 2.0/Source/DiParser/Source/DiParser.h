@@ -1,11 +1,14 @@
 
 /*
 *********************************************************************************************************************************************
+* DiLib v2.0
 *
 * Author: Dimutu Kulawardana
 * Date: 09-06-2011
 * Description: this executable is use to generate the header and cpp using the ini file at run time
 *
+* Modified: 20-02-2013
+* Description: 
 *********************************************************************************************************************************************
 */
 
@@ -71,6 +74,14 @@ namespace DiLib
 		*/
 		bool GenerateClassGenCpp(const char* a_zConfigFile, const char* a_zCppFile);
 
+		/*
+		********************************************************************************************************************************************
+		* Function: GenerateReturnTypeEnumHeader() - generate DI_RETURN_TYPE enum
+		* Parameters:	const char* a_zConfigFile - config file name
+						const char* a_zEnumFile - cpp file to be generated
+		* Return: bool - process success (true) or not(false)
+		********************************************************************************************************************************************
+		*/
 		bool GenerateReturnTypeEnumHeader(const char* a_zConfigFile, const char* a_zEnumFile);
 	private:
 		//generating file names

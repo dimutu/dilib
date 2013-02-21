@@ -318,7 +318,7 @@
             // configFileToolStripMenuItem
             // 
             this.configFileToolStripMenuItem.Name = "configFileToolStripMenuItem";
-            this.configFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.configFileToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.configFileToolStripMenuItem.Tag = "ID_EXPORT_CONFIG";
             this.configFileToolStripMenuItem.Text = "Config File";
             this.configFileToolStripMenuItem.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
@@ -327,7 +327,7 @@
             // treeFileToolStripMenuItem
             // 
             this.treeFileToolStripMenuItem.Name = "treeFileToolStripMenuItem";
-            this.treeFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.treeFileToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.treeFileToolStripMenuItem.Tag = "ID_EXPORT_TREE";
             this.treeFileToolStripMenuItem.Text = "Tree File";
             this.treeFileToolStripMenuItem.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
@@ -337,7 +337,7 @@
             // 
             this.allToolStripMenuItem.Enabled = false;
             this.allToolStripMenuItem.Name = "allToolStripMenuItem";
-            this.allToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.allToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.allToolStripMenuItem.Text = "All";
             this.allToolStripMenuItem.Click += new System.EventHandler(this.allToolStripMenuItem_Click);
             // 
@@ -482,7 +482,7 @@
             // 
             this.tasksToolStripMenuItem.Name = "tasksToolStripMenuItem";
             this.tasksToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.tasksToolStripMenuItem.Text = "Tasks View";
+            this.tasksToolStripMenuItem.Text = "Unused Tasks";
             this.tasksToolStripMenuItem.Click += new System.EventHandler(this.tasksToolStripMenuItem_Click);
             // 
             // outputWindowToolStripMenuItem

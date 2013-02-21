@@ -220,11 +220,11 @@ namespace DiLib
 		}
 		else if (!kINIFile.is_open() )
 		{
-			std::cout << "DiParser Error: Unable to open " << a_zConfigFile << " file. Make sure the file exists and not read-only.";
+			std::cout << "DiParser Error: Unable to open " << a_zConfigFile << " file. Make sure the file exists and not read-only.\n";
 		}
 		else if (!kEnumHFile.is_open() )
 		{
-			std::cout << "DiParser Error: Unable to open or create " << a_zEnumFile << " file. Make sure you have relavent permission for file access.";
+			std::cout << "DiParser Error: Unable to open or create " << a_zEnumFile << " file. Make sure you have relavent permission for file access.\n";
 		}
 
 		return false;
@@ -393,12 +393,12 @@ namespace DiLib
 		}
 		else if (kDIFile.is_open())
 		{
-			std::cout << "DiParser Error: Unable to open " << a_zConfigFile << " file. Make sure the file exists and not read-only.";
+			std::cout << "DiParser Error: Unable to open " << a_zConfigFile << " file. Make sure the file exists and not read-only.\n";
 
 		}
 		else if (kCppFile.is_open() )
 		{
-			std::cout << "DiParser Error: Unable to open or create " << a_zCppFile << " file. Make sure you have relavent permission for file access.";
+			std::cout << "DiParser Error: Unable to open or create " << a_zCppFile << " file. Make sure you have relavent permission for file access.\n";
 
 		}
 
@@ -495,11 +495,11 @@ namespace DiLib
 		}
 		else if (!kConfigFile.is_open() )
 		{
-			std::cout << "DiParser Error: Unable to open " << a_zConfigFile << " file. Make sure the file exists and not read-only.";
+			std::cout << "DiParser Error: Unable to open " << a_zConfigFile << " file. Make sure the file exists and not read-only.\n";
 		}
 		else if (!kEnumHFile.is_open() )
 		{
-			std::cout << "DiParser Error: Unable to open or create " << a_zEnumFile << " file. Make sure you have relavent permission for file access.";
+			std::cout << "DiParser Error: Unable to open or create " << a_zEnumFile << " file. Make sure you have relavent permission for file access.\n";
 		}
 
 		return false;

@@ -58,7 +58,8 @@ namespace DiTree
             m_dtData.Columns.Add(DATAFIELD_CLASSTYPE, typeof(DICLASSTYPES)); //class type
             m_dtData.Columns.Add(DATAFIELD_CLASSNAME, typeof(string)); //class name this can be template class or derived
             m_dtData.Columns.Add(DATAFIELD_TEMPLATECLASS, typeof(string)); //is it Player, Enemy type class
-            m_dtData.Columns.Add(DATAFIELD_USECOUNT, typeof(int)); //total times this class is used in the tree
+            DataColumn dcol = m_dtData.Columns.Add(DATAFIELD_USECOUNT, typeof(int)); //total times this class is used in the tree
+            dcol.DefaultValue = 0;
         }
 
         /// <summary>
@@ -401,12 +402,15 @@ namespace DiTree
         {
             //check any empty strings are there
             bool isOK = true;
+            DataRow dr;
+            string str;
             for (int iRow = 0; iRow < m_dtData.Rows.Count; iRow++)
             {
-                DataRow dr = m_dtData.Rows[iRow];
+                dr = m_dtData.Rows[iRow];
                 for (int iCol = 0; iCol < m_dtData.Columns.Count; iCol++)
                 {
-                    if (dr[iCol].ToString().Length <= 0)
+                    str = dr[iCol].ToString();
+                    if (str.Length <= 0)
                     {
                         isOK = false;
                         break;
