@@ -137,6 +137,7 @@
             // 
             // btnRemove
             // 
+            this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
             this.btnRemove.ImageKey = "delete.png";
             this.btnRemove.Location = new System.Drawing.Point(500, 190);
             this.btnRemove.Name = "btnRemove";
@@ -147,6 +148,8 @@
             // 
             // btnAddInclude
             // 
+            this.btnAddInclude.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAddInclude.Image = ((System.Drawing.Image)(resources.GetObject("btnAddInclude.Image")));
             this.btnAddInclude.ImageKey = "add.png";
             this.btnAddInclude.Location = new System.Drawing.Point(500, 99);
             this.btnAddInclude.Name = "btnAddInclude";
@@ -242,6 +245,7 @@
             // 
             // btnRemoveEnum
             // 
+            this.btnRemoveEnum.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveEnum.Image")));
             this.btnRemoveEnum.ImageKey = "delete.png";
             this.btnRemoveEnum.Location = new System.Drawing.Point(493, 147);
             this.btnRemoveEnum.Name = "btnRemoveEnum";
@@ -252,6 +256,7 @@
             // 
             // btnAddEnum
             // 
+            this.btnAddEnum.Image = ((System.Drawing.Image)(resources.GetObject("btnAddEnum.Image")));
             this.btnAddEnum.ImageKey = "add.png";
             this.btnAddEnum.Location = new System.Drawing.Point(493, 56);
             this.btnAddEnum.Name = "btnAddEnum";

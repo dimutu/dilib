@@ -21,7 +21,7 @@ namespace DiTree
 
 		private void timerSplash_Tick(object sender, EventArgs e)
 		{
-			Thread.Sleep(2000);
+			Thread.Sleep(1000);
 			this.Close();
 		}
 	}

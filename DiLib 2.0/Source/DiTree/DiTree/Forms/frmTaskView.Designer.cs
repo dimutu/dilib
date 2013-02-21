@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTaskView));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewTasks = new System.Windows.Forms.DataGridView();
@@ -52,8 +52,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.87196F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.12804F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.6777F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.3223F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(669, 453);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -66,11 +66,11 @@
             this.dataGridViewTasks.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewTasks.Name = "dataGridViewTasks";
             this.dataGridViewTasks.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dataGridViewTasks.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dataGridViewTasks.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTasks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewTasks.Size = new System.Drawing.Size(663, 382);
+            this.dataGridViewTasks.Size = new System.Drawing.Size(663, 363);
             this.dataGridViewTasks.TabIndex = 0;
             this.dataGridViewTasks.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewTasks_DataBindingComplete);
             // 
@@ -80,9 +80,9 @@
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 391);
+            this.panel1.Location = new System.Drawing.Point(3, 372);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(663, 59);
+            this.panel1.Size = new System.Drawing.Size(663, 78);
             this.panel1.TabIndex = 1;
             // 
             // btnDeleteAll
@@ -93,6 +93,8 @@
             this.btnDeleteAll.TabIndex = 2;
             this.btnDeleteAll.Text = "Del All";
             this.btnDeleteAll.UseVisualStyleBackColor = true;
+            this.btnDeleteAll.Visible = false;
+            this.btnDeleteAll.Click += new System.EventHandler(this.btnDeleteAll_Click);
             // 
             // btnDelete
             // 
@@ -102,6 +104,8 @@
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Del";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // textBox1
             // 
@@ -111,7 +115,7 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(559, 54);
+            this.textBox1.Size = new System.Drawing.Size(559, 71);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = resources.GetString("textBox1.Text");
             // 

@@ -118,6 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>These task data are unused in any of the tree on the current data file. Be advice that these data may occur incorrect export files with invalid data which can cause loading errors when loading the behavior tree.</value>
+    <value>These task data are unused in any of the tree on the current data file. Be advice that these data may occur incorrect export files with invalid data which can cause loading errors when loading the behavior tree.
+PRESS DELETE TO REMOVE.</value>
   </data>
 </root>

@@ -18,6 +18,7 @@ namespace DiTree
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             string[] args = Environment.GetCommandLineArgs();
+            Application.Run(new frmSplashScreen());
             DiApplication app = new DiApplication();
             app.Run(args);
             

@@ -48,5 +48,15 @@ namespace DiTree
             }
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteAll_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

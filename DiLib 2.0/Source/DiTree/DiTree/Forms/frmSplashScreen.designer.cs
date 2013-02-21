@@ -57,19 +57,19 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(120, 335);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 16);
+            this.label1.Size = new System.Drawing.Size(312, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "DiLib (c) 2011 by Dimutu Kulawardana";
+            this.label1.Text = "DiLib (c) 2011 - 2013 by Dimutu Kulawardana";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(180, 305);
+            this.label2.Location = new System.Drawing.Point(227, 292);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 16);
+            this.label2.Size = new System.Drawing.Size(85, 16);
             this.label2.TabIndex = 2;
-            this.label2.Text = "DiTreeCreator 1.0b";
+            this.label2.Text = "Version 2.0";
             // 
             // frmSplashScreen
             // 
