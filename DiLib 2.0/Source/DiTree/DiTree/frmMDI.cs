@@ -118,6 +118,7 @@ namespace DiTree
                 breakToolStripMenuItem.Enabled = false;
                 debugStepToolStripMenuItem.Enabled = false;
                 disconnectToolStripMenuItem.Enabled = true;
+                trackBarDebugSpeed.Enabled = false;
 
                 toolStripBtnDebugStart.Enabled = false;
                 toolStripBtnDebugBreak.Enabled = false;
@@ -132,6 +133,7 @@ namespace DiTree
                 breakToolStripMenuItem.Enabled = true;
                 debugStepToolStripMenuItem.Enabled = false;
                 disconnectToolStripMenuItem.Enabled = true;
+                trackBarDebugSpeed.Enabled = true;
 
                 toolStripBtnDebugStart.Enabled = false;
                 toolStripBtnDebugBreak.Enabled = true;
@@ -145,6 +147,7 @@ namespace DiTree
                 breakToolStripMenuItem.Enabled = false;
                 debugStepToolStripMenuItem.Enabled = true;
                 disconnectToolStripMenuItem.Enabled = true;
+                trackBarDebugSpeed.Enabled = false;
 
                 toolStripBtnDebugStart.Enabled = true;
                 toolStripBtnDebugBreak.Enabled = false;
@@ -158,6 +161,7 @@ namespace DiTree
                 breakToolStripMenuItem.Enabled = false;
                 debugStepToolStripMenuItem.Enabled = false;
                 disconnectToolStripMenuItem.Enabled = false;
+                trackBarDebugSpeed.Enabled = false;
 
                 toolStripBtnDebugStart.Enabled = true;
                 toolStripBtnDebugBreak.Enabled = false;
@@ -213,7 +217,7 @@ namespace DiTree
             else if (DiGlobals.IsConnected)
             {
                 m_bIsQutting = true;
-                DebugDisconnect();
+                DebugDisconnectMainThread();
             }
             DebugMenuDisplay();
         }
@@ -292,7 +296,7 @@ namespace DiTree
             else if (DiGlobals.IsConnected)
             {
                 m_bIsQutting = true;
-                DebugDisconnect();
+                DebugDisconnectMainThread();
             }
         }
 
@@ -530,7 +534,7 @@ namespace DiTree
             else if (DiGlobals.IsConnected)
             {
                 m_bIsQutting = true;
-                DebugDisconnect();
+                DebugDisconnectMainThread();
             }
             DebugMenuDisplay();
         }
@@ -584,6 +588,11 @@ namespace DiTree
             {
                 DiMethods.MyDialogShow("Need to open a didata file to view the tasks list.", MessageBoxButtons.OK);
             }
+        }
+
+        private void trackBarDebugSpeed_Scroll(object sender, EventArgs e)
+        {
+            DiGlobals.DebugSpeed = trackBarDebugSpeed.Value;
         }
 
     }

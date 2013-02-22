@@ -52,6 +52,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnCloseTab = new System.Windows.Forms.Button();
             this.toolTipHelp = new System.Windows.Forms.ToolTip(this.components);
+            this.imageListDiFille = new System.Windows.Forms.ImageList(this.components);
             this.tabPageGeneral.SuspendLayout();
             this.tabDiFile.SuspendLayout();
             this.tabPageReturns.SuspendLayout();
@@ -137,7 +138,6 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
             this.btnRemove.ImageKey = "delete.png";
             this.btnRemove.Location = new System.Drawing.Point(500, 190);
             this.btnRemove.Name = "btnRemove";
@@ -149,7 +149,6 @@
             // btnAddInclude
             // 
             this.btnAddInclude.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAddInclude.Image = ((System.Drawing.Image)(resources.GetObject("btnAddInclude.Image")));
             this.btnAddInclude.ImageKey = "add.png";
             this.btnAddInclude.Location = new System.Drawing.Point(500, 99);
             this.btnAddInclude.Name = "btnAddInclude";
@@ -181,8 +180,9 @@
             // 
             this.tabPageNew.BackColor = System.Drawing.Color.Transparent;
             this.tabPageNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.tabPageNew.ImageKey = "bullet_star.png";
+            this.tabPageNew.ImageKey = "bullet_add.png";
             this.tabPageNew.Location = new System.Drawing.Point(4, 54);
+            this.tabPageNew.Margin = new System.Windows.Forms.Padding(0);
             this.tabPageNew.Name = "tabPageNew";
             this.tabPageNew.Size = new System.Drawing.Size(772, 432);
             this.tabPageNew.TabIndex = 2;
@@ -196,6 +196,7 @@
             this.tabDiFile.Controls.Add(this.tabPageReturns);
             this.tabDiFile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabDiFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabDiFile.ImageList = this.imageListDiFille;
             this.tabDiFile.ItemSize = new System.Drawing.Size(80, 50);
             this.tabDiFile.Location = new System.Drawing.Point(0, 0);
             this.tabDiFile.Margin = new System.Windows.Forms.Padding(30);
@@ -245,7 +246,6 @@
             // 
             // btnRemoveEnum
             // 
-            this.btnRemoveEnum.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveEnum.Image")));
             this.btnRemoveEnum.ImageKey = "delete.png";
             this.btnRemoveEnum.Location = new System.Drawing.Point(493, 147);
             this.btnRemoveEnum.Name = "btnRemoveEnum";
@@ -256,7 +256,6 @@
             // 
             // btnAddEnum
             // 
-            this.btnAddEnum.Image = ((System.Drawing.Image)(resources.GetObject("btnAddEnum.Image")));
             this.btnAddEnum.ImageKey = "add.png";
             this.btnAddEnum.Location = new System.Drawing.Point(493, 56);
             this.btnAddEnum.Name = "btnAddEnum";
@@ -295,6 +294,12 @@
             this.btnCloseTab.UseVisualStyleBackColor = true;
             this.btnCloseTab.Click += new System.EventHandler(this.btnCloseTab_Click);
             this.btnCloseTab.MouseHover += new System.EventHandler(this.btnCloseTab_MouseHover);
+            // 
+            // imageListDiFille
+            // 
+            this.imageListDiFille.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListDiFille.ImageStream")));
+            this.imageListDiFille.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListDiFille.Images.SetKeyName(0, "bullet_star.png");
             // 
             // frmDiFile
             // 
@@ -340,5 +345,6 @@
         private System.Windows.Forms.ListBox listReturnEnums;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ImageList imageListDiFille;
     }
 }

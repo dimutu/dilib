@@ -28,6 +28,8 @@ namespace DiTree
         private static bool m_bIsBreak = false; //flag break is selected from menu, then use that as a breakpoint on whatever current location is
         private static bool m_bIsResume = false; //flag menu action of continue selected
 
+        private static int m_iDebugSpeed = 0; //debug speed to slow down the visual speed
+
         public static bool IsConnected
         {
             get
@@ -130,6 +132,21 @@ namespace DiTree
             set
             {
                 m_bIsResume = value;
+            }
+        }
+
+        /// <summary>
+        /// when debugging this will slow down the transfer rate
+        /// </summary>
+        public static int DebugSpeed
+        {
+            get
+            {
+                return m_iDebugSpeed;
+            }
+            set
+            {
+                m_iDebugSpeed = value;
             }
         }
     }

@@ -643,12 +643,7 @@ namespace DiTree
             if (txtReturnEnum.Text.Length > 0)
             {
                 string str = txtReturnEnum.Text.ToUpper();
-                //check has DITASK_ infront, if not put it
-                if (!str.StartsWith("DITASK_"))
-                {
-                    str = "DITASK_" + str;
-                }
-
+               
                 //check its not default 
                 if (str == "DITASK_COMPLETE" || str == "DITASK_FAILED" || str == "DITASK_CALLBACK" || str == "DITASK_NEXTTASK")
                 {

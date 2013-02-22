@@ -14,8 +14,6 @@ namespace DiTree
 {
     public partial class frmDiTreeView : Form
     {
-        private string m_zFileName;
-
         public frmDiTreeView()
         {
             InitializeComponent();

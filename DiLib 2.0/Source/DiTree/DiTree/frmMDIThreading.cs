@@ -75,7 +75,7 @@ namespace DiTree
             }
         }
 
-        private void DebugDisconnect()
+        private void DebugDisconnectMainThread()
         {
             if (m_kMainThread != null)
             {
@@ -83,6 +83,33 @@ namespace DiTree
                 m_kMainThread = null;
             }
 
+            if (m_kMainSocket != null)
+            {
+                if (m_kMainSocket.Connected)
+                {
+                    m_kMainSocket.Shutdown(SocketShutdown.Both);
+                    m_kMainSocket.Disconnect(false);
+                }
+                m_kMainSocket.Dispose();
+                m_kMainSocket = null;
+            }
+
+            if (InvokeRequired)
+            {
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    DebugDisconnectListenThread();
+                }
+                ));
+            }
+
+            DiGlobals.IsConnected = false;
+            DiGlobals.IsDebugging = false;
+            m_frmConsole.addOutputText("Debugger Disconnected.");
+        }
+
+        private void DebugDisconnectListenThread()
+        {
             if (m_kListenThread != null)
             {
                 m_kListenThread.Abort();
@@ -100,20 +127,6 @@ namespace DiTree
                 m_kClientSocket = null;
             }
 
-            if (m_kMainSocket != null)
-            {
-                m_kMainSocket.Shutdown(SocketShutdown.Both);
-                if (m_kMainSocket.Connected)
-                {
-                    m_kMainSocket.Disconnect(false);
-                }
-                m_kMainSocket.Dispose();
-                m_kMainSocket = null;
-            }
-
-            DiGlobals.IsConnected = false;
-            DiGlobals.IsDebugging = false;
-            m_frmConsole.addOutputText("Debugger Disconnected.");
         }
 
         private void ConnectionAccept()
@@ -135,9 +148,17 @@ namespace DiTree
 
                         SetConnectedClientSocketInThread(m_kClientSocket);
                         m_frmConsole.addOutputText("Debugger connection established.");
-                        DiGlobals.IsConnected = true;
-                        DiGlobals.IsListening = false;
-                        DebugMenuDisplay();
+                        
+                        if (InvokeRequired)
+                        {
+                            this.Invoke(new MethodInvoker(delegate
+                            {
+                                DiGlobals.IsConnected = true;
+                                DiGlobals.IsListening = false;
+                                DebugMenuDisplay();
+                            }
+                             ));
+                         }
                     }
 
                 }
@@ -194,13 +215,14 @@ namespace DiTree
                 {
                     if (DiGlobals.IsConnected)
                     {
+                        if (!DiGlobals.IsDebugging)
+                        {
+                            Thread.Sleep(DiGlobals.DebugSpeed);
+                        }
                         UpdateFrame(kMsgData);
                     }
                 }
 
-                //do whatever using the data
-                UpdateConsole("task : " + kMsgData.m_zDebugID + " : " + kMsgData.m_zDebugTreeID + " : " + kMsgData.m_lDebugTaskID.ToString() + " : " + kMsgData.m_lTime.ToString());
-                // Console.WriteLine("task : " + kMsgData.m_zDebugID + " : " + kMsgData.m_zDebugTreeID + " : " + kMsgData.m_lDebugTaskID.ToString() + " : " + kMsgData.m_lTime.ToString());
             }
         }
 
@@ -230,10 +252,10 @@ namespace DiTree
             {
                 this.Invoke(new MethodInvoker(delegate
                 {
-                    //  toolStripStatusDebugProgress.Visible = false;
                     DiGlobals.IsConnected = false;
                     m_frmConsole.addOutputText("Debug disconnected.");
-                    //ShowDebugConnectMenu();
+                    DebugMenuDisplay();
+                    DebugDisconnectMainThread();
                 }
                 ));
             }
@@ -273,6 +295,26 @@ namespace DiTree
                                 {
                                     SendDebugTask(node.Task);
                                 }
+                                string str = "";
+                                switch (node.ClassType)
+                                {
+                                    case DICLASSTYPES.DICLASSTYPE_CONDITION:
+                                        str = "DiCondition"; break;
+                                    case DICLASSTYPES.DICLASSTYPE_FILTER:
+                                        str = "DiFilter"; break;
+                                    case DICLASSTYPES.DICLASSTYPE_ROOT:
+                                        str = "DiRoot"; break;
+                                    case DICLASSTYPES.DICLASSTYPE_SELECTION:
+                                        str = "DiSelection"; break;
+                                    case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
+                                        str = "DiSequence"; break;
+                                    case DICLASSTYPES.DICLASSTYPE_TASK:
+                                        str = "DiTask"; break;
+                                    default:
+                                        str = "Unknow Task"; break;
+                                };
+                                m_frmConsole.addOutputText(str + ":" + node.DebuggerID + " : " + a_kDebugData.m_zDebugTreeID + " : " + a_kDebugData.m_lDebugTaskID.ToString() + " : " + a_kDebugData.m_lTime.ToString(), true);
+                
                             }
                         }
                     }
@@ -327,16 +369,8 @@ namespace DiTree
 
             if (!DiGlobals.IsConnected)
             {
-                DialogResult dr = DiMethods.MyDialogShow("You are not connected to debug service.\nDo you wish to connect?", MessageBoxButtons.YesNoCancel);
-                if (dr == System.Windows.Forms.DialogResult.Yes)
-                {
-                    DiGlobals.IsConnected = true;
-                    //ShowDebugConnectMenu();
-                }
-                else
-                {
-                    return;
-                }
+                DialogResult dr = DiMethods.MyDialogShow("You are not connected to debug service.", MessageBoxButtons.OK);
+                return;
             }
 
             DiGlobals.IsDebugging = !DiGlobals.IsDebugging;
@@ -344,17 +378,13 @@ namespace DiTree
             if (DiGlobals.IsDebugging)
             {
                 //debgging started
-                //toolStripDebugPause.Image = Properties.Resources.control_play;
                 DiGlobals.IsDebugNextOn = true;
-                //toolStripDebugPause.ToolTipText = "Stop Debugging";
-                //SendDebugCommands(DIDEBUGCONTROLS.DIDEBUGCONTROL_STARTDEBUG);
                 DiGlobals.IsBreak = true;
 
                 //on debug through UI must have the viewable on
                 if (!DiGlobals.IsDebugViewable)
                 {
                     DiGlobals.IsDebugViewable = true;
-                    //SetDebugViewable();
                 }
 
             }
