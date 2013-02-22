@@ -29,6 +29,7 @@ namespace DiTree
         private static bool m_bIsResume = false; //flag menu action of continue selected
 
         private static int m_iDebugSpeed = 0; //debug speed to slow down the visual speed
+        private static bool m_bIsFirstRun = true; //flag first run after connection establish, this is to set a delay between connection start and first update
 
         public static bool IsConnected
         {
@@ -147,6 +148,21 @@ namespace DiTree
             set
             {
                 m_iDebugSpeed = value;
+            }
+        }
+
+        /// <summary>
+        /// flag first run after connection establish, this is to set a delay between connection start and first update
+        /// </summary>
+        public static bool IsFirstRun
+        {
+            get
+            {
+                return m_bIsFirstRun;
+            }
+            set
+            {
+                m_bIsFirstRun = value;
             }
         }
     }

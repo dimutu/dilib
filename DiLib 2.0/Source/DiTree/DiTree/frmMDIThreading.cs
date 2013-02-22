@@ -40,6 +40,7 @@ namespace DiTree
 
                 m_frmConsole.addOutputText("Debugger connection listener started.");
                 DiGlobals.IsListening = true;
+                DiGlobals.IsFirstRun = true;
                 return true;
 
             }
@@ -215,6 +216,12 @@ namespace DiTree
                 {
                     if (DiGlobals.IsConnected)
                     {
+                        if (DiGlobals.IsFirstRun)
+                        {
+                            Thread.Sleep(100);
+                            DiGlobals.IsFirstRun = false;
+                        }
+
                         if (!DiGlobals.IsDebugging)
                         {
                             Thread.Sleep(DiGlobals.DebugSpeed);
@@ -294,38 +301,37 @@ namespace DiTree
                                 if (node != null)
                                 {
                                     SendDebugTask(node.Task);
+
+                                    string str = "";
+                                    switch (node.ClassType)
+                                    {
+                                        case DICLASSTYPES.DICLASSTYPE_CONDITION:
+                                            str = "DiCondition"; break;
+                                        case DICLASSTYPES.DICLASSTYPE_FILTER:
+                                            str = "DiFilter"; break;
+                                        case DICLASSTYPES.DICLASSTYPE_ROOT:
+                                            str = "DiRoot"; break;
+                                        case DICLASSTYPES.DICLASSTYPE_SELECTION:
+                                            str = "DiSelection"; break;
+                                        case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
+                                            str = "DiSequence"; break;
+                                        case DICLASSTYPES.DICLASSTYPE_TASK:
+                                            str = "DiTask"; break;
+                                        default:
+                                            str = "Unknow Task"; break;
+                                    };
+                                    m_frmConsole.addOutputText(str + ":" + node.DebuggerID + " : " + a_kDebugData.m_zDebugTreeID + " : " + a_kDebugData.m_lDebugTaskID.ToString() + " : " + a_kDebugData.m_lTime.ToString(), true);
                                 }
-                                string str = "";
-                                switch (node.ClassType)
+                                else
                                 {
-                                    case DICLASSTYPES.DICLASSTYPE_CONDITION:
-                                        str = "DiCondition"; break;
-                                    case DICLASSTYPES.DICLASSTYPE_FILTER:
-                                        str = "DiFilter"; break;
-                                    case DICLASSTYPES.DICLASSTYPE_ROOT:
-                                        str = "DiRoot"; break;
-                                    case DICLASSTYPES.DICLASSTYPE_SELECTION:
-                                        str = "DiSelection"; break;
-                                    case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
-                                        str = "DiSequence"; break;
-                                    case DICLASSTYPES.DICLASSTYPE_TASK:
-                                        str = "DiTask"; break;
-                                    default:
-                                        str = "Unknow Task"; break;
-                                };
-                                m_frmConsole.addOutputText(str + ":" + node.DebuggerID + " : " + a_kDebugData.m_zDebugTreeID + " : " + a_kDebugData.m_lDebugTaskID.ToString() + " : " + a_kDebugData.m_lTime.ToString(), true);
-                
+                                    //couldnt reach the node, send back something to keep the connection alive
+                                    m_frmConsole.addOutputText("Task:" + a_kDebugData.m_lDebugTaskID + " : " + a_kDebugData.m_zDebugTreeID + " : " + a_kDebugData.m_lDebugTaskID.ToString() + " : " + a_kDebugData.m_lTime.ToString(), true);
+
+                                    SendDebugCommands(DIDEBUGCONTROLS.DIDEBUGCONTROL_RESUME);
+                                }
                             }
                         }
                     }
-
-
-                    //place any data coming in to console
-                    if (a_kDebugData != null)
-                    {
-                        m_frmConsole.addOutputText("Debug data:" + a_kDebugData.m_zDebugID + " : " + a_kDebugData.m_zDebugTreeID + " : " + a_kDebugData.m_lDebugTaskID.ToString() + " : " + a_kDebugData.m_lTime.ToString());
-                    }
-
                 }
                 ));
             }
@@ -336,37 +342,6 @@ namespace DiTree
         /// </summary>
         private void DebugPlayPause()
         {
-            if (!DiGlobals.IsDebugging) //currently not debugging
-            {
-                //check any data file has loaded
-                if (this.ActiveMdiChild == null)
-                {
-                    DiMethods.SetStatusMessage(DiLangID.ID_ERROR_NO_DEBUG_FILE);
-                    return;
-                }
-                else
-                {
-                    if (this.ActiveMdiChild.GetType() != typeof(frmDiFile))
-                    {
-                        DiMethods.SetStatusMessage(DiLangID.ID_ERROR_NO_DEBUG_FILE);
-                        return;
-                    }
-                    else
-                    {
-                        //set the debugging form
-                        m_frmDebugControlForm = (frmDiFile)this.ActiveMdiChild;
-                        //check active tab is a tree
-                        if (m_frmDebugControlForm.GetTabTreeName() == "")
-                        {
-                            m_frmDebugControlForm = null;
-                            DiMethods.MyDialogShow("No tree selected to debug, select a tree tab that you requier to debug.", MessageBoxButtons.OK);
-                            return;
-                        }
-
-                    }
-                }
-            }
-
             if (!DiGlobals.IsConnected)
             {
                 DialogResult dr = DiMethods.MyDialogShow("You are not connected to debug service.", MessageBoxButtons.OK);

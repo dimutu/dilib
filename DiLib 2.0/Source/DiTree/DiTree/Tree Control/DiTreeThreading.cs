@@ -54,6 +54,12 @@ namespace DiTree
             return m_pkCurrentRunNode;
         }
 
+        public DiTreeNode GetTreeNode(long a_lDebugTaskID)
+        {
+            DiTreeNode root = (DiTreeNode)treeBT.Nodes[0];
+            return GetTreeNode(ref root, a_lDebugTaskID);
+        }
+
         /// <summary>
         /// Return tree node matching the debug id
         /// </summary>

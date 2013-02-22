@@ -23,12 +23,6 @@ namespace DiTree
 
         public DiTreeNode SetTreeDebugData(string a_zDebugTreeID, long a_lDebugTaskID)
         {
-            //dont want to see changing icons when behaviour tree executes
-            /*if (!DiGlobals.IsDebugViewable)
-            {
-                return;
-            }*/
-
             //only if tree is active
             if (tabDiFile.SelectedIndex >= TABSTART_INDEX)
             {
