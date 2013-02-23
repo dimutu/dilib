@@ -287,6 +287,7 @@ namespace DiTree
                 this.Invoke(new MethodInvoker(delegate
                 {
                     //returning current executing node data
+                    bool bUpdated = false;
                     Form frmActive = this.ActiveMdiChild;
                     if (frmActive != null)
                     {
@@ -321,16 +322,19 @@ namespace DiTree
                                             str = "Unknow Task"; break;
                                     };
                                     m_frmConsole.addOutputText(str + ":" + node.DebuggerID + " : " + a_kDebugData.m_zDebugTreeID + " : " + a_kDebugData.m_lDebugTaskID.ToString() + " : " + a_kDebugData.m_lTime.ToString(), true);
+                                    bUpdated = true;
                                 }
-                                else
-                                {
-                                    //couldnt reach the node, send back something to keep the connection alive
-                                    m_frmConsole.addOutputText("Task:" + a_kDebugData.m_lDebugTaskID + " : " + a_kDebugData.m_zDebugTreeID + " : " + a_kDebugData.m_lDebugTaskID.ToString() + " : " + a_kDebugData.m_lTime.ToString(), true);
-
-                                    SendDebugCommands(DIDEBUGCONTROLS.DIDEBUGCONTROL_RESUME);
-                                }
+                               
                             }
                         }
+                    }
+
+                    if (!bUpdated)
+                    {
+                        //couldnt reach the node, send back something to keep the connection alive
+                        m_frmConsole.addOutputText("Task:" + a_kDebugData.m_lDebugTaskID + " : " + a_kDebugData.m_zDebugTreeID + " : " + a_kDebugData.m_lDebugTaskID.ToString() + " : " + a_kDebugData.m_lTime.ToString(), true);
+
+                        SendDebugCommands(DIDEBUGCONTROLS.DIDEBUGCONTROL_RESUME);
                     }
                 }
                 ));

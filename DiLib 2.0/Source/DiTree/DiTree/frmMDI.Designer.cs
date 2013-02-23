@@ -78,6 +78,7 @@
             this.treeInsertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.remoteDebuggingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disconnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
             this.breakToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -123,7 +124,6 @@
             this.saveConfigFile = new System.Windows.Forms.SaveFileDialog();
             this.saveTreeFile = new System.Windows.Forms.SaveFileDialog();
             this.trackBarDebugSpeed = new System.Windows.Forms.TrackBar();
-            this.remoteDebuggingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripMDI.SuspendLayout();
             this.menuMDI.SuspendLayout();
             this.toolStripMain.SuspendLayout();
@@ -603,6 +603,13 @@
             this.connectToolStripMenuItem.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
             this.connectToolStripMenuItem.MouseLeave += new System.EventHandler(this.hideHelptoolStrip);
             // 
+            // remoteDebuggingToolStripMenuItem
+            // 
+            this.remoteDebuggingToolStripMenuItem.Name = "remoteDebuggingToolStripMenuItem";
+            this.remoteDebuggingToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
+            this.remoteDebuggingToolStripMenuItem.Text = "Remote Debugging";
+            this.remoteDebuggingToolStripMenuItem.Click += new System.EventHandler(this.remoteDebuggingToolStripMenuItem_Click);
+            // 
             // disconnectToolStripMenuItem
             // 
             this.disconnectToolStripMenuItem.Name = "disconnectToolStripMenuItem";
@@ -994,14 +1001,11 @@
             this.trackBarDebugSpeed.Size = new System.Drawing.Size(94, 30);
             this.trackBarDebugSpeed.SmallChange = 20;
             this.trackBarDebugSpeed.TabIndex = 6;
+            this.trackBarDebugSpeed.Tag = "ID_DEBUG_SPEED";
             this.trackBarDebugSpeed.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBarDebugSpeed.Scroll += new System.EventHandler(this.trackBarDebugSpeed_Scroll);
-            // 
-            // remoteDebuggingToolStripMenuItem
-            // 
-            this.remoteDebuggingToolStripMenuItem.Name = "remoteDebuggingToolStripMenuItem";
-            this.remoteDebuggingToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
-            this.remoteDebuggingToolStripMenuItem.Text = "Remote Debugging";
+            this.trackBarDebugSpeed.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
+            this.trackBarDebugSpeed.MouseLeave += new System.EventHandler(this.hideHelptoolStrip);
             // 
             // frmMDI
             // 

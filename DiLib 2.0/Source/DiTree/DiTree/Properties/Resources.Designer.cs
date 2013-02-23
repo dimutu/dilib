@@ -160,6 +160,15 @@ namespace DiTree.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This slow the debug speed between task from 0 to 0.5 seconds..
+        /// </summary>
+        internal static string ID_DEBUG_SPEED {
+            get {
+                return ResourceManager.GetString("ID_DEBUG_SPEED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start/Continue Debugger..
         /// </summary>
         internal static string ID_DEBUG_START {

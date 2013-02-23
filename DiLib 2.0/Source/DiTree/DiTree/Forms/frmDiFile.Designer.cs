@@ -50,9 +50,10 @@
             this.btnAddEnum = new System.Windows.Forms.Button();
             this.listReturnEnums = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.imageListDiFille = new System.Windows.Forms.ImageList(this.components);
             this.btnCloseTab = new System.Windows.Forms.Button();
             this.toolTipHelp = new System.Windows.Forms.ToolTip(this.components);
-            this.imageListDiFille = new System.Windows.Forms.ImageList(this.components);
+            this.chkPrefix = new System.Windows.Forms.CheckBox();
             this.tabPageGeneral.SuspendLayout();
             this.tabDiFile.SuspendLayout();
             this.tabPageReturns.SuspendLayout();
@@ -209,6 +210,7 @@
             // 
             // tabPageReturns
             // 
+            this.tabPageReturns.Controls.Add(this.chkPrefix);
             this.tabPageReturns.Controls.Add(this.textBox1);
             this.tabPageReturns.Controls.Add(this.txtReturnEnum);
             this.tabPageReturns.Controls.Add(this.btnRemoveEnum);
@@ -283,6 +285,12 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Additional Return Types";
             // 
+            // imageListDiFille
+            // 
+            this.imageListDiFille.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListDiFille.ImageStream")));
+            this.imageListDiFille.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListDiFille.Images.SetKeyName(0, "bullet_star.png");
+            // 
             // btnCloseTab
             // 
             this.btnCloseTab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -295,11 +303,15 @@
             this.btnCloseTab.Click += new System.EventHandler(this.btnCloseTab_Click);
             this.btnCloseTab.MouseHover += new System.EventHandler(this.btnCloseTab_MouseHover);
             // 
-            // imageListDiFille
+            // chkPrefix
             // 
-            this.imageListDiFille.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListDiFille.ImageStream")));
-            this.imageListDiFille.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListDiFille.Images.SetKeyName(0, "bullet_star.png");
+            this.chkPrefix.AutoSize = true;
+            this.chkPrefix.Location = new System.Drawing.Point(210, 98);
+            this.chkPrefix.Name = "chkPrefix";
+            this.chkPrefix.Size = new System.Drawing.Size(126, 19);
+            this.chkPrefix.TabIndex = 15;
+            this.chkPrefix.Text = "Add DITASK Prefix";
+            this.chkPrefix.UseVisualStyleBackColor = true;
             // 
             // frmDiFile
             // 
@@ -346,5 +358,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ImageList imageListDiFille;
+        private System.Windows.Forms.CheckBox chkPrefix;
     }
 }

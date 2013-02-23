@@ -19,6 +19,7 @@ namespace DiTree
         private frmSelectExportTree m_frmSelectTree; //select tree fro exporting the tree from currently selected frmDiFile
         private DiRecentFileManager m_recentFileManager;
         private frmTaskView m_frmTaskView;
+        private frmRemoteDebug m_frmRemoteDebug;
 
         public frmMDI()
         {
@@ -26,6 +27,7 @@ namespace DiTree
             m_frmSelectTree = new frmSelectExportTree();
             m_frmConsole = new frmConsole();
             m_frmTaskView = new frmTaskView();
+            m_frmRemoteDebug = new frmRemoteDebug();
             DiMethods.StatusMessageLable = toolStripStatusMessage;
 
             m_recentFileManager = new DiRecentFileManager(this, ref recentFilesToolStripMenuItem, 
@@ -53,6 +55,11 @@ namespace DiTree
             {
                 ToolStripButton btn = (ToolStripButton)sender;
                 DiMethods.SetStatusMessage(btn.Tag.ToString());
+            }
+            else if (sender is TrackBar)
+            {
+                TrackBar track = (TrackBar)sender;
+                DiMethods.SetStatusMessage(track.Tag.ToString());
             }
         }
 
@@ -120,6 +127,7 @@ namespace DiTree
                 disconnectToolStripMenuItem.Enabled = true;
                 trackBarDebugSpeed.Enabled = false;
 
+                toolStripBtnDebugStart.Text = "Debug";
                 toolStripBtnDebugStart.Enabled = false;
                 toolStripBtnDebugBreak.Enabled = false;
                 toolStripBtnDebugStep.Enabled = false;
@@ -136,6 +144,7 @@ namespace DiTree
                 trackBarDebugSpeed.Enabled = true;
 
                 toolStripBtnDebugStart.Enabled = false;
+                toolStripBtnDebugStart.Text = "Resume";
                 toolStripBtnDebugBreak.Enabled = true;
                 toolStripBtnDebugStep.Enabled = false;
                 toolStripBtnDebugStop.Enabled = true;
@@ -164,6 +173,7 @@ namespace DiTree
                 trackBarDebugSpeed.Enabled = false;
 
                 toolStripBtnDebugStart.Enabled = true;
+                toolStripBtnDebugStart.Text = "Debug";
                 toolStripBtnDebugBreak.Enabled = false;
                 toolStripBtnDebugStep.Enabled = false;
                 toolStripBtnDebugStop.Enabled = false;
@@ -593,6 +603,15 @@ namespace DiTree
         private void trackBarDebugSpeed_Scroll(object sender, EventArgs e)
         {
             DiGlobals.DebugSpeed = trackBarDebugSpeed.Value;
+        }
+
+        private void remoteDebuggingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = m_frmRemoteDebug.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                //debug connect to different address
+            }
         }
 
     }
