@@ -69,6 +69,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3C82D4E99D5C49A19975B542AA2F1AA6"
+        "OwnerKey" = "8:_AC937891B79D4B9EAFF57D81CDC2B698"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_468A7A8782E74DA8BC36982C6A163516"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -220,7 +226,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_38DEE784870C43D79740C76CF4330EEE"
+        "OwnerKey" = "8:_AC937891B79D4B9EAFF57D81CDC2B698"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -232,7 +238,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AC937891B79D4B9EAFF57D81CDC2B698"
+        "OwnerKey" = "8:_38DEE784870C43D79740C76CF4330EEE"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -1123,7 +1129,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:DiLIB 2.0"
         "ProductCode" = "8:{1669135E-6DDD-4DB8-BFC2-53EA92B1B2A3}"
-        "PackageCode" = "8:{32CA8ACC-5988-4359-B281-57E0A440D38F}"
+        "PackageCode" = "8:{E54B0F2C-CFB0-4903-92CE-453D531EFBC3}"
         "UpgradeCode" = "8:{7E562CAB-0CF2-4CEA-8582-36B569AC56A5}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1745,6 +1751,20 @@
         }
         "MergeModule"
         {
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_3C82D4E99D5C49A19975B542AA2F1AA6"
+            {
+            "UseDynamicProperties" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "SourcePath" = "8:Microsoft_VC100_CRT_x86.msm"
+                "Properties"
+                {
+                }
+            "LanguageId" = "3:0"
+            "Exclude" = "11:FALSE"
+            "Folder" = "8:"
+            "Feature" = "8:"
+            "IsolateTo" = "8:"
+            }
         }
         "ProjectOutput"
         {

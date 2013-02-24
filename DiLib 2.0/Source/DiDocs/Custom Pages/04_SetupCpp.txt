@@ -4,14 +4,21 @@ The instruction here within is for Microsoft Visual Studio C++ Project.
 
 \section setup_project Setup Project
 
-\li  Use Environment Variable <b>DILIB_DIR</b> which will has the path to DiLib installation folder.
-\li Once you have created your configuration ( .diconfig ) file, it needs to be precompiled in order to run the tree builder. 
-\li Open Project Properties for you current project.
-\li Configuration Properties  --> VC++ Directories 
-\li Under Include Directories set path to includes folder under your installation path and 3rdParty\\TinyXML  (if you require to add XML libraries)
-\li Under Library Directories set path lib directory under your installation path.
-\li Linker -> Input, set DiLibDebug.lib for debug build and for release versions put DiLib.lib
- 
+Setting up here within is explained in Microsoft Visual Studio environment and
+use Windows Environment Variable <b>DILIB_DIR</b> has the path to DiLib installation folder.<br />
+\$(DILIB_DIR) is Microsoft Visual Studio macro representation of the environment variable.
+
+-# Open Project Properties for you current project.
+-# Configuration Properties  --> VC++ Directories.
+-# Under Include Directories add following paths:
+	-# \$(DILIB_DIR)includes
+	-# \$(DILIB_DIR)3rdParty\\TinyXML
+-# Under Library Directories add following paths:
+	- \$(DILIB_DIR)libs
+-# Linker -> Input, set following lib file name depend on your configuration
+	- Debug configuration - DiLibDebug.lib
+	- Release configuration - DiLib.lib
+-# Add all the source files header(*.h) and cpp (*.cpp) from \<Install Folder>\\3rdParty\\TinyXML to your project.
  <br />
  
 \section setup_class Classes
@@ -21,7 +28,7 @@ make sure these classes header files are added to configuration files during \li
 
 \section setup_parse Parsing Config File
 
-This need to use the exported configuration file DiConfig.
+This need to use the exported configuration file DiConfig. Follow \link create_tree Creating Behavior Tree \endlink exporting tree for how to.
 
 \li Use Environment Variable <b>DILIB_DIR</b> which will has the path to DiLib installation folder.
 \li Add the configuration (.diconfig) file into your project and open the property page of the file.
