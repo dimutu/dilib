@@ -1,0 +1,24 @@
+/*! \mainpage Overview
+
+\section changelog Change Log
+Version 2.0.45a
+- UI
+	-# Highly improved tree creating user interface.
+	-# No data setup before creating tree.
+	-# Ability to view and remove unused node data.
+	-# Debugging breakpoint placement in the user interface.
+	-# Enter task execute return types and DiParser makes new DiReturnTypes.h
+	-# Recently used files.
+
+- C++ Codebase
+	-# DiFilter no longer extends from DiCondition.
+	-# Optimized and re-factored C++ code.
+	-# Removed DI_TASK_RETURNS enumeration from base class and created by DiParser, values set from UI to make DiReturnTypes.h
+	-# Config file parser executable outputs progress and log errors.
+	-# Networking moved to DiLib namespace and removed DiNetwork class.
+	-# Debugging only active under Windows OS and in DEBUG preprocessor, to be able to use under different Operating Systems.
+	-# Each task carries references pointer to Root, to keep track of last executed task.
+	-# DiFactory tree loading function renamed to CreateTree.
+	
+
+ */

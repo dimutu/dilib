@@ -1,0 +1,29 @@
+/*! \page terms Terms of Use
+
+<p>
+This software is provided 'as-is', without any express or implied
+warranty. In no event will the authors be held liable for any
+damages arising from the use of this software.
+</p>
+
+<p>
+Permission is granted to anyone to use this software for any
+purpose, including commercial applications, subject to the following restrictions:
+</p>
+
+<ol>
+<li> The origin of this software must not be misrepresented; you must
+not claim that you wrote the original software. If you use this
+software in a product, an acknowledgment in the product documentation
+would be appreciated.</li>
+
+<li>NO alteration must be made to the source version.</li>
+
+<li>This notice may not be removed or altered from any source distribution.</li>
+
+<li>Third party open source &quot;TinyXML&quot; is used in this program, and for more information please see its own terms of use.</li>
+</ol>
+
+<br />
+
+ */

@@ -40,6 +40,12 @@ namespace DiTree
         {
             base.OnLoad(e);
             string[] args = Environment.GetCommandLineArgs();
+            if (args.Length >= 2)
+            {
+                List<string> arglist = new List<string>(args);
+                arglist.RemoveAt(0);
+                args = arglist.ToArray();
+            }
             LoadFiles(args); 
             DebugMenuDisplay();
         }

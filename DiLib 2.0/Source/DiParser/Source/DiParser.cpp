@@ -1,4 +1,26 @@
-
+/*
+****************************************************************************************************************************
+* DiLib v2.0 (dilib.dimutu.com)
+*
+* This software is provided 'as-is', without any express or implied warranty. 
+* In no event will the authors be held liable for any
+* damages arising from the use of this software.
+* 
+* Permission is granted to anyone to use this software for any
+* purpose, including commercial applications, subject to the following restrictions:
+* 
+* 1. The origin of this software must not be misrepresented; you must
+* not claim that you wrote the original software. If you use this
+* software in a product, an acknowledgment in the product documentation
+* would be appreciated.
+* 
+* 2. NO alteration must be made to the source version.
+* 
+* 3. This notice may not be removed or altered from any source distribution.
+* 
+* 4. Third party open source "TinyXML" is used in this program, and for more information please see its own terms of use.
+******************************************************************************************************************************
+*/
 #include "DiParser.h"
 
 namespace DiLib
@@ -88,7 +110,7 @@ namespace DiLib
 			char zBuff[200];
 			
 			//write a comment on header
-			sWriteLine = "\n/*this file generates at runtime to identify each inherited or templated class by a enum id for easy identification*/\n\n";
+			sWriteLine = "\n/*DiLib v2.0 - this file generates at runtime to identify each inherited or templated class by a enum id for easy identification*/\n\n";
 			kEnumHFile.write(sWriteLine.c_str(), sWriteLine.size());
 
 			//write #defines for header
@@ -260,6 +282,9 @@ namespace DiLib
 
 			//inlcude the header just created, so all the inlcudes can go in
 			//write a comment on header
+			sWriteLine = "\n/*DiLib v2.0 - this file generates at runtime, do not make any modifications.*/\n\n";
+			kCppFile.write(sWriteLine.c_str(), sWriteLine.size());
+
 			sWriteLine = "\n#include \"" + m_zEnumFileName;
 			sWriteLine += "\"\n";
 			sWriteLine += "#include <DiFactory.h>\n\n";

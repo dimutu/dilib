@@ -1,0 +1,21 @@
+/*! \page download Download
+
+Download the latest version from the <a href="../download.php">download</a> page.
+
+\section sys_req System Requirements
+
+\li Windows XP SP2 or higher
+\li .NET Framework 4.0
+\li 1 GHz or higher CPU
+\li 512Mb Memory
+\li 10Mb Hard Disk space
+
+\section dependencies Dependencies
+
+DiLIB C++ classes loading are primarily based on XML and it is heavily using third party TinyXML library which includes with the installation.
+And in-order to compile the C++ library you must include the paths to the XML library which will be covering in \link setup_cpp Setting up C++ \endlink.
+
+<br/> For more information on TinyXML visit <a href="http://www.grinninglizard.com/tinyxml" target="_blank">www.grinninglizard.com/tinyxml</a>.
+
+
+*/

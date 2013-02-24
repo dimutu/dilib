@@ -97,8 +97,6 @@
             this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.termsOfUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMainNew = new System.Windows.Forms.ToolStripButton();
             this.toolStripMainOpen = new System.Windows.Forms.ToolStripButton();
@@ -605,6 +603,7 @@
             // 
             // remoteDebuggingToolStripMenuItem
             // 
+            this.remoteDebuggingToolStripMenuItem.Enabled = false;
             this.remoteDebuggingToolStripMenuItem.Name = "remoteDebuggingToolStripMenuItem";
             this.remoteDebuggingToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.remoteDebuggingToolStripMenuItem.Text = "Remote Debugging";
@@ -748,8 +747,6 @@
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.documentationToolStripMenuItem,
-            this.termsOfUseToolStripMenuItem,
-            this.toolStripSeparator1,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -761,17 +758,6 @@
             this.documentationToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
             this.documentationToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.documentationToolStripMenuItem.Text = "Documentation";
-            // 
-            // termsOfUseToolStripMenuItem
-            // 
-            this.termsOfUseToolStripMenuItem.Name = "termsOfUseToolStripMenuItem";
-            this.termsOfUseToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.termsOfUseToolStripMenuItem.Text = "Terms of Use";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(173, 6);
             // 
             // aboutToolStripMenuItem
             // 
@@ -1075,8 +1061,6 @@
         private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem termsOfUseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem upToolStripMenuItem;

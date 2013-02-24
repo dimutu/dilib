@@ -57,6 +57,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_362C4F66D8B2467E835031A937FB5127"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_38DEE784870C43D79740C76CF4330EEE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -117,6 +123,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_865DFB90E2844DC4A7476EC5D89DB096"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_87E71838AA8644088DEB1133DE19761C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -131,12 +143,6 @@
         {
         "MsmKey" = "8:_8BFFD66252994D6FABA688006E4BB4EC"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_95DB874EDB8042CF9F93C3659C34EEED"
-        "OwnerKey" = "8:_AC937891B79D4B9EAFF57D81CDC2B698"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -189,6 +195,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_E6E38BECC675429AA9F20A7AEF2E645E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_E8D3CC399F5B492D8F4CCB6757A1AD6A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -208,13 +220,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_87E71838AA8644088DEB1133DE19761C"
+        "OwnerKey" = "8:_38DEE784870C43D79740C76CF4330EEE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_38DEE784870C43D79740C76CF4330EEE"
+        "OwnerKey" = "8:_87E71838AA8644088DEB1133DE19761C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -241,6 +253,27 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -447,6 +480,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_362C4F66D8B2467E835031A937FB5127"
+            {
+            "SourcePath" = "8:..\\icons\\config.ico"
+            "TargetName" = "8:config.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_FB8DB83863914F3296E0D1B83B04FD45"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_468A7A8782E74DA8BC36982C6A163516"
             {
             "SourcePath" = "8:..\\..\\DiLib\\Source\\WinsockInclude.h"
@@ -593,6 +646,26 @@
             "TargetName" = "8:tinyxml.cpp"
             "Tag" = "8:"
             "Folder" = "8:_3ACE96D292F8444FBA0E60FDED7F0465"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_865DFB90E2844DC4A7476EC5D89DB096"
+            {
+            "SourcePath" = "8:..\\icons\\tree.ico"
+            "TargetName" = "8:tree.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_FB8DB83863914F3296E0D1B83B04FD45"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -787,6 +860,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E6E38BECC675429AA9F20A7AEF2E645E"
+            {
+            "SourcePath" = "8:..\\icons\\data.ico"
+            "TargetName" = "8:data.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_FB8DB83863914F3296E0D1B83B04FD45"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E8D3CC399F5B492D8F4CCB6757A1AD6A"
             {
             "SourcePath" = "8:..\\..\\DiLib\\Source\\DiFactory.h"
@@ -836,7 +929,7 @@
             "Description" = "8:"
             "Extensions" = "8:.didata"
             "MIME" = "8:"
-            "Icon" = "8:"
+            "Icon" = "8:_E6E38BECC675429AA9F20A7AEF2E645E"
             "IconIndex" = "3:0"
                 "Command"
                 {
@@ -859,7 +952,7 @@
             "Description" = "8:"
             "Extensions" = "8:.ditree"
             "MIME" = "8:"
-            "Icon" = "8:"
+            "Icon" = "8:_865DFB90E2844DC4A7476EC5D89DB096"
             "IconIndex" = "3:0"
                 "Command"
                 {
@@ -882,7 +975,7 @@
             "Description" = "8:"
             "Extensions" = "8:.diconfig"
             "MIME" = "8:"
-            "Icon" = "8:"
+            "Icon" = "8:_362C4F66D8B2467E835031A937FB5127"
             "IconIndex" = "3:0"
                 "Command"
                 {
@@ -937,7 +1030,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_D1A18798AB5943E78C188E43D84BB7DC"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFilesFolder][ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -1028,9 +1121,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:DiLib"
+        "ProductName" = "8:DiLIB 2.0"
         "ProductCode" = "8:{1669135E-6DDD-4DB8-BFC2-53EA92B1B2A3}"
-        "PackageCode" = "8:{128CFE04-AE64-4CA1-8041-6D2D7CDB41AE}"
+        "PackageCode" = "8:{32CA8ACC-5988-4359-B281-57E0A440D38F}"
         "UpgradeCode" = "8:{7E562CAB-0CF2-4CEA-8582-36B569AC56A5}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1041,11 +1134,11 @@
         "Manufacturer" = "8:Dimutu Kulawardana"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://dilib.dimutu.com"
-        "Title" = "8:DiLib 2.0 Installer"
+        "Title" = "8:DiLIB 2.0 Installer"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Dimutu Kulawardana"
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:DiLib 2.0 Artificial Intelligence Behavior Tool"
+        "ARPCOMMENTS" = "8:DiLIB 2.0 Artificial Intelligence Behavior Tool"
         "ARPURLINFOABOUT" = "8:http://www.dimutu.com"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
@@ -1154,7 +1247,7 @@
                             "Name" = "8:[Manufacturer]"
                             "Condition" = "8:"
                             "AlwaysCreate" = "11:FALSE"
-                            "DeleteAtUninstall" = "11:FALSE"
+                            "DeleteAtUninstall" = "11:TRUE"
                             "Transitive" = "11:FALSE"
                                 "Keys"
                                 {
@@ -1652,20 +1745,6 @@
         }
         "MergeModule"
         {
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_95DB874EDB8042CF9F93C3659C34EEED"
-            {
-            "UseDynamicProperties" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:Microsoft_VC100_CRT_x86.msm"
-                "Properties"
-                {
-                }
-            "LanguageId" = "3:0"
-            "Exclude" = "11:FALSE"
-            "Folder" = "8:"
-            "Feature" = "8:"
-            "IsolateTo" = "8:"
-            }
         }
         "ProjectOutput"
         {

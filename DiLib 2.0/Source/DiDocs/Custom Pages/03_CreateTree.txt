@@ -1,0 +1,74 @@
+/*! \page create_tree Creating Behavior Tree
+
+\section create_tree_overview Overview
+
+This section covers the building the UI element of the library. <br />
+
+\li Run DiLIB application from Start --> Programe Files --> DiLIb 2.0 --> DiLIb 2.0 DiTree Creators
+\li Create a new tree data file <br />
+      File --> New
+	  
+A single file can hold multiple behavior trees as many as the project requires, so only single file needs for a single project containing all the behavior trees.
+ 
+\section create_tree_general General
+
+Unique debugger ID will use for identifying this tree during debugging session if you have multiple files open. 
+This auto generates a unique key or it can be overridden as long as its unique value. <br />
+
+Enter all the header files you use in the C++ project here. <br />
+This includes
+\li AI header files
+\li Implemented and extended C++ header files using the base DiLIB source files
+
+\section create_tree_enum Custom Enumerations
+
+Each C++ Task file contains Execute function returns an integer value to identify the new state of the AI. <br />
+DiLIB auto generate following enumerations used inside default template classes, but you can enter any new enumeration names here you can use to extend beyond 
+the templated values.
+\li DITASK_COMPLETE
+\li DITASK_FAILED
+\li DITASK_CALLBACK
+\li DITASK_NEXTTASK
+
+\section create_tree_nodes Building Behavior Tree
+
+Tree creation is done inside the tree tabs, each tree needs to have a unique key so it will help to debug the correct tree. <br />
+Add trees from
+\li Insert --> Tree
+
+And remove existing trees
+\li Edit --> Tree --> Delete
+
+Rename tree
+\li Edit --> Tree --> Rename
+
+Before you begin making the tree, first enter the template class name for the tree and this cannot be change afterwards as the whole tree nodes information are depend on the template class.
+
+Add tree nodes
+\li Insert --> Task, or other menu item for each type
+\li Drag and drop from top right list of task items
+
+Arrange of tree items can modify by
+\li Drag and drop of the nodes
+\li Edit --> Node --> Up or other menu commands
+
+\section export_files Exporting Files
+
+Export the files require to load the tree in the C++ project.
+<br />
+<b>THIS SECTION IS STILL IMPLEMENTING TO BE MORE USER FRIENDLY.</b>
+
+\subsection export_config DiConfig Configuration
+
+Export the configuration file <br />
+File --> Export --> Config File
+
+\subsection export_tree DiTree Tree Data
+
+Export the tree information file.
+File -->Export --> Tree File <br />
+This will show the list of tree currently attached to the project, select the tree name and OK to export to path of your choice.
+
+
+<br />
+*/

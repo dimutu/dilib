@@ -45,11 +45,12 @@ namespace DiTree
             int iCounter = 0;
             
             InitializeFileHandler();
-
+            
             if (a_azFiles != null)
             {
                 for (iCounter = 0; iCounter < a_azFiles.Length; ++iCounter)
                 {
+                    zFile = a_azFiles[iCounter];
                     OpenFile(zFile);
                 }
             }
