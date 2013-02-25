@@ -16,7 +16,7 @@ namespace DiTree
 		public frmSplashScreen()
 		{
 			InitializeComponent();
-
+            lblVersion.Text = "Version " + DiUtility.AssemblyVersion;
 		}
 
 		private void timerSplash_Tick(object sender, EventArgs e)

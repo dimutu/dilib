@@ -23,10 +23,11 @@
 \li <b>When debugger connected, why can't I see updating tree?</b> <br />
 	Debugger only updates if there is DiData file opened, check you have opened the file and correct tree tab is activated before Start Debugging.
 	
-The system cannot find the path specified. error MSB6006: "cmd.exe" exited with code 3.
-	Cannot find the path to DiParser.exe
-	
-\li Cant find DILIB_DIR
-	Sometimes windows needs to restart after installation to load the environment variables.
+\li <b>Can't find DILIB_DIR in Visual Studio.</b> <br />
+	You may need to restart your computer as some occations windows needs to restart after installation to load the environment variables.
+
+<p>
+If what you looking for isn't here, always welcome to comment at <a href="mailto:dilib@dimutu.com">dilib@dimutu.com</a> and I will try to get back to with an answer.
+</p>
 <br/>
 */

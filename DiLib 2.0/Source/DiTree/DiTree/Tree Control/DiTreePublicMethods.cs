@@ -772,6 +772,11 @@ namespace DiTree
             }
 
         }
+
+        public bool ExportSource(string a_zPath)
+        {
+            return true;
+        }
     }
 
 

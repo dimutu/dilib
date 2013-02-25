@@ -692,5 +692,48 @@ namespace DiTree
                 }
             }
         }
+
+        public bool ExportSource(string a_zFilePath, int a_iTabIndex)
+        {
+            if (tabDiFile.TabPages.Count > TABSTART_INDEX)
+            {
+                //check enum table has valid data before start
+                if (!m_pkDataHandler.IsConfigValid())
+                {
+                    DiMethods.MyDialogShow("Error in config data, please check the error before exporting the source.", MessageBoxButtons.OK);
+                    return false;
+                }
+
+
+                if (a_iTabIndex == -1)
+                {
+                    DiMethods.MyDialogShow("You haven't select the tree to export.", MessageBoxButtons.OK);
+                    return false;
+                }
+                //focus to the exporting tab
+                tabDiFile.SelectedIndex = a_iTabIndex;
+                DiTabPage tab = (DiTabPage)tabDiFile.SelectedTab;
+                if (tab != null)
+                {
+                    if (!tab.Tree.ExportSource(a_zFilePath))
+                    {
+                        tab.Focus();
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+
+            }//end if tab count > m_iStaticTabCount
+            else
+            {
+                DiMethods.MyDialogShow("No tree files to export.", MessageBoxButtons.OK);
+                return false;
+            }
+
+            return false;
+        }
     }
 }

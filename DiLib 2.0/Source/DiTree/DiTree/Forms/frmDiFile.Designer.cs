@@ -44,6 +44,7 @@
             this.tabPageNew = new System.Windows.Forms.TabPage();
             this.tabDiFile = new System.Windows.Forms.TabControl();
             this.tabPageReturns = new System.Windows.Forms.TabPage();
+            this.chkPrefix = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtReturnEnum = new System.Windows.Forms.TextBox();
             this.btnRemoveEnum = new System.Windows.Forms.Button();
@@ -53,7 +54,7 @@
             this.imageListDiFille = new System.Windows.Forms.ImageList(this.components);
             this.btnCloseTab = new System.Windows.Forms.Button();
             this.toolTipHelp = new System.Windows.Forms.ToolTip(this.components);
-            this.chkPrefix = new System.Windows.Forms.CheckBox();
+            this.imageListButtons = new System.Windows.Forms.ImageList(this.components);
             this.tabPageGeneral.SuspendLayout();
             this.tabDiFile.SuspendLayout();
             this.tabPageReturns.SuspendLayout();
@@ -139,7 +140,8 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.ImageKey = "delete.png";
+            this.btnRemove.ImageKey = "delete";
+            this.btnRemove.ImageList = this.imageListButtons;
             this.btnRemove.Location = new System.Drawing.Point(500, 190);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(53, 37);
@@ -150,7 +152,8 @@
             // btnAddInclude
             // 
             this.btnAddInclude.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAddInclude.ImageKey = "add.png";
+            this.btnAddInclude.ImageKey = "add";
+            this.btnAddInclude.ImageList = this.imageListButtons;
             this.btnAddInclude.Location = new System.Drawing.Point(500, 99);
             this.btnAddInclude.Name = "btnAddInclude";
             this.btnAddInclude.Size = new System.Drawing.Size(53, 37);
@@ -181,7 +184,7 @@
             // 
             this.tabPageNew.BackColor = System.Drawing.Color.Transparent;
             this.tabPageNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.tabPageNew.ImageKey = "bullet_add.png";
+            this.tabPageNew.ImageKey = "bullet_star.png";
             this.tabPageNew.Location = new System.Drawing.Point(4, 54);
             this.tabPageNew.Margin = new System.Windows.Forms.Padding(0);
             this.tabPageNew.Name = "tabPageNew";
@@ -224,6 +227,16 @@
             this.tabPageReturns.Text = "Enumerations";
             this.tabPageReturns.UseVisualStyleBackColor = true;
             // 
+            // chkPrefix
+            // 
+            this.chkPrefix.AutoSize = true;
+            this.chkPrefix.Location = new System.Drawing.Point(210, 98);
+            this.chkPrefix.Name = "chkPrefix";
+            this.chkPrefix.Size = new System.Drawing.Size(205, 19);
+            this.chkPrefix.TabIndex = 15;
+            this.chkPrefix.Text = "Add DITASK Prefix to return types";
+            this.chkPrefix.UseVisualStyleBackColor = true;
+            // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Window;
@@ -248,7 +261,8 @@
             // 
             // btnRemoveEnum
             // 
-            this.btnRemoveEnum.ImageKey = "delete.png";
+            this.btnRemoveEnum.ImageKey = "delete";
+            this.btnRemoveEnum.ImageList = this.imageListButtons;
             this.btnRemoveEnum.Location = new System.Drawing.Point(493, 147);
             this.btnRemoveEnum.Name = "btnRemoveEnum";
             this.btnRemoveEnum.Size = new System.Drawing.Size(53, 37);
@@ -258,7 +272,8 @@
             // 
             // btnAddEnum
             // 
-            this.btnAddEnum.ImageKey = "add.png";
+            this.btnAddEnum.ImageKey = "add";
+            this.btnAddEnum.ImageList = this.imageListButtons;
             this.btnAddEnum.Location = new System.Drawing.Point(493, 56);
             this.btnAddEnum.Name = "btnAddEnum";
             this.btnAddEnum.Size = new System.Drawing.Size(53, 37);
@@ -290,6 +305,8 @@
             this.imageListDiFille.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListDiFille.ImageStream")));
             this.imageListDiFille.TransparentColor = System.Drawing.Color.Transparent;
             this.imageListDiFille.Images.SetKeyName(0, "bullet_star.png");
+            this.imageListDiFille.Images.SetKeyName(1, "add.png");
+            this.imageListDiFille.Images.SetKeyName(2, "delete.png");
             // 
             // btnCloseTab
             // 
@@ -303,15 +320,12 @@
             this.btnCloseTab.Click += new System.EventHandler(this.btnCloseTab_Click);
             this.btnCloseTab.MouseHover += new System.EventHandler(this.btnCloseTab_MouseHover);
             // 
-            // chkPrefix
+            // imageListButtons
             // 
-            this.chkPrefix.AutoSize = true;
-            this.chkPrefix.Location = new System.Drawing.Point(210, 98);
-            this.chkPrefix.Name = "chkPrefix";
-            this.chkPrefix.Size = new System.Drawing.Size(126, 19);
-            this.chkPrefix.TabIndex = 15;
-            this.chkPrefix.Text = "Add DITASK Prefix";
-            this.chkPrefix.UseVisualStyleBackColor = true;
+            this.imageListButtons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListButtons.ImageStream")));
+            this.imageListButtons.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListButtons.Images.SetKeyName(0, "add");
+            this.imageListButtons.Images.SetKeyName(1, "delete");
             // 
             // frmDiFile
             // 
@@ -359,5 +373,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ImageList imageListDiFille;
         private System.Windows.Forms.CheckBox chkPrefix;
+        private System.Windows.Forms.ImageList imageListButtons;
     }
 }

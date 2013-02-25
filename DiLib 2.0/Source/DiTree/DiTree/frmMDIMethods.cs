@@ -208,5 +208,41 @@ namespace DiTree
         {
             a_frmDiFile.AddTreeNode(a_eType);
         }
+
+        private void ExportSource()
+        {
+            Form frmActive = this.ActiveMdiChild;
+
+            if (frmActive == null)
+            {
+                return;
+            }
+
+            if (frmActive.GetType() == typeof(frmDiFile))
+            {
+                //active window is enum id, save that
+                frmDiFile f = (frmDiFile)frmActive;
+
+                //show the select tree from the active form
+                m_frmSelectTree.TreeForm = f;
+                saveTreeFile.FileName = ""; //reset last file
+                if (m_frmSelectTree.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    //now get the path to save
+                    if (saveTreeFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        if (f.ExportSource(saveTreeFile.FileName, m_frmSelectTree.SelectedIndex))
+                        {
+                            DiMethods.SetStatusMessage(DiLangID.ID_EXPORT_COMPLETE);
+                        }
+                        else
+                        {
+                            DiMethods.SetStatusMessage(DiLangID.ID_ERROR_EXPORT_FILE);
+                        }
+                    }
+                }
+
+            }
+        }
     }
 }

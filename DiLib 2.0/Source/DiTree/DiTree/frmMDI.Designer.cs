@@ -49,8 +49,9 @@
             this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.treeFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportConfigFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportTreeFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportCppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,7 +122,6 @@
             this.saveConfigFile = new System.Windows.Forms.SaveFileDialog();
             this.saveTreeFile = new System.Windows.Forms.SaveFileDialog();
             this.trackBarDebugSpeed = new System.Windows.Forms.TrackBar();
-            this.exportCppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripMDI.SuspendLayout();
             this.menuMDI.SuspendLayout();
             this.toolStripMain.SuspendLayout();
@@ -309,30 +309,39 @@
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.configFileToolStripMenuItem,
-            this.treeFileToolStripMenuItem,
+            this.exportConfigFileToolStripMenuItem,
+            this.exportTreeFileToolStripMenuItem,
             this.exportCppToolStripMenuItem});
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
             this.exportToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.exportToolStripMenuItem.Text = "Export";
             // 
-            // configFileToolStripMenuItem
+            // exportConfigFileToolStripMenuItem
             // 
-            this.configFileToolStripMenuItem.Name = "configFileToolStripMenuItem";
-            this.configFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.configFileToolStripMenuItem.Tag = "ID_EXPORT_CONFIG";
-            this.configFileToolStripMenuItem.Text = "Config File";
-            this.configFileToolStripMenuItem.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
-            this.configFileToolStripMenuItem.MouseLeave += new System.EventHandler(this.hideHelptoolStrip);
+            this.exportConfigFileToolStripMenuItem.Name = "exportConfigFileToolStripMenuItem";
+            this.exportConfigFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportConfigFileToolStripMenuItem.Tag = "ID_EXPORT_CONFIG";
+            this.exportConfigFileToolStripMenuItem.Text = "Config File";
+            this.exportConfigFileToolStripMenuItem.Click += new System.EventHandler(this.exportConfigFileToolStripMenuItem_Click);
+            this.exportConfigFileToolStripMenuItem.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
+            this.exportConfigFileToolStripMenuItem.MouseLeave += new System.EventHandler(this.hideHelptoolStrip);
             // 
-            // treeFileToolStripMenuItem
+            // exportTreeFileToolStripMenuItem
             // 
-            this.treeFileToolStripMenuItem.Name = "treeFileToolStripMenuItem";
-            this.treeFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.treeFileToolStripMenuItem.Tag = "ID_EXPORT_TREE";
-            this.treeFileToolStripMenuItem.Text = "Tree File";
-            this.treeFileToolStripMenuItem.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
-            this.treeFileToolStripMenuItem.MouseLeave += new System.EventHandler(this.hideHelptoolStrip);
+            this.exportTreeFileToolStripMenuItem.Name = "exportTreeFileToolStripMenuItem";
+            this.exportTreeFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportTreeFileToolStripMenuItem.Tag = "ID_EXPORT_TREE";
+            this.exportTreeFileToolStripMenuItem.Text = "Tree File";
+            this.exportTreeFileToolStripMenuItem.Click += new System.EventHandler(this.exportTreeFileToolStripMenuItem_Click);
+            this.exportTreeFileToolStripMenuItem.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
+            this.exportTreeFileToolStripMenuItem.MouseLeave += new System.EventHandler(this.hideHelptoolStrip);
+            // 
+            // exportCppToolStripMenuItem
+            // 
+            this.exportCppToolStripMenuItem.Name = "exportCppToolStripMenuItem";
+            this.exportCppToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportCppToolStripMenuItem.Text = "C++ Source";
+            this.exportCppToolStripMenuItem.Click += new System.EventHandler(this.exportCppToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -985,13 +994,6 @@
             this.trackBarDebugSpeed.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
             this.trackBarDebugSpeed.MouseLeave += new System.EventHandler(this.hideHelptoolStrip);
             // 
-            // exportCppToolStripMenuItem
-            // 
-            this.exportCppToolStripMenuItem.Name = "exportCppToolStripMenuItem";
-            this.exportCppToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exportCppToolStripMenuItem.Text = "C++ Source";
-            this.exportCppToolStripMenuItem.Click += new System.EventHandler(this.exportCppToolStripMenuItem_Click);
-            // 
             // frmMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1040,8 +1042,8 @@
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem configFileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem treeFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportConfigFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportTreeFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem taskToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem conditionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filterToolStripMenuItem;

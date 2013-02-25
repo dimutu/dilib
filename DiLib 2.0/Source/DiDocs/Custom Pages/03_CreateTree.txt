@@ -17,8 +17,10 @@ This auto generates a unique key or it can be overridden as long as its unique v
 
 Enter all the header files you use in the C++ project here. <br />
 This includes
-\li AI header files
-\li Implemented and extended C++ header files using the base DiLIB source files
+\li AI header files.
+\li Implemented and extended C++ header files using the base DiLIB source files.
+
+\image html ditree-general.jpg
 
 \section create_tree_enum Custom Enumerations
 
@@ -29,6 +31,8 @@ the templated values.
 \li DITASK_FAILED
 \li DITASK_CALLBACK
 \li DITASK_NEXTTASK
+
+\image html ditree-custom-enum.jpg
 
 \section create_tree_nodes Building Behavior Tree
 
@@ -51,6 +55,8 @@ Add tree nodes
 Arrange of tree items can modify by
 \li Drag and drop of the nodes
 \li Edit --> Node --> Up or other menu commands
+
+\image html ditree-treeview.jpg
 
 \section export_files Exporting Files
 
