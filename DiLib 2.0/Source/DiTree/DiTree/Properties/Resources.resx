@@ -117,6 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="condcpp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\export templates\condcpp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="filcpp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\export templates\filcpp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="header" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\export templates\header.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="ID_ADD_CONDITION" xml:space="preserve">
     <value>Adds new Condition task to currently selected node.</value>
   </data>
@@ -218,5 +228,14 @@
   </data>
   <data name="ID_SHOW_CONSOLE" xml:space="preserve">
     <value>Show the console window.</value>
+  </data>
+  <data name="selcpp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\export templates\selcpp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="seqcpp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\export templates\seqcpp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="taskcpp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\export templates\taskcpp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

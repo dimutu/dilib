@@ -69,12 +69,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_3C82D4E99D5C49A19975B542AA2F1AA6"
-        "OwnerKey" = "8:_AC937891B79D4B9EAFF57D81CDC2B698"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_468A7A8782E74DA8BC36982C6A163516"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -226,7 +220,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AC937891B79D4B9EAFF57D81CDC2B698"
+        "OwnerKey" = "8:_38DEE784870C43D79740C76CF4330EEE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -238,7 +232,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_38DEE784870C43D79740C76CF4330EEE"
+        "OwnerKey" = "8:_AC937891B79D4B9EAFF57D81CDC2B698"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -1751,20 +1745,6 @@
         }
         "MergeModule"
         {
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_3C82D4E99D5C49A19975B542AA2F1AA6"
-            {
-            "UseDynamicProperties" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:Microsoft_VC100_CRT_x86.msm"
-                "Properties"
-                {
-                }
-            "LanguageId" = "3:0"
-            "Exclude" = "11:FALSE"
-            "Folder" = "8:"
-            "Feature" = "8:"
-            "IsolateTo" = "8:"
-            }
         }
         "ProjectOutput"
         {
@@ -1875,6 +1855,34 @@
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{522B7B83-8834-4306-9D4B-4F6F33353449}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_FF0958604F194797A68E8A9050CD9819"
+            {
+            "SourcePath" = "8:"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C34BAB23257E4D6CBA698B7522A608ED"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:Debug|Win32"
+            "OutputGroupCanonicalName" = "8:Symbols"
+            "OutputProjectGuid" = "8:{95242BDA-C440-4E51-9369-17BD6FB1DD55}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {

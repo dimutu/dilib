@@ -156,5 +156,13 @@ namespace DiTree
         {
             return m_kResourceManager.GetString(a_zID);
         }
+
+        public static string AssemblyVersion
+        {
+            get
+            {
+                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            }
+        }
     }
 }

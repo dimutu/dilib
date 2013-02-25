@@ -234,7 +234,14 @@ namespace DiTree
                 using (writer = XmlWriter.Create(zTempFile, settings))
                 {
                     writer.WriteStartDocument();
+                    
+
                     writer.WriteStartElement(DiXMLElements.XMLELEMENT_TREEROOT);
+
+                    //write file version
+                    writer.WriteStartElement(DiXMLElements.XMLELEMENT_DILIB);
+                    writer.WriteAttributeString(DiXMLElements.XMLELEMENT_DILIB_VERSION, DiUtility.AssemblyVersion);
+                    writer.WriteEndElement();
 
                     //start di config data
                     writer.WriteStartElement(DiXMLElements.XMLELEMENT_CONFIG);
@@ -529,7 +536,7 @@ namespace DiTree
             System.IO.StreamWriter kWriter = new System.IO.StreamWriter(a_zFilePath);
 
             //write some comments not to modify this
-            string sLine = "# do not modify this file, this is a generated file - DiLib 2.0";
+            string sLine = "# do not modify this file, this is a generated file - DiLIB v" + DiUtility.AssemblyVersion;
             kWriter.WriteLine(sLine);
             kWriter.WriteLine();
 

@@ -575,6 +575,11 @@ namespace DiTree
                     writer.WriteStartDocument();
                     writer.WriteStartElement("TreeRoot");
 
+                    //write file version
+                    writer.WriteStartElement(DiXMLElements.XMLELEMENT_DILIB);
+                    writer.WriteAttributeString(DiXMLElements.XMLELEMENT_DILIB_VERSION, DiUtility.AssemblyVersion);
+                    writer.WriteEndElement();
+
                     //write using DI file 
                     writer.WriteStartElement("DI");
                     writer.WriteAttributeString("Template", txtTemplateClass.Text.Trim());

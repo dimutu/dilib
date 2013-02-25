@@ -7,6 +7,9 @@ namespace DiTree
 {
     public static class DiXMLElements
     {
+        public const string XMLELEMENT_DILIB = "DiLIB";
+        public const string XMLELEMENT_DILIB_VERSION = "version"; //file version
+
         public const string XMLELEMENT_TREEROOT = "TreeRoot"; //main xml header
 
         //configuration details

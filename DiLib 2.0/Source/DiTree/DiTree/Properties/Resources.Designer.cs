@@ -61,6 +61,97 @@ namespace DiTree.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to #include &quot;[CLASS].h&quot;
+        ///#include &quot;DiReturnEnum.h&quot;
+        ///#include &quot;[TEMPLATE].h&quot;
+        ///
+        ///[CLASS]::[CLASS]() : [DICLASS]&lt;[TEMPLATE]&gt;()
+        ///{
+        ///}
+        ///
+        ///[CLASS]::~[CLASS]()
+        ///{
+        ///}
+        ///
+        ///int [CLASS]::Execute([TEMPLATE]* a_pkObject)
+        ///{
+        ///	if (true)
+        ///	{
+        ///		return m_pkTrueTask-&gt;Execute(a_pkObject);
+        ///	}
+        ///	else
+        ///	{
+        ///		return m_pkFalseTask-&gt;Execute(a_pkObject);
+        ///	}
+        ///}
+        ///.
+        /// </summary>
+        internal static string condcpp {
+            get {
+                return ResourceManager.GetString("condcpp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #include &quot;[CLASS].h&quot;
+        ///#include &quot;DiReturnEnum.h&quot;
+        ///#include &quot;[TEMPLATE].h&quot;
+        ///
+        ///[CLASS]::[CLASS]() : [DICLASS]&lt;[TEMPLATE]&gt;()
+        ///{
+        ///}
+        ///
+        ///[CLASS]::~[CLASS]()
+        ///{
+        ///}
+        ///
+        ///int [CLASS]::Execute([TEMPLATE]* a_pkObject)
+        ///{
+        ///	if (true)
+        ///	{
+        ///		return m_pkTrueTask-&gt;Execute(a_pkObject);
+        ///	}
+        ///	else
+        ///	{
+        ///		return m_pkFalseTask-&gt;Execute(a_pkObject);
+        ///	}
+        ///}
+        ///.
+        /// </summary>
+        internal static string filcpp {
+            get {
+                return ResourceManager.GetString("filcpp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #ifndef [DEFINE]
+        ///#define [DEFINE]
+        ///
+        ///#include [TASKH]
+        ///
+        ///class [TEMPLATE];
+        ///
+        ///class [CLASS] : public [DICLASS]&lt;[TEMPLATE]&gt;
+        ///{
+        ///public:
+        ///	[CLASS]();
+        ///	
+        ///	~[CLASS]();
+        ///	
+        ///	int Execute([TEMPLATE]* a_pkObject);
+        ///	
+        ///};
+        ///
+        ///#endif.
+        /// </summary>
+        internal static string header {
+            get {
+                return ResourceManager.GetString("header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Adds new Condition task to currently selected node..
         /// </summary>
         internal static string ID_ADD_CONDITION {
@@ -363,6 +454,96 @@ namespace DiTree.Properties {
         internal static string ID_SHOW_CONSOLE {
             get {
                 return ResourceManager.GetString("ID_SHOW_CONSOLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #include &quot;[CLASS].h&quot;
+        ///#include &quot;DiReturnEnum.h&quot;
+        ///#include &quot;[TEMPLATE].h&quot;
+        ///
+        ///[CLASS]::[CLASS]() : [DICLASS]&lt;[TEMPLATE]&gt;()
+        ///{
+        ///}
+        ///
+        ///[CLASS]::~[CLASS]()
+        ///{
+        ///}
+        ///
+        ///int [CLASS]::Execute([TEMPLATE]* a_pkObject)
+        ///{
+        ///	if (true)
+        ///	{
+        ///		return m_pkTrueTask-&gt;Execute(a_pkObject);
+        ///	}
+        ///	else
+        ///	{
+        ///		return m_pkFalseTask-&gt;Execute(a_pkObject);
+        ///	}
+        ///}
+        ///.
+        /// </summary>
+        internal static string selcpp {
+            get {
+                return ResourceManager.GetString("selcpp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #include &quot;[CLASS].h&quot;
+        ///#include &quot;DiReturnEnum.h&quot;
+        ///#include &quot;[TEMPLATE].h&quot;
+        ///
+        ///[CLASS]::[CLASS]() : [DICLASS]&lt;[TEMPLATE]&gt;()
+        ///{
+        ///}
+        ///
+        ///[CLASS]::~[CLASS]()
+        ///{
+        ///}
+        ///
+        ///int [CLASS]::Execute([TEMPLATE]* a_pkObject)
+        ///{
+        ///	if (true)
+        ///	{
+        ///		return m_pkTrueTask-&gt;Execute(a_pkObject);
+        ///	}
+        ///	else
+        ///	{
+        ///		return m_pkFalseTask-&gt;Execute(a_pkObject);
+        ///	}
+        ///}
+        ///.
+        /// </summary>
+        internal static string seqcpp {
+            get {
+                return ResourceManager.GetString("seqcpp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///#include &quot;[CLASS].h&quot;
+        ///#include &quot;DiReturnEnum.h&quot;
+        ///#include &quot;[TEMPLATE].h&quot;
+        ///
+        ///[CLASS]::[CLASS]() : [DICLASS]&lt;[TEMPLATE]&gt;()
+        ///{
+        ///}
+        ///
+        ///[CLASS]::~[CLASS]()
+        ///{
+        ///}
+        ///
+        ///int [CLASS]::Execute([TEMPLATE]* a_pkObject)
+        ///{
+        ///	return DiLib::DI_RETURN_COMPLETE;
+        ///}
+        ///.
+        /// </summary>
+        internal static string taskcpp {
+            get {
+                return ResourceManager.GetString("taskcpp", resourceCulture);
             }
         }
     }

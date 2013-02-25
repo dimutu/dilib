@@ -32,6 +32,6 @@ int main(int argc, char** argv)
 	{
 		p.GenerateFiles(argv[1], argv[2]);
 	}
-
+	
 	return 0;
 }

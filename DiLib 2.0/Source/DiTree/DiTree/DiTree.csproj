@@ -279,7 +279,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
-    <None Include="DiTree_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -318,6 +317,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TabCloseButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="export templates\condcpp.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="export templates\filcpp.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="export templates\header.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="export templates\selcpp.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="export templates\seqcpp.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="export templates\taskcpp.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

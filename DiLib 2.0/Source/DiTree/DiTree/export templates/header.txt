@@ -1,0 +1,19 @@
+#ifndef [DEFINE]
+#define [DEFINE]
+
+#include [TASKH]
+
+class [TEMPLATE];
+
+class [CLASS] : public [DICLASS]<[TEMPLATE]>
+{
+public:
+	[CLASS]();
+	
+	~[CLASS]();
+	
+	int Execute([TEMPLATE]* a_pkObject);
+	
+};
+
+#endif

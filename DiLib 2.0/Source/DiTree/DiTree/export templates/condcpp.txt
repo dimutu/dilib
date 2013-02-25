@@ -1,0 +1,23 @@
+#include "[CLASS].h"
+#include "DiReturnEnum.h"
+#include "[TEMPLATE].h"
+
+[CLASS]::[CLASS]() : [DICLASS]<[TEMPLATE]>()
+{
+}
+
+[CLASS]::~[CLASS]()
+{
+}
+
+int [CLASS]::Execute([TEMPLATE]* a_pkObject)
+{
+	if (true)
+	{
+		return m_pkTrueTask->Execute(a_pkObject);
+	}
+	else
+	{
+		return m_pkFalseTask->Execute(a_pkObject);
+	}
+}
