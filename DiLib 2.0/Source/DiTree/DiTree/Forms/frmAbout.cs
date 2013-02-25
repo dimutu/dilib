@@ -13,12 +13,11 @@ namespace DiTree
         public frmAbout()
         {
             InitializeComponent();
+
             this.Text = String.Format("About {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            labelCopyright.Text = AssemblyCopyright;
+            lblVersion.Text = String.Format(" Version {0}", AssemblyVersion);
+            labelDescription.Text = AssemblyDescription;
         }
 
         #region Assembly Attribute Accessors
@@ -100,5 +99,15 @@ namespace DiTree
             }
         }
         #endregion
+
+        private void linkSite_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.dilib.dimutu.com/");
+        }
+
+        private void linkIconReference_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://gentleface.com/");
+        }
     }
 }

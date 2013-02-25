@@ -81,6 +81,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.KeyPreview = true;
             this.Name = "frmConsole";
+            this.ShowInTaskbar = false;
             this.Text = "Console Output";
             this.contextMenuConsole.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.imageListButtons = new System.Windows.Forms.ImageList(this.components);
             this.btnAddInclude = new System.Windows.Forms.Button();
             this.listInclues = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.imageListDiFille = new System.Windows.Forms.ImageList(this.components);
             this.btnCloseTab = new System.Windows.Forms.Button();
             this.toolTipHelp = new System.Windows.Forms.ToolTip(this.components);
-            this.imageListButtons = new System.Windows.Forms.ImageList(this.components);
             this.tabPageGeneral.SuspendLayout();
             this.tabDiFile.SuspendLayout();
             this.tabPageReturns.SuspendLayout();
@@ -140,23 +140,35 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.ImageKey = "delete";
+            this.btnRemove.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnRemove.ImageKey = "trash";
             this.btnRemove.ImageList = this.imageListButtons;
             this.btnRemove.Location = new System.Drawing.Point(500, 190);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(53, 37);
+            this.btnRemove.Size = new System.Drawing.Size(39, 39);
             this.btnRemove.TabIndex = 5;
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
+            // imageListButtons
+            // 
+            this.imageListButtons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListButtons.ImageStream")));
+            this.imageListButtons.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListButtons.Images.SetKeyName(0, "add");
+            this.imageListButtons.Images.SetKeyName(1, "delete");
+            this.imageListButtons.Images.SetKeyName(2, "round_plus");
+            this.imageListButtons.Images.SetKeyName(3, "sq_plus");
+            this.imageListButtons.Images.SetKeyName(4, "trash");
+            // 
             // btnAddInclude
             // 
             this.btnAddInclude.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAddInclude.ImageKey = "add";
+            this.btnAddInclude.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnAddInclude.ImageKey = "sq_plus";
             this.btnAddInclude.ImageList = this.imageListButtons;
-            this.btnAddInclude.Location = new System.Drawing.Point(500, 99);
+            this.btnAddInclude.Location = new System.Drawing.Point(500, 97);
             this.btnAddInclude.Name = "btnAddInclude";
-            this.btnAddInclude.Size = new System.Drawing.Size(53, 37);
+            this.btnAddInclude.Size = new System.Drawing.Size(39, 39);
             this.btnAddInclude.TabIndex = 3;
             this.btnAddInclude.UseVisualStyleBackColor = true;
             this.btnAddInclude.Click += new System.EventHandler(this.btnAddInclude_Click);
@@ -209,6 +221,7 @@
             this.tabDiFile.SelectedIndex = 0;
             this.tabDiFile.Size = new System.Drawing.Size(780, 490);
             this.tabDiFile.TabIndex = 2;
+            this.tabDiFile.TabStop = false;
             this.tabDiFile.SelectedIndexChanged += new System.EventHandler(this.tabDiFile_SelectedIndexChanged);
             // 
             // tabPageReturns
@@ -261,22 +274,24 @@
             // 
             // btnRemoveEnum
             // 
-            this.btnRemoveEnum.ImageKey = "delete";
+            this.btnRemoveEnum.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnRemoveEnum.ImageKey = "trash";
             this.btnRemoveEnum.ImageList = this.imageListButtons;
             this.btnRemoveEnum.Location = new System.Drawing.Point(493, 147);
             this.btnRemoveEnum.Name = "btnRemoveEnum";
-            this.btnRemoveEnum.Size = new System.Drawing.Size(53, 37);
+            this.btnRemoveEnum.Size = new System.Drawing.Size(39, 39);
             this.btnRemoveEnum.TabIndex = 12;
             this.btnRemoveEnum.UseVisualStyleBackColor = true;
             this.btnRemoveEnum.Click += new System.EventHandler(this.btnRemoveEnum_Click);
             // 
             // btnAddEnum
             // 
-            this.btnAddEnum.ImageKey = "add";
+            this.btnAddEnum.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnAddEnum.ImageKey = "sq_plus";
             this.btnAddEnum.ImageList = this.imageListButtons;
             this.btnAddEnum.Location = new System.Drawing.Point(493, 56);
             this.btnAddEnum.Name = "btnAddEnum";
-            this.btnAddEnum.Size = new System.Drawing.Size(53, 37);
+            this.btnAddEnum.Size = new System.Drawing.Size(39, 39);
             this.btnAddEnum.TabIndex = 10;
             this.btnAddEnum.UseVisualStyleBackColor = true;
             this.btnAddEnum.Click += new System.EventHandler(this.btnAddEnum_Click);
@@ -304,13 +319,12 @@
             // 
             this.imageListDiFille.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListDiFille.ImageStream")));
             this.imageListDiFille.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListDiFille.Images.SetKeyName(0, "bullet_star.png");
-            this.imageListDiFille.Images.SetKeyName(1, "add.png");
-            this.imageListDiFille.Images.SetKeyName(2, "delete.png");
+            this.imageListDiFille.Images.SetKeyName(0, "doc_plus.png");
             // 
             // btnCloseTab
             // 
             this.btnCloseTab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCloseTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCloseTab.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseTab.Image")));
             this.btnCloseTab.Location = new System.Drawing.Point(751, 4);
             this.btnCloseTab.Name = "btnCloseTab";
@@ -319,13 +333,6 @@
             this.btnCloseTab.UseVisualStyleBackColor = true;
             this.btnCloseTab.Click += new System.EventHandler(this.btnCloseTab_Click);
             this.btnCloseTab.MouseHover += new System.EventHandler(this.btnCloseTab_MouseHover);
-            // 
-            // imageListButtons
-            // 
-            this.imageListButtons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListButtons.ImageStream")));
-            this.imageListButtons.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListButtons.Images.SetKeyName(0, "add");
-            this.imageListButtons.Images.SetKeyName(1, "delete");
             // 
             // frmDiFile
             // 

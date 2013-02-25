@@ -57,9 +57,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(120, 335);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 16);
+            this.label1.Size = new System.Drawing.Size(304, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "DiLib (c) 2011 - 2013 by Dimutu Kulawardana";
+            this.label1.Text = "DiLIB © 2011 - 2013 by Dimutu Kulawardana";
             // 
             // lblVersion
             // 
