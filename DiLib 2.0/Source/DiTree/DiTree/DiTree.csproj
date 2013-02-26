@@ -119,6 +119,12 @@
     <Compile Include="Forms\frmDiTreeView.Designer.cs">
       <DependentUpon>frmDiTreeView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmExportSource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmExportSource.Designer.cs">
+      <DependentUpon>frmExportSource.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmOptions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDiTreeView.resx">
       <DependentUpon>frmDiTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmExportSource.resx">
+      <DependentUpon>frmExportSource.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmOptions.resx">
       <DependentUpon>frmOptions.cs</DependentUpon>

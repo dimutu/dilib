@@ -20,6 +20,7 @@ namespace DiTree
         private DiRecentFileManager m_recentFileManager;
         private frmTaskView m_frmTaskView;
         private frmRemoteDebug m_frmRemoteDebug;
+        private frmExportSource m_frmExportSource;
 
         public frmMDI()
         {
@@ -28,6 +29,8 @@ namespace DiTree
             m_frmConsole = new frmConsole();
             m_frmTaskView = new frmTaskView();
             m_frmRemoteDebug = new frmRemoteDebug();
+            m_frmExportSource = new frmExportSource();
+
             DiMethods.StatusMessageLable = toolStripStatusMessage;
 
             m_recentFileManager = new DiRecentFileManager(this, ref recentFilesToolStripMenuItem, 
@@ -613,11 +616,19 @@ namespace DiTree
 
         private void remoteDebuggingToolStripMenuItem_Click(object sender, EventArgs e)
         {
+#if DEBUG
             DialogResult result = m_frmRemoteDebug.ShowDialog();
             if (result == System.Windows.Forms.DialogResult.OK)
             {
                 //debug connect to different address
             }
+#else
+            if (DiMethods.MyDialogShow("This feature will be available in future release." +
+             "Do you wish visit DiLIB website to check for new updates?", MessageBoxButtons.YesNoCancel) == System.Windows.Forms.DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start("http://www.dilib.dimutu.com/");
+            }
+#endif
         }
 
         private void exportCppToolStripMenuItem_Click(object sender, EventArgs e)

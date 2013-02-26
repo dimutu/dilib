@@ -1,0 +1,11 @@
+/*! \page reference References
+
+External references used in this project.
+
+\li TinyXML
+\li UI Images - <a href="http://gentleface.com/">gentleface.com</a>
+\li Tree Printing - <a href="http://www.codeproject.com/KB/printing/printtreeview.aspx">Pitman.Printing</a>
+
+<br />
+
+*/

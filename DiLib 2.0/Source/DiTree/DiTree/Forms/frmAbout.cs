@@ -109,5 +109,10 @@ namespace DiTree
         {
             System.Diagnostics.Process.Start("http://gentleface.com/");
         }
+
+        private void linkPrintTree_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.codeproject.com/KB/printing/printtreeview.aspx");
+        }
     }
 }

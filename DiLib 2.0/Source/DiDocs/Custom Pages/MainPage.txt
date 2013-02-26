@@ -23,6 +23,8 @@
 	-# Each task carries references pointer to Root, to keep track of last executed task.
 	-# DiFactory tree loading function renamed to CreateTree.
 
+<b>**NOTE</b> Unfortunately previous version files are not supported.
+	
 <h3>Version 1.0.0</h3>
 Startup version.
 

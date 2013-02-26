@@ -1,7 +1,7 @@
 #ifndef [DEFINE]
 #define [DEFINE]
 
-#include [TASKH]
+#include <[DICLASS].h>
 
 class [TEMPLATE];
 
