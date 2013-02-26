@@ -63,8 +63,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.42416F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.57584F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.27297F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.72704F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(677, 456);
@@ -74,11 +74,13 @@
             // 
             this.dataGridSource.AllowUserToAddRows = false;
             this.dataGridSource.AllowUserToDeleteRows = false;
+            this.dataGridSource.AllowUserToResizeRows = false;
             this.dataGridSource.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridSource.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridSource.Location = new System.Drawing.Point(3, 61);
+            this.dataGridSource.Location = new System.Drawing.Point(3, 65);
             this.dataGridSource.Name = "dataGridSource";
-            this.dataGridSource.Size = new System.Drawing.Size(671, 317);
+            this.dataGridSource.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridSource.Size = new System.Drawing.Size(671, 313);
             this.dataGridSource.TabIndex = 0;
             this.dataGridSource.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridSource_CellBeginEdit);
             this.dataGridSource.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridSource_DataBindingComplete);
@@ -87,9 +89,7 @@
             // 
             this.panel1.Controls.Add(this.progressExport);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.chkCpp);
             this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.chkHeaders);
             this.panel1.Controls.Add(this.btnExport);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 384);
@@ -106,21 +106,23 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(8, 9);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(8, 10);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(318, 41);
+            this.textBox1.Size = new System.Drawing.Size(396, 41);
             this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "Marked Red Files cannot be exported due to Class is only implemented as a templat" +
-    "e.";
+            this.textBox1.Text = "Marked rows cannot be exported due to its Class is only implemented as a template" +
+    ".";
             // 
             // chkCpp
             // 
             this.chkCpp.AutoSize = true;
-            this.chkCpp.Location = new System.Drawing.Point(342, 35);
+            this.chkCpp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkCpp.Location = new System.Drawing.Point(532, 33);
             this.chkCpp.Name = "chkCpp";
-            this.chkCpp.Size = new System.Drawing.Size(83, 17);
+            this.chkCpp.Size = new System.Drawing.Size(96, 17);
             this.chkCpp.TabIndex = 4;
             this.chkCpp.Text = "All Cpp Files";
             this.chkCpp.UseVisualStyleBackColor = true;
@@ -151,9 +153,10 @@
             // chkHeaders
             // 
             this.chkHeaders.AutoSize = true;
-            this.chkHeaders.Location = new System.Drawing.Point(342, 12);
+            this.chkHeaders.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHeaders.Location = new System.Drawing.Point(532, 10);
             this.chkHeaders.Name = "chkHeaders";
-            this.chkHeaders.Size = new System.Drawing.Size(99, 17);
+            this.chkHeaders.Size = new System.Drawing.Size(115, 17);
             this.chkHeaders.TabIndex = 3;
             this.chkHeaders.Text = "All Header Files";
             this.chkHeaders.UseVisualStyleBackColor = true;
@@ -177,19 +180,22 @@
             // 
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txtPath);
+            this.panel2.Controls.Add(this.chkCpp);
             this.panel2.Controls.Add(this.btnBrowse);
+            this.panel2.Controls.Add(this.chkHeaders);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(671, 52);
+            this.panel2.Size = new System.Drawing.Size(671, 56);
             this.panel2.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 24);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(9, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.Size = new System.Drawing.Size(112, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Export Folder Path";
             // 
@@ -222,7 +228,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmExportSource";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Export Source";
+            this.Text = "Generate Source";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmExportSource_FormClosed);
             this.Shown += new System.EventHandler(this.frmExportSource_Shown);
             this.tableLayoutPanel1.ResumeLayout(false);

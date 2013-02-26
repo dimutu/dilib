@@ -121,7 +121,8 @@ namespace DiTree
                     if ((DICLASSTYPES)row.Cells[DiDataHanlder.DATAFIELD_CLASSTYPE].Value == DICLASSTYPES.DICLASSTYPE_CONDITION ||
                         (DICLASSTYPES)row.Cells[DiDataHanlder.DATAFIELD_CLASSTYPE].Value == DICLASSTYPES.DICLASSTYPE_TASK)
                     {
-                        row.DefaultCellStyle.BackColor = Color.DarkGray;
+                        row.DefaultCellStyle.BackColor = Color.Tomato;
+                        row.DefaultCellStyle.ForeColor = Color.White;
                     }
                 }
             }

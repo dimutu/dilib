@@ -58,23 +58,6 @@ Arrange of tree items can modify by
 
 \image html ditree-treeview.jpg
 
-\section export_files Exporting Files
-
-Export the files require to load the tree in the C++ project.
-<br />
-<b>THIS SECTION IS STILL IMPLEMENTING TO BE MORE USER FRIENDLY.</b>
-
-\subsection export_config DiConfig Configuration
-
-Export the configuration file <br />
-File --> Export --> Config File
-
-\subsection export_tree DiTree Tree Data
-
-Export the tree information file.
-File -->Export --> Tree File <br />
-This will show the list of tree currently attached to the project, select the tree name and OK to export to path of your choice.
-
 
 <br />
 */

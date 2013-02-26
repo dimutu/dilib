@@ -11,6 +11,7 @@
 	-# Ability to view and remove unused node data.
 	-# Debugging \link debug_breaks breakpoint \endlink placement in the user interface.
 	-# Enter task execute return types and DiParser makes new DiReturnTypes.h
+	-# Generate C++ source files from nodes placed in the tree.
 	-# Recently used files.
 
 - C++ Codebase
