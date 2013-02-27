@@ -98,6 +98,7 @@
             this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMainNew = new System.Windows.Forms.ToolStripButton();
             this.toolStripMainOpen = new System.Windows.Forms.ToolStripButton();
@@ -123,7 +124,6 @@
             this.saveConfigFile = new System.Windows.Forms.SaveFileDialog();
             this.saveTreeFile = new System.Windows.Forms.SaveFileDialog();
             this.trackBarDebugSpeed = new System.Windows.Forms.TrackBar();
-            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripMDI.SuspendLayout();
             this.menuMDI.SuspendLayout();
             this.toolStripMain.SuspendLayout();
@@ -784,6 +784,13 @@
             this.documentationToolStripMenuItem.Text = "Online Documentation";
             this.documentationToolStripMenuItem.Click += new System.EventHandler(this.documentationToolStripMenuItem_Click);
             // 
+            // checkForUpdatesToolStripMenuItem
+            // 
+            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.checkForUpdatesToolStripMenuItem.Text = "Check for Updates";
+            this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
@@ -980,6 +987,7 @@
             this.toolStripBtnDebugStep.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripBtnDebugStep.Name = "toolStripBtnDebugStep";
             this.toolStripBtnDebugStep.Size = new System.Drawing.Size(28, 28);
+            this.toolStripBtnDebugStep.Tag = "ID_DEBUG_STEP";
             this.toolStripBtnDebugStep.Text = "Debug Step";
             this.toolStripBtnDebugStep.Click += new System.EventHandler(this.toolStripBtnDebugStep_Click);
             // 
@@ -990,6 +998,7 @@
             this.toolStripBtnDebugBreak.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripBtnDebugBreak.Name = "toolStripBtnDebugBreak";
             this.toolStripBtnDebugBreak.Size = new System.Drawing.Size(28, 28);
+            this.toolStripBtnDebugBreak.Tag = "ID_DEBUG_BREAK";
             this.toolStripBtnDebugBreak.Text = "Break";
             this.toolStripBtnDebugBreak.Click += new System.EventHandler(this.toolStripBtnDebugBreak_Click);
             // 
@@ -1000,7 +1009,8 @@
             this.toolStripBtnDebugStop.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripBtnDebugStop.Name = "toolStripBtnDebugStop";
             this.toolStripBtnDebugStop.Size = new System.Drawing.Size(28, 28);
-            this.toolStripBtnDebugStop.Text = "toolStripButton1";
+            this.toolStripBtnDebugStop.Tag = "ID_DEBUG_STOP";
+            this.toolStripBtnDebugStop.Text = "Stop Debugging";
             this.toolStripBtnDebugStop.Click += new System.EventHandler(this.toolStripBtnDebugStop_Click);
             // 
             // trackBarDebugSpeed
@@ -1018,13 +1028,6 @@
             this.trackBarDebugSpeed.Scroll += new System.EventHandler(this.trackBarDebugSpeed_Scroll);
             this.trackBarDebugSpeed.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
             this.trackBarDebugSpeed.MouseLeave += new System.EventHandler(this.hideHelptoolStrip);
-            // 
-            // checkForUpdatesToolStripMenuItem
-            // 
-            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.checkForUpdatesToolStripMenuItem.Text = "Check for Updates";
-            this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
             // 
             // frmMDI
             // 

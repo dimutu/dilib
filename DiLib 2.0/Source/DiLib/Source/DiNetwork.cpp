@@ -154,6 +154,7 @@ namespace DiLib
 			m_kRecevAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
 			int iResult = connect(m_kSendSocket, (sockaddr*)&m_kRecevAddr, sizeof(m_kRecevAddr));
+			Sleep(100);
 			if (iResult < 0)
 			{
 				m_bIsConnected = false;
@@ -161,7 +162,6 @@ namespace DiLib
 			else
 			{
 				m_bIsConnected = true;
-
 				//setup to none blocking data receiving
 				u_long iMode = 1;
 				ioctlsocket(m_kSendSocket, FIONBIO, &iMode);
@@ -182,6 +182,8 @@ namespace DiLib
 
 		Send(a_pkTask);
 
+		printf("Task data send for %i\n", a_pkTask->GetDebugTaskId());
+
 		//set to wait on receive for response from the UI that is being updated
 		u_long iMode = 0;
 		ioctlsocket(m_kSendSocket, FIONBIO, &iMode);
@@ -191,6 +193,7 @@ namespace DiLib
 			m_bWaitAtNextNode = false;
 			Wait(a_pkTask);
 		}
+		printf("Task data received.\n");
 		return true;
 
 #else

@@ -238,4 +238,7 @@
   <data name="taskcpp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\export templates\taskcpp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="ID_EDIT_DEBUG_BLOCKED" xml:space="preserve">
+    <value>Cannot modify during tree is running.</value>
+  </data>
 </root>

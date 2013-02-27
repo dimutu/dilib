@@ -107,16 +107,17 @@ namespace DiTree.Properties {
         ///
         ///int [CLASS]::Execute([TEMPLATE]* a_pkObject)
         ///{
-        ///	if (true)
+        ///	DIDEBUGGER_SEND(this);
+        ///
+        ///	//if the timer is set, execute code in time intervals
+        ///	if ( !m_pkTimer-&gt;IsRunTime() )
         ///	{
-        ///		return m_pkTrueTask-&gt;Execute(a_pkObject);
+        ///		//time not ready, come back later to execute
+        ///		return DiLib::DI_TASK_RETURNS::DITASK_CALLBACK
         ///	}
-        ///	else
-        ///	{
-        ///		return m_pkFalseTask-&gt;Execute(a_pkObject);
-        ///	}
-        ///}
-        ///.
+        ///
+        ///	//check loop conditions before executing
+        ///	if (m_bIsLoopOn || m_uiRunCycleCount [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string filcpp {
             get {
@@ -128,7 +129,7 @@ namespace DiTree.Properties {
         ///   Looks up a localized string similar to #ifndef [DEFINE]
         ///#define [DEFINE]
         ///
-        ///#include [TASKH]
+        ///#include &lt;[DICLASS].h&gt;
         ///
         ///class [TEMPLATE];
         ///
@@ -305,6 +306,15 @@ namespace DiTree.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot modify during tree is running..
+        /// </summary>
+        internal static string ID_EDIT_DEBUG_BLOCKED {
+            get {
+                return ResourceManager.GetString("ID_EDIT_DEBUG_BLOCKED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         internal static string ID_EMPTY {
@@ -472,16 +482,18 @@ namespace DiTree.Properties {
         ///
         ///int [CLASS]::Execute([TEMPLATE]* a_pkObject)
         ///{
-        ///	if (true)
+        ///	DIDEBUGGER_SEND(this);
+        ///
+        ///	//get current task
+        ///	DiTask&lt;T&gt;* pkTask = *m_itrCurrentTask;
+        ///	if (pkTask != NULL) //check current task is valie
         ///	{
-        ///		return m_pkTrueTask-&gt;Execute(a_pkObject);
-        ///	}
-        ///	else
-        ///	{
-        ///		return m_pkFalseTask-&gt;Execute(a_pkObject);
-        ///	}
-        ///}
-        ///.
+        ///		int eReturn;
+        ///		eReturn = pkTask-&gt;Execute(a_pkOwner);
+        ///
+        ///		switch (eReturn)
+        ///		{
+        ///		case DiLib::DI_TASK_RETURNS::DITASK_NEXTTASK: //check needs to get next t [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string selcpp {
             get {
@@ -504,16 +516,17 @@ namespace DiTree.Properties {
         ///
         ///int [CLASS]::Execute([TEMPLATE]* a_pkObject)
         ///{
-        ///	if (true)
+        ///	DIDEBUGGER_SEND(this);
+        ///
+        ///	//run all the taskst in the sequence
+        ///	int eReturn = DiLib::DI_TASK_RETURNS::DITASK_COMPLETE;
+        ///
+        ///	m_itrCurrentTask = m_akTaskSequence.begin();
+        ///
+        ///	DiTask&lt;T&gt;* pkTask = NULL;
+        ///	for (; m_itrCurrentTask != m_akTaskSequence.end(); ++m_itrCurrentTask)
         ///	{
-        ///		return m_pkTrueTask-&gt;Execute(a_pkObject);
-        ///	}
-        ///	else
-        ///	{
-        ///		return m_pkFalseTask-&gt;Execute(a_pkObject);
-        ///	}
-        ///}
-        ///.
+        ///		pkTask = *m_itrCurrentT [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string seqcpp {
             get {
@@ -537,6 +550,8 @@ namespace DiTree.Properties {
         ///
         ///int [CLASS]::Execute([TEMPLATE]* a_pkObject)
         ///{
+        ///	DIDEBUGGER_SEND(this);
+        ///
         ///	return DiLib::DI_RETURN_COMPLETE;
         ///}
         ///.

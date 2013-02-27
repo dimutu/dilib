@@ -104,12 +104,15 @@ namespace DiTree
 
         private void btnCloseTab_Click(object sender, EventArgs e)
         {
-            if (tabDiFile.SelectedIndex >= TABSTART_INDEX)
+            if (!DiGlobals.IsConnected)
             {
-                if (tabDiFile.SelectedTab != null)
+                if (tabDiFile.SelectedIndex >= TABSTART_INDEX)
                 {
-                    DiTabPage pkTabPage = (DiTabPage)tabDiFile.SelectedTab;
-                    RemoveTreeTab();
+                    if (tabDiFile.SelectedTab != null)
+                    {
+                        DiTabPage pkTabPage = (DiTabPage)tabDiFile.SelectedTab;
+                        RemoveTreeTab();
+                    }
                 }
             }
         }
