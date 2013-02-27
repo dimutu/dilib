@@ -282,62 +282,69 @@ namespace DiTree
 
         public void UpdateFrame(DiDebugData a_kDebugData)
         {
-            if (InvokeRequired)
+            try
             {
-                this.Invoke(new MethodInvoker(delegate
+                if (InvokeRequired)
                 {
-                    //returning current executing node data
-                    bool bUpdated = false;
-                    Form frmActive = this.ActiveMdiChild;
-                    if (frmActive != null)
+                    this.Invoke(new MethodInvoker(delegate
                     {
-
-                        if (frmActive.GetType() == typeof(frmDiFile))
+                        //returning current executing node data
+                        bool bUpdated = false;
+                        Form frmActive = this.ActiveMdiChild;
+                        if (frmActive != null)
                         {
-                            frmDiFile f = (frmDiFile)frmActive;
-                            if (f.DebugID == a_kDebugData.m_zDebugID) //check active tree is the one that data is coming for
-                            {
-                                DiTreeNode node = f.SetTreeDebugData(a_kDebugData.m_zDebugTreeID, a_kDebugData.m_lDebugTaskID);
-                                //send back the node is updated
-                                if (node != null)
-                                {
-                                    SendDebugTask(node.Task);
 
-                                    string str = "";
-                                    switch (node.ClassType)
+                            if (frmActive.GetType() == typeof(frmDiFile))
+                            {
+                                frmDiFile f = (frmDiFile)frmActive;
+                                if (f.DebugID == a_kDebugData.m_zDebugID) //check active tree is the one that data is coming for
+                                {
+                                    DiTreeNode node = f.SetTreeDebugData(a_kDebugData.m_zDebugTreeID, a_kDebugData.m_lDebugTaskID);
+                                    //send back the node is updated
+                                    if (node != null)
                                     {
-                                        case DICLASSTYPES.DICLASSTYPE_CONDITION:
-                                            str = "DiCondition"; break;
-                                        case DICLASSTYPES.DICLASSTYPE_FILTER:
-                                            str = "DiFilter"; break;
-                                        case DICLASSTYPES.DICLASSTYPE_ROOT:
-                                            str = "DiRoot"; break;
-                                        case DICLASSTYPES.DICLASSTYPE_SELECTION:
-                                            str = "DiSelection"; break;
-                                        case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
-                                            str = "DiSequence"; break;
-                                        case DICLASSTYPES.DICLASSTYPE_TASK:
-                                            str = "DiTask"; break;
-                                        default:
-                                            str = "Unknow Task"; break;
-                                    };
-                                    m_frmConsole.addOutputText(str + ":" + node.DebuggerID + " : " + a_kDebugData.m_zDebugTreeID + " : " + a_kDebugData.m_lDebugTaskID.ToString() + " : " + a_kDebugData.m_lTime.ToString(), true);
-                                    bUpdated = true;
+                                        SendDebugTask(node.Task);
+
+                                        string str = "";
+                                        switch (node.ClassType)
+                                        {
+                                            case DICLASSTYPES.DICLASSTYPE_CONDITION:
+                                                str = "DiCondition"; break;
+                                            case DICLASSTYPES.DICLASSTYPE_FILTER:
+                                                str = "DiFilter"; break;
+                                            case DICLASSTYPES.DICLASSTYPE_ROOT:
+                                                str = "DiRoot"; break;
+                                            case DICLASSTYPES.DICLASSTYPE_SELECTION:
+                                                str = "DiSelection"; break;
+                                            case DICLASSTYPES.DICLASSTYPE_SEQUENCE:
+                                                str = "DiSequence"; break;
+                                            case DICLASSTYPES.DICLASSTYPE_TASK:
+                                                str = "DiTask"; break;
+                                            default:
+                                                str = "Unknow Task"; break;
+                                        };
+                                        m_frmConsole.addOutputText(str + ":" + node.DebuggerID + " : " + a_kDebugData.m_zDebugTreeID + " : " + a_kDebugData.m_lDebugTaskID.ToString(), true);
+                                        bUpdated = true;
+                                    }
+
                                 }
-                               
                             }
                         }
-                    }
 
-                    if (!bUpdated)
-                    {
-                        //couldnt reach the node, send back something to keep the connection alive
-                        m_frmConsole.addOutputText("Task:" + a_kDebugData.m_lDebugTaskID + " : " + a_kDebugData.m_zDebugTreeID + " : " + a_kDebugData.m_lDebugTaskID.ToString() + " : " + a_kDebugData.m_lTime.ToString(), true);
+                        if (!bUpdated)
+                        {
+                            //couldnt reach the node, send back something to keep the connection alive
+                            m_frmConsole.addOutputText("Task:" + a_kDebugData.m_lDebugTaskID + " : " + a_kDebugData.m_zDebugTreeID + " : " + a_kDebugData.m_lDebugTaskID.ToString(), true);
 
-                        SendDebugCommands(DIDEBUGCONTROLS.DIDEBUGCONTROL_RESUME);
+                            SendDebugCommands(DIDEBUGCONTROLS.DIDEBUGCONTROL_RESUME);
+                        }
                     }
+                    ));
                 }
-                ));
+            }
+            catch (ExecutionEngineException ex)
+            {
+                DiMethods.SetErrorLog(ex);
             }
         }
 
@@ -370,10 +377,7 @@ namespace DiTree
             else
             {
                 //debugging stoped
-               // toolStripDebugPause.Image = Properties.Resources.control_pause;
-               // toolStripDebugPause.ToolTipText = "Start Debugging";
                 SendDebugCommands(DIDEBUGCONTROLS.DIDEBUGCONTROL_RESUME);
-               // DiGlobals.IsResume = true;
             }
         }
 

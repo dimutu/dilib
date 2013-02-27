@@ -17,6 +17,18 @@ namespace DiTree
 		{
 			InitializeComponent();
             lblVersion.Text = "Version " + DiUtility.AssemblyVersion;
+
+            var pos = this.PointToScreen(lblVersion.Location);
+            pos = pictureBox1.PointToClient(pos);
+            lblVersion.Parent = pictureBox1;
+            lblVersion.Location = pos;
+            lblVersion.BackColor = Color.Transparent;
+
+            pos = this.PointToScreen(lblCopyright.Location);
+            pos = pictureBox1.PointToClient(pos);
+            lblCopyright.Parent = pictureBox1;
+            lblCopyright.Location = pos;
+            lblCopyright.BackColor = Color.Transparent;
 		}
 
 		private void timerSplash_Tick(object sender, EventArgs e)

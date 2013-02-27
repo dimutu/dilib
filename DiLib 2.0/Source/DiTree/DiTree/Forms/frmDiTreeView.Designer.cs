@@ -81,6 +81,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(597, 454);
             this.Controls.Add(this.treeBT);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDiTreeView";
             this.Text = "frmDiTreeView";
             this.ResumeLayout(false);

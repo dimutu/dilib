@@ -29,6 +29,7 @@ namespace DiTree
                 txtConsole.Text += str + "\r\n";
             }
             txtConsole.SelectionStart = txtConsole.Text.Length;
+            txtConsole.ScrollToCaret();
         }
 
         private void copyConsoleToolStripMenuItem_Click(object sender, EventArgs e)

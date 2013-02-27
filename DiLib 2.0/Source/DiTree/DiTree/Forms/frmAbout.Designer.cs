@@ -63,7 +63,7 @@
             // labelCopyright
             // 
             this.labelCopyright.AutoSize = true;
-            this.labelCopyright.Location = new System.Drawing.Point(12, 141);
+            this.labelCopyright.Location = new System.Drawing.Point(12, 195);
             this.labelCopyright.Name = "labelCopyright";
             this.labelCopyright.Size = new System.Drawing.Size(51, 13);
             this.labelCopyright.TabIndex = 34;
@@ -72,7 +72,7 @@
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
-            this.labelDescription.Location = new System.Drawing.Point(12, 95);
+            this.labelDescription.Location = new System.Drawing.Point(12, 149);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(60, 13);
             this.labelDescription.TabIndex = 35;
@@ -81,7 +81,7 @@
             // linkSite
             // 
             this.linkSite.AutoSize = true;
-            this.linkSite.Location = new System.Drawing.Point(169, 178);
+            this.linkSite.Location = new System.Drawing.Point(171, 217);
             this.linkSite.Name = "linkSite";
             this.linkSite.Size = new System.Drawing.Size(82, 13);
             this.linkSite.TabIndex = 37;
@@ -103,18 +103,18 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(174, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(68, 66);
+            this.pictureBox1.Size = new System.Drawing.Size(411, 121);
             this.pictureBox1.TabIndex = 39;
             this.pictureBox1.TabStop = false;
             // 
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
-            this.lblVersion.Location = new System.Drawing.Point(12, 118);
+            this.lblVersion.Location = new System.Drawing.Point(12, 172);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(42, 13);
             this.lblVersion.TabIndex = 41;

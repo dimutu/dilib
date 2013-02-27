@@ -14,7 +14,7 @@ namespace DiTree
         {
             InitializeComponent();
 
-            this.Text = String.Format("About {0}", AssemblyTitle);
+            this.Text = "About DiLIB Tree Creator";
             labelCopyright.Text = AssemblyCopyright;
             lblVersion.Text = String.Format(" Version {0}", AssemblyVersion);
             labelDescription.Text = AssemblyDescription;
