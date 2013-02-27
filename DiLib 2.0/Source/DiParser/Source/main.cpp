@@ -22,15 +22,23 @@
 ******************************************************************************************************************************
 */
 
+#include <stdlib.h>
 #include "DiParser.h"
 
 int main(int argc, char** argv)
 {
+	
 	DiLib::DiParser p;
 
 	if (argc == 3)
 	{
 		p.GenerateFiles(argv[1], argv[2]);
+	}
+	else
+	{
+		printf("\nDiLIB DiParser version 2.0.1\n");
+		printf("Generates C++ source files from the exported diconfig file from the DiLIB tree creator.\n\n");
+		printf("Usage:\n \tDiParser.exe [di-config-file] [destination-folder]\n");
 	}
 	
 	return 0;

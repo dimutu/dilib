@@ -656,5 +656,10 @@ namespace DiTree
             System.Diagnostics.Process.Start("http://www.dilib.dimutu.com/documentation/");
         }
 
+        private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.dilib.dimutu.com/");
+        }
+
     }
 }

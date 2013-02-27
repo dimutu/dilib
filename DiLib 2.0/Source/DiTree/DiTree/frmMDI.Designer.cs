@@ -52,6 +52,7 @@
             this.exportConfigFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportTreeFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportCppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -122,7 +123,7 @@
             this.saveConfigFile = new System.Windows.Forms.SaveFileDialog();
             this.saveTreeFile = new System.Windows.Forms.SaveFileDialog();
             this.trackBarDebugSpeed = new System.Windows.Forms.TrackBar();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
+            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripMDI.SuspendLayout();
             this.menuMDI.SuspendLayout();
             this.toolStripMain.SuspendLayout();
@@ -351,6 +352,11 @@
             this.exportCppToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.exportCppToolStripMenuItem.Text = "C++ Source";
             this.exportCppToolStripMenuItem.Click += new System.EventHandler(this.exportCppToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(174, 6);
             // 
             // exitToolStripMenuItem
             // 
@@ -763,6 +769,7 @@
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.documentationToolStripMenuItem,
+            this.checkForUpdatesToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -1012,10 +1019,12 @@
             this.trackBarDebugSpeed.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
             this.trackBarDebugSpeed.MouseLeave += new System.EventHandler(this.hideHelptoolStrip);
             // 
-            // toolStripMenuItem6
+            // checkForUpdatesToolStripMenuItem
             // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(174, 6);
+            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.checkForUpdatesToolStripMenuItem.Text = "Check for Updates";
+            this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
             // 
             // frmMDI
             // 
@@ -1142,6 +1151,7 @@
         private System.Windows.Forms.ToolStripMenuItem remoteDebuggingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportCppToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem checkForUpdatesToolStripMenuItem;
     }
 }
 
