@@ -1,0 +1,36 @@
+/*! \page sample Samples
+
+\section sample1 Basic Sample
+
+This sample is included in the installer, which demonstrates the basics of setting up project, setting up UI and loading and executing tree.
+<br />
+File structure: <br/>
+<br />
+|-- <b>samples</b> <br />
+|----- sample01 <br />
+|--------- Data <br />
+|------------ DiAISample.didata <br />
+|------------ DiAIConfig.diconfig <br />
+|------------ DiSampleTree.ditree <br />
+|------------ DiSampleTree2.ditree <br />
+|--------- Source <br />
+|------------ All the C++ source files for the project <br />
+| <br />
+
+<h3>DiAISample.didata</h3> - This file contains all the data for both tree files in the Data folder, though only one tree has being loaded in the sample
+but you can load many trees.
+
+<h3>DiAIConfig.diconfig</h3> - Contains the configuration data exported from the didata file.
+
+<h3>DiSampleTree.ditree</h3> - Single behavior tree.
+
+<p>Visual Studio project is setup for both Debug and Release builds, and Release build will not execute any debugging functionalities.</p>
+<b>Only in Debug</b>
+\li Open DiAISample.didata file inside the Data folder from the Tree Creator UI
+\li Select Tree Creator UI Debug
+\li Build and run this project
+\li You can see the execution in the UI and use the slider on the toolbar to slow down the running speed
+
+<br />
+
+*/

@@ -16,6 +16,8 @@ Installation folder file structure
 |-- <b>libs</b> (DiLib C++ libraries for debug and release builds) <br />
 |----- DiLibDebug.lib <br />
 |----- DiLib.lib <br />
+| <br />
+|-- <b>samples</b>
 
 \section file_types File Types
 \subsection file_didata DiData
