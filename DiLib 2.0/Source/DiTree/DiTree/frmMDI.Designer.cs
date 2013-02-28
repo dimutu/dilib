@@ -37,7 +37,7 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeOpenFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -169,7 +169,7 @@
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem,
-            this.closeToolStripMenuItem,
+            this.closeOpenFormToolStripMenuItem,
             this.toolStripMenuItem1,
             this.printToolStripMenuItem,
             this.printPreviewToolStripMenuItem,
@@ -232,14 +232,15 @@
             this.saveAsToolStripMenuItem.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
             this.saveAsToolStripMenuItem.MouseLeave += new System.EventHandler(this.hideHelptoolStrip);
             // 
-            // closeToolStripMenuItem
+            // closeOpenFormToolStripMenuItem
             // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.closeToolStripMenuItem.Tag = "ID_CLOSE_FILE";
-            this.closeToolStripMenuItem.Text = "Close";
-            this.closeToolStripMenuItem.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
-            this.closeToolStripMenuItem.MouseLeave += new System.EventHandler(this.hideHelptoolStrip);
+            this.closeOpenFormToolStripMenuItem.Name = "closeOpenFormToolStripMenuItem";
+            this.closeOpenFormToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.closeOpenFormToolStripMenuItem.Tag = "ID_CLOSE_FILE";
+            this.closeOpenFormToolStripMenuItem.Text = "Close";
+            this.closeOpenFormToolStripMenuItem.Click += new System.EventHandler(this.closeOpenFormToolStripMenuItem_Click);
+            this.closeOpenFormToolStripMenuItem.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
+            this.closeOpenFormToolStripMenuItem.MouseLeave += new System.EventHandler(this.hideHelptoolStrip);
             // 
             // toolStripMenuItem1
             // 
@@ -484,7 +485,7 @@
             // preferencesToolStripMenuItem
             // 
             this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
-            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.preferencesToolStripMenuItem.Text = "Preferences";
             this.preferencesToolStripMenuItem.Click += new System.EventHandler(this.preferencesToolStripMenuItem_Click);
             // 
@@ -1032,6 +1033,7 @@
             // 
             // frmMDI
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 547);
@@ -1047,6 +1049,8 @@
             this.Text = "DiLIB Behavior Tree Library";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMDI_FormClosing);
             this.MdiChildActivate += new System.EventHandler(this.frmMDI_MdiChildActivate);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.frmMDI_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.frmMDI_DragEnter);
             this.statusStripMDI.ResumeLayout(false);
             this.statusStripMDI.PerformLayout();
             this.menuMDI.ResumeLayout(false);
@@ -1075,7 +1079,7 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insertToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeOpenFormToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;

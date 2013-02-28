@@ -78,6 +78,18 @@ namespace DiTree
             DiMethods.SetStatusMessage(DiLangID.ID_EMPTY);
         }
 
+        private bool IsActiveFormDiData()
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                if (this.ActiveMdiChild is frmDiFile)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showNewDiFile();
@@ -203,7 +215,6 @@ namespace DiTree
         private void closeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Form frmActive = this.ActiveMdiChild;
-
             if (frmActive != null)
             {
                 frmActive.Dispose();
@@ -243,6 +254,10 @@ namespace DiTree
 
         private void upToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
             if (frmActive != null)
             {
@@ -252,6 +267,10 @@ namespace DiTree
 
         private void downToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
             if (frmActive != null)
             {
@@ -261,6 +280,10 @@ namespace DiTree
 
         private void leftToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
             if (frmActive != null)
             {
@@ -270,6 +293,10 @@ namespace DiTree
 
         private void rightToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
             if (frmActive != null)
             {
@@ -279,6 +306,10 @@ namespace DiTree
 
         private void toggleBreakpointToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
             if (frmActive != null)
             {
@@ -288,6 +319,10 @@ namespace DiTree
 
         private void deleteAllBreakpointsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
             if (frmActive != null)
             {
@@ -297,6 +332,10 @@ namespace DiTree
 
         private void frmMDI_MdiChildActivate(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
             if (frmActive != null)
             {
@@ -343,6 +382,10 @@ namespace DiTree
 
         private void renameTreeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
             if (frmActive != null)
             {
@@ -352,6 +395,10 @@ namespace DiTree
 
         private void deleteTreeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
             if (frmActive != null)
             {
@@ -361,6 +408,10 @@ namespace DiTree
 
         private void deleteNodeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
             if (frmActive != null)
             {
@@ -406,6 +457,10 @@ namespace DiTree
 
         private void treeInsertToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
             if (frmActive != null)
             {
@@ -426,6 +481,10 @@ namespace DiTree
 
         private void taskToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
             if (frmActive != null)
             {
@@ -435,6 +494,10 @@ namespace DiTree
 
         private void conditionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
             if (frmActive != null)
             {
@@ -444,6 +507,10 @@ namespace DiTree
 
         private void filterToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
             if (frmActive != null)
             {
@@ -453,6 +520,10 @@ namespace DiTree
 
         private void sequenceToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
             if (frmActive != null)
             {
@@ -462,6 +533,10 @@ namespace DiTree
 
         private void selectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
             if (frmActive != null)
             {
@@ -471,6 +546,10 @@ namespace DiTree
 
         private void insertTaskToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
             if (frmActive != null)
             {
@@ -480,6 +559,10 @@ namespace DiTree
 
         private void insertConditionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
             if (frmActive != null)
             {
@@ -489,6 +572,10 @@ namespace DiTree
 
         private void insertSequenceToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
             if (frmActive != null)
             {
@@ -498,6 +585,10 @@ namespace DiTree
 
         private void insertSelectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
             if (frmActive != null)
             {
@@ -507,6 +598,10 @@ namespace DiTree
 
         private void insertFilterToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
             if (frmActive != null)
             {
@@ -516,6 +611,10 @@ namespace DiTree
 
         private void insertTreeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
             if (frmActive != null)
             {
@@ -596,6 +695,11 @@ namespace DiTree
 
         private void tasksToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!IsActiveFormDiData())
+            {
+                DiMethods.MyDialogShow("Need to open a didata file to view the tasks list.", MessageBoxButtons.OK);
+                return;
+            }
             frmDiFile frmActive = (frmDiFile)ActiveMdiChild;
             if (frmActive != null)
             {
@@ -686,6 +790,15 @@ namespace DiTree
             }
 #endif
         }
+
+        private void closeOpenFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Dispose();
+            }
+        }
+
 
     }
 }
