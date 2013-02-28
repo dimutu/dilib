@@ -762,7 +762,7 @@ namespace DiTree
 
         private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.dilib.dimutu.com/");
+            System.Diagnostics.Process.Start("http://www.dilib.dimutu.com/?v=" + DiUtility.AssemblyVersion);
         }
 
         private void importToolStripMenuItem_Click(object sender, EventArgs e)

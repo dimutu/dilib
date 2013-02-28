@@ -30,4 +30,8 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\DiSample\Data\DiSampleTree.ditree" />
+    <None Include="..\..\DiSample\Data\DiAIConfig.diconfig" />
+  </ItemGroup>
 </Project>

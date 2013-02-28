@@ -13,8 +13,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <StartArguments>"C:\MyThings\Game Projects\DiLib 2.0\DiSample\Data\DiSampleTree.ditree"</StartArguments>
     <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
-    <StartAction>Program</StartAction>
-    <StartProgram>C:\Program Files %28x86%29\DiLIB 2.0\bin\DiTree.exe</StartProgram>
+    <StartAction>Project</StartAction>
+    <StartProgram>
+    </StartProgram>
   </PropertyGroup>
   <PropertyGroup>
     <EnableSecurityDebugging>false</EnableSecurityDebugging>
