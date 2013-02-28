@@ -114,5 +114,11 @@ namespace DiTree
         {
             System.Diagnostics.Process.Start("http://www.codeproject.com/KB/printing/printtreeview.aspx");
         }
+
+        private void linkIconRef2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.fatcow.com/");
+
+        }
     }
 }

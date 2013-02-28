@@ -1,6 +1,6 @@
 /*
 ****************************************************************************************************************************
-* DiLib v2.0 (dilib.dimutu.com)
+* DiLib v2.0 (http://dilib.dimutu.com)
 *
 * This software is provided 'as-is', without any express or implied warranty. 
 * In no event will the authors be held liable for any

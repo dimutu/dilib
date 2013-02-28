@@ -125,7 +125,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAG
-        PQAAAk1TRnQBSQFMAgEBBQEAARgBAAEYAQABIAEAASABAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAGA
+        PQAAAk1TRnQBSQFMAgEBBQEAASABAAEgAQABIAEAASABAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAGA
         AwABQAMAAQEBAAEQBgABQBgAAb0BdwHnARwuAAHnARwBvQF3ygAB1gFaMgABlAFSygAB1gFaMgAB1gFa
         ygAB1gFaMgAB1gFaygAB1gFaASEBBAEhAQQBIQEEAdYBWgIAAdYBWgEhAQQB1gFaAgAB1gFaASEBBAHW
         AVoCAAHWAVoBIQEEAdYBWgIAAdYBWgEhAQQB1gFaAgAB1gFaASEBBAEhAQQBIQEEAdYBWsoAAdYBWgEh
@@ -388,6 +388,17 @@
         AcABHwH/AeABAwH/AeACAAEDAf8BgAEBDf8L
 </value>
   </data>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Addition to default return task types, you can place custom return types you wish to handle inside the behaviour tree. 
+
+Default values:
+DITASK_COMPLETE = 0
+DITASK_FAILED = 1
+DITASK_CALLBACK = 2
+DITASK_NEXTTASK = 3
+
+**Prefix (DITASK) will be added automatically.</value>
+  </data>
   <metadata name="imageListDiFille.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
   </metadata>
@@ -396,7 +407,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACQ
-        CgAAAk1TRnQBSQFMAwEBAAEYAQABGAEAASABAAEgAQAE/wERAQAI/wFCAU0BNgcAATYDAAEoAwABgAMA
+        CgAAAk1TRnQBSQFMAwEBAAEgAQABIAEAASABAAEgAQAE/wERAQAI/wFCAU0BNgcAATYDAAEoAwABgAMA
         ASADAAEBAQABEAYAASAaAAE5AWcBYwEMKgABMQFG/wABAAHeAXv/AP8A0AABIQEEASEBBAEhAQQBIQEE
         ASEBBAEhAQQBIQEEASEBBAEhAQQBIQEECAABIQEEASEBBAEhAQQBIQEEASEBBAEhAQQBIQEEASEBBAEh
         AQQBIQEE0AABIQEEASEBBAEhAQQBIQEEASEBBAEhAQQBIQEEASEBBAEhAQQBIQEECAABIQEEASEBBAEh
@@ -443,17 +454,6 @@
         AgABDwwAAfACAAEfDAAB8AIAAT8MAAHwAgABfwwAAfACAAH/DAAB8AEAAQEB/wwAAfABAAEDAf8MAAHw
         AQABBwH/DAAL
 </value>
-  </data>
-  <data name="textBox1.Text" xml:space="preserve">
-    <value>Addition to default return task types, you can place custom return types you wish to handle inside the behaviour tree. 
-
-Default values:
-DITASK_COMPLETE = 0
-DITASK_FAILED = 1
-DITASK_CALLBACK = 2
-DITASK_NEXTTASK = 3
-
-**Prefix (DITASK) will be added automatically.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnCloseTab.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -503,14 +503,14 @@ DITASK_NEXTTASK = 3
         XTesb3QPLh88M+QwdP6m681Lt7xuXbu94vbgcOjwnZHokdE77DtTd1PuvriXeW/h/sYH6AdFD6UeVjxS
         fNTws+7PbaOWo6fHXMf6Hwc/vj/OGn/2S8Yv7ycKnpCfVEyqTDZPmU2dmnafvvF05dOJZ+nPFmYKf5X+
         tfa5zvMffnP8rX82YnbiBf/Fp99LXsq/PPRq2aueuYC5R69TXy/MF72Rf3P4LeNt37vwd5MLWe+x7ys/
-        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALEAAACxABrSO9dQAAAWtJREFUOE+Nk9tqwkAY
-        hEfFIxoRxVx4RDyQIGKiD1nBu0rfwLtuNb7gdmaxJYSk9eKLm3/m22wIIgxDbLdbRFHkHQ6HSxzH4W63
-        g+br9dqhtWbK1FFXjubuopv9fn9mYMmjaANl6qib3mDMmxOxKUz2BMxMpvPGjo8gCK7E5mB+XoGZKeh8
-        YLPZHFer1Y3YHO6cibzsk26kDcACFouFIfZFjBy5egW3oIjZbGam06n9C3XUlSPXPX25XGI+n2MymWA0
-        GiXEFpCoo64cufA8D91uF/1+H8PhEL7vJ8QWkKijrhy5aLVaaLfb6PV6GAwGhth/MOrKkesW2olDBfZF
-        jBy5uhw7nc6N2CzM7iIv4+yLWaxjXJvNpuXvL897oyc8j2oKOlfU6/VxrVY7EZtCAvgUh9bMTKZzkotG
-        o6EQlUrlXC6XLUmq1aqT0htoxuyhjrpy5LoLd1LIb4L3UqkUKMw5AZjx/4uLunLkfgOnlNSAnD0CCwAA
-        AABJRU5ErkJggg==
+        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALDwAACw8BkvkDpQAAAWhJREFUOE+Nk92OwVAU
+        hRdSSqgI0QuKiJ+0EdHykCNxNzJv4G7OUC+4Z68TpGnaGRdf7bPXz2nSQBRF2Gw2iOPY2+/35yRJou12
+        a/er1crCmTtq9NDLDPevgt1ud1JBlHtZATV66M0WjPVwVCSDyRdwl/N86N5HGIYXRQowzwLOOe3JF9br
+        9WG5XF4VKeD2oEj71mzMAugB8/ncKPImhhlm+Xp20CWm06mZTCbyF/TQywyz9vbFYoHZbIYgCDAajVJF
+        SkjpoZcZZuF5HrrdLvr9PobDIXzfTxUpIaWHXmaYRavVQrvdRq/Xw2AwMIr8g6GXGWbtwCZdUpA3Mcww
+        y8eh0+lcFcmj2o0UacqPaglf49JsNkV/XzzOhjcQziWeCxqNxrherx8VycAA9BYLZ+5yniOzcF2XImq1
+        2qlarYqSOo5jQ9kC7lS700MvM8zahzZR1G+Cz0qlElIseAOopn8/nOllxnVd/AKnlNSAtMVY6gAAAABJ
+        RU5ErkJggg==
 </value>
   </data>
   <metadata name="toolTipHelp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

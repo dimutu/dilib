@@ -1,7 +1,7 @@
 
 /*
 *********************************************************************************************************************************************
-* DiLib v2.0 (dilib.dimutu.com)
+* DiLib v2.0 (http://dilib.dimutu.com)
 *
 * This software is provided 'as-is', without any express or implied warranty. 
 * In no event will the authors be held liable for any
@@ -23,7 +23,7 @@
 *
 * Author: Dimutu Kulawardana
 * Date: 06-06-2011
-* Description: execute tasks in selected order
+* Description: This act as SWITCH statement execute tasks in selected order, but only executes one task from its selection in a single execution cycle
 *
 * Modified: 20-02-2013
 * Description: removed Execute function returning enum and changed to int, to able to have many types of return values

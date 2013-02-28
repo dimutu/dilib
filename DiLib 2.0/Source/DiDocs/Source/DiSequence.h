@@ -1,14 +1,6 @@
 
 
-/*
-*********************************************************************************************************************************************
-*
-* Author: Dimutu Kulawardana
-* Date: 28-05-2011
-* Description: inherits from DiCondition and do the task on given time intervel and it can be a continuos loop, eg: run animation, play sound
-*
-*********************************************************************************************************************************************
-*/
+
 
 #ifndef _DI_SEQUENCE_TASK_H_
 #define _DI_SEQUENCE_TASK_H_
@@ -22,7 +14,7 @@
 namespace DiLib
 {
 	//! class DiSequence
-	//! \details Execute the tasks in the list in sequential order
+	//! \details Execute the tasks in the list in sequential order, and will iterate through all the nodes unless a task return failure.
 	template <class T>
 	class DiSequence : public DiTask<T>
 	{

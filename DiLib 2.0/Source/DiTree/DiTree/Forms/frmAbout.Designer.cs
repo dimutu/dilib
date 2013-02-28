@@ -37,6 +37,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblVersion = new System.Windows.Forms.Label();
             this.linkPrintTree = new System.Windows.Forms.LinkLabel();
+            this.linkIconRef2 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,11 +133,24 @@
             this.linkPrintTree.Text = "Pitman.Printing";
             this.linkPrintTree.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPrintTree_LinkClicked);
             // 
+            // linkIconRef2
+            // 
+            this.linkIconRef2.AutoSize = true;
+            this.linkIconRef2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkIconRef2.Location = new System.Drawing.Point(173, 246);
+            this.linkIconRef2.Name = "linkIconRef2";
+            this.linkIconRef2.Size = new System.Drawing.Size(89, 13);
+            this.linkIconRef2.TabIndex = 43;
+            this.linkIconRef2.TabStop = true;
+            this.linkIconRef2.Text = "www.fatcow.com";
+            this.linkIconRef2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkIconRef2_LinkClicked);
+            // 
             // frmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 287);
+            this.Controls.Add(this.linkIconRef2);
             this.Controls.Add(this.linkPrintTree);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.pictureBox1);
@@ -172,6 +186,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.LinkLabel linkPrintTree;
+        private System.Windows.Forms.LinkLabel linkIconRef2;
 
     }
 }

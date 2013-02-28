@@ -21,7 +21,7 @@
 namespace DiLib
 {
 	//! \class DiSelection
-	//! \details Exeute tasks in selected order using the returning state value
+	//! \details This act as SWITCH statement execute tasks in selected order, but only executes one task from its selection in a single execution cycle
 	template <class T>
 	class DiSelection : public DiSequence<T>
 	{

@@ -196,7 +196,7 @@
             // 
             this.tabPageNew.BackColor = System.Drawing.Color.Transparent;
             this.tabPageNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.tabPageNew.ImageKey = "bullet_star.png";
+            this.tabPageNew.ImageIndex = 0;
             this.tabPageNew.Location = new System.Drawing.Point(4, 54);
             this.tabPageNew.Margin = new System.Windows.Forms.Padding(0);
             this.tabPageNew.Name = "tabPageNew";

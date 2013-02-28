@@ -1,7 +1,7 @@
 
 /*
 *********************************************************************************************************************************************
-* DiLib v2.0 (dilib.dimutu.com)
+* DiLib v2.0 (http://dilib.dimutu.com)
 *
 * This software is provided 'as-is', without any express or implied warranty. 
 * In no event will the authors be held liable for any
@@ -23,7 +23,7 @@
 *
 * Author: Dimutu Kulawardana
 * Date: 04-06-2011
-* Description: inherits from DiCondition and do the task on given time intervel and it can be a continues loop, eg: run animation, play sound
+* Description: Execute task on given time intervel and it can be a continues loop or fixed iteration count eg: run animation, play sound
 *
 * Modified: 14-10-2012
 * Description: changed inheritance to DiTask and only has single task execution on timer

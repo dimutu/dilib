@@ -19,7 +19,7 @@
 namespace DiLib
 {
 	//! \class DiCondition
-	//! \details Check condition and if child task exists try to run the task or return back to parent
+	//! \details This act as IF statement and check condition and if child task exists try to run the task or return back to parent
 	//! \par This class must be implemented in the game code in-order to use it.
 	template <class T>
 	class DiCondition : public DiTask<T>

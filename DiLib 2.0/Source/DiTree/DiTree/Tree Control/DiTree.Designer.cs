@@ -152,7 +152,6 @@
             this.treeBT.SelectedImageIndex = 0;
             this.treeBT.Size = new System.Drawing.Size(502, 441);
             this.treeBT.TabIndex = 0;
-            this.toolTipTreeNode.SetToolTip(this.treeBT, "dgdfg");
             this.treeBT.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.treeBT_ItemDrag);
             this.treeBT.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeBT_AfterSelect);
             this.treeBT.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeBT_DragDrop);

@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_00A6F84849A442D9A5B601ACCB57EB8C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_08DCA1B8848E4AF6894BFEAF83F2F581"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -22,6 +28,24 @@
         "Entry"
         {
         "MsmKey" = "8:_0B2A24D816DE49559EC412DB8291CBA3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_14AA63AE8DD34CE3BF424CD794D566FC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1616C6DB1A6A4F4AA2343A7C7051AECC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1645508395F84DF2B556357D566EE3E1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -45,7 +69,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_23EEBE8871114EFCB617A392F01679E0"
+        "MsmKey" = "8:_231369F93ACC467DBD7611B4F652A646"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -64,6 +88,12 @@
         "Entry"
         {
         "MsmKey" = "8:_38DEE784870C43D79740C76CF4330EEE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_421A82EE7A15465BB84146A37F5F6D0E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -93,6 +123,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_540C7952DAD7443F90C3D6EF6D7338F2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_56A0B10FB7134495ACB87A43C2D21B57"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_594FFEFBDDCE405488CD31A8851780A0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -105,7 +147,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_5C9952C12F0A4155ACB8383B67A5E35C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5E1C2D222D704428ABEC9E41CF5057D2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5ECC33847B594F329B396F8B36A1B54A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -135,13 +189,37 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_6F189EF178544EDB82901CB27469407C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_739AE684C93247E5AB6BC9B4B72EC30D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
+        "MsmKey" = "8:_7660ED4D66FA4E27839319B387BDEE14"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7B6F4A5389BE4EFEBE1B02205C948786"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_811F06E86D20442DB8497A24F27277C9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8629201F92454C428F5FF52C3194020A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -165,7 +243,43 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8CAEF5A774E541F4BFBF29F02D9D3549"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_977D23E251254CBFA0973A3A036F090A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9A43D69684BA447E8A94882348B628AA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A15C5817C2CC46E98FAE3AB236D1A6E5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A444240BC7354F22B988FA4C30C884CA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A4F9BAF1E9DA4330906F52264AEF30E2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A8F5F1106F3E4A759223660BC1DD2FE9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -195,6 +309,30 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_B3491C2967904E0BA02A91364BCC7C4F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BDCBD75C9F1441EEA3E6A94E6025774F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C15961689CDF43069C1FF1D84AE73CF6"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C7AA977E1213461F891A8D0797C88693"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D6A83FA43A294FDCA1ADEC30B91E7F7F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -213,7 +351,37 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_E6B92C4ED8E34A5399EEBBF3C6574C0A"
+        "OwnerKey" = "8:_AC937891B79D4B9EAFF57D81CDC2B698"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E8CBACB505A941C78D3C173586AA5D0B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_E8D3CC399F5B492D8F4CCB6757A1AD6A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EC652641E8894A43AD819176F2A9034E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F0A394950AC7414284B298966166D419"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F33FB629026940518ED5320F231C8C0F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -232,7 +400,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_38DEE784870C43D79740C76CF4330EEE"
+        "OwnerKey" = "8:_AC937891B79D4B9EAFF57D81CDC2B698"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -244,7 +412,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AC937891B79D4B9EAFF57D81CDC2B698"
+        "OwnerKey" = "8:_38DEE784870C43D79740C76CF4330EEE"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -255,7 +423,7 @@
         "DisplayName" = "8:Debug"
         "IsDebugOnly" = "11:TRUE"
         "IsReleaseOnly" = "11:FALSE"
-        "OutputFilename" = "8:Debug\\DiLibInstaller.msi"
+        "OutputFilename" = "8:Debug\\DiLIB2.0Installer.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -352,6 +520,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_00A6F84849A442D9A5B601ACCB57EB8C"
+            {
+            "SourcePath" = "8:..\\icons\\FolderIcon.ico"
+            "TargetName" = "8:FolderIcon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_FB8DB83863914F3296E0D1B83B04FD45"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_08DCA1B8848E4AF6894BFEAF83F2F581"
             {
             "SourcePath" = "8:..\\..\\DiLib\\Source\\DiCondition.inl"
@@ -378,6 +566,66 @@
             "TargetName" = "8:DiNetwork.h"
             "Tag" = "8:"
             "Folder" = "8:_F0FFB530D8A94524AFBA45D0DD2CAE8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_14AA63AE8DD34CE3BF424CD794D566FC"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Data\\DiSampleTree2.ditree"
+            "TargetName" = "8:DiSampleTree2.ditree"
+            "Tag" = "8:"
+            "Folder" = "8:_B2DFF4AD44104B82B735ED68A23F6053"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1616C6DB1A6A4F4AA2343A7C7051AECC"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\DiAITaskTwo.h"
+            "TargetName" = "8:DiAITaskTwo.h"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1645508395F84DF2B556357D566EE3E1"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\DiAICondition.h"
+            "TargetName" = "8:DiAICondition.h"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -452,12 +700,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_23EEBE8871114EFCB617A392F01679E0"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_231369F93ACC467DBD7611B4F652A646"
             {
-            "SourcePath" = "8:..\\icons\\installicon.jpg"
-            "TargetName" = "8:installicon.jpg"
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\tinyxmlparser.cpp"
+            "TargetName" = "8:tinyxmlparser.cpp"
             "Tag" = "8:"
-            "Folder" = "8:_FB8DB83863914F3296E0D1B83B04FD45"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -468,7 +716,7 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:TRUE"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
@@ -498,6 +746,26 @@
             "TargetName" = "8:DiRoot.h"
             "Tag" = "8:"
             "Folder" = "8:_F0FFB530D8A94524AFBA45D0DD2CAE8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_421A82EE7A15465BB84146A37F5F6D0E"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\DiClassGenerator.cpp"
+            "TargetName" = "8:DiClassGenerator.cpp"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -592,6 +860,46 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_540C7952DAD7443F90C3D6EF6D7338F2"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\DiReturnEnums.h"
+            "TargetName" = "8:DiReturnEnums.h"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_56A0B10FB7134495ACB87A43C2D21B57"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\DiAICondition.cpp"
+            "TargetName" = "8:DiAICondition.cpp"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_594FFEFBDDCE405488CD31A8851780A0"
             {
             "SourcePath" = "8:..\\icons\\DiDataIcon.ico"
@@ -618,6 +926,46 @@
             "TargetName" = "8:DiTask.h"
             "Tag" = "8:"
             "Folder" = "8:_F0FFB530D8A94524AFBA45D0DD2CAE8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5C9952C12F0A4155ACB8383B67A5E35C"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\AI.h"
+            "TargetName" = "8:AI.h"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5ECC33847B594F329B396F8B36A1B54A"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Data\\DiAIConfig.diconfig"
+            "TargetName" = "8:DiAIConfig.diconfig"
+            "Tag" = "8:"
+            "Folder" = "8:_B2DFF4AD44104B82B735ED68A23F6053"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -712,6 +1060,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6F189EF178544EDB82901CB27469407C"
+            {
+            "SourcePath" = "8:..\\..\\DiLib\\Debug\\vc100.pdb"
+            "TargetName" = "8:vc100.pdb"
+            "Tag" = "8:"
+            "Folder" = "8:_C34BAB23257E4D6CBA698B7522A608ED"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_739AE684C93247E5AB6BC9B4B72EC30D"
             {
             "SourcePath" = "8:..\\..\\DiLib\\Source\\DiFilter.inl"
@@ -732,12 +1100,72 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7660ED4D66FA4E27839319B387BDEE14"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\tinystr.cpp"
+            "TargetName" = "8:tinystr.cpp"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7B6F4A5389BE4EFEBE1B02205C948786"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Data\\DiSampleTree.ditree"
+            "TargetName" = "8:DiSampleTree.ditree"
+            "Tag" = "8:"
+            "Folder" = "8:_B2DFF4AD44104B82B735ED68A23F6053"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_811F06E86D20442DB8497A24F27277C9"
             {
             "SourcePath" = "8:..\\..\\TinyXML\\tinyxml.cpp"
             "TargetName" = "8:tinyxml.cpp"
             "Tag" = "8:"
             "Folder" = "8:_3ACE96D292F8444FBA0E60FDED7F0465"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8629201F92454C428F5FF52C3194020A"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\DiAITaskTwo.cpp"
+            "TargetName" = "8:DiAITaskTwo.cpp"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -792,12 +1220,132 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8CAEF5A774E541F4BFBF29F02D9D3549"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\DiAIFilterTask.h"
+            "TargetName" = "8:DiAIFilterTask.h"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_977D23E251254CBFA0973A3A036F090A"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\tinyxmlerror.cpp"
+            "TargetName" = "8:tinyxmlerror.cpp"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9A43D69684BA447E8A94882348B628AA"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\DiSample.sln"
+            "TargetName" = "8:DiSample.sln"
+            "Tag" = "8:"
+            "Folder" = "8:_4FB3DF764E5F4BC7B28ABE55EBF34E3C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A15C5817C2CC46E98FAE3AB236D1A6E5"
             {
             "SourcePath" = "8:..\\..\\TinyXML\\tinyxmlerror.cpp"
             "TargetName" = "8:tinyxmlerror.cpp"
             "Tag" = "8:"
             "Folder" = "8:_3ACE96D292F8444FBA0E60FDED7F0465"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A444240BC7354F22B988FA4C30C884CA"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\tinyxml.cpp"
+            "TargetName" = "8:tinyxml.cpp"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A4F9BAF1E9DA4330906F52264AEF30E2"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\main.cpp"
+            "TargetName" = "8:main.cpp"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A8F5F1106F3E4A759223660BC1DD2FE9"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\DiAITaskOne.cpp"
+            "TargetName" = "8:DiAITaskOne.cpp"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -872,6 +1420,86 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B3491C2967904E0BA02A91364BCC7C4F"
+            {
+            "SourcePath" = "8:..\\icons\\installicon.jpg"
+            "TargetName" = "8:installicon.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_FB8DB83863914F3296E0D1B83B04FD45"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BDCBD75C9F1441EEA3E6A94E6025774F"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\DiSample.vcxproj"
+            "TargetName" = "8:DiSample.vcxproj"
+            "Tag" = "8:"
+            "Folder" = "8:_4FB3DF764E5F4BC7B28ABE55EBF34E3C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C15961689CDF43069C1FF1D84AE73CF6"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Data\\DiAISample.didata"
+            "TargetName" = "8:DiAISample.didata"
+            "Tag" = "8:"
+            "Folder" = "8:_B2DFF4AD44104B82B735ED68A23F6053"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C7AA977E1213461F891A8D0797C88693"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\DiClassTypeIDs.h"
+            "TargetName" = "8:DiClassTypeIDs.h"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D6A83FA43A294FDCA1ADEC30B91E7F7F"
             {
             "SourcePath" = "8:..\\..\\DiLib\\Source\\DiSelection.inl"
@@ -932,12 +1560,92 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E8CBACB505A941C78D3C173586AA5D0B"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\DiAITaskOne.h"
+            "TargetName" = "8:DiAITaskOne.h"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E8D3CC399F5B492D8F4CCB6757A1AD6A"
             {
             "SourcePath" = "8:..\\..\\DiLib\\Source\\DiFactory.h"
             "TargetName" = "8:DiFactory.h"
             "Tag" = "8:"
             "Folder" = "8:_F0FFB530D8A94524AFBA45D0DD2CAE8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EC652641E8894A43AD819176F2A9034E"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\DiSample.vcxproj.filters"
+            "TargetName" = "8:DiSample.vcxproj.filters"
+            "Tag" = "8:"
+            "Folder" = "8:_4FB3DF764E5F4BC7B28ABE55EBF34E3C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F0A394950AC7414284B298966166D419"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\DiAIFilterTask.cpp"
+            "TargetName" = "8:DiAIFilterTask.cpp"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F33FB629026940518ED5320F231C8C0F"
+            {
+            "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\AI.cpp"
+            "TargetName" = "8:AI.cpp"
+            "Tag" = "8:"
+            "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -978,7 +1686,7 @@
             "{5EB83D71-FA18-4901-BE56-DE22E13CC478}:_2651AAA740DB4632A194E16718996E4A"
             {
             "Name" = "8:.didata"
-            "Description" = "8:"
+            "Description" = "8:DiLIB Project Data File"
             "Extensions" = "8:.didata"
             "MIME" = "8:"
             "Icon" = "8:_594FFEFBDDCE405488CD31A8851780A0"
@@ -1001,7 +1709,7 @@
             "{5EB83D71-FA18-4901-BE56-DE22E13CC478}:_C748EED1B4A74A5385F9DF4190336361"
             {
             "Name" = "8:.ditree"
-            "Description" = "8:"
+            "Description" = "8:DiLIB Tree Implementation Data Loading into C++ Project"
             "Extensions" = "8:.ditree"
             "MIME" = "8:"
             "Icon" = "8:_49C15988637A473C8D19189B99B9D993"
@@ -1024,7 +1732,7 @@
             "{5EB83D71-FA18-4901-BE56-DE22E13CC478}:_DBCB1DEDC4B34A3FB4EE5D18A8134B21"
             {
             "Name" = "8:.diconfig"
-            "Description" = "8:"
+            "Description" = "8:DiLIB Configuration Data loading into C++ Project"
             "Extensions" = "8:.diconfig"
             "MIME" = "8:"
             "Icon" = "8:_65931E7AA18A4984A1172E38981C6289"
@@ -1082,7 +1790,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_D1A18798AB5943E78C188E43D84BB7DC"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][ProductName]"
+            "DefaultLocation" = "8:[ProgramFilesFolder][ProductName] [ProductVersion]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -1090,6 +1798,50 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_8747B5998ED24E36A52442DFED13A69D"
+                    {
+                    "Name" = "8:samples"
+                    "AlwaysCreate" = "11:TRUE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_68646C52EBCD4499B1109A62B0D643D2"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_4FB3DF764E5F4BC7B28ABE55EBF34E3C"
+                            {
+                            "Name" = "8:sample_01"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_5AF6073B0F68434F919FFCC3899E12D9"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_271BEF9A10B24A7F9C641E0B613F2076"
+                                    {
+                                    "Name" = "8:Source"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_20080B913D0C422292B7E83B2921B260"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B2DFF4AD44104B82B735ED68A23F6053"
+                                    {
+                                    "Name" = "8:Data"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_C6CD570DE4174A31835F3296F99A3673"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_A0567F8E0C5B4B678DAF2449664E8B34"
                     {
                     "Name" = "8:3rdParty"
@@ -1173,16 +1925,16 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:DiLIB 2.0"
-        "ProductCode" = "8:{1669135E-6DDD-4DB8-BFC2-53EA92B1B2A3}"
-        "PackageCode" = "8:{CEB77E03-FEA7-4A7E-AAFF-76C8527F6B1F}"
+        "ProductName" = "8:DiLIB"
+        "ProductCode" = "8:{E752C07E-5881-4746-8A1F-D5FD1A03EF59}"
+        "PackageCode" = "8:{D9E8F7E1-CFFD-4018-AF5E-D2D4B32E7900}"
         "UpgradeCode" = "8:{7E562CAB-0CF2-4CEA-8582-36B569AC56A5}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:2.0.0"
+        "ProductVersion" = "8:2.0"
         "Manufacturer" = "8:Dimutu Kulawardana"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://dilib.dimutu.com"
@@ -1190,7 +1942,7 @@
         "Subject" = "8:"
         "ARPCONTACT" = "8:Dimutu Kulawardana"
         "Keywords" = "8:DiLIB"
-        "ARPCOMMENTS" = "8:DiLIB 2.0 Artificial Intelligence Behavior Tool"
+        "ARPCOMMENTS" = "8:DiLIB 2.0 Behavior Tree Library"
         "ARPURLINFOABOUT" = "8:http://www.dimutu.com"
         "ARPPRODUCTICON" = "8:_628E299CEE5F41A8881CA9CE3884A60B"
         "ARPIconIndex" = "3:0"
@@ -1375,9 +2127,9 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_4C23BEAF4C2E404C847B30007075B9D3"
             {
-            "Name" = "8:DiLib 2.0"
+            "Name" = "8:DiLIB 2.0 Tree Creator"
             "Arguments" = "8:"
-            "Description" = "8:"
+            "Description" = "8:Start DiLIB 2.0 Tree Creator"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
@@ -1387,11 +2139,25 @@
             "Icon" = "8:_628E299CEE5F41A8881CA9CE3884A60B"
             "Feature" = "8:"
             }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_911C795259E14E789D35BBA54CEAE39B"
+            {
+            "Name" = "8:Samples"
+            "Arguments" = "8:"
+            "Description" = "8:DiLIB 2.0 Samples"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:TRUE"
+            "Target" = "8:_8747B5998ED24E36A52442DFED13A69D"
+            "Folder" = "8:_74E50EFE5279495188EE8E51D4FF28BF"
+            "WorkingFolder" = "8:_8747B5998ED24E36A52442DFED13A69D"
+            "Icon" = "8:_00A6F84849A442D9A5B601ACCB57EB8C"
+            "Feature" = "8:"
+            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E3209DEFCFDE449A847D40D1940BC936"
             {
             "Name" = "8:DiLIB 2.0 Tree Creator"
             "Arguments" = "8:"
-            "Description" = "8:"
+            "Description" = "8:DILIB 2.0 Tree Creator"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
@@ -1462,7 +2228,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_23EEBE8871114EFCB617A392F01679E0"
+                            "Value" = "8:_B3491C2967904E0BA02A91364BCC7C4F"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -1513,7 +2279,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_23EEBE8871114EFCB617A392F01679E0"
+                            "Value" = "8:_B3491C2967904E0BA02A91364BCC7C4F"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"
@@ -1562,7 +2328,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_23EEBE8871114EFCB617A392F01679E0"
+                            "Value" = "8:_B3491C2967904E0BA02A91364BCC7C4F"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "InstallAllUsersVisible"
@@ -1598,7 +2364,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_23EEBE8871114EFCB617A392F01679E0"
+                            "Value" = "8:_B3491C2967904E0BA02A91364BCC7C4F"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -1630,7 +2396,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_23EEBE8871114EFCB617A392F01679E0"
+                            "Value" = "8:_B3491C2967904E0BA02A91364BCC7C4F"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "UpdateText"
@@ -1653,6 +2419,20 @@
         }
         "MergeModule"
         {
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_E6B92C4ED8E34A5399EEBBF3C6574C0A"
+            {
+            "UseDynamicProperties" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "SourcePath" = "8:Microsoft_VC100_CRT_x86.msm"
+                "Properties"
+                {
+                }
+            "LanguageId" = "3:0"
+            "Exclude" = "11:FALSE"
+            "Folder" = "8:"
+            "Feature" = "8:"
+            "IsolateTo" = "8:"
+            }
         }
         "ProjectOutput"
         {
@@ -1763,34 +2543,6 @@
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{522B7B83-8834-4306-9D4B-4F6F33353449}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_FF0958604F194797A68E8A9050CD9819"
-            {
-            "SourcePath" = "8:"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C34BAB23257E4D6CBA698B7522A608ED"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:Debug|Win32"
-            "OutputGroupCanonicalName" = "8:Symbols"
-            "OutputProjectGuid" = "8:{95242BDA-C440-4E51-9369-17BD6FB1DD55}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
