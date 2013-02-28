@@ -6,6 +6,14 @@ Debugging allows you to view the execution of the behavior tree through the UI, 
 breaking and resuming and stepping through each task in the UI or stepping through your C++ code will update the current position executing on 
 enabling to view current location of the tree.
 
+\image html toolbar-debug.jpg
+
+-# Start Debugging.
+-# Step in to Next task while in Debug Break.
+-# Break at current execution node.
+-# Stop Debugging.
+-# Change speed of execution. (This allows you to see actual running time to slow motion view of the tasks behaving during each run cycle.)
+
 \section debug_setup Setting Up
 
 In-order to enable the debugging, need to initialize the debugger and need to place the debug command on each task to communicate with the DiTree UI.<br />

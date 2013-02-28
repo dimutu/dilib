@@ -342,7 +342,7 @@ namespace DiTree
                     ));
                 }
             }
-            catch (ExecutionEngineException ex)
+            catch (Exception ex)
             {
                 DiMethods.SetErrorLog(ex);
             }

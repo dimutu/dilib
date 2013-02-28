@@ -661,5 +661,31 @@ namespace DiTree
             System.Diagnostics.Process.Start("http://www.dilib.dimutu.com/");
         }
 
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+#if DEBUG
+
+#else
+            if (DiMethods.MyDialogShow("This feature will be available in future release." +
+             "Do you wish visit DiLIB website to check for new updates?", MessageBoxButtons.YesNoCancel) == System.Windows.Forms.DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start("http://www.dilib.dimutu.com/");
+            }
+#endif
+        }
+
+        private void preferencesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+#if DEBUG
+
+#else
+            if (DiMethods.MyDialogShow("This feature will be available in future release." +
+             "Do you wish visit DiLIB website to check for new updates?", MessageBoxButtons.YesNoCancel) == System.Windows.Forms.DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start("http://www.dilib.dimutu.com/");
+            }
+#endif
+        }
+
     }
 }
