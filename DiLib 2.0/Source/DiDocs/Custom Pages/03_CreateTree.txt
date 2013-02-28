@@ -4,7 +4,8 @@
 
 This section covers the building the UI element of the library. <br />
 
-\li Run DiLIB application from Start --> Programe Files --> DiLIb 2.0 --> DiLIb 2.0 DiTree Creators
+\li Run DiLIB application from <br />
+	Start --> Program Files --> DiLIB 2.0 --> DiLIB 2.0 DiTree Creators
 \li Create a new tree data file <br />
       File --> New
 	  

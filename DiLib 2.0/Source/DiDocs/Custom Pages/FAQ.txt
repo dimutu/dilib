@@ -26,8 +26,11 @@
 \li <b>Can't find DILIB_DIR in Visual Studio.</b> <br />
 	You may need to restart your computer as some occations windows needs to restart after installation to load the environment variables.
 
+\li <b>When debugging start, sometimes C++ project hangs at start and don't see any execution.</b> <br />
+	On occations this could happen due debugger not connected properly between the UI and C++ project, you can break the game and step through to avoid
+	 this deadlock and once you select Continue Debug it will go back to normal execution. This issue will be addressed in coming release.
 <p>
-If what you looking for isn't here, always welcome to comment at <a href="mailto:dilib@dimutu.com">dilib@dimutu.com</a> and I will try to get back to with an answer.
+If what you looking for isn't here, or have other queries you can send your comments to <a href="mailto:dilib@dimutu.com">dilib@dimutu.com</a> and I will to get back to with an answer.
 </p>
 <br/>
 */

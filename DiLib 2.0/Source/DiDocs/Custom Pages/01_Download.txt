@@ -1,6 +1,7 @@
 /*! \page download Download
 
-Download the latest version from the <a href="../download.php">download</a> page.
+<p>Download the latest version from the <a href="../download.php">download</a> page.</p>
+<p><b>**NOTE: </b>Please restart the computer after installation.</p>
 
 \section sys_req System Requirements
 
@@ -8,7 +9,7 @@ Download the latest version from the <a href="../download.php">download</a> page
 \li .NET Framework 4.0
 \li 1 GHz or higher CPU
 \li 512Mb Memory
-\li 10Mb Hard Disk space
+\li 30Mb Hard Disk space
 
 \section dependencies Dependencies
 

@@ -4,7 +4,7 @@
 
 \image html ditree-overview.jpg
 
-<h3>Version 2.0.1a</h3>
+<h3>Version 2.0.0a</h3>
 - UI
 	-# Highly improved tree creating user interface.
 	-# No data setup before creating tree.
@@ -13,6 +13,7 @@
 	-# Enter task execute return types and DiParser makes new DiReturnTypes.h
 	-# Generate C++ source files from nodes placed in the tree.
 	-# Recently used files.
+	-# Bug fixes.
 
 - C++ Codebase
 	-# DiFilter no longer extends from DiCondition.
@@ -23,6 +24,7 @@
 	-# Debugging only active under Windows OS and in DEBUG preprocessor, to be able to use under different Operating Systems.
 	-# Each task carries references pointer to Root, to keep track of last executed task.
 	-# DiFactory tree loading function renamed to CreateTree.
+	-# Bug fixes.
 
 <b>**NOTE</b> Unfortunately previous version files are not supported.
 	

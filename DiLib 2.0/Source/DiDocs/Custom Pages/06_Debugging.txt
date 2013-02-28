@@ -2,9 +2,10 @@
 
 \section debug_overview Overview
 
-Debugging allows you to view the execution of the behavior tree through the UI, and have the option of setting up breakpoints, 
+<p>Debugging allows you to view the execution of the behavior tree through the UI, and have the option of setting up breakpoints, 
 breaking and resuming and stepping through each task in the UI or stepping through your C++ code will update the current position executing on 
-enabling to view current location of the tree.
+enabling to view current location of the tree.</p>
+<b>**NOTE </b> Check you have permission from your firewall to activate the debugging.
 
 \image html toolbar-debug.jpg
 

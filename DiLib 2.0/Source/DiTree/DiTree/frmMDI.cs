@@ -799,6 +799,32 @@ namespace DiTree
             }
         }
 
+        private void toolStripNodeMoveUp_Click(object sender, EventArgs e)
+        {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
+            frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
+            if (frmActive != null)
+            {
+                frmActive.MoveNode(TREENODEMOVEMENT.TREENODEMOVE_UP);
+            }
+        }
+
+        private void toolStripNodeMoveDown_Click(object sender, EventArgs e)
+        {
+            if (!IsActiveFormDiData())
+            {
+                return;
+            }
+            frmDiFile frmActive = (frmDiFile)this.ActiveMdiChild;
+            if (frmActive != null)
+            {
+                frmActive.MoveNode(TREENODEMOVEMENT.TREENODEMOVE_DOWN);
+            }
+        }
+
 
     }
 }
