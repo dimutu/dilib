@@ -61,5 +61,6 @@ namespace DiTree
         public const string XMLELEMENT_NODETASKTRUE = "TaskTrue"; //condition node attribute - enum id of the task
         public const string XMLELEMENT_NODETASKFALSE = "TaskFalse";//condition node attribute - enum id of the task
         public const string XMLELEMENT_NODEBREAKPOINT = "Breakpoint"; //has a breakpoint
+        public const string XMLELEMENT_NODEARGS = "TaskArgs"; //additional arguments passing to C++
     }
 }

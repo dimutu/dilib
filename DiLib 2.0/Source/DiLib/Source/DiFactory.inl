@@ -110,6 +110,7 @@ void GenerateTree(TiXmlElement* a_xmlNode, DiLib::DiTask<T>* a_pkCurNode, DiLib:
 			//set child data
 			pkChildNode->SetParent(a_pkCurNode); //set parent
 			pkChildNode->SetRoot(a_pkRoot);
+			pkChildNode->SetArgs(pkXmlChild->Attribute("TaskArgs"));
 
 #ifdef _DIDEBUG
 			//set debugging information

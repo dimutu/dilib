@@ -38,6 +38,9 @@
 * Modified: 20-02-2013
 * Description: removed Execute function returning enum and changed to int, to able to have many types of return values
 *
+* Modified: 01-03-2013
+* Description: added argument property to set any additional arguments from UI
+*
 *********************************************************************************************************************************************
 */
 
@@ -134,12 +137,23 @@ namespace DiLib
 		*/
 		void SetRoot(const DiRoot<T>* a_pkRoot);
 
+		/*
+		********************************************************************************************************************************************
+		* Function: SetArgs() - set additional arguments need for this task set from the UI
+		* Parameters: const char* a_zArgs - all the arguments in single string
+		* Return: void
+		********************************************************************************************************************************************
+		*/
+		void SetArgs(const char* a_zArgs);
+
 	protected:
 		const DiRoot<T>* m_pkRoot; //root node
 
 		const DiTask* m_pkParentTask; //parent node
 
 		std::string m_zScriptFile; //location of the external script file
+
+		std::string m_zArgs; //additional settings from the UI to use inside this task
 
 	};
 	//***************************************************************************************************************************************************//

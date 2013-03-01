@@ -67,6 +67,10 @@ namespace DiLib
 		//! \param a_pkRoot Pointer reference to the root task
 		void SetRoot(const DiRoot<T>* a_pkRoot);
 
+		//! Set additional arguments need for this task set from the UI
+		//! \param a_zArgs Argument value in a string
+		void SetArgs(const char* a_zArgs);
+
 	protected:
 		const DiRoot<T>* m_pkRoot; //!< Pointer to the DiRoot task
 
@@ -74,6 +78,7 @@ namespace DiLib
 
 		std::string m_zScriptFile; //!< External script file path (To be use by implementation)
 
+		std::string m_zArgs; //!< Additional arguments to pass-in from the UI to use inside this task
 	};
 	//***************************************************************************************************************************************************//
 }

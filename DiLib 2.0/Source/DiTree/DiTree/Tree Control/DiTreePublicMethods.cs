@@ -236,6 +236,10 @@ namespace DiTree
             writer.WriteAttributeString(DiXMLElements.XMLELEMENT_NODECHILDCOUNT, node.Nodes.Count.ToString());
             writer.WriteAttributeString(DiXMLElements.XMLELEMENT_NODEDEBUGID, kNodeTask.DebuggerID.ToString());
             writer.WriteAttributeString(DiXMLElements.XMLELEMENT_NODEBREAKPOINT, kNodeTask.Breakpoint.ToString());
+            if (kNodeTask.Arguments != null)
+            {
+                writer.WriteAttributeString(DiXMLElements.XMLELEMENT_NODEARGS, kNodeTask.Arguments.ToString());
+            }
 
             //if this is condition, set which task runs when true and false
             switch (node.ClassType)
@@ -509,6 +513,7 @@ namespace DiTree
             kTask.DebuggerID = -1;
             kTask.TemplateClass = txtTemplateClass.Text;
             kTask.Breakpoint = Convert.ToBoolean(reader[DiXMLElements.XMLELEMENT_NODEBREAKPOINT]);
+            kTask.Arguments = reader[DiXMLElements.XMLELEMENT_NODEARGS];
 
             DiDataRow dr = m_pkDataHandler.GetRow(kTask.EnumID);
             if (dr != null)
@@ -564,7 +569,7 @@ namespace DiTree
             Evaluate_DebugIDs(ref pkRoot);
             //
 
-            try
+            //try
             {
                 XmlWriter writer;
                 XmlWriterSettings s = new XmlWriterSettings();
@@ -596,15 +601,15 @@ namespace DiTree
                 }
 
             }
-            catch (Exception ex)
-            {
-                DiMethods.SetErrorLog(ex);
-                DiMethods.SetStatusMessage(DiLangID.ID_ERROR_SAVE_FILE);
-                DiMethods.MyDialogShow("Unable to save file.", MessageBoxButtons.OK);
-#if DEBUG
-                Console.WriteLine(ex.Message);
-#endif
-            }
+//            catch (Exception ex)
+//            {
+//                DiMethods.SetErrorLog(ex);
+//                DiMethods.SetStatusMessage(DiLangID.ID_ERROR_SAVE_FILE);
+//                DiMethods.MyDialogShow("Unable to save file.", MessageBoxButtons.OK);
+//#if DEBUG
+//                Console.WriteLine(ex.Message);
+//#endif
+//            }
 
             return true;
 
@@ -642,6 +647,15 @@ namespace DiTree
             writer.WriteAttributeString("LuaScript", node.Task.ScriptFile.ToString().Trim());
             writer.WriteAttributeString("ChildCount", node.Nodes.Count.ToString());
             writer.WriteAttributeString("TaskDebugID", node.Task.DebuggerID.ToString());
+
+            if (node.Task.Arguments == null)
+            {
+                node.Task.Arguments = "";
+            }
+            if (node.Task.Arguments != "")
+            {
+                writer.WriteAttributeString("TaskArgs", node.Task.Arguments.ToString());
+            }
 
             //if this is condition, set which task runs when true and false
             if (node.ClassType == DICLASSTYPES.DICLASSTYPE_CONDITION)

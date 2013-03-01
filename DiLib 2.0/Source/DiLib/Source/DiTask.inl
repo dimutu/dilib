@@ -127,3 +127,20 @@ void DiTask<T>::SetRoot(const DiRoot<T>* a_pkRoot)
 {
 	m_pkRoot = a_pkRoot;
 }
+
+/*
+********************************************************************************************************************************************
+* Function: SetArgs() - set additional arguments need for this task set from the UI
+* Parameters: const char* a_zArgs - all the arguments in single string
+* Return: void
+********************************************************************************************************************************************
+*/
+template <class T>
+void DiTask<T>::SetArgs(const char* a_zArgs)
+{
+	if (a_zArgs != NULL)
+	{
+		m_zArgs = a_zArgs;
+	}
+}
+

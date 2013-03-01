@@ -7,6 +7,8 @@ using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using System.Data;
 using System.Drawing;
+using System.ComponentModel.Design;
+using System.Drawing.Design;
 
 namespace DiTree
 {
@@ -38,6 +40,8 @@ namespace DiTree
 
         private bool m_bBreakpoint;// this node is has a breakpoint or not
 
+        private string m_zArgs; //additional arguments needs to setup this task
+
         public DiTask()
         {
             m_eClassType = DICLASSTYPES.DICLASSTYPE_TASK;
@@ -49,6 +53,7 @@ namespace DiTree
             m_pkParent = null;
             m_zTemplateClass = "";
             m_bBreakpoint = false;
+            m_zArgs = "";
         }
 
         [Category("Task"), TypeConverter( typeof(DiStringAutoComplete)),
@@ -217,5 +222,22 @@ namespace DiTree
             }
         }
 
+        /// <summary>
+        /// Additional arguments needs to pass to C++ project
+        /// </summary>
+        [Category("Task"), 
+        Description("Additional arguments and settings to pass to the C++ project as a string value."),
+        Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))] 
+        public string Arguments
+        {
+            get
+            {
+                return m_zArgs;
+            }
+            set
+            {
+                m_zArgs = value;
+            }
+        }
     }
 }

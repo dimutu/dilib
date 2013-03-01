@@ -291,14 +291,11 @@ namespace DiTree
                         
                         for (int ii = TABSTART_INDEX; ii < tabDiFile.TabCount; ++ii)
                         {
-                            foreach (Control ctrl in tabDiFile.TabPages[ii].Controls)
+                            TabPage tab = tabDiFile.TabPages[ii];
+                            if (tab is DiTabPage)
                             {
-                                if (ctrl.GetType() == typeof(DiTree))
-                                {
-                                    DiTree pkTree = (DiTree)ctrl;
-                                    pkTree.SaveTree(ref writer); //export individual tree
-                                    break;
-                                }
+                                DiTree pkTree = ((DiTabPage)tab).Tree;
+                                pkTree.SaveTree(ref writer); //export individual tree
                             }
                         }
 
