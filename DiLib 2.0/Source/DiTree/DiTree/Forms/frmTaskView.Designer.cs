@@ -93,7 +93,6 @@
             this.btnDeleteAll.TabIndex = 2;
             this.btnDeleteAll.Text = "Del All";
             this.btnDeleteAll.UseVisualStyleBackColor = true;
-            this.btnDeleteAll.Visible = false;
             this.btnDeleteAll.Click += new System.EventHandler(this.btnDeleteAll_Click);
             // 
             // btnDelete
@@ -104,7 +103,6 @@
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Del";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Visible = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // textBox1

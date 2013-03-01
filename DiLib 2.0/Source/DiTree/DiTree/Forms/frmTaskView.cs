@@ -50,12 +50,26 @@ namespace DiTree
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            if (dataGridViewTasks.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dataGridViewTasks.SelectedRows)
+                {
+                    dataGridViewTasks.Rows.RemoveAt(row.Index);
+                }
+            }
         }
 
         private void btnDeleteAll_Click(object sender, EventArgs e)
         {
-
+            DataGridViewRow row;
+            for(int i = dataGridViewTasks.Rows.Count -1; i >= 0; --i)
+            {
+                row = dataGridViewTasks.Rows[i];
+                if ((int)row.Cells[5].Value <= 0)
+                {
+                    dataGridViewTasks.Rows.RemoveAt(row.Index);
+                }
+            }
         }
 
     }
