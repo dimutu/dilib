@@ -5,36 +5,61 @@
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="MyRelease|Win32">
-      <Configuration>MyRelease</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\AI.cpp" />
+    <ClCompile Include="Source\DiAICondition.cpp" />
+    <ClCompile Include="Source\DiAIFilterTask.cpp" />
+    <ClCompile Include="Source\DiAITaskOne.cpp" />
+    <ClCompile Include="Source\DiAITaskTwo.cpp" />
+    <ClCompile Include="Source\DiClassGenerator.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\tinystr.cpp" />
+    <ClCompile Include="Source\tinyxml.cpp" />
+    <ClCompile Include="Source\tinyxmlerror.cpp" />
+    <ClCompile Include="Source\tinyxmlparser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\AI.h" />
+    <ClInclude Include="Source\DiAICondition.h" />
+    <ClInclude Include="Source\DiAIFilterTask.h" />
+    <ClInclude Include="Source\DiAITaskOne.h" />
+    <ClInclude Include="Source\DiAITaskTwo.h" />
+    <ClInclude Include="Source\DiClassTypeIDs.h" />
+    <ClInclude Include="Source\DiReturnEnums.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Data\DiAIConfig.diconfig">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DILIB_DIR)\bin\DiParser.exe" Data\DiAIConfig.diconfig Source</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Source</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\DiAISample.didata">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{95242BDA-C440-4E51-9369-17BD6FB1DD55}</ProjectGuid>
-    <Keyword>Win32Proj</Keyword>
-    <RootNamespace>DiLib</RootNamespace>
+    <ProjectGuid>{EBBA3819-31DA-40BE-89FD-243E4043E9A0}</ProjectGuid>
+    <RootNamespace>DiSample</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v100</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='MyRelease|Win32'">
-    <PlatformToolset>v100</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -47,84 +72,39 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <TargetName>$(ProjectName)Debug</TargetName>
+    <IncludePath>$(DILIB_DIR)includes;$(DILIB_DIR)3rdParty\TinyXML;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>$(DILIB_DIR)libs;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(DILIB_DIR)includes;$(DILIB_DIR)3rdParty\TinyXML;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;</IncludePath>
+    <LibraryPath>$(DILIB_DIR)libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>DiLibDebug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <PostBuildEvent>
-      <Command>
-      </Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>DiLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <PostBuildEvent>
-      <Message>
-      </Message>
-      <Command>
-      </Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MyRelease|Win32'">
-    <PostBuildEvent>
-      <Command>
-      </Command>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
-  <ItemGroup>
-    <None Include="Source\DiCondition.inl" />
-    <None Include="Source\DiFactory.inl" />
-    <None Include="Source\DiFilter.inl" />
-    <None Include="Source\DiRoot.inl" />
-    <None Include="Source\DiSelection.inl" />
-    <None Include="Source\DiSequence.inl" />
-    <None Include="Source\DiTask.inl" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Source\DiBase.h" />
-    <ClInclude Include="Source\DiCondition.h" />
-    <ClInclude Include="Source\DiDataTypes.h" />
-    <ClInclude Include="Source\DiFactory.h" />
-    <ClInclude Include="Source\DiFilter.h" />
-    <ClInclude Include="Source\DiDebugger.h" />
-    <ClInclude Include="Source\DiRoot.h" />
-    <ClInclude Include="Source\DiSelection.h" />
-    <ClInclude Include="Source\DiNetwork.h" />
-    <ClInclude Include="Source\DiTask.h" />
-    <ClInclude Include="Source\DiTimer.h" />
-    <ClInclude Include="Source\DiSequence.h" />
-    <ClInclude Include="Source\WinsockInclude.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Source\DiBase.cpp" />
-    <ClCompile Include="Source\DiNetwork.cpp" />
-    <ClCompile Include="Source\DiTimer.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

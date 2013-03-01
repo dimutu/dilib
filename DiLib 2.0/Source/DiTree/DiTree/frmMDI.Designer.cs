@@ -278,7 +278,7 @@
             // 
             this.exportConfigFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exportConfigFileToolStripMenuItem.Image")));
             this.exportConfigFileToolStripMenuItem.Name = "exportConfigFileToolStripMenuItem";
-            this.exportConfigFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportConfigFileToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.exportConfigFileToolStripMenuItem.Tag = "ID_EXPORT_CONFIG";
             this.exportConfigFileToolStripMenuItem.Text = "Config File";
             this.exportConfigFileToolStripMenuItem.Click += new System.EventHandler(this.exportConfigFileToolStripMenuItem_Click);
@@ -289,7 +289,7 @@
             // 
             this.exportTreeFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exportTreeFileToolStripMenuItem.Image")));
             this.exportTreeFileToolStripMenuItem.Name = "exportTreeFileToolStripMenuItem";
-            this.exportTreeFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportTreeFileToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.exportTreeFileToolStripMenuItem.Tag = "ID_EXPORT_TREE";
             this.exportTreeFileToolStripMenuItem.Text = "Tree File";
             this.exportTreeFileToolStripMenuItem.Click += new System.EventHandler(this.exportTreeFileToolStripMenuItem_Click);
@@ -300,7 +300,7 @@
             // 
             this.exportCppToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exportCppToolStripMenuItem.Image")));
             this.exportCppToolStripMenuItem.Name = "exportCppToolStripMenuItem";
-            this.exportCppToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportCppToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.exportCppToolStripMenuItem.Tag = "ID_EXPORT_SOURCE";
             this.exportCppToolStripMenuItem.Text = "C++ Source";
             this.exportCppToolStripMenuItem.Click += new System.EventHandler(this.exportCppToolStripMenuItem_Click);
@@ -400,7 +400,7 @@
             this.rightToolStripMenuItem,
             this.deleteNodeToolStripMenuItem});
             this.moveToolStripMenuItem.Name = "moveToolStripMenuItem";
-            this.moveToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.moveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.moveToolStripMenuItem.Text = "Node";
             // 
             // upToolStripMenuItem
@@ -465,7 +465,7 @@
             this.renameTreeToolStripMenuItem,
             this.deleteTreeToolStripMenuItem});
             this.treeToolStripMenuItem1.Name = "treeToolStripMenuItem1";
-            this.treeToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
+            this.treeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.treeToolStripMenuItem1.Text = "Tree";
             // 
             // renameTreeToolStripMenuItem
@@ -491,12 +491,13 @@
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(132, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(149, 6);
             // 
             // preferencesToolStripMenuItem
             // 
+            this.preferencesToolStripMenuItem.Enabled = false;
             this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
-            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.preferencesToolStripMenuItem.Text = "Preferences";
             this.preferencesToolStripMenuItem.Click += new System.EventHandler(this.preferencesToolStripMenuItem_Click);
             // 

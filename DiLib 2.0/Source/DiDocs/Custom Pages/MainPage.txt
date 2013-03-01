@@ -10,6 +10,7 @@
 	-# No data setup before creating tree.
 	-# Ability to view and remove unused node data.
 	-# Debugging \link debug_breaks breakpoint \endlink placement in the user interface.
+	-# Set time delay between each task execution for more slowdown version of tree execution.
 	-# Enter task execute return types and DiParser makes new DiReturnTypes.h
 	-# Generate C++ source files from nodes placed in the tree.
 	-# Recently used files.
@@ -24,9 +25,13 @@
 	-# Debugging only active under Windows OS and in DEBUG preprocessor, to be able to use under different Operating Systems.
 	-# Each task carries references pointer to Root, to keep track of last executed task.
 	-# DiFactory tree loading function renamed to CreateTree.
+	-# Library files for Visual Studio 2010 and 2012
 	-# Bug fixes.
 
-<b>**NOTE</b> Unfortunately previous version files are not supported.
+<h4>Known Issues</h4>
+- Unfortunately previous version files are not supported.
+- While debugging in UI, opening Console Output Window can slowdown the program drastically.
+- No C++ library for Visual Studio 2008
 	
 <h3>Version 1.0.0</h3>
 Startup version.

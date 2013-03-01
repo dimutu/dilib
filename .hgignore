@@ -6,3 +6,13 @@ Presentation
 DiLib 2.0/Source/DiTree/DiTree/obj
 DiLib 2.0/Source/DiLIB Builds
 *.user
+DiLib 2.0/DiSample/Debug
+DiLib 2.0/DiSample/Release
+DiLib 2.0/INSTALL_DIR
+DiLib 2.0/Source/Debug
+DiLib 2.0/Source/DiLib/Debug
+DiLib 2.0/Source/DiLib/Release
+DiLib 2.0/Source/DiTree/DiTree/bin
+DiLib 2.0/Source/Release
+DiSample/Debug
+libbuild.bat
