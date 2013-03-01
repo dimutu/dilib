@@ -569,7 +569,7 @@ namespace DiTree
             Evaluate_DebugIDs(ref pkRoot);
             //
 
-            //try
+            try
             {
                 XmlWriter writer;
                 XmlWriterSettings s = new XmlWriterSettings();
@@ -601,15 +601,15 @@ namespace DiTree
                 }
 
             }
-//            catch (Exception ex)
-//            {
-//                DiMethods.SetErrorLog(ex);
-//                DiMethods.SetStatusMessage(DiLangID.ID_ERROR_SAVE_FILE);
-//                DiMethods.MyDialogShow("Unable to save file.", MessageBoxButtons.OK);
-//#if DEBUG
-//                Console.WriteLine(ex.Message);
-//#endif
-//            }
+            catch (Exception ex)
+            {
+                DiMethods.SetErrorLog(ex);
+                DiMethods.SetStatusMessage(DiLangID.ID_ERROR_SAVE_FILE);
+                DiMethods.MyDialogShow("Unable to save file.", MessageBoxButtons.OK);
+#if DEBUG
+                Console.WriteLine(ex.Message);
+#endif
+            }
 
             return true;
 
