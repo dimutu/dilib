@@ -1,0 +1,21 @@
+# do not modify this file, this is a generated file - DiLIB v2.0.0.56
+
+[Headers]
+AI.h
+DiAICondition.h
+DiAITaskOne.h
+DiAITaskTwo.h
+DiAIFilterTask.h
+
+[ReturnTypes]
+DITASK_OTHER
+DITASK_SOMETHING
+
+[Enum]
+2,DIAIFILTER,True,4,DiFilter,AI
+3,DIAISELECTION,True,2,DiSelection,AI
+4,DIAISEQUENCE,True,1,DiSequence,AI
+7,DIAITASKONE,False,0,DiAITaskOne,AI
+8,DIAICONDITION,False,3,DiAICondition,AI
+9,DIAITASKTWO,False,0,DiAITaskTwo,AI
+10,DIAIFILTERTASK,False,0,DiAIFilterTask,AI

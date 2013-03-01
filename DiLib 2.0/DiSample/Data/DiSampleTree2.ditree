@@ -1,0 +1,7 @@
+﻿<TreeRoot>
+  <DiLIB version="2.0.0.47" />
+  <DI Template="AI" DebugID="r12bgrodfhs" TreeDebugID="DiTree1" />
+  <Node EnumID="0" TypeID="5" ClassName="RootNode" LuaScript="" ChildCount="1" TaskDebugID="0">
+    <Node EnumID="9" TypeID="0" ClassName="DiAITaskTwo" LuaScript="" ChildCount="0" TaskDebugID="1" />
+  </Node>
+</TreeRoot>
