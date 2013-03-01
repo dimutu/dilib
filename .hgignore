@@ -1,0 +1,6 @@
+syntax: glob
+*.suo
+Presentation
+*.sdf
+*.opensdf
+DiLib 2.0/Source/DiTree/DiTree/obj
