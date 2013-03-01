@@ -14,7 +14,8 @@ use Windows Environment Variable <b>DILIB_DIR</b> has the path to DiLib installa
 	-# \$(DILIB_DIR)includes
 	-# \$(DILIB_DIR)3rdParty\\TinyXML
 -# Under Library Directories add following paths:
-	- \$(DILIB_DIR)libs
+	- For Visual Studio 2010: \$(DILIB_DIR)libs
+	- For Visual Studio 2012: \$(DILIB_DIR)libs\vs2012
 -# Linker -> Input, set following lib file name depend on your configuration
 	- Debug configuration - DiLibDebug.lib
 	- Release configuration - DiLib.lib

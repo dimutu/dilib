@@ -5,7 +5,7 @@
 
 class [TEMPLATE];
 
-class [CLASS] : public [DICLASS]<[TEMPLATE]>
+class [CLASS] : public DiLib::[DICLASS]<[TEMPLATE]>
 {
 public:
 	[CLASS]();

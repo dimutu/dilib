@@ -1,8 +1,8 @@
 #include "[CLASS].h"
-#include "DiReturnEnum.h"
+#include "DiReturnEnums.h"
 #include "[TEMPLATE].h"
 
-[CLASS]::[CLASS]() : [DICLASS]<[TEMPLATE]>()
+[CLASS]::[CLASS]() : DiLib::[DICLASS]<[TEMPLATE]>()
 {
 }
 
@@ -19,13 +19,13 @@ int [CLASS]::Execute([TEMPLATE]* a_pkObject)
 
 	m_itrCurrentTask = m_akTaskSequence.begin();
 
-	DiTask<T>* pkTask = NULL;
+	DiLib::DiTask<[TEMPLATE]>* pkTask = NULL;
 	for (; m_itrCurrentTask != m_akTaskSequence.end(); ++m_itrCurrentTask)
 	{
 		pkTask = *m_itrCurrentTask;
 		if (pkTask != NULL)
 		{
-			eReturn = pkTask->Execute(a_pkOwner); //run the task
+			eReturn = pkTask->Execute(a_pkObject); //run the task
 			if (eReturn == DiLib::DI_TASK_RETURNS::DITASK_FAILED)
 			{
 				return DiLib::DI_TASK_RETURNS::DITASK_FAILED;

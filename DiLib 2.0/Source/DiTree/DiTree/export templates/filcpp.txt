@@ -1,8 +1,8 @@
 #include "[CLASS].h"
-#include "DiReturnEnum.h"
+#include "DiReturnEnums.h"
 #include "[TEMPLATE].h"
 
-[CLASS]::[CLASS]() : [DICLASS]<[TEMPLATE]>()
+[CLASS]::[CLASS]() : DiLib::[DICLASS]<[TEMPLATE]>()
 {
 }
 
@@ -18,7 +18,7 @@ int [CLASS]::Execute([TEMPLATE]* a_pkObject)
 	if ( !m_pkTimer->IsRunTime() )
 	{
 		//time not ready, come back later to execute
-		return DiLib::DI_TASK_RETURNS::DITASK_CALLBACK
+		return DiLib::DI_TASK_RETURNS::DITASK_CALLBACK;
 	}
 
 	//check loop conditions before executing
@@ -29,10 +29,10 @@ int [CLASS]::Execute([TEMPLATE]* a_pkObject)
 		//for default will run the true task only
 		if (m_pkTask != NULL)
 		{
-			return m_pkTask->Execute(a_pkOwner);
+			return m_pkTask->Execute(a_pkObject);
 		}
 
 	}
 
-	return DiLib::DI_TASK_RETURNS::DITASK_COMPLETE
+	return DiLib::DI_TASK_RETURNS::DITASK_COMPLETE;
 }

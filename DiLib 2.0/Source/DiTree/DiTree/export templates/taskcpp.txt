@@ -1,9 +1,9 @@
 
 #include "[CLASS].h"
-#include "DiReturnEnum.h"
+#include "DiReturnEnums.h"
 #include "[TEMPLATE].h"
 
-[CLASS]::[CLASS]() : [DICLASS]<[TEMPLATE]>()
+[CLASS]::[CLASS]() : DiLib::[DICLASS]<[TEMPLATE]>()
 {
 }
 
@@ -15,5 +15,5 @@ int [CLASS]::Execute([TEMPLATE]* a_pkObject)
 {
 	DIDEBUGGER_SEND(this);
 
-	return DiLib::DI_RETURN_COMPLETE;
+	return DiLib::DITASK_COMPLETE;
 }

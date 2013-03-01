@@ -1,8 +1,8 @@
 #include "[CLASS].h"
-#include "DiReturnEnum.h"
+#include "DiReturnEnums.h"
 #include "[TEMPLATE].h"
 
-[CLASS]::[CLASS]() : [DICLASS]<[TEMPLATE]>()
+[CLASS]::[CLASS]() : DiLib::[DICLASS]<[TEMPLATE]>()
 {
 }
 

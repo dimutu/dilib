@@ -6,6 +6,10 @@
 \li <b>Compiling diconfig file, Error MSB6006: "cmd.exe" exited with code 9009.</b> <br />
 	Path to DiParser contains spacing and command line unable to find the file. Use qoutes around the path 
 	ie: "[Path]\DiParser.exe" "Config.diconfig" "MySourceDir"
+	
+\li <b>'C:\Program' is not recognized as an internal or external command</b>
+	Path to DiParser contains spacing and command line unable to find the file. Use qoutes around the path 
+	ie: "[Path]\DiParser.exe" "Config.diconfig" "MySourceDir"
 
 \li <b>When diconfig file complie, there are some unknown class names are generated.</b> <br />
 	This can happen when you enter a invalid name during setting up properties of each class in DiTree UI. Even if you recorrect 

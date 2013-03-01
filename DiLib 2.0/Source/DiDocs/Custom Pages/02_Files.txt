@@ -13,9 +13,14 @@ Installation folder file structure
 | <br />
 |-- <b>includes</b> (DiLib C++ source files) <br />
 | <br />
-|-- <b>libs</b> (DiLib C++ libraries for debug and release builds) <br />
+|-- <b>libs</b> (DiLib C++ libraries for debug and release builds for VS2010) <br />
 |----- DiLibDebug.lib <br />
 |----- DiLib.lib <br />
+|----- vc100.pdb
+|--------<b>vs2012</b> (C++ libraries for VS2012)
+|----------- DiLibDebug.lib <br />
+|----------- DiLib.lib <br />
+|----------- vc110.pdb
 | <br />
 |-- <b>samples</b>
 
