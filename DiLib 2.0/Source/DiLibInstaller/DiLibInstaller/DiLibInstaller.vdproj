@@ -57,24 +57,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1B2026A0CB3F415099D3BC643A27E771"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1E04CC78EA764803929E1685A851DB03"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_21A23266493C43E79F79E8ED6C879685"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_231369F93ACC467DBD7611B4F652A646"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -88,6 +70,12 @@
         "Entry"
         {
         "MsmKey" = "8:_2A3082780403455AA87A62BF4C5B7661"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_301B7CA405B647A19B38F76B939FAB70"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -219,7 +207,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_811F06E86D20442DB8497A24F27277C9"
+        "MsmKey" = "8:_84F4A9C6535E4D4F9BC696787D548984"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -273,12 +261,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A15C5817C2CC46E98FAE3AB236D1A6E5"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_A444240BC7354F22B988FA4C30C884CA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -286,6 +268,12 @@
         "Entry"
         {
         "MsmKey" = "8:_A4F9BAF1E9DA4330906F52264AEF30E2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A6BBE1A25A8C427B8160165E5DD583EC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -327,7 +315,25 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_B3C2A6D7EF82446198C13CEA2FA2671E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BAED7FE3F23C4B3995A5999E8565563C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_BDCBD75C9F1441EEA3E6A94E6025774F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C0F22C424AC24481871324C463301D5A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -352,12 +358,6 @@
         "Entry"
         {
         "MsmKey" = "8:_D6A83FA43A294FDCA1ADEC30B91E7F7F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DC3068420D99453B970D5EF74FFD5D82"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -660,66 +660,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1B2026A0CB3F415099D3BC643A27E771"
-            {
-            "SourcePath" = "8:..\\..\\TinyXML\\tinyxml.h"
-            "TargetName" = "8:tinyxml.h"
-            "Tag" = "8:"
-            "Folder" = "8:_3ACE96D292F8444FBA0E60FDED7F0465"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1E04CC78EA764803929E1685A851DB03"
-            {
-            "SourcePath" = "8:..\\..\\TinyXML\\tinystr.cpp"
-            "TargetName" = "8:tinystr.cpp"
-            "Tag" = "8:"
-            "Folder" = "8:_3ACE96D292F8444FBA0E60FDED7F0465"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_21A23266493C43E79F79E8ED6C879685"
-            {
-            "SourcePath" = "8:..\\..\\TinyXML\\tinyxmlparser.cpp"
-            "TargetName" = "8:tinyxmlparser.cpp"
-            "Tag" = "8:"
-            "Folder" = "8:_3ACE96D292F8444FBA0E60FDED7F0465"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_231369F93ACC467DBD7611B4F652A646"
             {
             "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\tinyxmlparser.cpp"
@@ -766,6 +706,26 @@
             "TargetName" = "8:DiRoot.h"
             "Tag" = "8:"
             "Folder" = "8:_F0FFB530D8A94524AFBA45D0DD2CAE8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_301B7CA405B647A19B38F76B939FAB70"
+            {
+            "SourcePath" = "8:..\\TinyXML\\tinystr.h"
+            "TargetName" = "8:tinystr.h"
+            "Tag" = "8:"
+            "Folder" = "8:_3ACE96D292F8444FBA0E60FDED7F0465"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1200,10 +1160,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_811F06E86D20442DB8497A24F27277C9"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_84F4A9C6535E4D4F9BC696787D548984"
             {
-            "SourcePath" = "8:..\\..\\TinyXML\\tinyxml.cpp"
-            "TargetName" = "8:tinyxml.cpp"
+            "SourcePath" = "8:..\\TinyXML\\tinystr.cpp"
+            "TargetName" = "8:tinystr.cpp"
             "Tag" = "8:"
             "Folder" = "8:_3ACE96D292F8444FBA0E60FDED7F0465"
             "Condition" = "8:"
@@ -1360,26 +1320,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A15C5817C2CC46E98FAE3AB236D1A6E5"
-            {
-            "SourcePath" = "8:..\\..\\TinyXML\\tinyxmlerror.cpp"
-            "TargetName" = "8:tinyxmlerror.cpp"
-            "Tag" = "8:"
-            "Folder" = "8:_3ACE96D292F8444FBA0E60FDED7F0465"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A444240BC7354F22B988FA4C30C884CA"
             {
             "SourcePath" = "8:..\\..\\..\\DiSample\\Source\\tinyxml.cpp"
@@ -1406,6 +1346,26 @@
             "TargetName" = "8:main.cpp"
             "Tag" = "8:"
             "Folder" = "8:_271BEF9A10B24A7F9C641E0B613F2076"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A6BBE1A25A8C427B8160165E5DD583EC"
+            {
+            "SourcePath" = "8:..\\TinyXML\\tinyxmlparser.cpp"
+            "TargetName" = "8:tinyxmlparser.cpp"
+            "Tag" = "8:"
+            "Folder" = "8:_3ACE96D292F8444FBA0E60FDED7F0465"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1520,12 +1480,72 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B3C2A6D7EF82446198C13CEA2FA2671E"
+            {
+            "SourcePath" = "8:..\\TinyXML\\tinyxmlerror.cpp"
+            "TargetName" = "8:tinyxmlerror.cpp"
+            "Tag" = "8:"
+            "Folder" = "8:_3ACE96D292F8444FBA0E60FDED7F0465"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BAED7FE3F23C4B3995A5999E8565563C"
+            {
+            "SourcePath" = "8:..\\TinyXML\\tinyxml.cpp"
+            "TargetName" = "8:tinyxml.cpp"
+            "Tag" = "8:"
+            "Folder" = "8:_3ACE96D292F8444FBA0E60FDED7F0465"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BDCBD75C9F1441EEA3E6A94E6025774F"
             {
             "SourcePath" = "8:..\\..\\..\\DiSample\\DiSample.vcxproj"
             "TargetName" = "8:DiSample.vcxproj"
             "Tag" = "8:"
             "Folder" = "8:_4FB3DF764E5F4BC7B28ABE55EBF34E3C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C0F22C424AC24481871324C463301D5A"
+            {
+            "SourcePath" = "8:..\\TinyXML\\tinyxml.h"
+            "TargetName" = "8:tinyxml.h"
+            "Tag" = "8:"
+            "Folder" = "8:_3ACE96D292F8444FBA0E60FDED7F0465"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1606,26 +1626,6 @@
             "TargetName" = "8:DiSelection.inl"
             "Tag" = "8:"
             "Folder" = "8:_F0FFB530D8A94524AFBA45D0DD2CAE8C"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DC3068420D99453B970D5EF74FFD5D82"
-            {
-            "SourcePath" = "8:..\\..\\TinyXML\\tinystr.h"
-            "TargetName" = "8:tinystr.h"
-            "Tag" = "8:"
-            "Folder" = "8:_3ACE96D292F8444FBA0E60FDED7F0465"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2535,7 +2535,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_87E71838AA8644088DEB1133DE19761C"
             {
-            "SourcePath" = "8:..\\..\\DiTree\\DiTree\\obj\\x86\\Release\\DiTree.exe"
+            "SourcePath" = "8:..\\..\\DiTree\\DiTree\\obj\\x86\\Debug\\DiTree.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C552A12E1C9D429494C32D72D79D0112"
@@ -2563,7 +2563,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_AC937891B79D4B9EAFF57D81CDC2B698"
             {
-            "SourcePath" = "8:..\\Release\\DiParser.exe"
+            "SourcePath" = "8:..\\Debug\\DiParser.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C552A12E1C9D429494C32D72D79D0112"

@@ -4,3 +4,5 @@ Presentation
 *.sdf
 *.opensdf
 DiLib 2.0/Source/DiTree/DiTree/obj
+DiLib 2.0/Source/DiLIB Builds
+*.user
