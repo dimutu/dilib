@@ -241,4 +241,7 @@
   <data name="ID_EDIT_DEBUG_BLOCKED" xml:space="preserve">
     <value>Cannot modify during tree is running.</value>
   </data>
+  <data name="ID_EXPORT_SOURCE" xml:space="preserve">
+    <value>Generate and export C++ source from data set on all the trees on this file.</value>
+  </data>
 </root>

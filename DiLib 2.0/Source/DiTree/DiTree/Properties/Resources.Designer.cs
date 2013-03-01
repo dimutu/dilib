@@ -62,10 +62,10 @@ namespace DiTree.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to #include &quot;[CLASS].h&quot;
-        ///#include &quot;DiReturnEnum.h&quot;
+        ///#include &quot;DiReturnEnums.h&quot;
         ///#include &quot;[TEMPLATE].h&quot;
         ///
-        ///[CLASS]::[CLASS]() : [DICLASS]&lt;[TEMPLATE]&gt;()
+        ///[CLASS]::[CLASS]() : DiLib::[DICLASS]&lt;[TEMPLATE]&gt;()
         ///{
         ///}
         ///
@@ -94,10 +94,10 @@ namespace DiTree.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to #include &quot;[CLASS].h&quot;
-        ///#include &quot;DiReturnEnum.h&quot;
+        ///#include &quot;DiReturnEnums.h&quot;
         ///#include &quot;[TEMPLATE].h&quot;
         ///
-        ///[CLASS]::[CLASS]() : [DICLASS]&lt;[TEMPLATE]&gt;()
+        ///[CLASS]::[CLASS]() : DiLib::[DICLASS]&lt;[TEMPLATE]&gt;()
         ///{
         ///}
         ///
@@ -113,11 +113,11 @@ namespace DiTree.Properties {
         ///	if ( !m_pkTimer-&gt;IsRunTime() )
         ///	{
         ///		//time not ready, come back later to execute
-        ///		return DiLib::DI_TASK_RETURNS::DITASK_CALLBACK
+        ///		return DiLib::DI_TASK_RETURNS::DITASK_CALLBACK;
         ///	}
         ///
         ///	//check loop conditions before executing
-        ///	if (m_bIsLoopOn || m_uiRunCycleCount [rest of string was truncated]&quot;;.
+        ///	if (m_bIsLoopOn || m_uiRunC [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string filcpp {
             get {
@@ -133,7 +133,7 @@ namespace DiTree.Properties {
         ///
         ///class [TEMPLATE];
         ///
-        ///class [CLASS] : public [DICLASS]&lt;[TEMPLATE]&gt;
+        ///class [CLASS] : public DiLib::[DICLASS]&lt;[TEMPLATE]&gt;
         ///{
         ///public:
         ///	[CLASS]();
@@ -378,6 +378,15 @@ namespace DiTree.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generate and export C++ source from data set on all the trees on this file..
+        /// </summary>
+        internal static string ID_EXPORT_SOURCE {
+            get {
+                return ResourceManager.GetString("ID_EXPORT_SOURCE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Export tree file from active tree on data file..
         /// </summary>
         internal static string ID_EXPORT_TREE {
@@ -469,10 +478,10 @@ namespace DiTree.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to #include &quot;[CLASS].h&quot;
-        ///#include &quot;DiReturnEnum.h&quot;
+        ///#include &quot;DiReturnEnums.h&quot;
         ///#include &quot;[TEMPLATE].h&quot;
         ///
-        ///[CLASS]::[CLASS]() : [DICLASS]&lt;[TEMPLATE]&gt;()
+        ///[CLASS]::[CLASS]() : DiLib::[DICLASS]&lt;[TEMPLATE]&gt;()
         ///{
         ///}
         ///
@@ -485,15 +494,15 @@ namespace DiTree.Properties {
         ///	DIDEBUGGER_SEND(this);
         ///
         ///	//get current task
-        ///	DiTask&lt;T&gt;* pkTask = *m_itrCurrentTask;
+        ///	DiLib::DiTask&lt;[TEMPLATE]&gt;* pkTask = *m_itrCurrentTask;
         ///	if (pkTask != NULL) //check current task is valie
         ///	{
         ///		int eReturn;
-        ///		eReturn = pkTask-&gt;Execute(a_pkOwner);
+        ///		eReturn = pkTask-&gt;Execute(a_pkObject);
         ///
         ///		switch (eReturn)
         ///		{
-        ///		case DiLib::DI_TASK_RETURNS::DITASK_NEXTTASK: //check needs to get next t [rest of string was truncated]&quot;;.
+        ///		case DiLib::DI_TASK_RETURNS::DITASK_NEXTTASK: // [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string selcpp {
             get {
@@ -503,10 +512,10 @@ namespace DiTree.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to #include &quot;[CLASS].h&quot;
-        ///#include &quot;DiReturnEnum.h&quot;
+        ///#include &quot;DiReturnEnums.h&quot;
         ///#include &quot;[TEMPLATE].h&quot;
         ///
-        ///[CLASS]::[CLASS]() : [DICLASS]&lt;[TEMPLATE]&gt;()
+        ///[CLASS]::[CLASS]() : DiLib::[DICLASS]&lt;[TEMPLATE]&gt;()
         ///{
         ///}
         ///
@@ -523,10 +532,10 @@ namespace DiTree.Properties {
         ///
         ///	m_itrCurrentTask = m_akTaskSequence.begin();
         ///
-        ///	DiTask&lt;T&gt;* pkTask = NULL;
+        ///	DiLib::DiTask&lt;[TEMPLATE]&gt;* pkTask = NULL;
         ///	for (; m_itrCurrentTask != m_akTaskSequence.end(); ++m_itrCurrentTask)
         ///	{
-        ///		pkTask = *m_itrCurrentT [rest of string was truncated]&quot;;.
+        ///	 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string seqcpp {
             get {
@@ -537,10 +546,10 @@ namespace DiTree.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 
         ///#include &quot;[CLASS].h&quot;
-        ///#include &quot;DiReturnEnum.h&quot;
+        ///#include &quot;DiReturnEnums.h&quot;
         ///#include &quot;[TEMPLATE].h&quot;
         ///
-        ///[CLASS]::[CLASS]() : [DICLASS]&lt;[TEMPLATE]&gt;()
+        ///[CLASS]::[CLASS]() : DiLib::[DICLASS]&lt;[TEMPLATE]&gt;()
         ///{
         ///}
         ///
@@ -552,7 +561,7 @@ namespace DiTree.Properties {
         ///{
         ///	DIDEBUGGER_SEND(this);
         ///
-        ///	return DiLib::DI_RETURN_COMPLETE;
+        ///	return DiLib::DITASK_COMPLETE;
         ///}
         ///.
         /// </summary>

@@ -37,6 +37,8 @@ namespace DiTree
                                         ref clearRecentFilesToolStripMenuItem, 
                                         ref emptyRecentFilesToolStripMenuItem,
                                         ref separateRecentToolStripMenuItem);
+            DiRegistry.Initialize();
+            ShowHideToolText();
         }
 
         protected override void OnLoad(EventArgs e)
@@ -825,6 +827,40 @@ namespace DiTree
             }
         }
 
+        private void showToolTextToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DiRegistry.ShowToolText = !DiRegistry.ShowToolText;
+            ShowHideToolText();
+        }
 
+        private void ShowHideToolText()
+        {
+            foreach (ToolStripItem tb in toolStripMain.Items)
+            {
+                if (tb == debugSpeedtoolStrip)
+                {
+                    continue;
+                }
+                if (DiRegistry.ShowToolText)
+                {
+                    tb.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+                    trackBarDebugSpeed.Location = new Point(553, 30);
+                }
+                else
+                {
+                    tb.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                    trackBarDebugSpeed.Location = new Point(345, 25);
+                }
+            }
+            showToolTextToolStripMenuItem.Checked = DiRegistry.ShowToolText;
+            if (DiRegistry.ShowToolText)
+            {
+                showToolTextToolStripMenuItem.CheckState = CheckState.Checked;
+            }
+            else
+            {
+                showToolTextToolStripMenuItem.CheckState = CheckState.Unchecked;
+            }
+        }
     }
 }
