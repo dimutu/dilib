@@ -31,7 +31,9 @@
 <h4>Known Issues</h4>
 - Unfortunately previous version files are not supported.
 - While debugging in UI, opening Console Output Window can slowdown the program drastically.
-- No C++ library for Visual Studio 2008
+- No C++ library for Visual Studio 2008.
+- Tree Creator UI Move Nodes Left and Right commands are disabled.
+- Preferences are disabled.
 	
 <h3>Version 1.0.0</h3>
 Startup version.

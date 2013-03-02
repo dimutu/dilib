@@ -7,7 +7,7 @@
 	Path to DiParser contains spacing and command line unable to find the file. Use qoutes around the path 
 	ie: "[Path]\DiParser.exe" "Config.diconfig" "MySourceDir"
 	
-\li <b>'C:\Program' is not recognized as an internal or external command</b>
+\li <b>'C:\\Program' is not recognized as an internal or external command</b>
 	Path to DiParser contains spacing and command line unable to find the file. Use qoutes around the path 
 	ie: "[Path]\DiParser.exe" "Config.diconfig" "MySourceDir"
 
@@ -33,6 +33,12 @@
 \li <b>When debugging start, sometimes C++ project hangs at start and don't see any execution.</b> <br />
 	On occations this could happen due debugger not connected properly between the UI and C++ project, you can break the game and step through to avoid
 	 this deadlock and once you select Continue Debug it will go back to normal execution. This issue will be addressed in coming release.
+	 
+\li <b>fatal error C1047: The object or library file 'DiLib.lib' was created with an older compiler than other objects; rebuild old objects and libraries<br/>
+fatal error LNK1257: code generation failed</b>
+	You are linking VS2010 library when building a VS2012 project, change Project Properties --> VC++ Directories --> Library Path to <br>
+	\$(DILIB_DIR)libs\\vs2012
+	
 <p>
 If what you looking for isn't here, or have other queries you can send your comments to <a href="mailto:dilib@dimutu.com">dilib@dimutu.com</a> and I will to get back to with an answer.
 </p>
