@@ -278,7 +278,7 @@
             // 
             this.exportConfigFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exportConfigFileToolStripMenuItem.Image")));
             this.exportConfigFileToolStripMenuItem.Name = "exportConfigFileToolStripMenuItem";
-            this.exportConfigFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportConfigFileToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.exportConfigFileToolStripMenuItem.Tag = "ID_EXPORT_CONFIG";
             this.exportConfigFileToolStripMenuItem.Text = "Config File";
             this.exportConfigFileToolStripMenuItem.Click += new System.EventHandler(this.exportConfigFileToolStripMenuItem_Click);
@@ -289,7 +289,7 @@
             // 
             this.exportTreeFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exportTreeFileToolStripMenuItem.Image")));
             this.exportTreeFileToolStripMenuItem.Name = "exportTreeFileToolStripMenuItem";
-            this.exportTreeFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportTreeFileToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.exportTreeFileToolStripMenuItem.Tag = "ID_EXPORT_TREE";
             this.exportTreeFileToolStripMenuItem.Text = "Tree File";
             this.exportTreeFileToolStripMenuItem.Click += new System.EventHandler(this.exportTreeFileToolStripMenuItem_Click);
@@ -300,7 +300,7 @@
             // 
             this.exportCppToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exportCppToolStripMenuItem.Image")));
             this.exportCppToolStripMenuItem.Name = "exportCppToolStripMenuItem";
-            this.exportCppToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportCppToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.exportCppToolStripMenuItem.Tag = "ID_EXPORT_SOURCE";
             this.exportCppToolStripMenuItem.Text = "C++ Source";
             this.exportCppToolStripMenuItem.Click += new System.EventHandler(this.exportCppToolStripMenuItem_Click);
@@ -1079,8 +1079,8 @@
             // debugSpeedtoolStrip
             // 
             this.debugSpeedtoolStrip.Name = "debugSpeedtoolStrip";
-            this.debugSpeedtoolStrip.Size = new System.Drawing.Size(101, 43);
-            this.debugSpeedtoolStrip.Text = "Debugging Speed";
+            this.debugSpeedtoolStrip.Size = new System.Drawing.Size(115, 43);
+            this.debugSpeedtoolStrip.Text = "                                    ";
             // 
             // toolStripSeparator1
             // 
@@ -1147,10 +1147,10 @@
             // 
             this.trackBarDebugSpeed.AutoSize = false;
             this.trackBarDebugSpeed.LargeChange = 100;
-            this.trackBarDebugSpeed.Location = new System.Drawing.Point(553, 29);
+            this.trackBarDebugSpeed.Location = new System.Drawing.Point(556, 30);
             this.trackBarDebugSpeed.Maximum = 500;
             this.trackBarDebugSpeed.Name = "trackBarDebugSpeed";
-            this.trackBarDebugSpeed.Size = new System.Drawing.Size(94, 30);
+            this.trackBarDebugSpeed.Size = new System.Drawing.Size(101, 30);
             this.trackBarDebugSpeed.SmallChange = 20;
             this.trackBarDebugSpeed.TabIndex = 6;
             this.trackBarDebugSpeed.Tag = "ID_DEBUG_SPEED";

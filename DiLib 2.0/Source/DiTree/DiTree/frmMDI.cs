@@ -845,7 +845,7 @@ namespace DiTree
                 if (DiRegistry.ShowToolText)
                 {
                     tb.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
-                    trackBarDebugSpeed.Location = new Point(553, 30);
+                    trackBarDebugSpeed.Location = new Point(556, 30);
                 }
                 else
                 {
