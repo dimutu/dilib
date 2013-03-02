@@ -25,6 +25,7 @@ namespace DiTree
         public frmMDI()
         {
             InitializeComponent();
+            DiRegistry.Initialize();
             m_frmSelectTree = new frmSelectExportTree();
             m_frmConsole = new frmConsole();
             m_frmTaskView = new frmTaskView();
@@ -37,7 +38,7 @@ namespace DiTree
                                         ref clearRecentFilesToolStripMenuItem, 
                                         ref emptyRecentFilesToolStripMenuItem,
                                         ref separateRecentToolStripMenuItem);
-            DiRegistry.Initialize();
+            
             ShowHideToolText();
         }
 
@@ -861,6 +862,11 @@ namespace DiTree
             {
                 showToolTextToolStripMenuItem.CheckState = CheckState.Unchecked;
             }
+        }
+
+        private void toolStripBtnExportSource_Click(object sender, EventArgs e)
+        {
+            ExportSource();
         }
     }
 }

@@ -21,7 +21,8 @@ namespace DiTree
         public frmExportSource()
         {
             InitializeComponent();
-            txtPath.Text = Directory.GetCurrentDirectory();
+            txtPath.Text = DiRegistry.ExportSourcePath;
+            folderDlgSource.SelectedPath = DiRegistry.ExportSourcePath;
         }
 
         public void SetData(DiDataHanlder a_pkDataHandler)
@@ -62,9 +63,10 @@ namespace DiTree
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            if (folderDlgSource.ShowDialog() == System.Windows.Forms.DialogResult.Yes)
+            if (folderDlgSource.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 txtPath.Text = folderDlgSource.SelectedPath;
+                DiRegistry.ExportSourcePath = txtPath.Text;
             }
         }
 

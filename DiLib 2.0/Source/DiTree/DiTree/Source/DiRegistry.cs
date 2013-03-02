@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Win32;
+using System.IO;
 
 namespace DiTree
 {
@@ -13,6 +14,7 @@ namespace DiTree
 
         private static bool m_bShowToolText;
         private static bool m_bInitialized = false; //to avoid getting init when opening multiple windows
+        private static string m_zSourceExportPath; //last place source exported
 
         public static void Initialize()
         {
@@ -32,6 +34,18 @@ namespace DiTree
                 {
                     m_bShowToolText = true;
                 }
+
+                m_zSourceExportPath = "";
+                val = m_kRegMain.GetValue("ExportSourcePath");
+                if (val != null)
+                {
+                    m_zSourceExportPath = val.ToString();
+                }
+                if (!Directory.Exists(m_zSourceExportPath))
+                {
+                    m_zSourceExportPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+                }
+
                 m_bInitialized = true;
             }
         }
@@ -46,6 +60,19 @@ namespace DiTree
             {
                 m_bShowToolText = value;
                 m_kRegMain.SetValue("ShowToolText", m_bShowToolText);
+            }
+        }
+
+        public static string ExportSourcePath
+        {
+            get
+            {
+                return m_zSourceExportPath;
+            }
+            set
+            {
+                m_zSourceExportPath = value;
+                m_kRegMain.SetValue("ExportSourcePath", m_zSourceExportPath);
             }
         }
     }

@@ -16,3 +16,9 @@ DiLib 2.0/Source/DiTree/DiTree/bin
 DiLib 2.0/Source/Release
 DiSample/Debug
 libbuild.bat
+DiLib 2.0/Source/DiLibInstaller/DiInstaller/Debug
+DiLib 2.0/Source/DiLibInstaller/DiInstaller/DiInstaller/Release
+DiLib 2.0/Source/DiLibInstaller/DiInstaller/Release
+DiLib 2.0/Source/DiParser/Debug
+DiLib 2.0/Source/DiParser/Release
+Installer
