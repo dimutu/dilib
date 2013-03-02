@@ -3,13 +3,13 @@
 <p>Download the latest version from the <a href="../download.php">download</a> page.</p>
 <p><b>**NOTE: </b>Please restart the computer after installation.</p>
 
-\section sys_req System Requirements
+\section sys_req Minimum Requirements
 
-\li Windows XP SP2 or higher
+\li Windows XP SP2
 \li .NET Framework 4.0
 \li 1 GHz or higher CPU
 \li 512Mb Memory
-\li 30Mb Hard Disk space
+\li 100Mb Hard Disk space
 
 \section dependencies Dependencies
 

@@ -22,3 +22,5 @@ DiLib 2.0/Source/DiLibInstaller/DiInstaller/Release
 DiLib 2.0/Source/DiParser/Debug
 DiLib 2.0/Source/DiParser/Release
 Installer
+DiLib 2.0/Source/DiLibInstaller/DiInstaller/ipch
+DiSampleVS2012

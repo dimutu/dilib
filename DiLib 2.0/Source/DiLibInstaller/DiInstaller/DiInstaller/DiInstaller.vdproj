@@ -219,12 +219,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_827B886DCB3B4005951BDF7375015962"
-        "OwnerKey" = "8:_EAEEE51518ED4B899377BF979BD3677C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_83B0004F98A44A9EB39CF8FDD0CA512E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -2314,7 +2308,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_183668A83576429AB92C0BB50E178938"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_34ED74ABB9DA4C579F5F701FD75FA0A1"
             {
             "Name" = "8:DiLIB 2.0 Tree Creator"
             "Arguments" = "8:"
@@ -2322,7 +2316,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_EAEEE51518ED4B899377BF979BD3677C"
+            "Target" = "8:_A571FB8A1E684B53BAEB0D9BC4F49203"
             "Folder" = "8:_49697740E5344C5B9A6E8684441B403A"
             "WorkingFolder" = "8:_137DC49381B543659F4D7C93D990473E"
             "Icon" = "8:_34C8360F720046FF8187DB2E26212DA0"
@@ -2656,20 +2650,6 @@
         }
         "MergeModule"
         {
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_827B886DCB3B4005951BDF7375015962"
-            {
-            "UseDynamicProperties" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:Microsoft_VC100_CRT_x86.msm"
-                "Properties"
-                {
-                }
-            "LanguageId" = "3:0"
-            "Exclude" = "11:FALSE"
-            "Folder" = "8:"
-            "Feature" = "8:"
-            "IsolateTo" = "8:"
-            }
         }
         "ProjectOutput"
         {

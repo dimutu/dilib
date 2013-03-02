@@ -1,9 +1,10 @@
 /*! \mainpage Overview
 
-\section changelog Change Log
+DiLIB is a behavior tree library with tools to implement it over user interface aimed for C++ programmers.
 
 \image html ditree-overview.jpg
 
+\section changelog Change Log
 <h3>Version 2.0.0a</h3>
 - UI
 	-# Highly improved tree creating user interface.
