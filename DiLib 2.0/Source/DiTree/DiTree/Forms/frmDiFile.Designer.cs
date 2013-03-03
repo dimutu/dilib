@@ -344,7 +344,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "frmDiFile";
-            this.Text = "frmDiFile";
+            this.Text = "New DiData File";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDiFile_KeyDown);
             this.tabPageGeneral.ResumeLayout(false);
             this.tabPageGeneral.PerformLayout();

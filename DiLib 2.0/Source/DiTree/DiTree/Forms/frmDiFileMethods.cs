@@ -330,6 +330,16 @@ namespace DiTree
         {
             try
             {
+                int iCount = 0;
+                TabPage defaulttab = null;
+                //remove the default tab adding at start
+                for (iCount = TABSTART_INDEX; iCount < tabDiFile.TabCount; ++iCount)
+                {
+                    defaulttab = tabDiFile.TabPages[iCount];
+                    tabDiFile.TabPages.Remove(defaulttab);
+                }
+                defaulttab = null;
+
                 Text = Path.GetFileName(a_zFilePath);
                 XmlReader reader = XmlReader.Create(a_zFilePath);
 

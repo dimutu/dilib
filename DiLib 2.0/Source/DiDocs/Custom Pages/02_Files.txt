@@ -8,7 +8,7 @@ Installation folder file structure
 |----- TinyXML (Source files of the library) <br />
 | <br />
 |-- <b>bin</b> <br />
-|-----DiParser.exe (Parser command line executable use on DiConfig file) <br />
+|----- DiParser.exe (Parser command line executable use on DiConfig file) <br />
 |----- DiTree.exe (Tree creating windows application) <br />
 | <br />
 |-- <b>includes</b> (DiLib C++ source files) <br />
@@ -16,11 +16,9 @@ Installation folder file structure
 |-- <b>libs</b> (DiLib C++ libraries for debug and release builds for VS2010) <br />
 |----- DiLibDebug.lib <br />
 |----- DiLib.lib <br />
-|----- vc100.pdb
-|--------<b>vs2012</b> (C++ libraries for VS2012)
+|--------<b>vs2012</b> (C++ libraries for VS2012) <br />
 |----------- DiLibDebug.lib <br />
 |----------- DiLib.lib <br />
-|----------- vc110.pdb
 | <br />
 |-- <b>samples</b>
 

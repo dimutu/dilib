@@ -10,7 +10,7 @@ namespace DiTree
     public class DiRecentFileManager
     {
         private const int MAXCHARLENGTH = 50;
-        private const int MAXCOUNT = 10;
+        private const int MAXCOUNT = 2;
         private string m_zSubKeyName = "DiLib";
         private frmMDI m_kMDI;
         private ToolStripMenuItem m_kParentMenuItem;
@@ -54,45 +54,53 @@ namespace DiTree
 
         public void AddRecentFile(string a_zFileName)
         {
-            string[] list = m_kRecentSub.GetValueNames();
-            string value;
-            bool bNew = true;
-            int i = 0;
-
-            foreach (string str in list)
+            try
             {
-                value = (string)m_kRecentSub.GetValue(str);
-                if (value == a_zFileName)
+                string[] list = m_kRecentSub.GetValueNames();
+                string value;
+                bool bNew = true;
+                int i = 0;
+
+                foreach (string str in list)
                 {
-                    bNew = false;
-                    break;
+                    value = (string)m_kRecentSub.GetValue(str);
+                    if (value == a_zFileName)
+                    {
+                        bNew = false;
+                        break;
+                    }
+                }
+
+                if (bNew)
+                {
+                    if (list.Length >= MAXCOUNT) //maximum reached, remove first
+                    {
+                        list = m_kRecentSub.GetValueNames();
+                        for (i = 0; i <= list.Length - 2; ++i)
+                        {
+                            m_kRecentSub.SetValue(list[i], (string)m_kRecentSub.GetValue(list[i + 1]));
+                        }
+                        string delval = (string)m_kRecentSub.GetValue( list[list.Length - 1]);
+                        m_kRecentSub.DeleteValue(list[list.Length - 1]);
+
+                        //remove from menu
+                        foreach (ToolStripItem menu in m_kParentMenuItem.DropDownItems)
+                        {
+                            if (menu.Text == delval)
+                            {
+                                m_kParentMenuItem.DropDownItems.Remove(menu);
+                                break;
+                            }
+                        }
+                    }
+                    m_kRecentSub.SetValue((m_kRecentSub.ValueCount).ToString(), a_zFileName);
+                    AddMenuItem(a_zFileName);
+                    ShowDefault();
                 }
             }
-
-            if (bNew)
+            catch (Exception ex)
             {
-                if (list.Length >= MAXCOUNT) //maximum reached, remove first
-                {
-                    list = m_kRecentSub.GetValueNames();
-                    foreach (string str in list)
-                    {
-                        m_kRecentSub.DeleteValue(str);
-                    }
-                    i = 0; 
-                    foreach (string str in list)
-                    {
-                        if (i == 0)
-                        {
-                            i++;
-                            continue;
-                        }
-                        m_kRecentSub.SetValue(m_kRecentSub.ValueCount.ToString(), str);
-                    }
-                }
-
-                m_kRecentSub.SetValue(m_kRecentSub.ValueCount.ToString(), a_zFileName);
-                AddMenuItem(a_zFileName);
-                ShowDefault();
+                DiMethods.SetErrorLog(ex);
             }
         }
 
@@ -145,6 +153,7 @@ namespace DiTree
             menu.Tag = a_zFileName;
             menu.Click += toolStripRecentFile_Click;
         }
+            
 
         private void toolStripRecentFile_Click(object sender, EventArgs e)
         {

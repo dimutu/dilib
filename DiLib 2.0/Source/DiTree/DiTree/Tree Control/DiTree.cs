@@ -50,6 +50,7 @@ namespace DiTree
             InitializeComponent();
             InitializeControl();
             EnableControls(false);
+            errorProviderStart.SetError(txtTemplateClass, Properties.Resources.ID_INFO_TEMPLATE_NAME);
         }
         
         /// <summary>
@@ -300,6 +301,7 @@ namespace DiTree
 
         private void btnSetTemplate_Click(object sender, EventArgs e)
         {
+            errorProviderStart.Dispose();
             SetTemplateClass();
         }
 

@@ -396,6 +396,15 @@ namespace DiTree.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter C++ Template Class name here and click Set Template to begin creating the behavior tree..
+        /// </summary>
+        internal static string ID_INFO_TEMPLATE_NAME {
+            get {
+                return ResourceManager.GetString("ID_INFO_TEMPLATE_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Move currently selected tree node..
         /// </summary>
         internal static string ID_MOVE_TASK {

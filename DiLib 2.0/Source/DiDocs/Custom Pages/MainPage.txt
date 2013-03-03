@@ -4,17 +4,52 @@ DiLIB is a behavior tree library with tools to implement it over user interface 
 
 \image html ditree-overview.jpg
 
+\section intro_class_overview Classes Introduction
+
+All the classes used for implementing the behavior tree are templated for the objects is use, and most classes can use from its default behaviors 
+but all of these classes can implement and overridden to use how ever it is needed to be.
+
+\li \link DiLib::DiTask DiTask \endlink
+		\image html "DiTask.jpg" 
+		This the base class for all other classes. This class cannot be use as it is and must be implemented into its own class to use.
+		<br />
+		
+\li \link DiLib::DiFilter DiFilter \endlink
+		\image html "DiFilter.jpg" 
+		This is for executing code between time intervals and can use as is. Can set the time interval from UI and it will execute the child task inside on evertime the interval triggers.
+		<br />
+		
+\li \link DiLib::DiCondition DiCondition \endlink
+		\image html "DiCondition.jpg" 
+		This can explain as IF condition for the tree, has two child tasks which can trigger on a condition. Must be implemented to use from the base class.
+		<br />
+		
+\li \link DiLib::DiSequence DiSequence \endlink
+		\image html "DiSequence.jpg" 
+		This is a FOR LOOP, a collection of tasks which will execute all its child tasks in single execution, and can use as is without implementation.
+		<br />
+		
+\li \link DiLib::DiSelection DiSelection \endlink
+		\image html "DiSelection.jpg" 
+		This is the SWITCH statement for the tree, and default implementation only executes single task and move on to next.
+		<br />
+		
+\li \link DiLib::DiRoot DiRoot \endlink
+		\image html "DiRoot.jpg" 
+		This is root of the tree and has the main execute function gets called from the main update. Default execution style is match to DiSlection but can be implement to reflect other styles.
+		<br />
+		
 \section changelog Change Log
 <h3>Version 2.0.0a</h3>
 - UI
 	-# Highly improved tree creating user interface.
 	-# No data setup before creating tree.
-	-# Ability to view and remove unused node data.
+	-# Generate C++ source files from nodes placed in the tree.
 	-# Debugging \link debug_breaks breakpoint \endlink placement in the user interface.
 	-# Set time delay between each task execution for more slowdown version of tree execution.
 	-# Enter task execute return types and DiParser makes new DiReturnTypes.h
-	-# Generate C++ source files from nodes placed in the tree.
 	-# Recently used files.
+	-# Ability to view and remove unused node data.
 	-# Bug fixes.
 
 - C++ Codebase

@@ -244,4 +244,7 @@
   <data name="ID_EXPORT_SOURCE" xml:space="preserve">
     <value>Generate and export C++ source from data set on all the trees on this file.</value>
   </data>
+  <data name="ID_INFO_TEMPLATE_NAME" xml:space="preserve">
+    <value>Enter C++ Template Class name here and click Set Template to begin creating the behavior tree.</value>
+  </data>
 </root>

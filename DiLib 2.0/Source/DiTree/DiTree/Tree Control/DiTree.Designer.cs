@@ -58,6 +58,7 @@
             this.listTaskTypes = new System.Windows.Forms.ListView();
             this.propertyGridTask = new System.Windows.Forms.PropertyGrid();
             this.toolTipTreeNode = new System.Windows.Forms.ToolTip(this.components);
+            this.errorProviderStart = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitTreeProperties)).BeginInit();
             this.splitTreeProperties.Panel1.SuspendLayout();
             this.splitTreeProperties.Panel2.SuspendLayout();
@@ -71,6 +72,7 @@
             this.splitProperties.Panel1.SuspendLayout();
             this.splitProperties.Panel2.SuspendLayout();
             this.splitProperties.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderStart)).BeginInit();
             this.SuspendLayout();
             // 
             // splitTreeProperties
@@ -114,7 +116,7 @@
             // 
             // btnSetTemplate
             // 
-            this.btnSetTemplate.Location = new System.Drawing.Point(294, 9);
+            this.btnSetTemplate.Location = new System.Drawing.Point(298, 9);
             this.btnSetTemplate.Name = "btnSetTemplate";
             this.btnSetTemplate.Size = new System.Drawing.Size(85, 26);
             this.btnSetTemplate.TabIndex = 1;
@@ -370,6 +372,12 @@
             this.propertyGridTask.TabIndex = 0;
             this.propertyGridTask.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.propertyGridTask_PropertyValueChanged);
             // 
+            // errorProviderStart
+            // 
+            this.errorProviderStart.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.errorProviderStart.ContainerControl = this;
+            this.errorProviderStart.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderStart.Icon")));
+            // 
             // DiTree
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -391,6 +399,7 @@
             this.splitProperties.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitProperties)).EndInit();
             this.splitProperties.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderStart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -425,6 +434,7 @@
         private System.Windows.Forms.ToolStripMenuItem sequenceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectionToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTipTreeNode;
+        private System.Windows.Forms.ErrorProvider errorProviderStart;
 
     }
 }

@@ -22,6 +22,8 @@ namespace DiTree
         {
             InitializeComponent();
             InitializeGeneral();
+            AddNewTreeTab();
+            tabDiFile.SelectedIndex = 1;
             EnableTabCloseButton();
         }
 

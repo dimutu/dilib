@@ -321,6 +321,7 @@ namespace DiTree
         {
             try
             {
+                errorProviderStart.Dispose();
                 //create the tree node
                 txtTemplateClass.Text = reader[DiXMLElements.XMLELEMENT_TEMPLATECLASS];
                 EnableControls(true); //set template class and enable the tree
