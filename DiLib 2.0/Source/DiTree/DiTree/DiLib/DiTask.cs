@@ -57,7 +57,7 @@ namespace DiTree
         }
 
         [Category("Task"), TypeConverter( typeof(DiStringAutoComplete)),
-        Description("Name of the inherited class name you created from the base class.")]
+        Description("Name of the inherited class created from the base class.")]
         public string ClassName
         {
             get
@@ -74,7 +74,12 @@ namespace DiTree
             }
         }
 
-        [Category("Task"), ReadOnly(true), 
+        [Category("Task"),
+#if DEBUG
+        ReadOnly(true), 
+#else
+        Browsable(false),
+#endif
         Description("Unique identifier for each tree node to use in debugging.")] 
         public long DebuggerID
         {
@@ -103,7 +108,7 @@ namespace DiTree
 
         [Category("Task"),
         Editor(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor)),
-        Description("Script file which uses to run the commands inside this class")]
+        Description("Script file path uses to run any additional instructions or data for the implementing task.")]
         public string ScriptFile
         {
             get

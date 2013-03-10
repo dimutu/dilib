@@ -30,7 +30,7 @@ namespace DiTree
 
         [Category("Condition"), 
         TypeConverter(typeof(DiTaskTypeConverter)),
-        Description("Task to execute when the condition is met.")]
+        Description("Task to execute when the condition is satisfied or true.")]
         public string TrueTask
         {
             get
@@ -61,7 +61,7 @@ namespace DiTree
 
         [Category("Condition"),
         TypeConverter(typeof(DiTaskTypeConverter)),
-        Description("Task to execute when the condition unsatisfied.")]
+        Description("Task to execute when the condition unsatisfied or false.")]
         public string FalseTask
         {
             get

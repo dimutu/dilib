@@ -30,7 +30,7 @@ namespace DiTree
         }
 
         [Category("Filter"),
-        Description("Task to run when the filter conditions are met")]
+        Description("Task to run when the filtering time has met.")]
         public DiTask Task
         {
             get
@@ -44,7 +44,7 @@ namespace DiTree
         }
 
         [Category("Filter"),
-        Description("The task needs to run in a continuous loop.")]
+        Description("Sets the task should run in a loop.")]
         public bool LoopOn
         {
             get
@@ -58,7 +58,7 @@ namespace DiTree
         }
 
         [Category("Filter"),
-        Description("If not in a loop, maximum times the task should get executed.")]
+        Description("If not in a loop, maximum times the task should get executed. This only works if LoopOn property is false.")]
         public uint MaxRunCycles
         {
             get
@@ -72,7 +72,7 @@ namespace DiTree
         }
 
         [Category("Filter"),
-        Description("Time interval between each execution in milliseconds")]
+        Description("Time interval between each execution in milliseconds.")]
         public double TimerInterval
         {
             get
