@@ -20,9 +20,7 @@ namespace DiTree
 
         private static bool m_bIsConnected = false;
         private static bool m_bDebugOn = false; //is c# is debuggin the c++ code(true) or default just showing where the c++ currently executing (false)
-        private static bool m_bDebugNextOn = false; //is next button pressed
-        private static bool m_bDebugView = false; //ability to see where the current nodes are executing
-        private static bool m_bIsListening = false;
+       private static bool m_bIsListening = false;
         private static bool m_bLogDebugInfo = true;
 
         private static bool m_bIsBreak = false; //flag break is selected from menu, then use that as a breakpoint on whatever current location is
@@ -30,7 +28,11 @@ namespace DiTree
 
         private static int m_iDebugSpeed = 0; //debug speed to slow down the visual speed
         private static bool m_bIsFirstRun = true; //flag first run after connection establish, this is to set a delay between connection start and first update
+        private static bool m_bDisableBreakpoints = false;
 
+        /// <summary>
+        /// Debugger connected to C++ source
+        /// </summary>
         public static bool IsConnected
         {
             get
@@ -43,6 +45,9 @@ namespace DiTree
             }
         }
 
+        /// <summary>
+        /// Debugging is break and using Step functions
+        /// </summary>
         public static bool IsDebugging
         {
             get
@@ -55,30 +60,9 @@ namespace DiTree
             }
         }
 
-        public static bool IsDebugNextOn
-        {
-            get
-            {
-                return m_bDebugNextOn;
-            }
-            set
-            {
-                m_bDebugNextOn = value;
-            }
-        }
-
-        public static bool IsDebugViewable
-        {
-            get
-            {
-                return m_bDebugView;
-            }
-            set
-            {
-                m_bDebugView = value;
-            }
-        }
-
+        /// <summary>
+        /// Currently waiting for C++ source to connect
+        /// </summary>
         public static bool IsListening
         {
             get
@@ -163,6 +147,21 @@ namespace DiTree
             set
             {
                 m_bIsFirstRun = value;
+            }
+        }
+
+        /// <summary>
+        /// Currently set breakpoints are disabled and gets ignored
+        /// </summary>
+        public static bool DisableBreakpoints
+        {
+            get
+            {
+                return m_bDisableBreakpoints;
+            }
+            set
+            {
+                m_bDisableBreakpoints = value;
             }
         }
     }

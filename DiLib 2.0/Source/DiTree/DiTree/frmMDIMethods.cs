@@ -228,5 +228,11 @@ namespace DiTree
 
             }
         }
+
+        private void ToggleDisableBreakpoints()
+        {
+            DiGlobals.DisableBreakpoints = !DiGlobals.DisableBreakpoints;
+            disableBreakpointsToolStripMenuItem.Checked = DiGlobals.DisableBreakpoints;
+        }
     }
 }

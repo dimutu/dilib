@@ -36,16 +36,6 @@ namespace DiTree
                         {
                             DiTree pkTree = tabActive.Tree;
                             DiTreeNode node  = pkTree.SetDebugger(a_lDebugTaskID);
-                            //if (!DiGlobals.IsDebugging)
-                            //{
-                            //    pkTree.SetDebugger(a_lDebugTaskID);
-                            //}
-                            //else if (DiGlobals.IsDebugging && DiGlobals.IsDebugNextOn)
-                            //{
-                            //    pkTree.SetDebugger(a_lDebugTaskID);
-                            //    DiGlobals.IsDebugNextOn = false; //reset flag after updating tree current pos
-                            //}
-
                             //send node is updated back to C++
                             return node;
                         }

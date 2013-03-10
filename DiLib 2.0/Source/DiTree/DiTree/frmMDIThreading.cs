@@ -321,7 +321,7 @@ namespace DiTree
                                             case DICLASSTYPES.DICLASSTYPE_TASK:
                                                 str = "DiTask"; break;
                                             default:
-                                                str = "Unknow Task"; break;
+                                                str = "Unknown Task"; break;
                                         };
                                         m_frmConsole.addOutputText(str + ":" + node.DebuggerID + " : " + a_kDebugData.m_zDebugTreeID + " : " + a_kDebugData.m_lDebugTaskID.ToString(), true);
                                         bUpdated = true;
@@ -364,15 +364,7 @@ namespace DiTree
             if (DiGlobals.IsDebugging)
             {
                 //debgging started
-                DiGlobals.IsDebugNextOn = true;
                 DiGlobals.IsBreak = true;
-
-                //on debug through UI must have the viewable on
-                if (!DiGlobals.IsDebugViewable)
-                {
-                    DiGlobals.IsDebugViewable = true;
-                }
-
             }
             else
             {
@@ -391,7 +383,6 @@ namespace DiTree
             if (DiGlobals.IsDebugging)
             {
                 SendDebugCommands(DIDEBUGCONTROLS.DIDEBUGCONTROL_NEXTTASK);
-                DiGlobals.IsDebugNextOn = true; //flag so the tree can see that next update to set tree
             }
         }
         /// <summary>
@@ -442,7 +433,7 @@ namespace DiTree
                 {
                     DiDebugControl kDebugControl = new DiDebugControl();
                     bool debug = DiGlobals.IsDebugging;
-                    if (a_pkTask.Breakpoint)
+                    if (a_pkTask.Breakpoint && !DiGlobals.DisableBreakpoints)
                     {
                         kDebugControl.m_eCommand = DIDEBUGCONTROLS.DIDEBUGCONTROL_BREAKPOINT;
                         DiGlobals.IsDebugging = true;

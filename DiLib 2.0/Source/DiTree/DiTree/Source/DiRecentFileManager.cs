@@ -10,7 +10,7 @@ namespace DiTree
     public class DiRecentFileManager
     {
         private const int MAXCHARLENGTH = 50;
-        private const int MAXCOUNT = 2;
+        private const int MAXCOUNT = 10;
         private string m_zSubKeyName = "DiLib";
         private frmMDI m_kMDI;
         private ToolStripMenuItem m_kParentMenuItem;

@@ -868,5 +868,11 @@ namespace DiTree
         {
             ExportSource();
         }
+
+        private void disableBreakpointsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToggleDisableBreakpoints();
+
+        }
     }
 }

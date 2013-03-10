@@ -133,6 +133,7 @@
             this.saveConfigFile = new System.Windows.Forms.SaveFileDialog();
             this.saveTreeFile = new System.Windows.Forms.SaveFileDialog();
             this.trackBarDebugSpeed = new System.Windows.Forms.TrackBar();
+            this.disableBreakpointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripMDI.SuspendLayout();
             this.menuMDI.SuspendLayout();
             this.toolStripMain.SuspendLayout();
@@ -145,7 +146,7 @@
             this.toolStripStatusMessage});
             this.statusStripMDI.Location = new System.Drawing.Point(0, 525);
             this.statusStripMDI.Name = "statusStripMDI";
-            this.statusStripMDI.Size = new System.Drawing.Size(850, 22);
+            this.statusStripMDI.Size = new System.Drawing.Size(893, 22);
             this.statusStripMDI.TabIndex = 1;
             // 
             // toolStripStatusMessage
@@ -168,7 +169,7 @@
             this.menuMDI.Location = new System.Drawing.Point(0, 0);
             this.menuMDI.MdiWindowListItem = this.windowToolStripMenuItem;
             this.menuMDI.Name = "menuMDI";
-            this.menuMDI.Size = new System.Drawing.Size(850, 24);
+            this.menuMDI.Size = new System.Drawing.Size(893, 24);
             this.menuMDI.TabIndex = 2;
             // 
             // fileToolStripMenuItem
@@ -627,6 +628,7 @@
             this.toolStripMenuItem8,
             this.toggleBreakpointToolStripMenuItem,
             this.deleteAllBreakpointsToolStripMenuItem,
+            this.disableBreakpointsToolStripMenuItem,
             this.toolStripMenuItem9,
             this.logToConsoleToolStripMenuItem});
             this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
@@ -912,7 +914,7 @@
             this.toolStripBtnNodeMoveRight});
             this.toolStripMain.Location = new System.Drawing.Point(0, 24);
             this.toolStripMain.Name = "toolStripMain";
-            this.toolStripMain.Size = new System.Drawing.Size(850, 46);
+            this.toolStripMain.Size = new System.Drawing.Size(893, 46);
             this.toolStripMain.TabIndex = 4;
             this.toolStripMain.Text = "Standard";
             // 
@@ -1159,12 +1161,19 @@
             this.trackBarDebugSpeed.MouseEnter += new System.EventHandler(this.showHelptoolStrip);
             this.trackBarDebugSpeed.MouseLeave += new System.EventHandler(this.hideHelptoolStrip);
             // 
+            // disableBreakpointsToolStripMenuItem
+            // 
+            this.disableBreakpointsToolStripMenuItem.Name = "disableBreakpointsToolStripMenuItem";
+            this.disableBreakpointsToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
+            this.disableBreakpointsToolStripMenuItem.Text = "Disable Breakpoints";
+            this.disableBreakpointsToolStripMenuItem.Click += new System.EventHandler(this.disableBreakpointsToolStripMenuItem_Click);
+            // 
             // frmMDI
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 547);
+            this.ClientSize = new System.Drawing.Size(893, 547);
             this.Controls.Add(this.trackBarDebugSpeed);
             this.Controls.Add(this.toolStripMain);
             this.Controls.Add(this.statusStripMDI);
@@ -1298,6 +1307,7 @@
         private System.Windows.Forms.ToolStripMenuItem showToolTextToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem disableBreakpointsToolStripMenuItem;
     }
 }
 
