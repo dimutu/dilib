@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DiParser", "DiParser.vcxproj", "{522B7B83-8834-4306-9D4B-4F6F33353449}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{522B7B83-8834-4306-9D4B-4F6F33353449}.Debug|Win32.ActiveCfg = Debug|Win32
+		{522B7B83-8834-4306-9D4B-4F6F33353449}.Debug|Win32.Build.0 = Debug|Win32
+		{522B7B83-8834-4306-9D4B-4F6F33353449}.Release|Win32.ActiveCfg = Release|Win32
+		{522B7B83-8834-4306-9D4B-4F6F33353449}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

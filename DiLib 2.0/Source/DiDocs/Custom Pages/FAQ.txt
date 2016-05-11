@@ -1,0 +1,46 @@
+/*! \page faq Frequently Asked Questions
+
+\li <b>"CreateTree" : illegal use of type 'void'.</b> <br />
+	Compiling project cannot find the path to tinyXML sources. Check \link setup_project how to setup project \endlink for more information.
+	
+\li <b>Compiling diconfig file, Error MSB6006: "cmd.exe" exited with code 9009.</b> <br />
+	Path to DiParser contains spacing and command line unable to find the file. Use qoutes around the path 
+	ie: "[Path]\DiParser.exe" "Config.diconfig" "MySourceDir"
+	
+\li <b>'C:\\Program' is not recognized as an internal or external command</b>
+	Path to DiParser contains spacing and command line unable to find the file. Use qoutes around the path 
+	ie: "[Path]\DiParser.exe" "Config.diconfig" "MySourceDir"
+
+\li <b>When diconfig file complie, there are some unknown class names are generated.</b> <br />
+	This can happen when you enter a invalid name during setting up properties of each class in DiTree UI. Even if you recorrect 
+	the value, it keeps track that as a class name for the project.<br/>
+	To remove unused class references, follow menu command...<br />
+	<b>View</b> --> <b>Unused Tasks</b>
+	
+\li <b>When compiling I get missing references.</b> <br />
+	Check you have entered all the header files you that use in the tree in your DiData file before \link export_files exporting \endlink the DiConfig file.
+	Check \link create_tree_general how to setup general \endlink information.
+	
+\li <b>When debugger connected, it is too fast to view tree iteration without breaking. How can see it without breaking the live run?</b> <br />
+	Once debugger connected, the slider on the toolbar gets active. This allows you to slow the data transfer rate between 0 to 0.5 seconds. 
+	
+\li <b>When debugger connected, why can't I see updating tree?</b> <br />
+	Debugger only updates if there is DiData file opened, check you have opened the file and correct tree tab is activated before Start Debugging.
+	
+\li <b>Can't find DILIB_DIR in Visual Studio.</b> <br />
+	You may need to restart your computer as some occations windows needs to restart after installation to load the environment variables.
+
+\li <b>When debugging start, sometimes C++ project hangs at start and don't see any execution.</b> <br />
+	On occations this could happen due debugger not connected properly between the UI and C++ project, you can break the game and step through to avoid
+	 this deadlock and once you select Continue Debug it will go back to normal execution. This issue will be addressed in coming release.
+	 
+\li <b>fatal error C1047: The object or library file 'DiLib.lib' was created with an older compiler than other objects; rebuild old objects and libraries<br/>
+fatal error LNK1257: code generation failed</b>
+	You are linking VS2010 library when building a VS2012 project, change Project Properties --> VC++ Directories --> Library Path to <br>
+	\$(DILIB_DIR)libs\\vs2012
+	
+<p>
+If what you looking for isn't here, or have other queries you can send your comments to <a href="mailto:dilib@dimutu.com">dilib@dimutu.com</a> and I will to get back to with an answer.
+</p>
+<br/>
+*/

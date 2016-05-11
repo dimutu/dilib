@@ -1,0 +1,78 @@
+/*! \page setup_cpp Setting Up C++ Environment
+
+The instruction here within is for Microsoft Visual Studio C++ Project.
+
+\section setup_project Setup Project
+
+Setting up here within is explained in Microsoft Visual Studio environment and
+use Windows Environment Variable <b>DILIB_DIR</b> has the path to DiLib installation folder.<br />
+\$(DILIB_DIR) is Microsoft Visual Studio macro representation of the environment variable.
+
+-# Open Project Properties for you current project.
+-# Configuration Properties  --> VC++ Directories.
+-# Under Include Directories add following paths:
+	-# \$(DILIB_DIR)includes
+	-# \$(DILIB_DIR)3rdParty\\TinyXML
+-# Under Library Directories add following paths:
+	- For Visual Studio 2010: \$(DILIB_DIR)libs
+	- For Visual Studio 2012: \$(DILIB_DIR)libs\\vs2012
+-# Linker -> Input, set following lib file name depend on your configuration
+	- Debug configuration - DiLibDebug.lib
+	- Release configuration - DiLib.lib
+-# Add all the source files header(*.h) and cpp (*.cpp) from \<Install Folder>\\3rdParty\\TinyXML to your project.
+ <br />
+ 
+\section setup_class Classes
+
+From the template classes DiTask and DiCondition classes are must implementations, and need to 
+make sure these classes header files are added to configuration files during \link create_tree_general Creating Tree \endlink.
+
+\section setup_parse Parsing Config File
+
+This need to use the exported configuration file DiConfig. Follow \link create_tree Creating Behavior Tree \endlink exporting tree for how to.
+
+\li Use Environment Variable <b>DILIB_DIR</b> which will has the path to DiLib installation folder.
+\li Add the configuration (.diconfig) file into your project and open the property page of the file.
+\li Configuration Properties --> General - set Item type to Custom Build Tool and click Apply.
+under new side menu Custom Build Tool (as the image below)
+\li Set Command Line to $(DIRLIB_DIR)bin\\DiParser.exe (Your Source Path)\\Config.diconfig   (Your Source Path)
+\li Set Outputs to (Your Source Path)
+
+<b>**NOTE: if your source path contains whitespaces, it is recomend to wrap the path around double quotes.</b>
+
+\image html diconfig-properties.jpg
+
+<ul>
+<li> Once compiled, it will generate following source files inside the output directory. </li>
+	<ul>
+		<li>DiClassTypeIDs.h</li>
+		<li>DiClassGenerator.cpp</li>
+		<li>DiReturnEnums.h</li>
+	</ul>
+<li> Add these files into your development environment to bind the tree creator function in order to load the behaviour tree structure.</li>
+</ul>
+\section setup_load	Loading Tree
+Following code snippet shows how to load the tree
+
+\code{cpp}
+#include <DiFactory.h>
+
+int main()
+{
+	//Create AI and DiRoot object 
+	AI* m_pkAI = new AI();
+	DiRoot<AI>* m_pkRoot = new DiRoot<AI>();
+
+	//Load .ditree 
+	DiFactory::CreateTree<AI>("Data/DiSampleTree.ditree", m_pkRoot);
+  
+	//Execute the tree
+	m_pkRoot->Execute(m_pkAI);
+
+	//Free memory
+	delete m_pkAI;
+	delete m_pkRoot;
+}
+\endcode
+<br />
+*/

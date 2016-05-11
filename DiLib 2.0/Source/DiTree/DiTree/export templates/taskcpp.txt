@@ -1,0 +1,19 @@
+
+#include "[CLASS].h"
+#include "DiReturnEnums.h"
+#include "[TEMPLATE].h"
+
+[CLASS]::[CLASS]() : DiLib::[DICLASS]<[TEMPLATE]>()
+{
+}
+
+[CLASS]::~[CLASS]()
+{
+}
+
+int [CLASS]::Execute([TEMPLATE]* a_pkObject)
+{
+	DIDEBUGGER_SEND(this);
+
+	return DiLib::DITASK_COMPLETE;
+}

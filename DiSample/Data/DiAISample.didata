@@ -1,0 +1,44 @@
+﻿<TreeRoot>
+  <DiLIB version="2.0.0.56" />
+  <DiConfig>
+    <DebugID>r12bgrodfhs</DebugID>
+    <HeaderFiles Count="5">
+      <File Name="AI.h" />
+      <File Name="DiAICondition.h" />
+      <File Name="DiAITaskOne.h" />
+      <File Name="DiAITaskTwo.h" />
+      <File Name="DiAIFilterTask.h" />
+    </HeaderFiles>
+    <CustomReturn Count="2">
+      <ReturnType Enum="DITASK_OTHER" />
+      <ReturnType Enum="DITASK_SOMETHING" />
+    </CustomReturn>
+    <Enums Count="9">
+      <Enum ID="1" IsTemplate="True" ClassTypeID="3" ClassName="DiCondition" TemplateClassName="AI" />
+      <Enum ID="2" IsTemplate="True" ClassTypeID="4" ClassName="DiAIFilter" TemplateClassName="AI" />
+      <Enum ID="3" IsTemplate="True" ClassTypeID="2" ClassName="DiAISelection" TemplateClassName="AI" />
+      <Enum ID="4" IsTemplate="True" ClassTypeID="1" ClassName="DiAISequence" TemplateClassName="AI" />
+      <Enum ID="5" IsTemplate="True" ClassTypeID="0" ClassName="DiTask" TemplateClassName="AI" />
+      <Enum ID="7" IsTemplate="False" ClassTypeID="0" ClassName="DiAITaskOne" TemplateClassName="AI" />
+      <Enum ID="8" IsTemplate="False" ClassTypeID="3" ClassName="DiAICondition" TemplateClassName="AI" />
+      <Enum ID="9" IsTemplate="False" ClassTypeID="0" ClassName="DiAITaskTwo" TemplateClassName="AI" />
+      <Enum ID="10" IsTemplate="False" ClassTypeID="0" ClassName="DiAIFilterTask" TemplateClassName="AI" />
+    </Enums>
+  </DiConfig>
+  <RootNodes ChildCount="2">
+    <RootNode TemplateClassName="AI" RootDebugID="DiTree0" EnumID="0" TypeID="5" ClassName="" LuaScript="" ChildCount="1" TaskDebugID="0" Breakpoint="False" TaskArgs="">
+      <Node EnumID="4" TypeID="1" ClassName="DiAISequence" LuaScript="" ChildCount="2" TaskDebugID="3" Breakpoint="False">
+        <Node EnumID="8" TypeID="3" ClassName="DiAICondition" LuaScript="" ChildCount="2" TaskDebugID="4" Breakpoint="False" TaskTrue="7" TaskFalse="9">
+          <Node EnumID="7" TypeID="0" ClassName="DiAITaskOne" LuaScript="" ChildCount="0" TaskDebugID="2" Breakpoint="False" />
+          <Node EnumID="9" TypeID="0" ClassName="DiAITaskTwo" LuaScript="" ChildCount="0" TaskDebugID="1" Breakpoint="False" />
+        </Node>
+        <Node EnumID="2" TypeID="4" ClassName="DiAIFilter" LuaScript="" ChildCount="1" TaskDebugID="5" Breakpoint="False" TimerInterval="1000" Repeat="True" MaxRunCycle="1">
+          <Node EnumID="10" TypeID="0" ClassName="DiAIFilterTask" LuaScript="" ChildCount="0" TaskDebugID="6" Breakpoint="False" TaskArgs="This is set from the UI" />
+        </Node>
+      </Node>
+    </RootNode>
+    <RootNode TemplateClassName="AI" RootDebugID="DiTree1" EnumID="0" TypeID="5" ClassName="" LuaScript="" ChildCount="1" TaskDebugID="0" Breakpoint="False" TaskArgs="">
+      <Node EnumID="9" TypeID="0" ClassName="DiAITaskTwo" LuaScript="" ChildCount="0" TaskDebugID="1" Breakpoint="False" />
+    </RootNode>
+  </RootNodes>
+</TreeRoot>

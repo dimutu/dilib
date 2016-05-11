@@ -1,0 +1,37 @@
+#include "[CLASS].h"
+#include "DiReturnEnums.h"
+#include "[TEMPLATE].h"
+
+[CLASS]::[CLASS]() : DiLib::[DICLASS]<[TEMPLATE]>()
+{
+}
+
+[CLASS]::~[CLASS]()
+{
+}
+
+int [CLASS]::Execute([TEMPLATE]* a_pkObject)
+{
+	DIDEBUGGER_SEND(this);
+
+	//run all the taskst in the sequence
+	int eReturn = DiLib::DI_TASK_RETURNS::DITASK_COMPLETE;
+
+	m_itrCurrentTask = m_akTaskSequence.begin();
+
+	DiLib::DiTask<[TEMPLATE]>* pkTask = NULL;
+	for (; m_itrCurrentTask != m_akTaskSequence.end(); ++m_itrCurrentTask)
+	{
+		pkTask = *m_itrCurrentTask;
+		if (pkTask != NULL)
+		{
+			eReturn = pkTask->Execute(a_pkObject); //run the task
+			if (eReturn == DiLib::DI_TASK_RETURNS::DITASK_FAILED)
+			{
+				return DiLib::DI_TASK_RETURNS::DITASK_FAILED;
+			}
+		}
+	}
+
+	return DiLib::DI_TASK_RETURNS::DITASK_COMPLETE;
+}

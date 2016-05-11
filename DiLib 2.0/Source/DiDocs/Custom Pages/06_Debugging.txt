@@ -1,0 +1,75 @@
+/*! \page debugging Debugging
+
+\section debug_overview Overview
+
+<p>Debugging allows you to view the execution of the behavior tree through the UI, and have the option of setting up breakpoints, 
+breaking and resuming and stepping through each task in the UI or stepping through your C++ code will update the current position executing on 
+enabling to view current location of the tree.</p>
+<b>**NOTE </b> Check you have permission from your firewall to activate the debugging.
+
+\image html toolbar-debug.jpg
+
+-# Start Debugging.
+-# Step in to Next task while in Debug Break.
+-# Break at current execution node.
+-# Stop Debugging.
+-# Change speed of execution. (This allows you to see actual running time to slow motion view of the tasks behaving during each run cycle.)
+
+\section debug_setup Setting Up
+
+In-order to enable the debugging, need to initialize the debugger and need to place the debug command on each task to communicate with the DiTree UI.<br />
+From the UI select <br />
+\li Debug --> Start Debugging
+\li Run the C++ application.
+
+<b>THIS IS ONLY VALID IN WINDOWS UNDER DEBUG BUILD CONFIGURATION.</b>
+
+\subsection debug_init Initialize
+
+This initialize the connection between the UI and the C++ program. Place the below macro at your game initialization.
+
+\code{cpp}
+DIDEBUGGER_INIT();
+\endcode
+
+\subsection debug_add Adding to Extended Classes
+
+For the extended classes place the following macro inside the Execute function
+\code{cpp}
+int DiAITaskOne::Execute(AI* p_pkAI)
+{
+	DIDEBUGGER_SEND(this); //THIS WILL SEND INFOMATION ABOUT THIS CLASS
+
+	std::cout << "executing this task";
+
+	return DiLib::DITASK_COMPLETE;
+}
+\endcode
+
+\subsection debug_shutdown Shutdown
+
+To disconnect and free the resources of debugger place the following macro on your exit program function.
+\code{cpp}
+DIDEBUGGER_SHUTDOWN();
+\endcode
+
+\section debug_breaks Breakpoints
+
+You can set and remove breakpoints in the UI
+\li Debug --> Toggle Breakpoints
+
+Or can simple break the running application at current execution point during debugging
+\li Debug --> Break
+
+\section debug_step Stepping
+
+Once in debug break mode, can simply step through each node execution and view from the UI
+\li Debug --> Step
+
+\section debug_remote Remote Debugging
+
+<b>TO BE IMPLEMENTED</b>
+
+<br />
+
+*/

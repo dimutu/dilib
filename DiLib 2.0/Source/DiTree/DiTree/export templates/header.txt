@@ -1,0 +1,19 @@
+#ifndef [DEFINE]
+#define [DEFINE]
+
+#include <[DICLASS].h>
+
+class [TEMPLATE];
+
+class [CLASS] : public DiLib::[DICLASS]<[TEMPLATE]>
+{
+public:
+	[CLASS]();
+	
+	~[CLASS]();
+	
+	int Execute([TEMPLATE]* a_pkObject);
+	
+};
+
+#endif

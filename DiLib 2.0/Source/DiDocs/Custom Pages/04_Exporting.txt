@@ -1,0 +1,27 @@
+/*! \page export_files Exporting Files
+
+Export the files require to load the tree in the C++ project.
+<br />
+<b>THIS SECTION IS STILL IMPLEMENTING TO BE MORE USER FRIENDLY.</b>
+
+\section export_config DiConfig Configuration
+
+Export the configuration file <br />
+File --> Export --> Config File
+
+\section export_tree DiTree Tree Data
+
+Export the tree information file.
+File -->Export --> Tree File <br />
+This will show the list of tree currently attached to the project, select the tree name and OK to export to path of your choice.
+
+\section export_source Generate C++ Source
+
+Generate C++ header and cpp source files setup on each tree you have created in the UI. This generate a copy of template class in the selected source folder path.
+
+File --> Export --> C++ Source
+
+\image html export-source.jpg
+
+
+*/

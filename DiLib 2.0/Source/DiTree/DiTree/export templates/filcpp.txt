@@ -1,0 +1,38 @@
+#include "[CLASS].h"
+#include "DiReturnEnums.h"
+#include "[TEMPLATE].h"
+
+[CLASS]::[CLASS]() : DiLib::[DICLASS]<[TEMPLATE]>()
+{
+}
+
+[CLASS]::~[CLASS]()
+{
+}
+
+int [CLASS]::Execute([TEMPLATE]* a_pkObject)
+{
+	DIDEBUGGER_SEND(this);
+
+	//if the timer is set, execute code in time intervals
+	if ( !m_pkTimer->IsRunTime() )
+	{
+		//time not ready, come back later to execute
+		return DiLib::DI_TASK_RETURNS::DITASK_CALLBACK;
+	}
+
+	//check loop conditions before executing
+	if (m_bIsLoopOn || m_uiRunCycleCounter < m_uiMaxRunCycles)
+	{
+		++m_uiRunCycleCounter;
+		m_pkTimer->SetNextTimeInterval();
+		//for default will run the true task only
+		if (m_pkTask != NULL)
+		{
+			return m_pkTask->Execute(a_pkObject);
+		}
+
+	}
+
+	return DiLib::DI_TASK_RETURNS::DITASK_COMPLETE;
+}

@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="condcpp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\export templates\condcpp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="filcpp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\export templates\filcpp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="header" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\export templates\header.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ID_ADD_CONDITION" xml:space="preserve">
+    <value>Adds new Condition task to currently selected node.</value>
+  </data>
+  <data name="ID_ADD_FILTER" xml:space="preserve">
+    <value>Adds new Filter task to currently selected node.</value>
+  </data>
+  <data name="ID_ADD_SELECTION" xml:space="preserve">
+    <value>Adds new Selection task to currently selected node.</value>
+  </data>
+  <data name="ID_ADD_SEQUENCE" xml:space="preserve">
+    <value>Adds new Sequence task to currently selected node.</value>
+  </data>
+  <data name="ID_ADD_TASK" xml:space="preserve">
+    <value>Adds new Task to currently selected node.</value>
+  </data>
+  <data name="ID_ADD_TREE" xml:space="preserve">
+    <value>Adds new Tree tab.</value>
+  </data>
+  <data name="ID_CLOSE_FILE" xml:space="preserve">
+    <value>Close file.</value>
+  </data>
+  <data name="ID_DEBUG_BREAK" xml:space="preserve">
+    <value>Break debugger at next node.</value>
+  </data>
+  <data name="ID_DEBUG_BREAKPOINT" xml:space="preserve">
+    <value>Toggle breakpoint on selected tree node.</value>
+  </data>
+  <data name="ID_DEBUG_LOG" xml:space="preserve">
+    <value>Log debug data to the console window.</value>
+  </data>
+  <data name="ID_DEBUG_REMOVEALL_BREAKS" xml:space="preserve">
+    <value>Remove all the breakpoints on selected tree.</value>
+  </data>
+  <data name="ID_DEBUG_SPEED" xml:space="preserve">
+    <value>This slow the debug speed between task from 0 to 0.5 seconds.</value>
+  </data>
+  <data name="ID_DEBUG_START" xml:space="preserve">
+    <value>Start/Continue Debugger.</value>
+  </data>
+  <data name="ID_DEBUG_STEP" xml:space="preserve">
+    <value>Step through debug process.</value>
+  </data>
+  <data name="ID_DEBUG_STOP" xml:space="preserve">
+    <value>Stop debugger.</value>
+  </data>
+  <data name="ID_DELETE_TASK" xml:space="preserve">
+    <value>Delete currently selected tree node and its child nodes.</value>
+  </data>
+  <data name="ID_DELETE_TREE" xml:space="preserve">
+    <value>Delete currently selected tree tab.</value>
+  </data>
+  <data name="ID_EMPTY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ID_ERROR_LOAD_FILE" xml:space="preserve">
+    <value>Error loading file.</value>
+  </data>
+  <data name="ID_ERROR_NO_DEBUG_FILE" xml:space="preserve">
+    <value>No data file open for debugging.</value>
+  </data>
+  <data name="ID_ERROR_SAVE_FILE" xml:space="preserve">
+    <value>Error saving file.</value>
+  </data>
+  <data name="ID_ERROR_WRITING_LOG" xml:space="preserve">
+    <value>Unable to write to error log.</value>
+  </data>
+  <data name="ID_EXPORT_COMPLETE" xml:space="preserve">
+    <value>Exporting complete.</value>
+  </data>
+  <data name="ID_EXPORT_CONFIG" xml:space="preserve">
+    <value>Export configuration file from active data file.</value>
+  </data>
+  <data name="ID_EXPORT_TREE" xml:space="preserve">
+    <value>Export tree file from active tree on data file.</value>
+  </data>
+  <data name="ID_MOVE_TASK" xml:space="preserve">
+    <value>Move currently selected tree node.</value>
+  </data>
+  <data name="ID_NEW_DIDATA" xml:space="preserve">
+    <value>Create new didata file.</value>
+  </data>
+  <data name="ID_OPEN_DIDATA" xml:space="preserve">
+    <value>Open existing didata file.</value>
+  </data>
+  <data name="ID_PRINT" xml:space="preserve">
+    <value>Print currently active tree.</value>
+  </data>
+  <data name="ID_PRINT_PREVIEW" xml:space="preserve">
+    <value>Print preview currently active tree.</value>
+  </data>
+  <data name="ID_RENAME_TREE" xml:space="preserve">
+    <value>Rename currently selected tree tab.</value>
+  </data>
+  <data name="ID_SAVEAS_DIDATA" xml:space="preserve">
+    <value>Save As currently open diddata file.</value>
+  </data>
+  <data name="ID_SAVE_DIDATA" xml:space="preserve">
+    <value>Save currently open didata file.</value>
+  </data>
+  <data name="ID_SHOW_CONSOLE" xml:space="preserve">
+    <value>Show the console window.</value>
+  </data>
+  <data name="selcpp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\export templates\selcpp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="seqcpp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\export templates\seqcpp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="taskcpp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\export templates\taskcpp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ID_EDIT_DEBUG_BLOCKED" xml:space="preserve">
+    <value>Cannot modify during tree is running.</value>
+  </data>
+  <data name="ID_EXPORT_SOURCE" xml:space="preserve">
+    <value>Generate and export C++ source from data set on all the trees on this file.</value>
+  </data>
+  <data name="ID_INFO_TEMPLATE_NAME" xml:space="preserve">
+    <value>Enter C++ Template Class name here and click Set Template to begin creating the behavior tree.</value>
+  </data>
+</root>

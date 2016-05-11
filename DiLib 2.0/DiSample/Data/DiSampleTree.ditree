@@ -1,0 +1,15 @@
+﻿<TreeRoot>
+  <DiLIB version="2.0.0.56" />
+  <DI Template="AI" DebugID="r12bgrodfhs" TreeDebugID="DiTree0" />
+  <Node EnumID="0" TypeID="5" ClassName="" LuaScript="" ChildCount="1" TaskDebugID="0">
+    <Node EnumID="4" TypeID="1" ClassName="DiAISequence" LuaScript="" ChildCount="2" TaskDebugID="3">
+      <Node EnumID="8" TypeID="3" ClassName="DiAICondition" LuaScript="" ChildCount="2" TaskDebugID="4" TaskTrue="7" TaskFalse="9">
+        <Node EnumID="7" TypeID="0" ClassName="DiAITaskOne" LuaScript="" ChildCount="0" TaskDebugID="2" />
+        <Node EnumID="9" TypeID="0" ClassName="DiAITaskTwo" LuaScript="" ChildCount="0" TaskDebugID="1" />
+      </Node>
+      <Node EnumID="2" TypeID="4" ClassName="DiAIFilter" LuaScript="" ChildCount="1" TaskDebugID="5" TimerInterval="1000" Repeat="True" MaxRunCycle="1">
+        <Node EnumID="10" TypeID="0" ClassName="DiAIFilterTask" LuaScript="" ChildCount="0" TaskDebugID="6" TaskArgs="This is set from the UI" />
+      </Node>
+    </Node>
+  </Node>
+</TreeRoot>

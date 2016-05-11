@@ -1,0 +1,58 @@
+#include "[CLASS].h"
+#include "DiReturnEnums.h"
+#include "[TEMPLATE].h"
+
+[CLASS]::[CLASS]() : DiLib::[DICLASS]<[TEMPLATE]>()
+{
+}
+
+[CLASS]::~[CLASS]()
+{
+}
+
+int [CLASS]::Execute([TEMPLATE]* a_pkObject)
+{
+	DIDEBUGGER_SEND(this);
+
+	//get current task
+	DiLib::DiTask<[TEMPLATE]>* pkTask = *m_itrCurrentTask;
+	if (pkTask != NULL) //check current task is valie
+	{
+		int eReturn;
+		eReturn = pkTask->Execute(a_pkObject);
+
+		switch (eReturn)
+		{
+		case DiLib::DI_TASK_RETURNS::DITASK_NEXTTASK: //check needs to get next task
+		case DiLib::DI_TASK_RETURNS::DITASK_COMPLETE://current task ran successfully (currently works like a sequence)
+			++m_itrCurrentTask; //move to next task
+			break;
+
+		case DiLib::DI_TASK_RETURNS::DITASK_FAILED:
+			//current task failed, all selection is failed and return back to parent
+			return DiLib::DI_TASK_RETURNS::DITASK_FAILED;
+			break;
+
+		default:
+			break;
+		}
+			
+
+	}
+	else
+	{
+		//invalid task, move to the next task
+		++m_itrCurrentTask;
+	}//end if curretn task null
+
+
+	if (m_itrCurrentTask == m_akTaskSequence.end()) //check all the task are ran through
+	{
+		return DiLib::DI_TASK_RETURNS::DITASK_COMPLETE; //all the task has ran through, go back to parent with all complete message
+	}
+	else
+	{
+		//more task has to run
+		return DiLib::DI_TASK_RETURNS::DITASK_CALLBACK;
+	}
+}

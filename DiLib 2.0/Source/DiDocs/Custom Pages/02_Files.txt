@@ -1,0 +1,41 @@
+/*! \page files File Structure
+
+\section file_overview Overview
+
+Installation folder file structure
+<br />
+|-- <b>3rdParty</b> <br />
+|----- TinyXML (Source files of the library) <br />
+| <br />
+|-- <b>bin</b> <br />
+|----- DiParser.exe (Parser command line executable use on DiConfig file) <br />
+|----- DiTree.exe (Tree creating windows application) <br />
+| <br />
+|-- <b>includes</b> (DiLib C++ source files) <br />
+| <br />
+|-- <b>libs</b> (DiLib C++ libraries for debug and release builds for VS2010) <br />
+|----- DiLibDebug.lib <br />
+|----- DiLib.lib <br />
+|--------<b>vs2012</b> (C++ libraries for VS2012) <br />
+|----------- DiLibDebug.lib <br />
+|----------- DiLib.lib <br />
+| <br />
+|-- <b>samples</b>
+
+\section file_types File Types
+\subsection file_didata DiData
+
+This is the main file type for the UI program to save complete tree data.
+
+\subsection file_ditree DiTree
+
+These are individual files of each behavior tree containing the tree structure for each AI bot, and use to load into C++ project.
+
+\subsection file_diconfig DiConfig
+
+The configuration file containing the enumeration to identify each tree node types helping to load the tree and 
+enumerations to help identify the states returning from each code execution. This will need to compile through DiParser program before starting the C++ compile.
+More information can be found in \link setup_cpp Setting up C++ \endlink section.
+
+<br />
+*/

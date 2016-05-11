@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Behavior Header Files">
+      <UniqueIdentifier>{7ff7ebc7-8e10-458a-bc6b-77020874cd4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Behavior Source Files">
+      <UniqueIdentifier>{7e961ad1-28bc-482d-8b32-fbd49f010ca1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\AI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DiClassGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DiAITaskOne.cpp">
+      <Filter>Behavior Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DiAICondition.cpp">
+      <Filter>Behavior Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DiAITaskTwo.cpp">
+      <Filter>Behavior Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DiAIFilterTask.cpp">
+      <Filter>Behavior Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\tinystr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\tinyxml.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\tinyxmlerror.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\tinyxmlparser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\AI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DiClassTypeIDs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DiAITaskOne.h">
+      <Filter>Behavior Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DiReturnEnums.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DiAICondition.h">
+      <Filter>Behavior Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DiAITaskTwo.h">
+      <Filter>Behavior Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DiAIFilterTask.h">
+      <Filter>Behavior Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Data\DiAIConfig.diconfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\DiAISample.didata" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+/*! \page preprocess Preprocessors
+
+\section prepro_debug _DIDEBUG
+This is a combination of WIN32 and DEBUG preprocessors to set DiLIB debugging service active or not. Debugging is active is only if both of the preprocessors are defined.
+
+\section prepro_port _DINETWORKPORT
+The default the Windows socket port number use to communicate with the DiTree user interface with value set to 34542, unless \link debug_remote Remote Debugging \endlink session is activated.
+
+<br />
+
+*/
