@@ -13,13 +13,13 @@
 * not claim that you wrote the original software. If you use this
 * software in a product, an acknowledgment in the product documentation
 * would be appreciated.
-* 
-* 2. NO alteration must be made to the source version.
+*
+* 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
 * 
 * 3. This notice may not be removed or altered from any source distribution.
 * 
 * 4. Third party open source "TinyXML" is used in this program, and for more information please see its own terms of use.
-******************************************************************************************************************************
+*******************************************************************************************************************************
 */
 /*
 ********************************************************************************************************************************************
